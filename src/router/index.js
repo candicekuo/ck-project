@@ -7,6 +7,11 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
+    name: "ckProject",
+    component: () => import("../layouts/mainLayouts.vue"),
+  },
+  {
+    path: "/home",
     name: "Home",
     component: Home,
   },
