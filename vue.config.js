@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: "/ck-project/",
+  publicPath: '/ck-project/',
 };
