@@ -1,8 +1,6 @@
 <template>
     <div>
  
- 
- 
         <header></header>
 
         <footer></footer>
@@ -17,7 +15,7 @@
 // import CustomDialog from 'components/CustomDialog';
 
 export default {
-  name: 'MainTopNavSidebar',
+  name: 'mainLayouts',
   components: {
   },
   data() {
