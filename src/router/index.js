@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/',
     name: 'ckProject',
-    component: () => import('/src/layouts/mainLayouts.vue'),
+    component: () => import('@/layouts/mainLayouts.vue'), // @ 代表 /src
   },
   {
     path: '/home',

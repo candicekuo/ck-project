@@ -25,3 +25,8 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+p {
+  color: $mainColor;
+}
+</style>
