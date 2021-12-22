@@ -1,7 +1,9 @@
 <template>
-  <div class="app">
-    <header>
+  <div class="wp">
+    <header class="header">
       <!-- menu -->
+      <nav class="menu">menu</nav>
+      header
     </header>
     <main>
       <p>
@@ -10,7 +12,7 @@
       <router-view />
     </main>
     <footer class="footer">
-      <p>Copyright © {{ year }} Candice. All rights reserved.</p>
+      <p>COPYRIGHT © {{ year }} CandiceKuo Design All Rights Reserved.</p>
     </footer>
   </div>
 </template>
@@ -32,11 +34,25 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.app {
-  .footer {
+.wp {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+
+  .header {
+    height: calc((100vw - 240px) / 3.52);
+    background: $main;
+
+    .menu {
+    }
   }
-}
-p {
-  color: $mainColor;
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    padding: 6px 0;
+    background: $brown;
+    color: $lightGray;
+  }
 }
 </style>
