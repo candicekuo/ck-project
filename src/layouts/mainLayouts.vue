@@ -1,8 +1,10 @@
 <template>
   <div>
     <header></header>
+    <main>
+      <router-view />
+    </main>
     <footer></footer>
-    <!-- 在這分割header footer -->
     <p>
       {{ test }}
     </p>
@@ -14,7 +16,7 @@
 // import CustomDialog from 'components/CustomDialog';
 
 export default {
-  name: 'mainLayouts',
+  name: 'MainLayouts',
   components: {},
   data() {
     return {
