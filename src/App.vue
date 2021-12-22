@@ -1,11 +1,5 @@
 <template>
   <div id="app">
-    <!-- 入口在這 -->
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
-    <!-- 留這個就好 -->
     <router-view />
   </div>
 </template>
