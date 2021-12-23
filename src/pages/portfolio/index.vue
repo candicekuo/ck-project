@@ -13,3 +13,9 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+div {
+  height: 1000px;
+  text-align: center;
+}
+</style>

@@ -1,18 +1,14 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
 import ErrorPage from '@/pages/error/index.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/ck-project/',
-    redirect: '/personal', // 要自動轉導的目標 = 可設定轉向預設頁面
-  },
-  {
-    path: '/personal',
-    component: () => import('@/layouts/mainLayouts.vue'),
+    path: '/',
+    component: () => import('@/pages/personal/index.vue'),
+    // redirect: '/personal',
   },
   {
     path: '/owner',
@@ -32,20 +28,6 @@ const routes = [
     ],
   },
   {
-    path: '/home',
-    name: 'Home',
-    component: Home,
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/About.vue'),
-  },
-  {
     path: '*',
     name: 'ErrorPage',
     // component: () => import('@/pages/error/index.vue'),
@@ -54,7 +36,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   routes,
 });
 
