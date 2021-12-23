@@ -1,15 +1,13 @@
 <template>
-  <div>Portfolio</div>
+  <div>404</div>
 </template>
 
 <script>
 export default {
-  name: 'Portfolio',
+  name: 'ErrorPage',
   components: {},
   data() {
-    return {
-      test: 'hello',
-    };
+    return {};
   },
 };
 </script>
