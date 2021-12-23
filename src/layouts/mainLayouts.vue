@@ -65,17 +65,16 @@ export default {
   justify-content: space-between;
 
   .header {
-    // height: calc((100vw - 240px) / 3.52);
-    height: calc(100vw / 4);
-    background: $main;
+    height: calc((100vw - 240px) / 3.5);
     background-image: url(../assets/bg.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center 30px;
+    background-repeat: no-repeat;
 
     .menu {
-      color: $lightGray;
+      color: $white;
       backdrop-filter: blur(2px);
-      background-color: #0000001a;
+      background-color: #8080801a;
       position: fixed;
       height: 42px;
       width: 100vw;
@@ -84,8 +83,8 @@ export default {
         display: flex;
         flex-flow: row wrap;
         padding: 12px;
-        background: rgba(150, 150, 150, 0.7);
-        box-shadow: 2px 2px 10px #333;
+        background: rgba(172, 208, 250, 0.4);
+        box-shadow: 0px 1px 12px $blue;
         position: fixed;
         width: 100vw;
 
@@ -94,7 +93,7 @@ export default {
           cursor: pointer;
           transition: color 0.12s;
           &:hover {
-            color: $white;
+            color: $darkBlue;
           }
         }
       }
@@ -109,6 +108,6 @@ export default {
   }
 }
 .is-active {
-  color: $white;
+  color: $darkBlue;
 }
 </style>
