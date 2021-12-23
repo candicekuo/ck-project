@@ -7,6 +7,10 @@ Vue.use(VueRouter);
 
 const routes = [
   {
+    path: '/ck-project/',
+    redirect: '/personal', // 要自動轉導的目標 = 可設定轉向預設頁面
+  },
+  {
     path: '/personal',
     component: () => import('@/layouts/mainLayouts.vue'),
   },
@@ -28,12 +32,6 @@ const routes = [
     ],
   },
   {
-    path: '/:catchAll(.*)',
-    name: 'ErrorPage',
-    // component: () => import('@/pages/error/index.vue'),
-    component: ErrorPage,
-  },
-  {
     path: '/home',
     name: 'Home',
     component: Home,
@@ -46,6 +44,12 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/About.vue'),
+  },
+  {
+    path: '*',
+    name: 'ErrorPage',
+    // component: () => import('@/pages/error/index.vue'),
+    component: ErrorPage,
   },
 ];
 
