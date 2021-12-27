@@ -17,6 +17,20 @@ li {
   list-style-type: none;
 }
 
+button {
+  font-size: 16px;
+  background: none;
+  border: 1px solid $main;
+  color: $main;
+  padding: 4px 16px;
+  border-radius: 4px;
+  transition: opacity 0.12s;
+  
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
 // .mt-xs{}
 // .mt-sm{}
 // .mt-md{}
