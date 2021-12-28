@@ -1,5 +1,8 @@
 <template>
-  <div>Portfolio</div>
+  <div>
+    <p>Portfolio</p>
+    <a href="./A/index.html">test a</a>
+  </div>
 </template>
 
 <script>
@@ -11,6 +14,7 @@ export default {
       test: 'hello',
     };
   },
+  methods: {},
 };
 </script>
 <style lang="scss" scoped>
