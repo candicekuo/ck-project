@@ -21,8 +21,7 @@
     </div>
     <div class="portfolioBox">
       <div v-for="(data, index) in portfolioInfo" :key="index">
-        <!-- <img src="" alt=""> -->
-        {{ data.label }}
+        <img :src="data.imgPath" :alt="data.label" />
       </div>
     </div>
   </div>
@@ -38,23 +37,51 @@ export default {
       portfolioInfo: [
         {
           label: 'test1',
-          imgPath: '',
+          imgPath: require('@/assets/p1.png'),
         },
         {
           label: 'test1',
-          imgPath: '',
+          imgPath: require('@/assets/p2.png'),
         },
         {
           label: 'test1',
-          imgPath: '',
+          imgPath: require('@/assets/p3.png'),
         },
         {
           label: 'test1',
-          imgPath: '',
+          imgPath: require('@/assets/p4.png'),
         },
         {
           label: 'test1',
-          imgPath: '',
+          imgPath: require('@/assets/p5.png'),
+        },
+        {
+          label: 'test1',
+          imgPath: require('@/assets/p6.png'),
+        },
+        {
+          label: 'test1',
+          imgPath: require('@/assets/p7.png'),
+        },
+        {
+          label: 'test1',
+          imgPath: require('@/assets/p8.png'),
+        },
+        {
+          label: 'test1',
+          imgPath: require('@/assets/p9.png'),
+        },
+        {
+          label: 'test1',
+          imgPath: require('@/assets/p10.png'),
+        },
+        {
+          label: 'test1',
+          imgPath: require('@/assets/p11.png'),
+        },
+        {
+          label: 'test1',
+          imgPath: require('@/assets/p12.png'),
         },
       ],
     };
@@ -64,7 +91,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .content {
-  // border: 1px solid #000;
   width: 80vw;
   margin: 40px auto;
   min-height: 500px;
@@ -77,7 +103,7 @@ export default {
   background: #fff;
 
   > div {
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     text-align: center;
     padding: 20px;
 
@@ -109,15 +135,22 @@ export default {
 }
 .portfolioBox {
   flex-basis: 75%;
-  // border: 1px solid #000;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   gap: 40px 25px;
 
   > div {
     height: 13vw;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
+    background: #eee;
     border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 75%;
+    }
   }
 }
 </style>
