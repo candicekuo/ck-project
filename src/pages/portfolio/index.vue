@@ -99,6 +99,7 @@ export default {
 }
 .infoBox {
   flex-basis: 25%;
+  min-width: 264px;
   margin-top: -80px;
   background: #fff;
 
@@ -118,7 +119,7 @@ export default {
       ~ p {
         font-weight: 100;
         font-size: 14px;
-        color: #ccc;
+        color: rgb(170, 170, 170);
       }
     }
     .detail,
