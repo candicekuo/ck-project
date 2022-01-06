@@ -147,10 +147,6 @@ export default {
     overflow: hidden;
     display: flex;
     justify-content: center;
-
-    img {
-      width: 75%;
-    }
   }
 }
 </style>
