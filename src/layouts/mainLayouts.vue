@@ -84,7 +84,7 @@ export default {
         flex-flow: row wrap;
         padding: 12px;
         background: rgba(172, 208, 250, 0.4);
-        box-shadow: 0px 1px 12px $blue;
+        box-shadow: 0px -5px 12px $blue;
         position: fixed;
         width: 100vw;
 
