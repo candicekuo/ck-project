@@ -1,27 +1,33 @@
 <template>
-  <div class="content">
+  <div class="content container">
     <!-- <p>Portfolio</p>
     <a href="./A/index.html">test a</a> -->
-    <div class="infoBox">
-      <div>
-        <img src="@/assets/pic1.jpg" alt="" />
-        <p class="title">Candice Kuo</p>
-        <p>Taiwan, Taipei</p>
-        <div class="detail">
-          candice89989@gmail.com <br />
-          0952 620 651
-        </div>
-        <div class="more">
-          擅長工具 <br />
-          Photoshop、Illustrator<br />
-          html、css、jquery、js、vue.js <br />
-          RWD響應式網站
+    <div class="row">
+      <div class="infoBox col-xs-12 col-lg-4">
+        <div>
+          <img src="@/assets/pic1.jpg" alt="" />
+          <p class="title">Candice Kuo</p>
+          <p>Taiwan, Taipei</p>
+          <div class="detail">
+            <i class="bi bi-envelope"></i> candice89989@gmail.com <br />
+            <i class="bi bi-phone"></i> 0952 620 651
+          </div>
+          <div class="more">
+            擅長工具 <br />
+            Photoshop、Illustrator<br />
+            html、css、jquery、js、vue.js <br />
+            RWD響應式網站
+          </div>
         </div>
       </div>
-    </div>
-    <div class="portfolioBox">
-      <div v-for="(data, index) in portfolioInfo" :key="index">
-        <img :src="data.imgPath" :alt="data.label" />
+      <div class="portfolioBox col-xs-12 col-lg-8">
+        <div
+          v-for="(data, index) in portfolioInfo"
+          :key="index"
+          class="col-xs-6"
+        >
+          <img :src="data.imgPath" :alt="data.label" />
+        </div>
       </div>
     </div>
   </div>
