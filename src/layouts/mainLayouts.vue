@@ -8,9 +8,7 @@
             :key="item.label"
             :class="currentTab === item.label ? 'is-active' : ''"
             @click="goPage(item.pushName)"
-          >
-            {{ item.label }}
-          </li>
+          >{{ item.label }}</li>
         </ul>
       </nav>
     </header>
@@ -78,6 +76,7 @@ export default {
       position: fixed;
       height: 42px;
       width: 100vw;
+      z-index: 99999;
 
       ul {
         display: flex;
