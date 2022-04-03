@@ -5,7 +5,7 @@
         <div class="row">
             <div class="infoBox col-xs-12 col-sm-12 col-md-5 col-lg-4 col-xl-3">
                 <div>
-                    <img src="@/assets/pic1.jpg" alt />
+                    <img src="@/assets/img/pic1.jpg" alt />
                     <p class="title">{{ infoBox.name }}</p>
                     <p>{{ infoBox.add }}</p>
                     <div class="detail">
@@ -54,7 +54,6 @@ export default {
     components: {},
     data() {
         return {
-            test: 'hello',
             infoBox: {
                 name: 'Candice',
                 add: 'Taiwan, Taipei',
@@ -69,48 +68,56 @@ export default {
                         {
                             label: '自訂功能系統頁面',
                             content: '由視覺設計師設計出圖，主要負責切板，寫網頁互動功能的部分。',
-                            imgPath: require('@/assets/p1.png'),
-                            goto: ''
+                            imgPath: require('@/assets/img/p1.png'),
+                            goto: './A/index.html'
                         },
                         {
                             label: '測驗活動網站',
                             content: '從主視覺開始發想，動畫安排、網頁互動設計至完成所有頁面。',
-                            imgPath: require('@/assets/p2.png'),
+                            imgPath: require('@/assets/img/p2.png'),
+                            goto: './A/index.html'
                         },
                         {
                             label: '系統功能性介面',
                             content: '系統改版，主要負責頁面操作流程、UI UX規劃，頁面設計切版製作。',
-                            imgPath: require('@/assets/p3.png'),
+                            imgPath: require('@/assets/img/p3.png'),
+                            goto: './A/index.html'
                         },
                         {
                             label: '履歷表使用介面',
                             content: '系統改版，主要負責頁面操作流程、UI UX規劃，頁面設計切版製作。',
-                            imgPath: require('@/assets/p4.png'),
+                            imgPath: require('@/assets/img/p4.png'),
+                            goto: './A/index.html'
                         },
                         {
                             label: '使用者介面規劃',
                             content: '系統改版，主要負責頁面操作流程規劃，UI UX規劃，頁面設計。',
-                            imgPath: require('@/assets/p5.png'),
+                            imgPath: require('@/assets/img/p5.png'),
+                            goto: './A/index.html'
                         },
                         {
                             label: '系統介面規劃',
                             content: '系統改版，主要負責頁面操作流程規劃，UI UX規劃，頁面設計。',
-                            imgPath: require('@/assets/p6.png'),
+                            imgPath: require('@/assets/img/p6.png'),
+                            goto: './A/index.html'
                         },
                         {
                             label: 'EDM問卷頁面',
                             content: '負責主要風格與信件、網頁切板製作。',
-                            imgPath: require('@/assets/p7.png'),
+                            imgPath: require('@/assets/img/p7.png'),
+                            goto: './A/index.html'
                         },
                         {
                             label: '信件發送格式',
                             content: '重新規劃系統信件風格與呈現方式。',
-                            imgPath: require('@/assets/p8.png'),
+                            imgPath: require('@/assets/img/p8.png'),
+                            goto: './A/index.html'
                         },
                         {
                             label: '測驗頁面',
                             content: '把既有的頁面改寫為RWD，增加使用者體驗，使用vue.js框架製作。',
-                            imgPath: require('@/assets/p9.png'),
+                            imgPath: require('@/assets/img/p9.png'),
+                            goto: './A/index.html'
                         },
                     ],
                 },
@@ -120,17 +127,20 @@ export default {
                         {
                             label: 'Banner 設計',
                             content: '依不同的使用需求製作出適合的視覺設計',
-                            imgPath: require('@/assets/p10.png'),
+                            imgPath: require('@/assets/img/p10.png'),
+                            goto: './A/index.html'
                         },
                         {
                             label: '商業攝影',
                             content: '電商產品拍攝',
-                            imgPath: require('@/assets/p11.png'),
+                            imgPath: require('@/assets/img/p11.png'),
+                            goto: './A/index.html'
                         },
                         {
                             label: '版型設計',
                             content: '購物網站首頁規劃設計，配合不同需求調整使用',
-                            imgPath: require('@/assets/p12.png'),
+                            imgPath: require('@/assets/img/p12.png'),
+                            goto: './A/index.html'
                         },
                     ]
                 }
@@ -140,7 +150,7 @@ export default {
     methods: {
         handlePage(val) {
             console.log('yes', val);
-            window.open('./A/index.html');
+            window.open(val.goto);
         }
     },
 };

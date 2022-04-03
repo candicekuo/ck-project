@@ -71,7 +71,7 @@ export default {
 
   .header {
     height: calc((100vw - 240px) / 3.5);
-    background-image: url(../assets/bg.jpg);
+    background-image: url(../assets/img/bg.jpg);
     background-size: cover;
     background-position: center 30px;
     background-repeat: no-repeat;

@@ -4,7 +4,7 @@
     <a href="./A/index.html">test a</a>-->
     <div class="infoBox">
       <div>
-        <img src="@/assets/pic1.jpg" alt />
+        <img src="@/assets/img/pic1.jpg" alt />
         <p class="title">Candice Kuo</p>
         <p>Taiwan, Taipei</p>
         <div class="detail">
@@ -38,51 +38,51 @@ export default {
       portfolioInfo: [
         {
           label: 'test1',
-          imgPath: require('@/assets/p1.png'),
+          imgPath: require('@/assets/img/p1.png'),
         },
         {
           label: 'test1',
-          imgPath: require('@/assets/p2.png'),
+          imgPath: require('@/assets/img/p2.png'),
         },
         {
           label: 'test1',
-          imgPath: require('@/assets/p3.png'),
+          imgPath: require('@/assets/img/p3.png'),
         },
         {
           label: 'test1',
-          imgPath: require('@/assets/p4.png'),
+          imgPath: require('@/assets/img/p4.png'),
         },
         {
           label: 'test1',
-          imgPath: require('@/assets/p5.png'),
+          imgPath: require('@/assets/img/p5.png'),
         },
         {
           label: 'test1',
-          imgPath: require('@/assets/p6.png'),
+          imgPath: require('@/assets/img/p6.png'),
         },
         {
           label: 'test1',
-          imgPath: require('@/assets/p7.png'),
+          imgPath: require('@/assets/img/p7.png'),
         },
         {
           label: 'test1',
-          imgPath: require('@/assets/p8.png'),
+          imgPath: require('@/assets/img/p8.png'),
         },
         {
           label: 'test1',
-          imgPath: require('@/assets/p9.png'),
+          imgPath: require('@/assets/img/p9.png'),
         },
         {
           label: 'test1',
-          imgPath: require('@/assets/p10.png'),
+          imgPath: require('@/assets/img/p10.png'),
         },
         {
           label: 'test1',
-          imgPath: require('@/assets/p11.png'),
+          imgPath: require('@/assets/img/p11.png'),
         },
         {
           label: 'test1',
-          imgPath: require('@/assets/p12.png'),
+          imgPath: require('@/assets/img/p12.png'),
         },
       ],
     };
