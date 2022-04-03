@@ -131,9 +131,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.text-grey {
-  color: #999;
-}
 .dash {
   border: 0;
   border-bottom: 1px dashed #666;
