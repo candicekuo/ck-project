@@ -23,7 +23,7 @@ const routes = [
       {
         path: 'portfolio/test',
         name: 'PortfolioTest',
-        component: () => import('@/pages/portfolio/bootstrapTest.vue'),
+        component: () => import('@/pages/portfolio/gridTest.vue'),
       },
       {
         path: 'ckresume',

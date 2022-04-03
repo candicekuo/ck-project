@@ -74,7 +74,7 @@ export default {
       backdrop-filter: blur(2px);
       background-color: #8080801a;
       position: fixed;
-      height: 42px;
+      height: 46px;
       width: 100vw;
       z-index: 99999;
 
@@ -82,7 +82,7 @@ export default {
         display: flex;
         flex-flow: row wrap;
         padding: 12px;
-        background: rgba(172, 208, 250, 0.4);
+        background: rgba(2, 34, 65, 0.4);
         box-shadow: 0px -5px 12px $blue;
         position: fixed;
         width: 100vw;
@@ -108,5 +108,38 @@ export default {
 }
 .is-active {
   color: $darkBlue;
+}
+
+// Extra small devices (portrait phones, less than 576px) xs
+@media (max-width: 575.98px) {
+  .wp .header {
+    height: 225px;
+    background-position: -249px 30px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up) sm
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .wp .header {
+    height: calc((100vw - 240px) / 1.6);
+  }
+}
+
+// Medium devices (tablets, 768px and up) md
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .wp .header {
+    height: calc((100vw - 240px) / 2.6);
+  }
+}
+
+// Large devices (desktops, 992px and up) lg
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .wp .header {
+    height: calc((100vw - 240px) / 2.8);
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up) xl
+@media (min-width: 1200px) {
 }
 </style>
