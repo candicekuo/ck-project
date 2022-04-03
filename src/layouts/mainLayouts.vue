@@ -3,12 +3,17 @@
     <header class="header">
       <nav class="menu">
         <ul>
+          <li class="icon">
+            <i class="bi bi-x-diamond-fill"></i>
+          </li>
           <li
             v-for="item in menuList"
             :key="item.label"
             :class="currentTab === item.label ? 'is-active' : ''"
             @click="goPage(item.pushName)"
-          >{{ item.label }}</li>
+          >
+            <span>{{ item.name }}</span>
+          </li>
         </ul>
       </nav>
     </header>
@@ -33,10 +38,12 @@ export default {
       menuList: [
         {
           label: 'Portfolio',
+          name: '作品集 Portfolio',
           pushName: 'Portfolio',
         },
         {
           label: 'Resume',
+          name: '履歷表 Resume',
           pushName: 'Resume',
         },
       ],
@@ -74,7 +81,7 @@ export default {
       backdrop-filter: blur(2px);
       background-color: #8080801a;
       position: fixed;
-      height: 46px;
+      height: 44px;
       width: 100vw;
       z-index: 99999;
 
@@ -82,22 +89,44 @@ export default {
         display: flex;
         flex-flow: row wrap;
         padding: 12px;
-        background: rgba(2, 34, 65, 0.4);
+        background: rgba(0, 0, 0, 0.4);
         box-shadow: 0px -5px 12px $blue;
         position: fixed;
         width: 100vw;
 
         li {
-          padding: 0 12px;
-          cursor: pointer;
-          transition: color 0.12s;
-          &:hover {
-            color: $darkBlue;
+          .icon {
+            color: $yellow;
+          }
+          span {
+            padding: 4px 12px;
+            transition: color 0.12s;
+            &:hover {
+              &:not(.icon) {
+                cursor: pointer;
+                color: $darkBlue;
+                background: $yellow;
+                border-radius: 50px;
+              }
+            }
+          }
+
+          &::after {
+            content: "|";
+            margin: 0 12px;
+            color: $white;
+          }
+          &:last-child,
+          &:first-child {
+            &::after {
+              content: "";
+            }
           }
         }
       }
     }
   }
+
   .footer {
     text-align: center;
     font-size: 12px;
@@ -107,7 +136,7 @@ export default {
   }
 }
 .is-active {
-  color: $darkBlue;
+  color: $yellow;
 }
 
 // Extra small devices (portrait phones, less than 576px) xs
