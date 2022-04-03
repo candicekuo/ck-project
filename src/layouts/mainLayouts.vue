@@ -1,5 +1,5 @@
 <template>
-  <div class="wp">
+  <div class="wp" :class="currentTab !== 'List' ? 'bg' : ''">
     <header class="header">
       <nav class="menu">
         <ul>
@@ -63,12 +63,14 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.bg {
+  background-image: url(../assets/img/bg2.png);
+}
 .wp {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   justify-content: space-between;
-  background-image: url(../assets/img/bg2.png);
 
   .header {
     height: calc((100vw - 240px) / 3.5);
