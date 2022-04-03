@@ -19,12 +19,34 @@ const routes = [
         path: 'portfolio',
         name: 'Portfolio',
         component: () => import('@/pages/portfolio/index.vue'),
+        children: [
+          {
+            path: '/',
+            name: 'List',
+            component: () => import('@/pages/portfolio/list.vue'),
+
+          },
+          {
+            path: 'pages',
+            name: 'forPortfolio',
+            component: () => import('@/pages/portfolio/forPortfolio.vue'),
+
+          },
+        ],
       },
-      {
-        path: 'portfolio/test',
-        name: 'PortfolioTest',
-        component: () => import('@/pages/portfolio/gridTest.vue'),
-      },
+      //del
+      // {
+      //   path: 'portfolio/pages',
+      //   name: 'ForImg',
+      //   component: () => import('@/pages/portfolio/forPortfolio.vue'),
+
+      // },
+
+      // {
+      //   path: 'portfolio/test',
+      //   name: 'PortfolioTest',
+      //   component: () => import('@/pages/portfolio/gridTest.vue'),
+      // },
       {
         path: 'ckresume',
         name: 'Resume',
@@ -35,6 +57,7 @@ const routes = [
   {
     path: '*',
     name: 'ErrorPage',
+    component: () => import('@/pages/personal/index.vue'),
     // component: () => import('@/pages/error/index.vue'),
     component: ErrorPage,
   },
