@@ -28,20 +28,12 @@ const routes = [
           },
           {
             path: 'pages',
-            name: 'forPortfolio',
+            name: 'ForPortfolio',
             component: () => import('@/pages/portfolio/forPortfolio.vue'),
 
           },
         ],
       },
-      //del
-      // {
-      //   path: 'portfolio/pages',
-      //   name: 'ForImg',
-      //   component: () => import('@/pages/portfolio/forPortfolio.vue'),
-
-      // },
-
       // {
       //   path: 'portfolio/test',
       //   name: 'PortfolioTest',

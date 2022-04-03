@@ -42,55 +42,65 @@ export default {
               label: '自訂功能系統頁面',
               content: '由視覺設計師設計出圖，主要負責切板，寫網頁互動功能的部分。',
               imgPath: require('@/assets/img/p1.png'),
-              goto: './A/index.html'
+              goto: './A/index.html',
+              type: 0,
             },
             {
               label: '測驗活動網站',
               content: '從主視覺開始發想，動畫安排、網頁互動設計至完成所有頁面。',
               imgPath: require('@/assets/img/p2.png'),
-              goto: './A/index.html'
+              goto: './A/index.html',
+              type: 0,
             },
             {
               label: '系統功能性介面',
               content: '系統改版，主要負責頁面操作流程、UI UX規劃，頁面設計切版製作。',
               imgPath: require('@/assets/img/p3.png'),
-              goto: './A/index.html'
+              goto: './A/index.html',
+              type: 0,
             },
             {
               label: '履歷表使用介面',
               content: '系統改版，主要負責頁面操作流程、UI UX規劃，頁面設計切版製作。',
               imgPath: require('@/assets/img/p4.png'),
-              goto: './A/index.html'
+              goto: './A/index.html',
+              type: 0,
             },
             {
               label: '使用者介面規劃',
               content: '系統改版，主要負責頁面操作流程規劃，UI UX規劃，頁面設計。',
               imgPath: require('@/assets/img/p5.png'),
-              goto: './A/index.html'
+              goto: './A/index.html',
+              type: 0,
             },
             {
               label: '系統介面規劃',
               content: '系統改版，主要負責頁面操作流程規劃，UI UX規劃，頁面設計。',
               imgPath: require('@/assets/img/p6.png'),
-              goto: './A/index.html'
+              goto: 'ForPortfolio',
+              type: 1,
+              name: 'ehr'
             },
             {
               label: 'EDM問卷頁面',
               content: '負責主要風格與信件、網頁切板製作。',
               imgPath: require('@/assets/img/p7.png'),
-              goto: './A/index.html'
+              goto: './A/index.html',
+              type: 0,
             },
             {
               label: '信件發送格式',
               content: '重新規劃系統信件風格與呈現方式。',
               imgPath: require('@/assets/img/p8.png'),
-              goto: './A/index.html'
+              goto: './A/index.html',
+              type: 0,
             },
             {
               label: '測驗頁面',
               content: '把既有的頁面改寫為RWD，增加使用者體驗，使用vue.js框架製作。',
               imgPath: require('@/assets/img/p9.png'),
-              goto: './A/index.html'
+              goto: './A/index.html',
+              type: 0,
             },
           ],
         },
@@ -122,9 +132,10 @@ export default {
   },
   methods: {
     handlePage(val) {
-      console.log('yes', val);
-      this.$router.push({ name: 'forPortfolio' })
-      // window.open(val.goto);
+      if (val.type) {
+        return this.$router.push({ name: val.goto, params: { name: val.name } })
+      }
+      window.open(val.goto);
     }
   },
 };
