@@ -82,7 +82,7 @@ export default {
 // Extra small devices (portrait phones, less than 576px) xs
 @media (max-width: 575.98px) {
     .infoBox {
-        margin-top: -10px;
+        margin-top: -16px;
     }
 }
 

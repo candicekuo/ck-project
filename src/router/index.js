@@ -17,7 +17,7 @@ const routes = [
     children: [
       {
         path: 'portfolio',
-        name: 'Portfolio',
+        // name: 'Portfolio',
         component: () => import('@/pages/portfolio/index.vue'),
         children: [
           {

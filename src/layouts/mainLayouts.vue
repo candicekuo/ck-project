@@ -8,8 +8,8 @@
           </li>
           <li
             v-for="item in menuList"
-            :key="item.label"
-            :class="currentTab === item.label ? 'is-active' : ''"
+            :key="item.pushName"
+            :class="currentTab === item.pushName ? 'is-active' : ''"
             @click="goPage(item.pushName)"
           >
             <span>{{ item.name }}</span>
@@ -37,12 +37,10 @@ export default {
       year: dayjs().year(),
       menuList: [
         {
-          label: 'Portfolio',
           name: '作品集 Portfolio',
-          pushName: 'Portfolio',
+          pushName: 'List',
         },
         {
-          label: 'Resume',
           name: '履歷表 Resume',
           pushName: 'Resume',
         },
@@ -53,6 +51,8 @@ export default {
     currentTab() {
       return this.$route.name;
     },
+  },
+  mounted() {
   },
   methods: {
     goPage(val) {
@@ -68,6 +68,7 @@ export default {
   flex-direction: column;
   min-height: 100vh;
   justify-content: space-between;
+  background-image: url(../assets/img/bg2.png);
 
   .header {
     height: calc((100vw - 240px) / 3.5);
