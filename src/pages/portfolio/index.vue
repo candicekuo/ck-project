@@ -63,7 +63,7 @@ export default {
             },
             webInfo: {
                 web: {
-                    title: `網頁設計 \ RWD響應式網頁 \ EDM mail格式發送頁 \ 測驗互動網頁<br/>以下僅為作品展示用`,
+                    title: `網頁設計 \/ RWD響應式網頁 \/ EDM mail格式發送頁 \/ 測驗互動網頁<br/>以下僅為作品展示用`,
                     list: [
                         {
                             label: '自訂功能系統頁面',
@@ -122,7 +122,7 @@ export default {
                     ],
                 },
                 flat: {
-                    title: `平面設計 \ Banner 設計 \ 商業攝影 \ 版型設計</br>以下僅為作品展示用`,
+                    title: `平面設計 \/ Banner 設計 \/ 商業攝影 \/ 版型設計</br>以下僅為作品展示用`,
                     list: [
                         {
                             label: 'Banner 設計',
