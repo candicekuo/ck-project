@@ -75,6 +75,7 @@ export default {
     background-size: cover;
     background-position: center 30px;
     background-repeat: no-repeat;
+    background-color: #f3f4ee;
 
     .menu {
       color: $white;
@@ -95,8 +96,8 @@ export default {
         width: 100vw;
 
         li {
-          .icon {
-            color: $yellow;
+          &.icon {
+            margin-left: 65px;
           }
           span {
             padding: 4px 12px;
@@ -144,6 +145,17 @@ export default {
   .wp .header {
     height: 225px;
     background-position: -249px 30px;
+  }
+  .wp .header .menu ul li {
+    &.icon {
+      margin-left: 0;
+      &::after {
+        margin: 0 8px 0 0;
+      }
+    }
+    &::after {
+      margin: 0 8px;
+    }
   }
 }
 
