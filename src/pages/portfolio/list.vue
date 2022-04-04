@@ -20,6 +20,10 @@
             <div class="btnMore">see more</div>
           </div>
         </div>
+        <div class="msgInfoXS d-md-none d-lg-none d-xl-none">
+          <p>{{ item.label }}</p>
+          <span>{{ item.content }}</span>
+        </div>
       </div>
       <hr class="dash" :key="index" v-if="index !== 'flat'" />
     </div>
@@ -204,6 +208,16 @@ export default {
   }
 }
 
+.msgInfoXS {
+  margin-bottom: 20px;
+  p {
+    font-weight: bold;
+  }
+  span {
+    color: $grey9;
+  }
+}
+
 // Extra small devices (portrait phones, less than 576px) xs
 @media (max-width: 575.98px) {
   .listBox .imgBox {
@@ -211,6 +225,9 @@ export default {
   }
   .listBox .msgCoverBox {
     top: 60vw;
+  }
+  .hidden-xs {
+    display: none;
   }
 }
 
@@ -221,6 +238,9 @@ export default {
   }
   .listBox .msgCoverBox {
     top: 25vw;
+  }
+  .hidden-xs {
+    display: none;
   }
 }
 
