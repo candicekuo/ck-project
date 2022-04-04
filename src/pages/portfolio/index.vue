@@ -46,7 +46,7 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
     this.box = document.querySelector('.infoBox');
-    this.boxOffsetTop = this.box.boxOffsetTop - this.interval;
+    this.boxOffsetTop = this.box.offsetTop - this.interval;
   },
   methods: {
     handleScroll() {
