@@ -1,5 +1,5 @@
 <template>
-  <div class="wp" :class="currentTab !== 'List' ? 'bg' : ''">
+  <div class="wp" :class="currentTab !== 'Portfolio' ? 'bg' : ''">
     <header class="header">
       <nav class="menu">
         <ul>
@@ -38,7 +38,7 @@ export default {
       menuList: [
         {
           name: '作品集 Portfolio',
-          pushName: 'List',
+          pushName: 'Portfolio',
         },
         {
           name: '履歷表 Resume',
@@ -52,8 +52,7 @@ export default {
       return this.$route.name;
     },
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {
     goPage(val) {
       if (val === this.currentTab) return;
@@ -116,14 +115,14 @@ export default {
           }
 
           &::after {
-            content: "|";
+            content: '|';
             margin: 0 12px;
             color: $white;
           }
           &:last-child,
           &:first-child {
             &::after {
-              content: "";
+              content: '';
             }
           }
         }

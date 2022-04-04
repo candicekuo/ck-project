@@ -2,7 +2,7 @@
   <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 col-xl-9">
     <p class="mt-4">{{ imgData[useData].title }}</p>
     <div v-for="(path, index) in imgData[useData].list" :key="index">
-      <img :src="path.imgPath" :class="(index % 2) ? 'floatR' : ''" />
+      <img :src="path.imgPath" :class="index % 2 ? 'floatR' : ''" />
     </div>
   </div>
 </template>
@@ -19,10 +19,40 @@ export default {
           list: [
             { imgPath: require('@/assets/img/1hr-1.png') },
             { imgPath: require('@/assets/img/1hr-2.png') },
-          ]
-        }
-      }
-
+          ],
+        },
+        banner: {
+          title: '依照不同需求製作手繪、形象、產品、特賣不同風格的視覺設計',
+          list: [
+            { imgPath: require('@/assets/img/b1.jpg') },
+            { imgPath: require('@/assets/img/b2.jpg') },
+            { imgPath: require('@/assets/img/b3.jpg') },
+            { imgPath: require('@/assets/img/b4.jpg') },
+            { imgPath: require('@/assets/img/b5.jpg') },
+            { imgPath: require('@/assets/img/b6.jpg') },
+            { imgPath: require('@/assets/img/b7.jpg') },
+            { imgPath: require('@/assets/img/b8.jpg') },
+            { imgPath: require('@/assets/img/b9.jpg') },
+            { imgPath: require('@/assets/img/b10.jpg') },
+          ],
+        },
+        pic: {
+          title: '童裝的穿搭拍攝，以孩童給人活潑的印象為概念，拍攝出一系列的產品視覺',
+          list: [
+            { imgPath: require('@/assets/img/b1.jpg') },
+            { imgPath: require('@/assets/img/b2.jpg') },
+            { imgPath: require('@/assets/img/b3.jpg') },
+            { imgPath: require('@/assets/img/b4.jpg') },
+            { imgPath: require('@/assets/img/b5.jpg') },
+            { imgPath: require('@/assets/img/b6.jpg') },
+            { imgPath: require('@/assets/img/b7.jpg') },
+            { imgPath: require('@/assets/img/b8.jpg') },
+            { imgPath: require('@/assets/img/b9.jpg') },
+            { imgPath: require('@/assets/img/b10.jpg') },
+          ],
+        },
+        edition: {},
+      },
     };
   },
   computed: {
@@ -42,6 +72,7 @@ export default {
 img {
   width: 80%;
   margin: 15px 15px 30px;
+  box-shadow: 2px 2px 6px $grey9;
 }
 .floatR {
   float: right;

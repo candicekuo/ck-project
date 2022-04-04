@@ -28,7 +28,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'List',
   components: {},
@@ -70,16 +69,15 @@ export default {
               label: '使用者介面規劃',
               content: '系統改版，主要負責頁面操作流程規劃，UI UX規劃，頁面設計。',
               imgPath: require('@/assets/img/p5.png'),
-              goto: './A/index.html',
-              type: 0,
+              type: 1,
+              name: '',
             },
             {
               label: '系統介面規劃',
               content: '系統改版，主要負責頁面操作流程規劃，UI UX規劃，頁面設計。',
               imgPath: require('@/assets/img/p6.png'),
-              goto: 'ForPortfolio',
               type: 1,
-              name: 'ehr'
+              name: 'ehr',
             },
             {
               label: 'EDM問卷頁面',
@@ -111,32 +109,35 @@ export default {
               label: 'Banner 設計',
               content: '依不同的使用需求製作出適合的視覺設計',
               imgPath: require('@/assets/img/p10.png'),
-              goto: './A/index.html'
+              type: 1,
+              name: 'banner',
             },
             {
               label: '商業攝影',
               content: '電商產品拍攝',
               imgPath: require('@/assets/img/p11.png'),
-              goto: './A/index.html'
+              type: 1,
+              name: 'pic',
             },
             {
               label: '版型設計',
               content: '購物網站首頁規劃設計，配合不同需求調整使用',
               imgPath: require('@/assets/img/p12.png'),
-              goto: './A/index.html'
+              type: 1,
+              name: 'edition',
             },
-          ]
-        }
+          ],
+        },
       },
     };
   },
   methods: {
     handlePage(val) {
       if (val.type) {
-        return this.$router.push({ name: val.goto, params: { name: val.name } })
+        return this.$router.push({ name: 'ForPortfolio', params: { name: val.name } });
       }
       window.open(val.goto);
-    }
+    },
   },
 };
 </script>

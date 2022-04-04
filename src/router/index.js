@@ -16,13 +16,13 @@ const routes = [
     redirect: '/owner/portfolio', // 要自動轉導的目標 = 可設定轉向預設頁面
     children: [
       {
-        path: 'portfolio',
+        path: '/',
         // name: 'Portfolio',
         component: () => import('@/pages/portfolio/index.vue'),
         children: [
           {
-            path: '/',
-            name: 'List',
+            path: 'portfolio',
+            name: 'Portfolio',
             component: () => import('@/pages/portfolio/list.vue'),
 
           },
