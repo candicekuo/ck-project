@@ -134,7 +134,10 @@ export default {
   methods: {
     handlePage(val) {
       if (val.type) {
-        return this.$router.push({ name: 'ForPortfolio', params: { name: val.name } });
+        this.$store.commit('portfolio/setCurrentName', val.name);
+        window.localStorage.setItem('page', val.name);
+        return this.$router.push({ name: 'ForPortfolio' });
+        // return this.$router.push({ name: 'ForPortfolio', params: { name: val.name } });
       }
       window.open(val.goto);
     },

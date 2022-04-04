@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'ForImg',
+  name: 'ForPortfolio',
   components: {},
   data() {
     return {
@@ -35,7 +35,7 @@ export default {
         user: {
           title: '使用者介面與編輯頁面操作與狀態切換UI、UX的規劃設計示意圖',
           type: '',
-          classes: 'boxShadow',
+          classes: 'isShadow',
           list: [
             { imgPath: require('@/assets/img/user1.png') },
             { imgPath: require('@/assets/img/user2.png') },
@@ -49,7 +49,7 @@ export default {
         banner: {
           title: '依照不同需求製作手繪、形象、產品、特賣不同風格的視覺設計',
           type: 'LR',
-          classes: 'boxShadow',
+          classes: 'isShadow',
           list: [
             { imgPath: require('@/assets/img/b1.jpg') },
             { imgPath: require('@/assets/img/b2.jpg') },
@@ -88,13 +88,10 @@ export default {
   },
   computed: {
     useData() {
-      return this.$route.params.name;
+      return this.$store.getters['portfolio/getCurrentName'];
     },
   },
-  mounted() {
-    // console.log(this.useData)
-    // useData 要記狀態
-  },
+  mounted() {},
   methods: {},
 };
 </script>
@@ -104,7 +101,7 @@ img {
   width: 80%;
   margin: 15px 15px 30px;
 }
-.boxShadow {
+.isShadow {
   box-shadow: 2px 2px 6px $grey9;
 }
 .content {
