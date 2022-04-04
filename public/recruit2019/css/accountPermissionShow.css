@@ -1,0 +1,39 @@
+﻿
+body{overflow-x: hidden;}
+.wp{width: 570px;background: #fff;border-radius: 4px;}
+.header{border-bottom: 1px solid #4f6b92;padding:0 0 10px;font-size: 21px;font-weight: 600;color: #4f6b92;position: relative;}
+.header span{font-size: 14px;color: #808080;padding-left: 10px;font-weight: 100;}
+
+
+.content{}
+.content .listTitle{width: 13%;}
+.content .listCont{width: 84%;}
+
+.recipient i{position: absolute;background: #fff;color: #e25656;right: -8px;top: -4px;border-radius: 100px;}
+.recipient i:hover{cursor: pointer;color: #b43336;}
+.listCont .sended{background: #ffe6e0;}
+
+.content .infoBar{background: #e7ecf5;color: #4f6b92;height: 26px;padding-left: 15px;margin-bottom: 10px;}
+.content li .dash{margin: 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{background: #f5f5f5;margin: 0 -15px -15px;margin-top: 10px;}
+.footer div{width: 200px;margin: auto;}
+.footer .btnSend{color: #fff;text-decoration: none;display: inline-block;line-height: 36px;}
+.footer .btnSend:hover{color: #fff;}
+/*.footer a.btnSend {color: #fff;text-decoration: none;display: inline-block;}*/
+.footer a.btnCancel {text-decoration: none;display: inline-block;}
+
+.step div{width: 220px;}
+.step2 div{width: 320px;}
+

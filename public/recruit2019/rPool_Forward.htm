@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>轉寄履歷</title>
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
+    
+    <!--css-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="css/all.min.css" rel="stylesheet" type="text/css"><!--fontawesome-->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet" type="text/css" >
+    <!--共用 boxPage SharedModule -->
+    <link rel="stylesheet" href="css/lightBox/boxPage.css">
+    <link rel="stylesheet" href="css/lightBox/SharedModule.css">
+    <link rel="stylesheet" href="css/rPool_Forward.css">
+    <style type="text/css">
+    </style> 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //取消收件人
+            $(".sendBox").on("click" ,".recipient>.fa-times-circle",function(){
+                 $(this).closest(".recipient").fadeOut(200,function(){
+                    $(this).remove();
+                });
+            });
+            /*fancybox*/
+            $('[data-fancybox]').fancybox({
+                toolbar  : false,
+                smallBtn : true,
+                iframe : {
+                    preload : false,
+                    css: {
+                        width: 602,
+                        autoDimensions:true,
+                        backgroundColor: "transparent",
+                        autoScale:true
+                    }
+                }
+
+            });
+            
+        });
+        
+    </script>
+</head>
+<body>
+    <div class="wp box">
+        <div class="header">
+            <img src="images/ico-forward.png" alt="">
+            <span class="hTitle">轉寄履歷</span>
+        </div>
+        <form action="#" method="">
+            <div class="content">
+                <ul>
+                    <li>
+                        <div class="listTitle">轉寄求職者</div>
+                        <div class="listCont">
+                            <div class="sendBox">
+                                <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+                                <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+                                <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+                                <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><hr class="dash"></li>
+                    <li>
+                        <div class="listTitle">履歷格式</div>
+                        <div class="listCont">
+                            <span>
+                                <input type="radio" name="rm" id="chk" checked="checked">
+                                <label class="radioChk" for="chk">簡式版</label>
+                            </span>
+                            <span>
+                                <input type="radio" name="rm" id="chk2">
+                                <label class="radioChk" for="chk2">適中版</label>
+                            </span>
+                            <span>
+                                <input type="radio" name="rm" id="chk3">
+                                <label class="radioChk" for="chk3">完整版</label>
+                            </span>
+                            <span>
+                                <input type="radio" name="rm" id="chk4">
+                                <label class="radioChk" for="chk4">純文字</label>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="listTitle">合適職缺</div>
+                        <div class="listCont">
+                            <a href="noticemail_jobListShow.htm" data-fancybox="" data-type="iframe"><input class="jobList w80" type="text" placeholder="這邊帶入預設職缺"></a>
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="listTitle"><span class="Required">＊</span>收件人</div>
+                        <div class="listCont">
+                            <div class="w88 sendBox">
+                                <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+                                <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+                                <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+                                <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+                            </div>
+                            <a href="noticemail_addBookShow2.htm" data-fancybox="" data-type="iframe" class="bntAddBook">通訊錄</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="listTitle">轉寄留言</div>
+                        <div class="listCont">
+                            <textarea rows="3" class="letterCont"></textarea>
+                            <span class="textAttention">※限3000個字以內，已輸入 120 個字。</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer">
+                <div>
+                    <button type="button" class="btnCancel">取消</button>
+                    <button type="submit" class="btnSend">寄出</button>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</body>
+</html>

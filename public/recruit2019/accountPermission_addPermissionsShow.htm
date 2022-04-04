@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>新增帳號</title>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <!--fontawesome-->
+    <link href="css/all.min.css" rel="stylesheet" type="text/css">
+    <!--共用 boxPage SharedModule -->
+    <link rel="stylesheet" href="css/lightBox/boxPage.css">
+    <link rel="stylesheet" href="css/lightBox/SharedModule.css">
+    <link rel="stylesheet" href="css/accountPermissionShow.css">
+    <style type="text/css">
+    </style> 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            
+        });
+    </script>
+</head>
+<body>
+    <div class="wp box">
+        <div class="header">新增帳號<span>權限設定</span></div>
+        <form action="#" method="">
+            <div class="content">
+                <ul>
+                    <li>
+                        <img src="images/ap_step02.jpg" alt="">
+                        <select class="pySelect">
+                            <option value="0" selected="selected">複製其他人的權限</option>
+                            <option value="1">name1</option>
+                            <option value="2">name2</option>
+                            <option value="3">name3</option>
+                            <option value="4">name4</option>
+                            <option value="5">name5</option>
+                        </select>
+                    </li>
+                    <li><hr class="dash"></li>
+                    <li>
+                        <div class="listTitle">公司管理</div>
+                        <div class="listCont">
+                            <span>
+                                <input type="checkbox" id="chk1">
+                                <label class="checkboxChk" for="chk1">修改公司基本資料</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk2">
+                                <label class="checkboxChk" for="chk2">管理公司形象廣告</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk3">
+                                <label class="checkboxChk" for="chk3">兌換紅利點數</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk4">
+                                <label class="checkboxChk" for="chk4">可開關權</label>
+                            </span>
+                        </div>
+                    </li>
+                    <li><hr class="dash"></li>
+                    <li>
+                        <div class="listTitle">帳號維護</div>
+                        <div class="listCont">
+                            <span>
+                                <input type="checkbox" id="chk5">
+                                <label class="checkboxChk" for="chk5">管理其他帳號</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk6">
+                                <label class="checkboxChk" for="chk6">可自行修改密碼</label>
+                            </span>
+                        </div>
+                    </li>
+                    <li><hr class="dash"></li>
+                    <li>
+                        <div class="listTitle">職缺管理</div>
+                        <div class="listCont">
+                            <span>
+                                <input type="checkbox" id="chk7">
+                                <label class="checkboxChk" for="chk7">只顯示名下職缺</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk8">
+                                <label class="checkboxChk" for="chk8">新增/修改/複製/更新職缺期限</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk9">
+                                <label class="checkboxChk" for="chk9">可刪除</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk10">
+                                <label class="checkboxChk" for="chk10">可設定開關</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk11">
+                                <label class="checkboxChk" for="chk11">可調整職缺排序</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk12">
+                                <label class="checkboxChk" for="chk12">線上配對設定</label>
+                            </span>
+                        </div>
+                    </li>
+                    <li><hr class="dash"></li>
+                    <li>
+                        <div class="listTitle">求職者履歷</div>
+                        <div class="listCont">
+                            <span>
+                                <input type="checkbox" id="chk13">
+                                <label class="checkboxChk" for="chk13">只顯示名下職缺的應徵履歷</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk14">
+                                <label class="checkboxChk" for="chk14">履歷追蹤、通知、轉寄下載列印等功能</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk15">
+                                <label class="checkboxChk" for="chk15">封鎖求職者</label>
+                            </span>
+                        </div>
+                    </li>
+                    <li><hr class="dash"></li>
+                    <li>
+                        <div class="listTitle">追蹤資料夾</div>
+                        <div class="listCont">
+                            <span>
+                                <input type="checkbox" id="chk16">
+                                <label class="checkboxChk" for="chk16">只顯示自行加入追蹤的名單</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk17">
+                                <label class="checkboxChk" for="chk17">新增修改追蹤資料夾</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk18">
+                                <label class="checkboxChk" for="chk18">可刪除</label>
+                            </span>
+                        </div>
+                    </li>
+                    <li><hr class="dash"></li>
+                    <li>
+                        <div class="listTitle">範本管理</div>
+                        <div class="listCont">
+                            <span>
+                                <input type="checkbox" id="chk19">
+                                <label class="checkboxChk" for="chk19">只顯示自行建立的範本</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk20">
+                                <label class="checkboxChk" for="chk20">新增修改範本</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk21">
+                                <label class="checkboxChk" for="chk21">可刪除</label>
+                            </span>
+                        </div>
+                    </li>
+                    <li><hr class="dash"></li>
+                    <li>
+                        <div class="listTitle">通訊錄</div>
+                        <div class="listCont">
+                            <span>
+                                <input type="checkbox" id="chk22">
+                                <label class="checkboxChk" for="chk22">只顯示自己建立通訊錄名單</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk23">
+                                <label class="checkboxChk" for="chk23">新增修改通訊錄名單</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk24">
+                                <label class="checkboxChk" for="chk24">可刪除</label>
+                            </span>
+                        </div>
+                    </li>
+                    <li><hr class="dash"></li>
+                    <li>
+                        <div class="listTitle">簡訊服務</div>
+                        <div class="listCont">
+                            <span>
+                                <input type="checkbox" id="chk25">
+                                <label class="checkboxChk" for="chk25">只管理自己的簡訊</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk26">
+                                <label class="checkboxChk" for="chk26">使用簡訊服務</label>
+                            </span>
+                        </div>
+                    </li>
+                    <li><hr class="dash"></li>
+                    <li>
+                        <div class="listTitle">紀錄管理</div>
+                        <div class="listCont">
+                            <span>
+                                <input type="checkbox" id="chk27">
+                                <label class="checkboxChk" for="chk27">只顯示自己的寄發紀錄(含轉寄)</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="chk28">
+                                <label class="checkboxChk" for="chk28">可使用統據數據</label>
+                            </span>
+                        </div>
+                    </li>
+                    <li><hr class="dash"></li>
+                    <li>
+                        <div class="listTitle">行事曆</div>
+                        <div class="listCont">
+                            <span>
+                                <input type="checkbox" id="chk29">
+                                <label class="checkboxChk" for="chk29">只顯示自己的行事曆</label>
+                            </span>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="footer step">
+                <div>
+                    <a href="accountPermission_addAccountShow.htm" class="btnCancel">上一步</a>
+                    <button type="submit" class="btnSend">完成</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

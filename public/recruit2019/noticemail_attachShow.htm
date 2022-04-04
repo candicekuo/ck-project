@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>附加檔案</title>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="css/all.min.css" rel="stylesheet" type="text/css"><!--fontawesome-->
+    <link rel="stylesheet" href="css/boxPage.css"><!--共用-->
+    <link rel="stylesheet" href="css/noticemail_addBookShow.css">
+    <style type="text/css">
+    </style> 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var ary=[];
+            //新增
+            $(".btnAddLiaison").click(function(){
+                $(".addLiaison").animate({height:0},400);
+            });
+            //手動新增按鈕
+            $(".btnAdd").click(function(){
+                var t =$(this).closest(".cmdZone").prev().prev().height();
+                var a;
+                (t == 0)?a=46:a=0;
+                $(".addLiaison").animate({height:a},400);
+            });
+            //選擇職缺選單
+            $(".listBox >div").click(function(){
+                var t = $(this);
+                var v = t.data("v");
+                var n = t.children("span").text();
+                if(t.hasClass("setJobs")){//取消添加
+                    for(var i = ary.length - 1, t; i > -1;i--){
+                        t = ary[i];
+                        if (t.v == v){   
+                            ary.splice(i, 1);
+                            break;
+                        }
+                    }
+                    checkList();
+                }else{
+                    if (!$(".sendBox").find("div[data-v="+v+"]").length > 0 && $(".sendBox").children().length <3){
+                        ary.push({v:v, n:n});
+                    } else {
+                        return;
+                    }
+                    checkList();
+                }
+            });
+            //取消收件人
+            $(".sendBox").on("click" ,".recipient>.fa-times-circle",function(){
+                var t = $(this);
+                t.closest(".recipient").fadeOut(150,function(){
+                    var v = $(this).data("v");
+                    for(var i = ary.length - 1, t; i > -1;i--){
+                        t = ary[i];
+                        if (t.v == v){   
+                            ary.splice(i, 1);
+                            break;
+                        };
+                    };
+                    $(this).remove();
+                    checkList();
+                });
+                
+            });
+            //換頁
+            $(".pageBox >span").click(function(e){
+                var t = $(this);
+                if(t.index()>=2 && t.index()<=6){
+                    t.addClass("setPage").siblings().removeClass("setPage");
+                }
+            });
+            //檢查添加名單
+            function checkList(){
+                var topBox = $(".sendBox").empty(), bottomBox = $(".listBox");
+                bottomBox.find(">div").removeClass("setJobs");
+                for(var i = 0, t; i<ary.length ;i++){
+                    t = ary[i];
+                    topBox.append('<div class="recipient" data-v="'+t.v+'">'+t.n+'<i class="fas fa-times-circle"></i></div>')
+                    bottomBox.find("div[data-v=\"" + t.v + "\"]").addClass("setJobs");
+                };
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="wp box">
+        <div class="header">附加檔案</div>
+        <form action="#" method="">
+            <div class="content">
+                <div class="addLiaison">
+                    <div>
+                        增加聯絡人 
+                        <input class="w20" type="text" placeholder="姓名">
+                        <input type="text" placeholder="Email">
+                        <input type="checkBox" id="chk">
+                        <label for="chk">加到通訊錄</label>
+                        <div class="btnAddLiaison">新增</div>
+                    </div>
+                </div>
+                <div class="addUserList">
+                    <b>添加檔案</b>
+                    <div class="sendBox">
+<!--
+                        <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+-->
+                    </div>
+                </div>
+                <ul class="cmdZone">
+                    <li>
+                        <span class="textAttention">※最多夾帶3個檔案</span>
+                    </li>
+                    <li class="searchBox">
+                        <input type="text" placeholder="搜尋檔案名稱">
+                        <span class="btnSearch"><i class="fas fa-search"></i></span>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="choseList">
+                        <div class="infoBar">
+                            <span>選擇檔案　　</span>
+                            <div>共 <b>16</b> 筆 / 每頁10筆</div>
+                        </div>
+                        <div class="listBox">
+                            <div data-v="1"><span>新進人員基本資料.doc</span></div>
+                            <div data-v="2"><span>員工手冊.doc</span></div>
+                            <div data-v="3"><span>企劃test0620.docx</span></div>
+                            <div data-v="4"><span>正式機上傳.docx</span></div>
+                            <div data-v="5"><span>0707 企劃測試.doc</span></div>
+                            <div data-v="6"><span>新進人員報到通知.doc</span></div>
+                            <div data-v="7"><span>0620企劃測試123123123123.docx</span></div>
+                            <div data-v="8"><span>美玲TEST.docx</span></div>
+                            <div data-v="9"><span>0705企劃測試.docx</span></div>
+                            <div data-v="10"><span>1HR附檔測試.docx</span></div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="pageBox">
+                    <span>«</span><span>上一頁</span><span class="setPage">1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>下一頁</span><span>»</span>
+                </div>
+            </div>
+            <div class="footer">
+                <div>
+                    <button type="button" class="btnCancel">取消</button>
+                    <button type="submit" class="btnSend">加入</button>
+                </div>
+            </div>
+        </form>
+        <!--說明文字-->
+        <div class="infoBox">
+            <div class="triangle"></div>
+            <span class="infoS"></span>
+        </div>
+        <!--說明文字end-->
+    </div>
+</body>
+</html>

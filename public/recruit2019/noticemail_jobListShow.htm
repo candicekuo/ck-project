@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>職缺列表</title>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="css/all.min.css" rel="stylesheet" type="text/css"><!--fontawesome-->
+    <link rel="stylesheet" href="css/boxPage.css"><!--共用-->
+    <link rel="stylesheet" href="css/noticemail_jobListShow.css">
+    <style type="text/css">
+    </style> 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".navList div").click(function(){
+                var t = $(this);
+                var a;
+                $(".listBox >div").removeClass("setJobs");
+                if(t.hasClass("jobs1")){
+                   a = "choseList1";
+                }else if(t.hasClass("jobs2")){
+                    a = "choseList2";
+                }else if(t.hasClass("jobs3")){
+                    a = "choseList3";
+                }else{
+                    a = "choseList4";
+                }
+                t.addClass("setJobs").siblings().removeClass("setJobs").parent().next().attr("class",a);
+                
+            });
+            $(".listBox >div").click(function(){
+                var t = $(this);
+                t.addClass("setJobs").siblings().removeClass();
+            });
+            $(".pageBox >span").click(function(e){
+                var t = $(this);
+                if(t.index()>=2 && t.index()<=6){
+                    t.addClass("setPage").siblings().removeClass("setPage");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wp box">
+        <div class="header">
+            職缺列表
+<!--            <i class="fas fa-times"></i>-->
+        </div>
+        <form action="#" method="">
+            <div class="content">
+                <ul class="cmdZone">
+                    <li>
+                        <sapn>工作地</sapn>
+                        <select class="pySelect">
+                            <option value ="" selected="selected">不拘</option>
+                            <option value="">台北市</option>
+                            <option value="">台北市大安區</option>
+                            <option value="">台北市信義區</option>
+                            <option value="">台北市中正區</option>
+                            <option value="">大洋洲其他吐瓦魯</option>
+                        </select>
+                    </li>
+                    <li class="searchBox">
+                        <input type="text" placeholder="職務名稱/聯絡人/所有者/帳號">
+                        <span class="btnSearch"><i class="fas fa-search"></i></span>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="navList">
+                        <div class="jobs1 setJobs">全職</div><div class="jobs2">兼職</div><div class="jobs3">工讀</div><div class="jobs4">中高階</div>
+                    </li>
+                    <li class="choseList1">
+                        <div class="infoBar">
+                            <span>選擇通知職缺</span>
+                            <div>共 <b>16</b> 筆 / 每頁10筆</div>
+                        </div>
+                        <div class="listBox">
+                            <div>台北市松山區　求才實習職缺測試，請勿應徵</div>
+                            <div>台北市松山區　(1HR統計數據測試)請勿投遞履歷_勿關勿動勿勿關勿動勿勿關勿動勿勿關勿動勿勿關勿</div>
+                            <div>台北市信義區　2求才實習職缺測試，請勿應徵</div>
+                            <div>台北市松山區　2求才實習職缺測試，請勿應徵正式機上傳.docx</div>
+                            <div>台北市大安區　2求才實習職缺測試，請勿應徵0707 企劃測試.doc</div>
+                            <div>台北市松山區　2求才實習職缺測試，請勿應徵新進人員基本資料.doc</div>
+                            <div>台北市松山區　2求才實習職缺測試，請勿應徵員工手冊.doc</div>
+                            <div>台北市大安區　2求才實習職缺測試，請勿應徵企劃test0620.docx</div>
+                            <div>台北市松山區　2求才實習職缺測試，請勿應徵正式機上傳.docx</div>
+                            <div>台北市松山區　2求才實習職缺測試，請勿應徵0707 企劃測試.doc</div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="pageBox">
+                    <span>«</span><span>上一頁</span><span class="setPage">1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>下一頁</span><span>»</span>
+                </div>
+            </div>
+            <div class="footer">
+                <div>
+                    <button type="button" class="btnCancel">取消</button>
+                    <button type="submit" class="btnSend">加入</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

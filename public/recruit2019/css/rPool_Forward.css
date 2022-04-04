@@ -1,0 +1,19 @@
+.wp{width: 690px;}
+.header{border-bottom: 3px solid #199ed8;padding:0 15px 10px;margin:0 -15px;}
+.header span{display: inline-block;}
+.header img{vertical-align:bottom;}
+.header .hTitle{font-size: 21px;font-weight: 600;color: #4f6b92;}
+.header .viewingCount{width: 80%;text-align: right;}
+
+.recipient i{position: absolute;background: #fff;color: #e25656;right: -8px;top: -4px;border-radius: 100px;}
+.recipient i:hover{cursor: pointer;color: #b43336;}
+.listCont .sended{background: #ffe6e0;}
+
+.listCont .letterCont{width: 80%;max-width: 567px;}
+.listCont .textAttention{display: block;line-height: 10px;padding-left: 0;}
+.listCont .kind{margin-bottom: 10px;}
+.listCont .labelSet{line-height: 26px;margin-top: 5px;}
+.listCont .labelSet>span {display: block;}
+
+.footer{background: #f5f5f5;border-top: 2px solid #199ed8;margin: 0 -15px -15px;}
+.footer div{width: 200px;margin: auto;}

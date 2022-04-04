@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>信件類別/範本</title>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="css/all.min.css" rel="stylesheet" type="text/css"><!--fontawesome-->
+    <link rel="stylesheet" href="css/boxPage.css"><!--共用-->
+    <link rel="stylesheet" href="css/noticemail_letterTemplateShow.css">
+    <style type="text/css">
+    </style> 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".navList div").click(function(){
+                var t = $(this);
+                t.addClass("setJobs").siblings().removeClass("setJobs");
+                $(".listBox >div").removeClass("setJobs");
+            });
+            //選擇通知範本
+            $(".listBox >div").click(function(){
+                var t = $(this);
+                t.addClass("setJobs").siblings().removeClass();
+            });
+            $(".pageBox >span").click(function(e){
+                var t = $(this);
+                if(t.index()>=2 && t.index()<=6){
+                    t.addClass("setPage").siblings().removeClass("setPage");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wp box">
+        <div class="header">
+            信件類別/範本
+<!--            <i class="fas fa-times"></i>-->
+        </div>
+        <form action="#" method="">
+            <div class="content">
+                <ul class="cmdZone">
+                    <li></li>
+                    <li class="searchBox">
+                        <input type="text" placeholder="搜尋通知範本">
+                        <span class="btnSearch"><i class="fas fa-search"></i></span>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="navList">
+                        <div class="setJobs">面試邀約</div><div>面試確認</div><div>到職確認</div><div>遺珠函</div><div>其他</div>
+                    </li>
+                    <li class="choseList">
+                        <div class="infoBar">
+                            <span>選擇通知範本</span>
+                            <div>共 <b>16</b> 筆 / 每頁15筆</div>
+                        </div>
+                        <div class="listBox">
+                            <div>面試邀約--制式範本</div>
+                            <div>面試確認版本</div>
+                            <div>測試範本</div>
+                            <div>123企劃測試2求才實習職缺測試，請勿應徵正式機上傳.docx</div>
+                            <div>測試12345555555</div>
+                            <div>邀約業務專員</div>
+                            <div>自訂邀請面試範本</div>
+                            <div>測試信件範本_請勿應自訂邀請面試範本</div>
+                            <div>測試信件範本_請勿應</div>
+                            <div>測試信件範本_請勿應</div>
+                            <div>測試信件範本_請勿應</div>
+                            <div>測試信件範本_請勿應</div>
+                            <div>測試信件範本_請勿應</div>
+                            <div>測試信件範本_請勿應</div>
+                            <div>測試信件範本_請勿應</div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="pageBox">
+                    <span>«</span><span>上一頁</span><span class="setPage">1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>下一頁</span><span>»</span>
+                </div>
+            </div>
+            <div class="footer">
+                <div>
+                    <button type="button" class="btnCancel">取消</button>
+                    <button type="submit" class="btnSend">加入</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
