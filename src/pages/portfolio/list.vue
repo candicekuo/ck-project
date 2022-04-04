@@ -1,6 +1,11 @@
 <template>
   <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 col-xl-9">
-    <div class="row" v-for="(data, index) in webInfo" :key="index">
+    <div
+      class="row"
+      v-for="(data, index) in webInfo"
+      :key="index"
+      :class="index === 'flat' ? 'mb-4' : ''"
+    >
       <div class="col-12 mt-4 text-grey">
         <p v-html="data.title"></p>
       </div>
@@ -8,7 +13,6 @@
         v-for="item in data.list"
         :key="item.imgPath"
         class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-4"
-        :class="index === 'flat' ? 'mb-4' : ''"
       >
         <div class="listBox" @click="handlePage(item)">
           <div class="imgBox">
@@ -43,14 +47,14 @@ export default {
             {
               label: '稅務系統',
               content: 'Vue2 + Quasar 框架，修改 UI 符合設計稿 ＆ 串接API',
-              imgPath: require('@/assets/img/p2.png'),
+              imgPath: require('@/assets/img/p13.png'),
               type: 1,
               name: '',
             },
             {
               label: '後台系統',
               content: 'Vue3 + Quasar 框架，自行設計 UIUX ＆ 串接API',
-              imgPath: require('@/assets/img/p2.png'),
+              imgPath: require('@/assets/img/p14.png'),
               type: 1,
               name: '',
             },
@@ -175,7 +179,7 @@ export default {
 }
 .listBox {
   position: relative;
-  margin: 20px 0;
+  margin: 30px 0;
   border: 1px solid $ddd;
   background: $eee;
   border-radius: 8px;
