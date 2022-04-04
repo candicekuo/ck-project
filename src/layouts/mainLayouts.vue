@@ -34,6 +34,9 @@ export default {
   components: {},
   data() {
     return {
+      ratio: 0.5,
+      defaultTop: 30,
+
       year: dayjs().year(),
       menuList: [
         {
@@ -52,11 +55,25 @@ export default {
       return this.$route.name;
     },
   },
-  mounted() {},
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
   methods: {
     goPage(val) {
       if (val === this.currentTab) return;
       this.$router.push({ name: val });
+    },
+    handleScroll() {
+      //頁面滾動距離
+      let pic = document.querySelector('.header');
+      let scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      // header 視差
+      if (scrollTop * this.ratio >= this.defaultTop) {
+        pic.style.backgroundPositionY = `${scrollTop * this.ratio}px`;
+      } else {
+        pic.style.backgroundPositionY = `${this.defaultTop}px`;
+      }
     },
   },
 };
@@ -75,7 +92,8 @@ export default {
     height: calc((100vw - 240px) / 3.5);
     background-image: url(../assets/img/bg.jpg);
     background-size: cover;
-    background-position: center 30px;
+    background-position-x: center;
+    background-position-y: 30px;
     background-repeat: no-repeat;
     background-color: #f3f4ee;
 
