@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>本站僅為作品展示用</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/shared.js"></script>
+    <!--css-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/shared.css" rel="stylesheet" type="text/css">
+    <link href="css/cstar_jobType.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".headerMain h2").click(showMenu);
+            $(".typeMenu ul li").click(changeInfo);
+            $(".contBox h3").click(showlist);
+            $(".contBox .typeM p").click(showlistS);
+        });
+        
+        
+        /* +選單*/
+        function showMenu(){
+            $(".typeMenu").slideToggle();
+            $(".headerMain .pls").toggleClass("plsTf");
+        }
+        function changeInfo(){
+            var info = $(this).text();
+            $(".headerMain h2 span").text(info);
+            $(".contTitle p").html(info.replace("星","星<br />"));
+            showMenu();
+        }
+        /* 中類選單*/
+        function showlist(){
+            $(this).next(".typeM").slideToggle();
+        }
+        /* 小類選單*/
+        function showlistS(){
+            $(this).next().slideToggle();
+        }
+    </script>
+    
+</head>
+<body>
+    <div id="wp">
+        <div id="header" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topBar hidden-xs">
+                    <a href="cstar.htm"><img src="img/CstarLogo-s.png" alt="" style="margin:-5px 0 0;">九大職能星</a>
+                    <a href="#">OOO 登出</a>
+                    <a href="cstar_consult.htm">線上諮詢</a>
+                    <a href="cstar_report.htm">結果報告</a>
+                    <a href="cstar_start.htm">開始測驗</a>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topBar hidden-sm hidden-md hidden-lg">
+                    <a href="cstar.htm"><img src="img/CstarLogo-s.png" alt="" style="margin:-5px 0 0;">九大職能星</a>
+                    <i class="icon-icon-01"></i>
+                    <ul>
+                        <li><a href="cstar_start.htm">開始測驗</a></li>
+                        <li><a href="cstar_report.htm">結果報告</a></li>
+                        <li><a href="cstar_consult.htm">線上諮詢</a></li>
+                        <li><a href="#">OOO 登出</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row highBox"></div>
+            <div class="row">
+                <div class="headerBn">
+<!--                    <img src="img/bn4.png" alt="" class="bn4">-->
+                    <img src="img/fly5.png" alt="" class="moon">
+                </div>
+                <div class="headerMain">
+                    <h2><span>海王星服務型</span>推薦職務<i class="pls"></i></h2>
+                    <div class="typeMenu">
+                        <div>
+                            <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <li><a href="#">天王星研究型</a></li>
+                            </ul>
+                            <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <li><a href="#">水星業務型</a></li>
+                            </ul>
+                            <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <li><a href="#">海王星服務型</a></li>
+                            </ul>
+                            <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <li><a href="#">金星藝術型</a></li>
+                            </ul>
+                            <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <li><a href="#">冥王星商業型</a></li>
+                            </ul>
+                            <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <li><a href="#">火星社會型</a></li>
+                            </ul>
+                            <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <li><a href="#">土星應用型</a></li>
+                            </ul>
+                            <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <li><a href="#">木星領導型</a></li>
+                            </ul>
+                            <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <li><a href="#">地球傳統型</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="contBox">
+                        <!--title標籤-->
+                        <div class="contTitle">
+                            <p>天王星研究型</p>
+                        </div>
+                        <!--職務類型-->
+                        <h3>職務大類<span class="aDown"></span></h3>
+                        <div class="typeM">
+                            <p>職務中類<span class="aDown"></span></p>
+                            <div class="typeS">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <ul>
+                                            <li class="over"><a href="#">職務小類最多12個字職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <ul>
+                                            <li class="over"><a href="#">職務小類最多12個字職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <ul>
+                                            <li class="over"><a href="#">職務小類最多12個字職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                        </ul>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!-- typeS結束 -->
+                            <p>職務中類<span class="aDown"></span></p>
+                            <div class="typeS">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <ul>
+                                            <li class="over"><a href="#">職務小類最多12個字職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <ul>
+                                            <li class="over"><a href="#">職務小類最多12個字職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <ul>
+                                            <li class="over"><a href="#">職務小類最多12個字職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                        </ul>
+                                    </div>
+                                    
+                                </div>
+                                <!-- typeS結束 -->
+                            </div>
+                        </div>
+                        <!-- typeM結束 -->
+                        
+                        <h3>職務大類<span class="aDown"></span></h3>
+                        <div class="typeM">
+                            <p>職務中類<span class="aDown"></span></p>
+                            <div class="typeS">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <ul>
+                                            <li class="over"><a href="#">職務小類最多12個字職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <ul>
+                                            <li class="over"><a href="#">職務小類最多12個字職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <ul>
+                                            <li class="over"><a href="#">職務小類最多12個字職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                        </ul>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!-- typeS結束 -->
+                        </div>
+                        <!-- typeM結束 -->
+                        
+                        <h3>職務大類<span class="aDown"></span></h3>
+                        <div class="typeM">
+                            <p>職務中類<span class="aDown"></span></p>
+                            <div class="typeS">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <ul>
+                                            <li class="over"><a href="#">職務小類最多12個字職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <ul>
+                                            <li class="over"><a href="#">職務小類最多12個字職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <ul>
+                                            <li class="over"><a href="#">職務小類最多12個字職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                            <li class="over"><a href="#">職務小類最多12個字</a></li>
+                                        </ul>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!-- typeS結束 -->
+                        </div>
+                        <!-- typeM結束 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="footer" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footBg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul>
+                                    <li><a href="#">九大職能星</a></li>
+                                    <li><a href="#">開始測驗</a></li>
+                                    <li><a href="#">結果報告</a></li>
+                                    <li><a href="#">聯絡我們</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul>
+                                    <li><a href="#">其他測驗</a></li>
+                                    <li><a href="#">個人特質測驗</a></li>
+                                    <li><a href="#">TAT轉職測驗</a></li>
+                                    <li><a href="#">服務型職能測驗</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul>
+                                    <li><a href="#">其他服務</a></li>
+                                    <li><a href="#">職涯網</a></li>
+                                    <li><a href="#">訂閱電子報</a></li>
+                                    <li><a href="#">預留版位</a></li>
+                                    <li><a href="#">預留版位</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul class="icfSize">
+                                    <li><a href="#"></a></li>
+                                    <li>
+                                        <a href="#" class="icon-facebook"></a>
+                                        <a href="#" class="icon-google-plus"></a>
+                                        <a href="#" class="icon-linkedin2"></a>
+                                        <a href="#" class="icon-icon-10"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copyright">
+                    <h5 class="hidden-xs">建議您使用 google Chrome 瀏覽器以取得最佳、最快的瀏覽效果！</h5>
+                    <h5>全球華人股份有限公司版權所有 © 1111 Job Bank All Rights Reserved </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="gotop">
+        <div class="line" style="transform: rotate(45deg);top:22px;right:11px;"></div>
+        <div class="line" style="transform: rotate(-45deg);top:22px;right:21px;"></div>
+    </div>
+</body>
+</html>

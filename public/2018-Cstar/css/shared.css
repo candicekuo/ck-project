@@ -1,0 +1,394 @@
+/*9大職能星共用css*/
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial,微軟正黑體;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 26px;
+    overflow-x: hidden;
+}
+h1{
+    font-size: 54px;
+}
+h2{
+    font-size: 32px;
+}
+h3{
+    font-size: 21px;
+    line-height: 32px;
+}
+h4{
+    font-size: 16px;
+    line-height: 28px;
+}
+h5{
+    font-size: 12px;
+    line-height: 18px;
+}
+/*p 18*/
+p{
+    line-height: 32px;
+}
+hr{
+   border: 1px solid #41b4b0;
+}
+a:link,a:visited,a:active {
+	color: #fff;
+	text-decoration: none;
+}
+a:hover{
+	color: #ddd;
+}
+
+.pm0{
+    padding: 0;
+    margin: 0;
+}
+#wp{
+    width: 100%;
+    background-image: url(../img/bg.jpg);
+}
+
+.rel{
+    position: relative;
+}
+.abs{
+    position: absolute;
+}
+.over{
+    overflow : hidden;
+    text-overflow : ellipsis;
+    white-space : nowrap;
+}
+.pls{
+    background: url(../img/pls.png) no-repeat;
+    background-position: center;
+    display: inline-block;
+/*    background-size: cover;*/
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: transform 1s;
+    z-index: 9995;
+}
+.plsTf{
+    transform: rotate(45deg);
+    transition: transform 1s;
+}
+/*動畫*/
+.pls{
+    animation: plsB 2s infinite linear;
+}
+@keyframes plsB{
+    0% {background: url(../img/pls.png) no-repeat;}
+    50% {background: url(../img/pls-w.png) no-repeat;}
+    100% {background: url(../img/pls.png) no-repeat;}
+}
+.aDown{
+    background: url(../img/a-down.png) no-repeat;
+    background-position: center;
+    display: inline-block;
+/*    background-size: cover;*/
+    margin: -6px 5px 0;
+    width: 15px;
+    height: 8px;
+    vertical-align: middle;
+}
+/*符號*/
+.icon-icon-06:before,.icon-icon-05:before{
+    float: right;
+    line-height: 40px;
+    font-size:26px;
+}
+
+
+
+.topBar{
+    width: 100%;
+    height: 50px;
+    background: #407a99;
+    line-height: 50px;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    display: none;
+    box-shadow: 2px 2px 20px #333;
+}
+.topBar>ul{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    padding: 0 ;
+    background: #407a99;
+    list-style: none;
+    display: none;
+}
+.topBar>ul li{
+    height: 51px;
+    width: 100%;
+    border-top: 1px solid #486788;
+    text-align: center;
+}
+.topBar>a:first-child{
+    float: left;
+}
+.topBar>a,.topBar>i{
+    float: right;
+    padding-left: 20px;
+    cursor: pointer;
+}
+/*
+.topBar>i:hover{
+    color: #ddd;
+}
+*/
+.topBar>i{
+    font-size: 28px;
+    line-height: 51px;
+}
+
+
+
+.btnPink{
+    padding: 8px 90px;
+    margin: 40px 0 20px;
+    background: #d44859;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    letter-spacing: 3px;
+    text-align: center;
+}
+.btnPink:hover{
+    background: #b94859;
+}
+
+
+
+
+.line{
+    width: 18px;
+    height: 4px;
+    background: #fff;
+    position: absolute;
+}
+
+/*contList 滑開後效果*/
+.contListY{
+    color: #ffd852;
+}
+.contListY h3{
+    font-weight: 600;
+}
+.contListY .line{
+    background: #ffd852;
+}
+
+
+
+
+
+
+#footer{
+    margin: 100px 0 0;
+}
+.footBg{
+    padding: 30px 0 15px;
+    background: rgba(64,122,153,0.5);
+}
+.footBg ul li{
+    list-style: none;
+    font-size: 16px;
+    line-height: 30px;
+}
+.footBg ul li:first-child a{
+    color: #ffe600;
+    font-weight: 600;
+}
+.icfSize{
+    margin: 10px 0 0;
+}
+.icfSize a{
+    font-size: 28px;
+    padding: 0 3px ;
+}
+.copyright{
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+#gotop{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(200,200,200,0.8);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 1px 1px 1px gray;
+    border-radius: 50px;
+    color: white;
+    text-align: center;
+    line-height: 43px;
+    cursor: pointer;
+    font-size: 28px;
+    z-index: 999;
+    display: none;
+        }
+#gotop:hover{
+    background-color: rgba(200,200,200,1);
+}
+/*跳窗*/
+.coverB{
+    width: 100%;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    background: rgba(10,10,10,.6);
+}
+.Cinfo{
+    position: fixed;
+    width: 500px;
+    height: 260px;
+    top: 50%;
+    left: 50%;
+    margin: -130px 0 0 -250px;
+    background: #fff;
+    border-radius: 10px;
+    border: 5px solid #407a99;
+    text-align: center;
+}
+.Cinfo p{
+    color: #666;
+    padding: 20px;
+    text-align: left;
+    
+}
+.btnCheck{
+    padding: 8px 20px;
+    margin: 60px 20px 20px;
+    background: #d44859;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    letter-spacing: 3px;
+    text-align: center;
+}
+.btnCheck:hover{
+    background: #b94859;
+}
+
+
+
+
+
+
+
+
+
+
+/*icf*/
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?tijlyf');
+  src:  url('../fonts/icomoon.eot?tijlyf#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?tijlyf') format('truetype'),
+    url('../fonts/icomoon.woff?tijlyf') format('woff'),
+    url('../fonts/icomoon.svg?tijlyf#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon-01:before {
+  content: "\e900";
+}
+.icon-icon-02:before {
+  content: "\e901";
+}
+.icon-icon-03:before {
+  content: "\e902";
+}
+.icon-icon-04:before {
+  content: "\e90c";
+}
+.icon-icon-05:before {
+  content: "\e90d";
+}
+.icon-icon-06:before {
+  content: "\e90e";
+}
+.icon-icon-07:before {
+  content: "\e90f";
+}
+.icon-icon-08:before {
+  content: "\e910";
+}
+.icon-icon-09:before {
+  content: "\e911";
+}
+.icon-icon-10:before {
+  content: "\e912";
+}
+.icon-profile:before {
+  content: "\e923";
+}
+.icon-cog:before {
+  content: "\e994";
+}
+.icon-star-empty:before {
+  content: "\e9d7";
+}
+.icon-star-full:before {
+  content: "\e9d9";
+}
+.icon-plus:before {
+  content: "\ea0a";
+}
+.icon-minus:before {
+  content: "\ea0b";
+}
+.icon-cross:before {
+  content: "\ea0f";
+}
+.icon-checkmark:before {
+  content: "\ea10";
+}
+.icon-google-plus:before {
+  content: "\ea8b";
+}
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-linkedin2:before {
+  content: "\eaca";
+}
