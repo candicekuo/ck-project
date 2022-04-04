@@ -41,7 +41,8 @@ const routes = [
       //   component: () => import('@/pages/portfolio/gridTest.vue'),
       // },
       {
-        path: 'ckresume',
+        // path: 'ckresume',
+        path: 'resume',
         name: 'Resume',
         component: () => import('@/pages/resume/index.vue'),
       },
