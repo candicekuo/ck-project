@@ -1,0 +1,119 @@
+﻿/*主題色*/
+.mbg{background: #a8d3fe;opacity: 0;}
+.mfont{color: #2590fc;}
+.mline{border: 0.5px solid #2590fc;}
+.mbtn{color: #fff;background: #2590fc;border: 1px solid #fff;}
+.mbtn:hover{background: #2981c4;cursor: pointer;}
+.mbgcg{background: #f5faff;}
+
+/*主要顯示區版型*/
+.main{position: relative;font-size: 0;padding: 0 0 0 240px;background: #ddd;}
+.main .topBar{font-size: 13px;background: #2981c4;color: #fff;padding: 2px 5px;position: fixed;right:0;left: 240px;max-height: 22px;z-index: 1;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.leftBar,.rightBar{padding: 0 15px;font-size: 18px;vertical-align: top;}
+
+.main .leftBar{width: 340px;text-align: center;position: fixed;top: 92px;bottom: 0;left: 240px;}
+.leftBar .pic{width: 105px;height: 105px;border: 1px solid #2590fc;border-radius: 50%;overflow: hidden;margin: 60px auto 15px;}
+.leftBar .pic div{border-radius: 50%;border: 3px solid #a8d3fe;width: 100%;height: 100%;overflow: hidden;}
+.leftBar .stMove2 li{padding: 5px 0;}
+.leftBar .outLink{background: url("../images/outLink.png") no-repeat center;height: 80px;margin: 20px 0;position: relative;}
+.outLink .reOl{color: #666;position: absolute;top: 8px;right: 30px;display: none;}
+.outLink .reOl:hover{opacity: .7;}
+.outLink:hover .reOl{display: block;}
+.linkBtn{background: #4f5152;width: 50%;min-width: 150px; margin-top: 27px;height: 30px;font-size: 16px;padding-top: 2px;border: 1px solid #999;color: #fff;}
+.outLinkCtl{position: absolute;right: 0;bottom: 0;width: 310px;border: 1px solid #2981c4;background: #fff;box-shadow: 2px 2px 5px #333;padding-bottom: 15px;font-size: 14px;display: none;color: #333;}
+.outLinkCtl>p{background: #2981c4;color: #fff;padding: 4px 0;font-size: 16px;}
+.outLinkCtl .olClose{position: absolute;right: 5px;top: 5px;color: #fff;font-size: 20px;}
+.outLinkCtl .olClose:hover{opacity: .8;}
+.outLinkCtl i{color: #999;}
+.outLinkCtl hr{border: 0.5px solid #2981c4; margin: 12px 10px 10px;}
+.outLinkCtl ul li{display: inline-block;vertical-align: middle;}
+.outLinkCtl ul li input{width: 100%;}
+#olk{background: #eee;padding-top: 10px;padding-bottom:1px;}
+.stMoveOL li:nth-child(2){background: #999;width: 23px;height: 23px;border-radius: 50%;}
+.stMoveOL li:nth-child(2)>i{font-size: 16px;padding-top: 3px;color: #fff;}
+.olTips{width: 150px;height: 40px;background: #ddd;box-shadow: 2px 2px 5px #999;position: absolute;left: -30px;top: 35px;z-index: 999;display: none;}
+.olTips .triangle{border-width: 0 11px 10px 11px;border-color: transparent transparent #ddd transparent;left: 30px;top: -6px;}
+.olTips .fbIcon,.olTips .inIcon,.olTips .trIcon,.olTips .beIcon{width: 30px;height: 30px;background-size: 100%;margin-top: 5px;}
+.olSave{background: #2981c4;color: #fff;border: 0;padding: 2px 50px;font-size: 16px;margin-top: 15px;}
+.olSave:hover,.outLinkCtl i:hover:not(.stm){opacity: .8;}
+.mbtn{padding-top: 10px;width: 80%;margin: 15px auto;}
+
+.main .rightBar{width: 100%;margin: 37px 0 0 0;font-size: 16px;}
+.bgw{background: #fff;padding: 15px;box-shadow: 2px 2px 5px #666;}
+.rightBar ul li{padding: 15px;margin-bottom: 15px; border: 1px solid #ccc;position: relative;}
+.picBox{display: block;}
+.rightBar .pic{border-radius: 50%;overflow: hidden;height: auto;width: 70%;margin: auto;}
+.rightBar .pic div{border-radius: 50%;border: 3px solid #ddd;width: 100%;height: 100%;overflow: hidden;}
+.rightBar .pySelect{background: url("../images/adown.png") no-repeat 97% center transparent;margin: 0;border: 1px solid #4f5152;font-size: 14px;height: 26px;}
+.rightBar hr{margin: 6px 0;}
+.jobName span{background: #919293;color: #fff;padding: 0 8px;height: 28px;line-height: 28px;display: inline-block;overflow: hidden;max-width: 80%;}
+.jbnHide{vertical-align: top;}
+.introduction{margin-top:10px; }
+.schoolBox,.skillBox{margin: 10px 0;}
+.mt{margin-top: 20px}
+.separate{border-right: 2px solid #999;position: relative;}
+.circle{width: 12px;height: 12px;background: #999;border-radius: 50%;position: absolute;right: -7px;top: -11px;}
+.skillBox .separate{border-left: 2px solid #999;border-right: 0;}
+.skillBox .circle{left: -7px;}
+.expBox{margin-left: 10px;padding: 0 0 20px 2px;position: relative;border-left: 2px solid #999;}
+.expBox .separate{border-left: 1px solid #999;border-right: 0;}
+.expBox .circle{left: -12px;top: -2px;width: 24px;height: 24px; color: #fff;padding: 1px 0 0 7px;font-weight: 600;}
+.expBox:last-child{border-left: 0;}
+.autobiographyBox{padding: 15px 50px;}
+.cusTitle,.cusCont{border: 1px dashed #000; padding: 15px;margin-bottom: 15px;}
+.ct{background: url(../images/ct1.png) no-repeat center center transparent;}
+.cc{background: url(../images/cc1.png) no-repeat center center transparent;}
+.ct:hover,.cc:hover{opacity: 0.7;cursor: pointer;}
+.cusTitle{min-height: 54px;}
+.cusCont{min-height: 200px;}
+.evPrent{text-align: center;display: block;}
+.evPrent div{display: inline-block;width: 30%;}
+.evPrent p{margin: 6px 0;}
+.evPrent div img{display: initial;margin: auto;}
+.stMove3 .cut{border: 0;border-bottom: 1px dashed #333;background: url("../images/cut.png") 97% no-repeat;height: 23px;width: 100%;padding: 0;margin-bottom: 30px;}
+
+
+/*不顯示*/
+.rightBar .pySelect,.jbnHide,.leftBar,.eShow,.vShow,.msgFullBg,.msgInfo{display: none;}
+
+/*xs*/
+@media only screen and (max-width: 767px){
+    .main{padding: 0;}
+    .main .topBar{left: 0;}
+}
+/*sm*/
+@media (min-width: 768px) and (max-width: 991px){}
+/*md*/
+@media (min-width: 992px) and (max-width: 1199px){}
+/*lg*/
+@media (min-width: 1200px){}
+
+
+@media print{
+    .header,.menuBox,.topBar,.hh,.stMove3 .cut{display: none;}
+    .main{padding: 0;}
+    .main .rightBar{margin: 0;}
+    .expBox .circle{background: url("../images/g1.png") no-repeat 97% center transparent!important;border: 1px solid #ddd}
+    .stMove3 .pageBreak{page-break-after: always;clear: both;border: 0;padding: 0;margin: 0;}
+}
+@page{
+    size: A4 portrait;
+    margin: 1cm 0.5cm;
+    orphans:4;
+    widows:2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

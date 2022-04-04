@@ -1,0 +1,362 @@
+﻿/*主題色*/
+.mbg{background: #bf608f;opacity: 0;}
+.mbtn{color: #fff;background: #000;}
+/*.mbtn{color: #fff;}
+.mbtn:hover{background: #333; cursor: pointer;}*/
+.mbtn.eShow{background: #fff;color: #000;}
+.mbtn.eShow:hover{background: #eee; cursor: pointer;}
+.mbtn.vShow{background: #fff;color: #000;}
+.mbtn.vShow:hover{background: #eee; cursor: pointer;}
+.rbgbox{background: #fff;}
+.rbgone{background: #8f4c6d;}
+.rbgtwo{background: #fff;}
+.rbgthree{background: #fae6c9;}
+.rbgfour{background: #ffdded;}
+.tColor01{color: #8f4c6d;}
+.tColor02{color: #777777;}
+.tColor03{color: #f3ce98;}
+.tColor04{color: #c2397d;}
+
+/*主要顯示區版型*/
+.main{position: relative;padding: 0 0 0 580px;font-size: 0;}
+.main .topBar{font-size: 13px;background: #2981c4;color: #fff;padding: 2px 5px;position: fixed;right:0;left: 240px;max-height: 22px;z-index: 10;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.leftBar,.rightBar{padding: 0 15px;font-size: 15px;vertical-align: top;}
+
+.main .leftBar{width: 340px;text-align: center;position: fixed;top: 92px;bottom: 0;left: 240px;color: #fff; letter-spacing: 10px;}
+.leftBar .stMove2 li:hover,.leftBar .userName:hover{cursor: pointer;opacity: .9;}
+.main .leftBar .outLink{letter-spacing: 0;}
+.leftBar .pic{width: 90px;height: 90px;overflow: hidden;margin: 50px auto 10px;}
+.leftBar .pic div{width: 100%; height: 100%; overflow: hidden; border-radius: 100%;}
+.leftBar .pic div img{margin: auto;}
+.leftBar .userName{font-size: 21px;font-weight: 600;color: #fff; margin: 0 0 20px;}
+.leftBar .stMove2 li{padding: 5px 0; font-size: 16px;}
+.leftBar .outLink{background: url("../images/outLink.png") no-repeat center;height: 80px;margin: 20px 0;position: relative;}
+.outLink .reOl{color: #666;position: absolute;top: 8px;right: 30px;display: none;}
+.outLink .reOl:hover{opacity: .7;}
+.outLink:hover .reOl{display: block;}
+.linkBtn{background: #4f5152;width: 50%;min-width: 150px; margin-top: 27px;height: 30px;font-size: 16px;padding-top: 2px;border: 1px solid #999;color: #fff;}
+.outLinkCtl{position: absolute;right: 0;bottom: 0;width: 310px;border: 1px solid #2981c4;background: #fff;box-shadow: 2px 2px 5px #333;padding-bottom: 15px;font-size: 14px;display: none;color: #333;}
+.outLinkCtl>p{background: #2981c4;color: #fff;padding: 4px 0;font-size: 16px;}
+.outLinkCtl .olClose{position: absolute;right: 5px;top: 5px;color: #fff;font-size: 20px;}
+.outLinkCtl .olClose:hover{opacity: .8;}
+.outLinkCtl i{color: #999;}
+.outLinkCtl hr{border: 0.5px solid #2981c4; margin: 12px 10px 10px;}
+.outLinkCtl ul li{display: inline-block;vertical-align: middle;}
+.outLinkCtl ul li input{width: 100%;}
+
+#olk{background: #eee;padding-top: 10px;padding-bottom:1px;}
+.stMoveOL li:nth-child(2){background: #999;width: 23px;height: 23px;border-radius: 50%;}
+.stMoveOL li:nth-child(2)>i{font-size: 16px;padding-top: 3px;color: #fff;}
+.olTips{width: 150px;height: 40px;background: #ddd;box-shadow: 2px 2px 5px #999;position: absolute;left: -30px;top: 35px;z-index: 999;display: none;}
+.olTips .triangle{border-width: 0 11px 10px 11px;border-color: transparent transparent #ddd transparent;left: 30px;top: -6px;}
+.olTips .fbIcon,.olTips .inIcon,.olTips .trIcon,.olTips .beIcon{width: 30px;height: 30px;background-size: 100%;margin-top: 5px;}
+.olSave{background: #2981c4;color: #fff;border: 0;padding: 2px 50px;font-size: 16px;margin-top: 15px;}
+.olSave:hover,.outLinkCtl i:hover:not(.stm){opacity: .8;}
+.mbtn{padding: 10px 0 6px;width: 65%;margin: 15px auto;font-size: 16px; border-radius: 100px;}
+
+.main .rightBar{width: 100%;margin: 12px 0 0 0; background-color: #f9eef4;}
+.main .rightBar a{color: #333;}
+.rightBar ul li.box{padding: 10px 75px;position: relative;}
+.rightBar ul li.box2{padding: 50px 75px;position: relative;}
+.rightBar ul li .content{padding: 15px 50px; border-radius: 10px;}
+.rightBar ul li .content.bgImg{background-image: url(../images/resumeBg4_04.png); background-repeat: no-repeat; background-size: 9%; background-position: 98% 2%;}
+.rightBar hr{margin: 6px 0;}
+.rightBar ul li .content.personal{padding: 15px 10px;}
+
+.InfoBox{position: relative; z-index: 1; line-height: 24px; letter-spacing: 1px;}
+.InfoBox p{margin: 0; word-wrap: break-word; word-break: break-all; text-align: justify;}
+.InfoBox .subtitle{font-size: 18px; color: #806f3c; font-weight: 800;}
+
+.borderLine{width: 200px; height: 5px; margin: 15px auto; border-radius: 100px;}
+
+.bTitle{margin: 0px; font-size: 24px; font-weight: 800; position: relative; text-align: center;}
+.bTitle h3{margin: 0px; padding: 5px; font-size: 36px;}
+.bTitle .borderLine{height: 3px; margin: 0px auto;}
+.line-dashed{border:none; border-bottom: 1px dashed #c6bfaf;}
+
+.personal{margin-top: 45px; color: #fff;}
+.personal .photoBG{position: absolute;width: 30%;max-width: 250px;}
+.userMainInfo{position: relative; text-align: center;}
+.userMainInfo .photoBox{position: relative; z-index: 1; width: 300px; height: 1px;}
+.userMainInfo .photo{width: 100%; position: relative;}
+.userMainInfo .photo .pic{overflow: hidden; border-radius: 100%; position: absolute; top: -50px; left: 30%;}
+.userMainInfo .photo .pic img{width: 100%;}
+.userMainInfo .bubble{width: 15px; height: 15px;border-radius: 100%; position: absolute;}
+.userMainInfo .bubble.n01{top: 10px;}
+.userMainInfo .bubble.n02{width: 10px; height: 10px; left: 12%;}
+.userMainInfo .bubble.n03{width: 30px; height: 30px; top: 30px; left: 17%;}
+.userMainInfo .bubble.n04{width: 7px; height: 7px; right: 15%; top: 30px;}
+.userMainInfo .bubble.n05{width: 20px; height: 20px; right: 10%;}
+.userMainInfo .box{}
+.userMainInfo h3{font-size: 32px; margin-top: 0;margin-bottom: 2px;}
+.userMainInfo h3 .eName{padding-left: 10px;}
+.userMainInfo .info{font-size: 20px; margin-bottom: 10px;}
+.userMainInfo .info span{padding: 0px 5px;}
+.userMainInfo .jobName{font-size: 18px; text-align: center;}
+
+.ListBox{word-wrap: break-word; word-break: break-all;}
+.ListBox > li{border: 1px solid #fae6c9; padding: 5px 10px; margin: 10px 0; border-radius: 10px;}
+.ListBox p{text-align: justify; text-justify: auto;}
+.inlineList ul{font-size: 0;}
+.inlineList li{display: inline-block; font-weight: normal; color: #282828; padding: 2px 0; font-size: 16px;}
+.inlineList li:after{content: '\007C'; font-size: 16px; padding: 0 5px; color: #c4cbd9;}
+.inlineList li:last-child:after{content: ''; padding: 0;}
+.inlineList.fs14 li, .inlineList .fs14, .fs14{font-size: 14px;}
+
+.rightBar ul li .content .listBox{padding: 10px 0px 0px; font-size: 0px; letter-spacing: 0px;}
+.rightBar ul li .content .listBox > ul > li{padding: 15px 10px 15px 10px; border: 1px solid #fae6c9; border-radius: 10px; margin: 15px auto;}
+.listBox .icon{display: inline-block; font-size: 16px; width: 14%; vertical-align: middle; text-align: center;}
+.listBox .icon svg{width: 40px; height: 40px;}
+.listBox .icon svg .cls-1{fill: #8f4c6d;}
+.listBox .left{display: inline-block; font-size: 16px; width: 36%; vertical-align: middle;}
+.listBox .left .boxTop{border-bottom: 2px solid #8f4c6d; position: relative; padding: 0px 10px 5px;}
+.listBox .left .boxTop:after{content: ''; width: 20px; height: 20px; background-color: #fff; border: 1px solid #8f4c6d; position: absolute; right: 0; bottom: -11px; border-radius: 100%;}
+.listBox .left .boxTop .period{font-size: 16px;}
+.listBox .left .location{font-size: 16px; padding: 5px 10px;}
+.listBox .left .location span{padding-right: 5px;}
+.listBox .left .boxTop .tColor01{font-size: 20px; font-weight: 800;}
+.listBox .left h4{font-size: 24px;}
+.listBox .right{display: inline-block; font-size: 16px; width: 50%; vertical-align: middle; padding-left: 20px;}
+.listBox .right .graduation{padding-bottom: 5px; font-size: 0px; line-height: 16px; position: relative;}
+.listBox .right .graduation .maru{width: 14px; height: 15px; background-color: #ffdded; position: absolute; left: -6px; top: -2px; border-radius: 100%;}
+.listBox .right .graduation h4{margin: 0px; font-size: 22px; display: inline-block;z-index: 1; position: relative;}
+.listBox .right .graduation span{font-size: 14px;padding-right: 10px; display: inline-block;}
+.listBox .right .department{font-size: 16px;}
+.listBox .right .department span{padding-right: 10px;}
+
+.rightBar ul li .content .listBox02{padding: 10px 0px 0px; font-size: 0px; letter-spacing: 0px;}
+.rightBar ul li .content .listBox02 > ul > li{padding: 15px; border: 1px solid #fae6c9; border-radius: 10px; margin: 15px auto;}
+.listBox02 .jobInfo{font-size: 16px;}
+.listBox02 .jobInfo .boxTop{border-bottom: 2px solid #8f4c6d; position: relative; padding: 0px 10px 5px;}
+.listBox02 .jobInfo .boxTop:after{content: ''; width: 20px; height: 20px; background-color: #fff; border: 1px solid #8f4c6d; position: absolute; right: 0; bottom: -11px; border-radius: 100%;}
+.listBox02 .jobInfo .boxTop > div{display: inline-block; padding-right: 10px;}
+.listBox02 .jobInfo .boxTop .period{font-size: 16px; vertical-align: middle;}
+.listBox02 .jobInfo .boxTop .job{font-size: 16px; vertical-align: middle;}
+.listBox02 .jobInfo .boxTop .job span{font-size: 24px;vertical-align: middle;}
+.listBox02 .jobInfo .boxTop .job .icon svg{width: 22px; vertical-align: middle; height: 22px;}
+.listBox02 .jobInfo .boxTop .job .icon svg .cls-1{fill: #8f4c6d;}
+.listBox02 .jobInfo .boxTop .job .shift{font-size: 14px;}
+.listBox02 .jobInfo .company{font-size: 16px; padding: 5px 10px;}
+.listBox02 .infoList{font-size: 16px; padding: 5px 10px;}
+.listBox02 .infoList ul li{display: inline-block; position: relative; padding-right: 10px;}
+.listBox02 .infoList ul li .maru{width: 14px; height: 15px; background-color: #ffdded; position: absolute; left: -6px; top: -2px; border-radius: 100%;}
+.listBox02 .infoList ul li .txt{position: relative;}
+.listBox02 p{font-size: 14px; line-height: 18px; padding: 5px 10px;}
+.personal .InfoBox{padding: 0px 40px;}
+
+.skillList{padding: 5px 10px;}
+.skillList ul li{font-size: 16px; position: relative; padding-left: 15px; word-wrap: break-word; word-break: break-all;}
+.skillList ul li:before{content: ''; width: 8px; height: 8px; background-color: #8f4c6d; position: absolute; border-radius: 100%; left: 4px; top: 9px;}
+.skillList ul li .subTxt{font-size: 14px; padding-left: 10px;}
+
+.referrer .listBox .left .company{padding: 5px 10px;}
+.rightBar .listBox .left .boxTop{font-size: 16px;}
+.rightBar .listBox .left .boxTop .tColor02{padding-left: 10px;font-size: 16px;}
+.referrer .listBox .right .list ul li{position: relative;}
+.referrer .listBox .right .list ul li span{font-size: 14px; padding-right: 10px; display: inline-block;}
+.referrer .listBox .right .list ul li .maru{width: 14px; height: 15px; background-color: #ffdded; position: absolute; left: -6px; top: -2px; border-radius: 100%;}
+.referrer .listBox .right .list ul li .txt{z-index: 1; position: relative;}
+
+.autobiographyBox{padding: 10px 0px 0px; font-size: 0px; letter-spacing: 0px;}
+.autobiographyBox .innerBox{font-size: 14px; margin: 20px auto; padding: 15px; border: 1px solid #8f4c6d; border-radius: 10px; word-wrap: break-word; word-break: break-all;}
+
+.contactMe{}
+.contactMe .listBox02 .jobInfo .boxTop:after{content: ''; width: 20px; height: 20px; background-color: #fff; border: 1px solid #8f4c6d; position: absolute; right: 0; bottom: -11px; border-radius: 100%;}
+.contactMe .listBox02 .jobInfo .boxTop .job .icon svg{width: 40px;}
+.contactMe .listBox02 .jobInfo .boxTop .userName{font-size: 26px;vertical-align: middle; word-wrap: break-word; word-break: break-all;}
+.contactMe .listBox02 .infoList{padding: 10px 10px;}
+.contactMe .listBox02 p{padding: 2px 10px;}
+.contactMe .listBox02 .contactMeTips{font-size: 16px; padding: 10px 10px 0px;}
+.contactMe .listBox02 .contactMeTips span{vertical-align: middle;}
+.contactMe .listBox02 .contactMeTips .icon svg{width: 20px;vertical-align: middle; height: 22px;}
+.contactMe .listBox02 .contactMeTips .icon svg .cls-1{fill: #8f4c6d;}
+.contactMe .listBox02 .contactMeTips .tColor04{font-size: 18px;padding-right: 5px;}
+.contactMe .listBox02 .contactList{padding: 5px 10px;}
+.contactMe .listBox02 .contactList ul li{font-size: 14px; position: relative; padding-left: 15px; line-height: 22px; word-wrap: break-word; word-break: break-all;}
+.contactMe .listBox02 .contactList ul li:before{content: ''; width: 8px; height: 8px; background-color: #8f4c6d; position: absolute; border-radius: 100%; left: 4px; top: 7px;}
+.contactMe .listBox02 .resumeCode{font-size: 16px; padding: 5px 10px;}
+
+
+
+.skillBox .skTitle{line-height: 28px;}
+.skTitle b{font-size: 20px;}
+.separate{border-left: 2px solid #999;position: relative;padding: 0 15px 25px;}
+.circle{width: 20px;height: 20px;background: #fff;border: 3px solid #127a8b;border-radius: 50%;position: absolute;right: -11px;top: 0px;z-index: 9;}
+.separate h4{margin: 0 0 10px;font-size: 20px;}
+.separate b{border-bottom: 1px dotted #000;padding-bottom: 5px;width: 100%;display: inline-block;}
+.separate span{padding: 5px 0;display: inline-block;line-height: 26px;}
+
+
+
+/*自訂版塊*/
+.cusTitle,.cusCont{border: 1px dashed #000; padding: 15px;margin-bottom: 15px;}
+.ct{background: url(../images/ct1.png) no-repeat center center transparent;}
+.cc{background: url(../images/cc1.png) no-repeat center center transparent;}
+.ct:hover,.cc:hover{opacity: 0.7;cursor: pointer;}
+.cusTitle{min-height: 54px;}
+.cusCont{min-height: 200px;}
+.evPrent{text-align: center; display: none;}
+.rightBar ul li.evPrent{padding: 5px 0px;}
+.evPrent .inlineBox{display: inline-block;width: 30%;}
+.evPrent p{margin: 6px 0;}
+.evPrent .inlineBox img{display: initial;margin: auto;}
+
+.footer{background: #343a40;color: #fff;text-align: center;padding: 4px 0;margin-left: -15px;margin-right: -15px;}
+
+/*跳窗*/
+.msgFullBg{width: 100%;background: rgba(0,0,0,0.5);position: fixed;top: 0;bottom: 0;left: 0;z-index: 9999; display: none;}
+.msgBox{position: fixed;z-index: 9999;display: none;}
+.msgBox .msgInfo{width: 480px;height: 200px;background: #fff;position: relative;padding: 40px;box-shadow: 1px 1px 20px #333;line-height: 28px;letter-spacing: 1px;color: #666;text-align: center;border: 1px solid #2590fc;}
+.msgBox .msgInfo b{color: #2981c4;font-size: 18px;}
+.msgBox .msgInfo i{position: absolute;right: 10px;top: 10px;}
+.msgBox .msgInfo i:hover{color: #999;}
+.msgBox .msgInfo hr{border: .5px solid #2981c4;}
+.msgBox .msgInfo input{width: 230px;}
+.msgBox .msgInfo .btnCopy{margin: auto;padding: 0px 20px;color: #fff;background: #4077C9;border-radius: 4px;border: 0;}
+.msgBox .msgInfo .btnCopy:hover{background: #005a94;cursor: pointer;}
+
+
+@media only screen and (max-width: 1199px){
+    .main .rightBar{padding-top: 5px;}
+    .rightBar ul li.box{padding: 10px 15px;}
+    .userMainInfo h3{font-size: 26px;}
+    .userMainInfo .info{font-size: 18px;}
+    .userMainInfo .jobName{font-size: 16px;}
+    .userMainInfo .photoBox{width: 60%; height: auto; margin: 20px auto 30px;}
+    .userMainInfo .photo .pic{width: 60%; margin: auto; position: static;}
+    .userMainInfo .bubble.n01{bottom: 8px; left: 10%; top: auto;}
+    .userMainInfo .bubble.n02{bottom: -2px;left: 26%}
+    .userMainInfo .bubble.n03{top: -20px; left: 15%;}
+    .userMainInfo .bubble.n04{right: 18%;}
+    .userMainInfo .bubble.n05{bottom: 10px; right: 8%;}
+    .personal{margin-top: 5px;}
+    .personal .InfoBox{padding: 0px 20px;}
+    .bTitle h3{font-size: 28px; }
+    .rightBar ul li .content{padding: 15px 20px;}
+    .listBox .right .graduation h4{font-size: 18px;}
+    .listBox .icon{width: 15%;}
+    .listBox .left{width: 85%;}
+    .listBox .right{display: block; width: 85%; padding: 10px 10px 0px; margin-left: 15%;}
+    .listBox .right .graduation span{padding-right: 0px; display: block;}
+    .listBox02 .jobInfo .boxTop .job{display: block;}
+    .listBox02 .jobInfo .boxTop .job span{font-size: 16px;}
+    .listBox02 .jobInfo .boxTop .period{font-size: 14px;}
+    .listBox02 .infoList ul li{font-size: 14px;}
+    .skillList ul li{font-size: 14px;}
+    .contactMe .listBox02 .jobInfo .boxTop .job{display: inline-block;}
+    .contactMe .listBox02 .jobInfo .boxTop .job .icon svg{width: 30px;}
+    .contactMe .listBox02 .jobInfo .boxTop .userName{font-size: 24px;}
+    .contactMe .listBox02 .jobInfo .boxTop .userName span{display: block;}
+    .contactMe .listBox02 .infoList{font-size: 14px;}
+    .contactMe .listBox02 .contactMeTips .tColor04{font-size: 16px;}
+    .contactMe .listBox02 .contactMeTips .tColor02{font-size: 14px;}
+}
+
+/*xs*/
+@media only screen and (max-width: 767px){
+    .main .leftBar{display: none;}
+    .main{padding: 0;}
+    .main .leftBar{width: 240px;left: 0}
+    .main .topBar{left: 0;}
+    .schoolBox .sbTitle{background: none;}
+    .schoolBox .sbTitle{text-align: center;}
+    .sbTitle span{padding: 0;}
+    .spcount ul li{padding: 0;}
+    .circle{display: none;}
+    .separate{margin-left: 18px;padding-top: 15px;}
+    .introduction{width: 100%;}
+
+    .main .rightBar{padding-top: 10px;}
+    .rightBar ul li.box{padding: 10px 15px;}
+    .userMainInfo h3{font-size: 26px; margin-bottom: 5px;}
+    .userMainInfo h3 .eName{display: block; font-size: 20px; margin-bottom: 5px;}
+    .userMainInfo .info{font-size: 16px;}
+    .userMainInfo .jobName{font-size: 14px;}
+    .userMainInfo .photoBox{width: 60%; height: auto; margin: 10px auto 30px;}
+    .userMainInfo .photo{ width: 100%;}
+    .userMainInfo .photo .pic{width: 60%; margin: auto; position: static;}
+    .userMainInfo .bubble.n01{width: 7%; height: 11.5%; bottom: 6%; left: 14%; top: auto;}
+    .userMainInfo .bubble.n02{width: 4%; height: 6.5%; bottom: 1%;left: 26%}
+    .userMainInfo .bubble.n03{width: 10%; height: 16.5%; top: 0%; left: 18%;}
+    .userMainInfo .bubble.n04{right: 16%; top: 25%;}
+    .userMainInfo .bubble.n05{width: 9%; height: 15%; bottom: 12%; right: 13%;}
+
+    .rightBar ul li .content.personal{margin-top: 0px; }
+    .personal .InfoBox{padding: 0px 20px; font-size: 14px;}
+}
+
+@media only screen and (max-width: 497px){
+    .listBox .icon{width: 20%;}
+    .listBox .left{width: 80%;}
+    .listBox .icon svg{ width: 30px;}
+    .listBox .right{width: 100%; margin-left: 0%;}
+    .bTitle h3{ font-size: 22px;}
+    .listBox .right .graduation h4{font-size: 16px;}
+    .listBox .right .department{font-size: 16px;}
+    .rightBar .listBox .left .boxTop{font-size: 14px;}
+    .rightBar .listBox .left .boxTop .tColor02{font-size: 14px;}
+    .referrer .listBox .left .company{font-size: 14px;}
+    .contactMe .listBox02 .jobInfo .boxTop .job .icon svg{ width: 24px;}
+    .contactMe .listBox02 .jobInfo .boxTop .userName span{font-size: 18px;}
+}
+
+/*sm*/
+@media (min-width: 768px) and (max-width: 991px){
+    .main{padding: 0 0 0 240px;}
+    .main .leftBar{width: 240px;left: 0}
+    .outLinkCtl{right: -16px;width: 240px;}
+    .viewIcon{width: 30px;height: 30px;}
+    .fbIcon{background: url(../images/fb.png) 45% 45% no-repeat transparent;}
+    .inIcon{background: url(../images/in.png)no-repeat 45% 45% transparent;}
+    .trIcon{background: url(../images/tr.png)no-repeat 45% 45% transparent;}
+    .beIcon{background: url(../images/be.png)no-repeat 45% 45% transparent;}
+    .outLink .reOl{right: -6px;}
+}
+/*md*/
+@media (min-width: 992px) and (max-width: 1199px){
+    .main{padding: 0 0 0 480px;}
+    .main .leftBar{width: 240px;}
+    .outLinkCtl{right: -30px;width: 250px;}
+    .viewIcon{width: 30px;height: 30px;}
+    .fbIcon{background: url(../images/fb.png) 45% 45% no-repeat transparent;}
+    .inIcon{background: url(../images/in.png)no-repeat 45% 45% transparent;}
+    .trIcon{background: url(../images/tr.png)no-repeat 45% 45% transparent;}
+    .beIcon{background: url(../images/be.png)no-repeat 45% 45% transparent;}
+    .outLink .reOl{right: -6px;}
+
+}
+/*lg*/
+@media (min-width: 1200px) and (max-width: 1699px){
+    .rightBar ul li.box{padding: 10px 15px;}
+    .userMainInfo h3{font-size: 26px;}
+    .userMainInfo .info{font-size: 18px;}
+    .userMainInfo .jobName{font-size: 16px;}
+    .userMainInfo .photo{ width: 66%;}
+    .userMainInfo .photo .pic{width: 50%;left: 20%;}
+    .userMainInfo .bubble.n03{top: 40px;}
+    .userMainInfo .bubble.n04{right: 30%;}
+    .userMainInfo .bubble.n05{right: 18%;}
+}
+/*lgBig*/
+@media (min-width: 1700px){
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

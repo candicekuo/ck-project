@@ -1,0 +1,10 @@
+﻿/*主題色*/
+.mbg{background: #ffbc4b;opacity: 0;}
+.mfont{color: #a94442;}
+.mline{border: 0.5px solid #a94442;}
+.mbtn{color: #fff;background: #a94442;border: 1px solid #fff;}
+.mbtn:hover{background: #be8677;cursor: pointer;}
+.mbgcg{background: #fff6ef;}
+
+.leftBar .pic{border: 1px solid #a94442;}
+.leftBar .pic div{border: 3px solid #ffbc4b;}
