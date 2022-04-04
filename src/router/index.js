@@ -58,6 +58,15 @@ const routes = [
 const router = new VueRouter({
   // mode: 'history',
   routes,
+
+  // 解決 spa 路由跳轉 scrollTop 不會在 top 的問題
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+     return savedPosition
+    } 
+    return { x: 0, y: 0 }
+    
+  }
 });
 
 export default router;
