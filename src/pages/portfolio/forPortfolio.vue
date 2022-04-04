@@ -39,19 +39,19 @@ export default {
         pic: {
           title: '童裝的穿搭拍攝，以孩童給人活潑的印象為概念，拍攝出一系列的產品視覺',
           list: [
-            { imgPath: require('@/assets/img/b1.jpg') },
-            { imgPath: require('@/assets/img/b2.jpg') },
-            { imgPath: require('@/assets/img/b3.jpg') },
-            { imgPath: require('@/assets/img/b4.jpg') },
-            { imgPath: require('@/assets/img/b5.jpg') },
-            { imgPath: require('@/assets/img/b6.jpg') },
-            { imgPath: require('@/assets/img/b7.jpg') },
-            { imgPath: require('@/assets/img/b8.jpg') },
-            { imgPath: require('@/assets/img/b9.jpg') },
-            { imgPath: require('@/assets/img/b10.jpg') },
+            { imgPath: require('@/assets/img/photo1.png') },
+            { imgPath: require('@/assets/img/photo2.png') },
+            { imgPath: require('@/assets/img/photo3.png') },
           ],
         },
-        edition: {},
+        edition: {
+          title: '購物網站版型設計，配合不同時期的活動需求，設計變動的版型，使其能夠更靈活運用',
+          list: [
+            { imgPath: require('@/assets/img/type1.png') },
+            { imgPath: require('@/assets/img/type2.png') },
+            { imgPath: require('@/assets/img/type3.png') },
+          ],
+        },
       },
     };
   },
@@ -72,7 +72,7 @@ export default {
 img {
   width: 80%;
   margin: 15px 15px 30px;
-  box-shadow: 2px 2px 6px $grey9;
+  // box-shadow: 2px 2px 6px $grey9;
 }
 .floatR {
   float: right;
