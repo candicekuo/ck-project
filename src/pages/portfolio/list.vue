@@ -9,9 +9,8 @@
         :key="item.imgPath"
         class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-4"
         :class="index === 'flat' ? 'mb-4' : ''"
-        @click="handlePage(item)"
       >
-        <div class="listBox">
+        <div class="listBox" @click="handlePage(item)">
           <div class="imgBox">
             <img :src="item.imgPath" :alt="item.label" />
           </div>

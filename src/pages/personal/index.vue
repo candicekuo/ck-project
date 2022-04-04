@@ -1,10 +1,10 @@
 <template>
   <div class="personal">
     <div class="img_box">
-      <button class="enter_btn" @click="enter">enter</button>
+      <button class="enter_btn" @click="enter">Enter Portfolio</button>
       <div class="font_box">
-        <p class="title">HELLO</p>
-        <p>test,test,test,test</p>
+        <p class="title">HELLO,</p>
+        <p>Welcome to Portfolio</p>
       </div>
     </div>
   </div>
@@ -30,11 +30,7 @@ export default {
   flex-flow: column nowrap;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 149, 129, 1) 33%,
-    rgba(255, 160, 136, 0.8) 58%
-  );
+  background: linear-gradient(45deg, rgba(255, 149, 129, 1) 33%, rgba(255, 160, 136, 0.8) 58%);
   // background: linear-gradient(
   //   46deg,
   //   rgba(255, 134, 136, 1) 39%,
@@ -54,14 +50,14 @@ export default {
 
     .enter_btn {
       position: absolute;
-      right: -8%;
+      right: -15%;
       top: 30%;
       background: $white;
     }
 
     .font_box {
       position: absolute;
-      right: -30%;
+      right: -35%;
       top: 10%;
 
       .title {
