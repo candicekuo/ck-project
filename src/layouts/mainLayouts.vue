@@ -35,7 +35,7 @@ export default {
   data() {
     return {
       ratio: 0.5,
-      defaultTop: 30,
+      defaultTop: 15,
 
       year: dayjs().year(),
       menuList: [
@@ -93,7 +93,7 @@ export default {
     background-image: url(../assets/img/bg.jpg);
     background-size: cover;
     background-position-x: center;
-    background-position-y: 30px;
+    background-position-y: 15px;
     background-repeat: no-repeat;
     background-color: #f3f4ee;
 

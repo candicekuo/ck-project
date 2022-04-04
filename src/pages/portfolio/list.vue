@@ -32,11 +32,30 @@
 
 <script>
 export default {
-  name: 'List',
+  name: 'Portfolio',
   components: {},
   data() {
     return {
       webInfo: {
+        frontend: {
+          title: `Vue Cli 前端專案 \/ 稅務系統 \/ 後台系統<br/>以下僅為作品展示用`,
+          list: [
+            {
+              label: '稅務系統',
+              content: 'Vue2 + Quasar 框架，修改 UI 符合設計稿 ＆ 串接API',
+              imgPath: require('@/assets/img/p2.png'),
+              type: 1,
+              name: '',
+            },
+            {
+              label: '後台系統',
+              content: 'Vue3 + Quasar 框架，自行設計 UIUX ＆ 串接API',
+              imgPath: require('@/assets/img/p2.png'),
+              type: 1,
+              name: '',
+            },
+          ],
+        },
         web: {
           title: `網頁設計 \/ RWD響應式網頁 \/ EDM mail格式發送頁 \/ 測驗互動網頁<br/>以下僅為作品展示用`,
           list: [
