@@ -43,23 +43,32 @@ export default {
       },
     };
   },
+  computed: {},
   mounted() {
+    this.handleTop();
     window.addEventListener('scroll', this.handleScroll);
-    this.box = document.querySelector('.infoBox');
-    this.boxOffsetTop = this.box.offsetTop - this.interval;
+    window.addEventListener('resize', this.handleTop);
   },
   methods: {
     handleScroll() {
       //頁面滾動距離
       let scrollTop =
         window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      // 手機 pass
+      const windowWidth = document.body.scrollWidth;
+      if (windowWidth < 768) return;
       if (scrollTop >= this.boxOffsetTop) {
         this.box.style.marginTop = `${scrollTop - this.marginDefault - this.boxOffsetTop}px`;
       } else {
         this.box.style.marginTop = `-${this.marginDefault}px`;
       }
     },
+    handleTop() {
+      this.box = document.querySelector('.infoBox');
+      this.boxOffsetTop = this.box.offsetTop - this.interval;
+    },
   },
+  watch: {},
 };
 </script>
 <style lang="scss" scoped>
