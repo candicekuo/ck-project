@@ -9,6 +9,7 @@ const routes = [
     path: '/',
     component: () => import('@/pages/personal/index.vue'),
     // redirect: '/personal',
+    redirect: '/owner/portfolio', // 這頁先關
   },
   {
     path: '/owner',
