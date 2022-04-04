@@ -70,7 +70,7 @@ export default {
               content: '系統改版，主要負責頁面操作流程規劃，UI UX規劃，頁面設計。',
               imgPath: require('@/assets/img/p5.png'),
               type: 1,
-              name: '',
+              name: 'user',
             },
             {
               label: '系統介面規劃',

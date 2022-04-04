@@ -21,6 +21,18 @@ export default {
             { imgPath: require('@/assets/img/1hr-2.png') },
           ],
         },
+        user: {
+          title: '使用者介面與編輯頁面操作與狀態切換UI、UX的規劃設計示意圖',
+          list: [
+            { imgPath: require('@/assets/img/user1.png') },
+            { imgPath: require('@/assets/img/user2.png') },
+            { imgPath: require('@/assets/img/user3.png') },
+            { imgPath: require('@/assets/img/user4.png') },
+            { imgPath: require('@/assets/img/user5.png') },
+            { imgPath: require('@/assets/img/user6.png') },
+            { imgPath: require('@/assets/img/user7.png') },
+          ],
+        },
         banner: {
           title: '依照不同需求製作手繪、形象、產品、特賣不同風格的視覺設計',
           list: [
