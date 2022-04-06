@@ -23,6 +23,56 @@ export default {
   data() {
     return {
       imgData: {
+        taxbi: {
+          title: '稅務系統使用 vue2 + queaer 框架製作符合設計稿的頁面，功能開發，串接API',
+          type: '',
+          classes: 'isShadow',
+          list: [
+            { imgPath: require('@/assets/img/tax0.png') },
+            { imgPath: require('@/assets/img/tax1.png') },
+            { imgPath: require('@/assets/img/tax2.png') },
+            { imgPath: require('@/assets/img/tax3.png') },
+            { imgPath: require('@/assets/img/tax4.png') },
+            { imgPath: require('@/assets/img/tax5.png') },
+            { imgPath: require('@/assets/img/tax6.png') },
+            { imgPath: require('@/assets/img/tax7.png') },
+            { imgPath: require('@/assets/img/tax8.png') },
+            { imgPath: require('@/assets/img/tax9.png') },
+          ],
+        },
+        mc: {
+          title: '稅務系統使用 vue2 + queaer 框架製作符合設計稿的頁面，功能開發，串接API',
+          type: '',
+          classes: 'isShadow',
+          list: [
+            { imgPath: require('@/assets/img/mc1.png') },
+            { imgPath: require('@/assets/img/mc2.png') },
+            { imgPath: require('@/assets/img/mc3.png') },
+            { imgPath: require('@/assets/img/mc4.png') },
+            { imgPath: require('@/assets/img/mc5.png') },
+            { imgPath: require('@/assets/img/mc6.png') },
+            { imgPath: require('@/assets/img/mc7.png') },
+          ],
+        },
+        kc: {
+          title: '稅務系統使用 vue2 + queaer 框架製作符合設計稿的頁面，功能開發，串接API',
+          type: '',
+          classes: 'isShadow',
+          list: [
+            { imgPath: require('@/assets/img/kc1.png') },
+            { imgPath: require('@/assets/img/kc2.png') },
+            { imgPath: require('@/assets/img/kc3.png') },
+            { imgPath: require('@/assets/img/kc4.png') },
+            { imgPath: require('@/assets/img/kc5.png') },
+            { imgPath: require('@/assets/img/kc6.png') },
+          ],
+        },
+        admin: {
+          title: '後台系統使用 vue3 + queaer 框架製作，各種需求功能開發，UIUX設計，串接API',
+          type: 'LR',
+          classes: 'isShadow',
+          list: [],
+        },
         ehr: {
           title: '系統介面設計，以扁平化風格為基礎設計',
           type: 'LR',

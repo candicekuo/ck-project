@@ -49,14 +49,28 @@ export default {
               content: 'Vue2 + Quasar 框架，修改 UI 符合設計稿 ＆ 串接API',
               imgPath: require('@/assets/img/p13.png'),
               type: 1,
-              name: '',
+              name: 'taxbi',
+            },
+            {
+              label: '稅務系統',
+              content: 'Vue2 + Quasar 框架，修改 UI 符合設計稿 ＆ 串接API',
+              imgPath: require('@/assets/img/p15.png'),
+              type: 1,
+              name: 'mc',
+            },
+            {
+              label: '稅務系統',
+              content: 'Vue2 + Quasar 框架，修改 UI 符合設計稿 ＆ 串接API',
+              imgPath: require('@/assets/img/p16.png'),
+              type: 1,
+              name: 'kc',
             },
             {
               label: '後台系統',
               content: 'Vue3 + Quasar 框架，自行設計 UIUX ＆ 串接API',
               imgPath: require('@/assets/img/p14.png'),
               type: 1,
-              name: '',
+              name: 'admin',
             },
           ],
         },
@@ -176,6 +190,7 @@ export default {
   border: 0;
   border-bottom: 1px dashed #666;
   width: 100%;
+  margin: 1rem 15px;
 }
 .listBox {
   position: relative;
