@@ -45,21 +45,21 @@ export default {
           title: `Vue Cli 前端專案 \/ 稅務系統 \/ 後台系統<br/>以下僅為作品展示用`,
           list: [
             {
-              label: '稅務系統',
+              label: '稅務系統 - Taxbi',
               content: 'Vue2 + Quasar 框架，修改 UI 符合設計稿 ＆ 串接API',
               imgPath: require('@/assets/img/p13.png'),
               type: 1,
               name: 'taxbi',
             },
             {
-              label: '稅務系統',
+              label: '稅務系統 - Merchant',
               content: 'Vue2 + Quasar 框架，修改 UI 符合設計稿 ＆ 串接API',
               imgPath: require('@/assets/img/p15.png'),
               type: 1,
               name: 'mc',
             },
             {
-              label: '稅務系統',
+              label: '稅務系統 - Kodecomm',
               content: 'Vue2 + Quasar 框架，修改 UI 符合設計稿 ＆ 串接API',
               imgPath: require('@/assets/img/p16.png'),
               type: 1,

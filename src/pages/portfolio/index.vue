@@ -102,6 +102,7 @@ export default {
       text-align: left;
     }
     .more {
+      font-size: 0.875rem;
       border-top: 1px solid #eee;
       padding-top: 25px;
     }
