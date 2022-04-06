@@ -1,18 +1,20 @@
 <template>
   <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 col-xl-9">
     <p class="mt-4">{{ imgData[useData].title }}</p>
-    <!-- 左右版 -->
-    <template v-if="imgData[useData].type === 'LR'">
-      <div v-for="(path, index) in imgData[useData].list" :key="index">
-        <img :src="path.imgPath" :class="[index % 2 ? 'floatR' : '', imgData[useData].classes]" />
-      </div>
-    </template>
-    <!-- 正常版 -->
-    <template v-else>
-      <div v-for="(path, index) in imgData[useData].list" :key="index" class="content">
-        <img :src="path.imgPath" :class="imgData[useData].classes" />
-      </div>
-    </template>
+    <div class="upAnimation">
+      <!-- 左右版 -->
+      <template v-if="imgData[useData].type === 'LR'">
+        <div v-for="(path, index) in imgData[useData].list" :key="index">
+          <img :src="path.imgPath" :class="[index % 2 ? 'floatR' : '', imgData[useData].classes]" />
+        </div>
+      </template>
+      <!-- 正常版 -->
+      <template v-else>
+        <div v-for="(path, index) in imgData[useData].list" :key="index" class="content">
+          <img :src="path.imgPath" :class="imgData[useData].classes" />
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -159,5 +161,21 @@ img {
 }
 .floatR {
   float: right;
+}
+
+// upAnimation
+.upAnimation {
+  animation-name: flash;
+  animation-duration: 1s;
+}
+@keyframes flash {
+  0% {
+    opacity: 0;
+    margin-top: 200px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: inherit;
+  }
 }
 </style>
