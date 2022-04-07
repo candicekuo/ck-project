@@ -24,7 +24,6 @@ export default {
   components: {},
   data() {
     return {
-      isback: false,
       imgData: {},
     };
   },
@@ -38,7 +37,7 @@ export default {
   },
   methods: {
     fetchList() {
-      this.$store
+      return this.$store
         .dispatch('portfolio/getList', { name: this.useData })
         .then((res) => {
           this.imgData = res;
