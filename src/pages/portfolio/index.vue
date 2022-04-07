@@ -39,7 +39,7 @@ export default {
         add: 'Taiwan, Taipei',
         mail: 'candice89989@gmail.com',
         phone: '0952 620 651',
-        use: `擅長工具</br>Photoshop、Illustrator</br>html、css、jquery、js、vue.js</br>RWD響應式網站`,
+        use: `<i class="bi bi-credit-card-2-front"></i> Web Frontend</br>Html、Scss、Jquery、Js ES6</br>Bootstrap、Vue.js、Quasar、Git</br>RWD 響應式網站</br>Photoshop、Illustrator、Figma`,
       },
     };
   },

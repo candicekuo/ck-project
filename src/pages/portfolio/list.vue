@@ -42,7 +42,7 @@ export default {
     return {
       webInfo: {
         frontend: {
-          title: `Vue Cli 前端專案 \/ 稅務系統 \/ 後台系統<br/>以下僅為作品展示用`,
+          title: `Vue Cli 前端專案功能開發 \/ 稅務系統 \/ 後台系統<br/>以下僅為作品展示用`,
           list: [
             {
               label: '稅務系統 - Taxbi',
