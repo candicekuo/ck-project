@@ -1,7 +1,5 @@
 <template>
   <div class="container">
-    <!-- <p>Portfolio</p>
-        <a href="./A/index.html">test a</a>-->
     <div class="row">
       <div class="infoBox col-xs-12 col-sm-12 col-md-5 col-lg-4 col-xl-3">
         <div>
