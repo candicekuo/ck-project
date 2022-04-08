@@ -38,7 +38,7 @@ export default {
   methods: {
     fetchList() {
       return this.$store
-        .dispatch('portfolio/getList', { name: this.useData })
+        .dispatch('portfolio/getContentList', { name: this.useData })
         .then((res) => {
           this.imgData = res;
         })

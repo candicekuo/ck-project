@@ -40,136 +40,11 @@ export default {
   components: {},
   data() {
     return {
-      webInfo: {
-        frontend: {
-          title: `Vue Cli 前端專案功能開發 \/ 稅務系統 \/ 後台系統<br/>以下僅為作品展示用`,
-          list: [
-            {
-              label: '稅務系統 - Taxbi',
-              content: 'Vue2 + Quasar 框架，修改 UI 符合設計稿 ＆ 串接API',
-              imgPath: require('@/assets/img/p13.png'),
-              type: 1,
-              name: 'taxbi',
-            },
-            {
-              label: '稅務系統 - Merchant',
-              content: 'Vue2 + Quasar 框架，修改 UI 符合設計稿 ＆ 串接API',
-              imgPath: require('@/assets/img/p15.png'),
-              type: 1,
-              name: 'mc',
-            },
-            {
-              label: '稅務系統 - Kodecomm',
-              content: 'Vue2 + Quasar 框架，修改 UI 符合設計稿 ＆ 串接API',
-              imgPath: require('@/assets/img/p16.png'),
-              type: 1,
-              name: 'kc',
-            },
-            {
-              label: '後台系統',
-              content: 'Vue3 + Quasar 框架，自行設計 UIUX ＆ 串接API',
-              imgPath: require('@/assets/img/p14.png'),
-              type: 1,
-              name: 'admin',
-            },
-          ],
-        },
-        web: {
-          title: `網頁設計 \/ RWD響應式網頁 \/ EDM mail格式發送頁 \/ 測驗互動網頁<br/>以下僅為作品展示用`,
-          list: [
-            {
-              label: '自訂功能系統頁面',
-              content: '由視覺設計師設計出圖，主要負責切板，寫網頁互動功能的部分。',
-              imgPath: require('@/assets/img/p1.png'),
-              goto: './20190506-Custom-Resume/backstage.htm',
-              type: 0,
-            },
-            {
-              label: '測驗活動網站',
-              content: '從主視覺開始發想，動畫安排、網頁互動設計至完成所有頁面。',
-              imgPath: require('@/assets/img/p2.png'),
-              goto: './2018-Cstar/cstar.htm',
-              type: 0,
-            },
-            {
-              label: '系統功能性介面',
-              content: '系統改版，主要負責頁面操作流程、UI UX規劃，頁面設計切版製作。',
-              imgPath: require('@/assets/img/p3.png'),
-              goto: './recruit2019/default.htm',
-              type: 0,
-            },
-            {
-              label: '履歷表使用介面',
-              content: '系統改版，主要負責頁面操作流程、UI UX規劃，頁面設計切版製作。',
-              imgPath: require('@/assets/img/p4.png'),
-              goto: './20190606_resume-preview/resume-preview.htm',
-              type: 0,
-            },
-            {
-              label: '使用者介面規劃',
-              content: '系統改版，主要負責頁面操作流程規劃，UI UX規劃，頁面設計。',
-              imgPath: require('@/assets/img/p5.png'),
-              type: 1,
-              name: 'user',
-            },
-            {
-              label: '系統介面規劃',
-              content: '系統改版，主要負責頁面操作流程規劃，UI UX規劃，頁面設計。',
-              imgPath: require('@/assets/img/p6.png'),
-              type: 1,
-              name: 'ehr',
-            },
-            {
-              label: 'EDM問卷頁面',
-              content: '負責主要風格與信件、網頁切板製作。',
-              imgPath: require('@/assets/img/p7.png'),
-              goto: './ytu2017/index.html',
-              type: 0,
-            },
-            {
-              label: '信件發送格式',
-              content: '重新規劃系統信件風格與呈現方式。',
-              imgPath: require('@/assets/img/p8.png'),
-              goto: './20180614_new_letter/letter8-2.htm',
-              type: 0,
-            },
-            // {
-            //   label: '測驗頁面',
-            //   content: '把既有的頁面改寫為RWD，增加使用者體驗，使用vue.js框架製作。',
-            //   imgPath: require('@/assets/img/p9.png'),
-            //   goto: './A/index.html',
-            //   type: 0,
-            // },
-          ],
-        },
-        flat: {
-          title: `平面設計 \/ Banner 設計 \/ 商業攝影 \/ 版型設計</br>以下僅為作品展示用`,
-          list: [
-            {
-              label: 'Banner 設計',
-              content: '依不同的使用需求製作出適合的視覺設計',
-              imgPath: require('@/assets/img/p10.png'),
-              type: 1,
-              name: 'banner',
-            },
-            {
-              label: '商業攝影',
-              content: '電商產品拍攝',
-              imgPath: require('@/assets/img/p11.png'),
-              type: 1,
-              name: 'pic',
-            },
-            {
-              label: '版型設計',
-              content: '購物網站首頁規劃設計，配合不同需求調整使用',
-              imgPath: require('@/assets/img/p12.png'),
-              type: 1,
-              name: 'edition',
-            },
-          ],
-        },
-      },
+      webInfo: {},
     };
+  },
+  mounted() {
+    this.fetchList();
   },
   methods: {
     handlePage(val) {
@@ -177,9 +52,18 @@ export default {
         this.$store.commit('portfolio/setCurrentName', val.name);
         window.localStorage.setItem('page', val.name);
         return this.$router.push({ name: 'ForPortfolio' });
-        // return this.$router.push({ name: 'ForPortfolio', params: { name: val.name } });
       }
       window.open(val.goto);
+    },
+    fetchList() {
+      return this.$store
+        .dispatch('portfolio/getPortfolioList')
+        .then((res) => {
+          this.webInfo = res;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };

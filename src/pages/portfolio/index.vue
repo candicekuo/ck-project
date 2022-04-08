@@ -32,17 +32,12 @@ export default {
       marginDefault: 40,
       interval: 90, // 想要的間距
 
-      infoBox: {
-        name: 'Candice',
-        add: 'Taiwan, Taipei',
-        mail: 'candice89989@gmail.com',
-        phone: '0952 620 651',
-        use: `<i class="bi bi-credit-card-2-front"></i> Web Frontend</br>Html、Scss、Jquery、Js ES6</br>Bootstrap、Vue.js、Quasar、Git</br>RWD 響應式網站</br>Photoshop、Illustrator、Figma`,
-      },
+      infoBox: {},
     };
   },
   computed: {},
-  mounted() {
+  async mounted() {
+    await this.fetchInfo();
     this.handleTop();
     window.addEventListener('scroll', this.handleScroll);
     window.addEventListener('resize', this.handleTop);
@@ -64,6 +59,16 @@ export default {
     handleTop() {
       this.box = document.querySelector('.infoBox');
       this.boxOffsetTop = this.box.offsetTop - this.interval;
+    },
+    fetchInfo() {
+      return this.$store
+        .dispatch('portfolio/getPersonalInfo')
+        .then((res) => {
+          this.infoBox = res;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
   watch: {},
