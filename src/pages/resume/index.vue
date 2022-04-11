@@ -36,7 +36,7 @@
           </p>
           <div class="jobInfo">
             <p>工作說明</p>
-            <ol>
+            <ol class="text-grey6">
               <li>使用 Vue + Quasar 開發稅務系統、後台系統</li>
               <li>網站 UI 切版、特效製作</li>
               <li>網站功能開發</li>
@@ -57,7 +57,7 @@
           </p>
           <div class="jobInfo">
             <p>工作說明</p>
-            <ol>
+            <ol class="text-grey6">
               <li>系統 UIUX 優化</li>
               <li>網站介面改版規劃設計</li>
               <li>RWD 響應式網站製作</li>
@@ -152,6 +152,9 @@ p {
 .text-big {
   font-size: 1.125rem;
 }
+.text-grey6 {
+  color: $grey6;
+}
 .setDetail {
   margin: 60px 0;
   padding: 60px 0;
@@ -240,7 +243,6 @@ p {
     }
   }
   .title {
-    display: detail-block;
     background: #4f9ebc;
     color: white;
     text-align: center;
