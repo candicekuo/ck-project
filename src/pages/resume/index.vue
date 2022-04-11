@@ -5,7 +5,7 @@
         <div class="card personal rotates">
           <img src="@/assets/img/pic2.png" alt="" />
           <div class="marginT">
-            <p>Candice <small>( Taiwan )</small></p>
+            <b>Candice <small>( Taiwan )</small></b>
             <p>
               女性 <span class="text-grey">｜</span> 33歲 <span class="text-grey">｜</span> Ｏ型
             </p>
@@ -16,12 +16,16 @@
         <div class="card lineBox">
           <p class="title">學歷</p>
           <div class="educationBox">
-            <p>中國科技大學 (畢業) 2007/09 - 2011/06</p>
+            <p><b>中國科技大學 (畢業) 2007/09 - 2011/06</b></p>
             <p class="detail">視覺傳達設計系</p>
             <hr />
-            <p>大安高工 (畢業) 2004/09 - 2007/06</p>
+            <p><b>大安高工 (畢業) 2004/09 - 2007/06</b></p>
             <p class="detail">圖文傳播科</p>
           </div>
+        </div>
+        <div class="card">
+          <b>累積年資</b>
+          <p class="detail">9~10年工作經驗 ( 在職中 )</p>
         </div>
         <div class="itemR">
           <p>2020/11 - 在職中</p>
@@ -70,19 +74,19 @@
       </div>
       <div class="col-xl-6 col-lg-6 col-md-12">
         <div class="card">
-          <p>Frontend</p>
+          <b>Frontend</b>
           <p class="detail">
             熟悉 HTML、 CSS SCSS、Tailwind css、Javascript ES6、jQuery
             、Bootstrap3,4、Vue.js、Vuex、Router、Quasar、Git，可獨立切版、優化 UIUX、完成RWD網頁
           </p>
           <hr />
-          <p>平面設計</p>
+          <b>平面設計</b>
           <p class="detail">
             熟悉 Illustrator、Photoshop、Figma，相關軟體操作，擅長影像處理＆版面視覺
           </p>
         </div>
         <div class="itemC">
-          <p><i class="bi bi-clipboard2-minus"></i> 求職條件</p>
+          <b><i class="bi bi-clipboard2-minus"></i> 求職條件</b>
         </div>
         <div class="card">
           <div>
@@ -113,7 +117,7 @@
           </div>
         </div>
         <div class="itemC">
-          <p><i class="bi bi-file-earmark-person"></i> 自 傳</p>
+          <b><i class="bi bi-file-earmark-person"></i> 自 傳</b>
         </div>
         <div class="card autobiography">
           <p>
