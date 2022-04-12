@@ -1,4 +1,5 @@
 export function getContentList( _, data) {
+  // 作品 detail data
   const opts = {
     taxbi: {
       title: '稅務系統使用 vue2 + queaer 框架製作符合設計稿的頁面，功能開發，串接API',
@@ -46,7 +47,7 @@ export function getContentList( _, data) {
     },
     admin: {
       title: '後台系統使用 vue3 + queaer 框架製作，各種需求功能開發，UIUX設計，串接API',
-      type: 'LR',
+      type: '',
       classes: 'isShadow',
       list: [
         { imgPath: require('@/assets/img/adm5.png') },
@@ -142,6 +143,7 @@ export function getContentList( _, data) {
 }
 
 export function getPortfolioList( _, ) {
+  // 目錄資料
   const opts = {
     frontend: {
       title: `Vue Cli 前端專案功能開發 \/ 稅務系統 \/ 後台系統<br/>以下僅為作品展示用`,
@@ -274,6 +276,7 @@ export function getPortfolioList( _, ) {
 }
 
 export function getPersonalInfo( _, ) {
+  // 目錄左側資訊
   const opts = {
     name: 'Candice',
     add: 'Taiwan, Taipei',
