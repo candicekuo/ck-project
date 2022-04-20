@@ -280,7 +280,7 @@ export function getPersonalInfo( _, ) {
   const opts = {
     name: 'Candice',
     add: 'Taiwan, Taipei',
-    mail: 'candice89989@gmail.com',
+    mail: 'candiceworker@gmail.com',
     phone: '0952 620 651',
     use: `<i class="bi bi-credit-card-2-front"></i> Web Frontend</br>Html、Scss、Jquery、Js ES6</br>Bootstrap、Vue.js、Quasar、Git</br>RWD 響應式網站</br>Photoshop、Illustrator、Figma`,
   }

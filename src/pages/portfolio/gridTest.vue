@@ -8,15 +8,13 @@
         <p class="title">Candice Kuo</p>
         <p>Taiwan, Taipei</p>
         <div class="detail">
-          <i class="bi bi-envelope"></i> candice89989@gmail.com
+          <i class="bi bi-envelope"></i> candiceworker@gmail.com
           <br />
           <i class="bi bi-phone"></i> 0952 620 651
         </div>
         <div class="more">
           擅長工具
-          <br />Photoshop、Illustrator
-          <br />html、css、jquery、js、vue.js
-          <br />RWD響應式網站
+          <br />Photoshop、Illustrator <br />html、css、jquery、js、vue.js <br />RWD響應式網站
         </div>
       </div>
     </div>
