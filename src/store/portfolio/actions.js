@@ -45,6 +45,20 @@ export function getContentList( _, data) {
         { imgPath: require('@/assets/img/kc6.png') },
       ],
     },
+    sd: {
+      title: '開獎系統使用 vue2 + queaer 框架製作符合設計稿的頁面，功能開發，串接API',
+      type: '',
+      classes: 'isShadow',
+      list: [
+        { imgPath: require('@/assets/img/sd0.png') },
+        { imgPath: require('@/assets/img/sd1.png') },
+        { imgPath: require('@/assets/img/sd2.png') },
+        { imgPath: require('@/assets/img/sd3.png') },
+        { imgPath: require('@/assets/img/sd4.png') },
+        { imgPath: require('@/assets/img/sd5.png') },
+        { imgPath: require('@/assets/img/sd6.png') },
+      ],
+    },
     admin: {
       title: '後台系統使用 vue3 + queaer 框架製作，各種需求功能開發，UIUX設計，串接API',
       type: '',
@@ -168,6 +182,13 @@ export function getPortfolioList( _, ) {
           imgPath: require('@/assets/img/p16.png'),
           type: 1,
           name: 'kc',
+        },
+        {
+          label: '開獎系統 - SmartDraw',
+          content: 'Vue2 + Quasar 框架，修改 UI 符合設計稿 ＆ 串接API',
+          imgPath: require('@/assets/img/p17.png'),
+          type: 1,
+          name: 'sd',
         },
         {
           label: '後台系統',
