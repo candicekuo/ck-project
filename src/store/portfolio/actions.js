@@ -64,6 +64,11 @@ export function getContentList( _, data) {
       type: '',
       classes: 'isShadow',
       list: [
+        { imgPath: require('@/assets/img/adm0.png') },
+        { imgPath: require('@/assets/img/adm1.png') },
+        { imgPath: require('@/assets/img/adm2.png') },
+        { imgPath: require('@/assets/img/adm3.png') },
+        { imgPath: require('@/assets/img/adm4.png') },
         { imgPath: require('@/assets/img/adm5.png') },
         { imgPath: require('@/assets/img/adm6.png') },
         { imgPath: require('@/assets/img/adm7.png') },
