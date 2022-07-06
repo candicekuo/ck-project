@@ -2,7 +2,7 @@ export function getContentList( _, data) {
   // 作品 detail data
   const opts = {
     taxbi: {
-      title: '稅務系統使用 vue2 + queaer 框架製作符合設計稿的頁面，功能開發，串接API',
+      title: '稅務系統使用 vue2 + quasar 框架製作符合設計稿的頁面，功能開發，串接API',
       type: '',
       classes: 'isShadow',
       list: [
@@ -19,7 +19,7 @@ export function getContentList( _, data) {
       ],
     },
     mc: {
-      title: '稅務系統使用 vue2 + queaer 框架製作符合設計稿的頁面，功能開發，串接API',
+      title: '稅務系統使用 vue2 + quasar 框架製作符合設計稿的頁面，功能開發，串接API',
       type: '',
       classes: 'isShadow',
       list: [
@@ -33,7 +33,7 @@ export function getContentList( _, data) {
       ],
     },
     kc: {
-      title: '稅務系統使用 vue2 + queaer 框架製作符合設計稿的頁面，功能開發，串接API',
+      title: '稅務系統使用 vue2 + quasar 框架製作符合設計稿的頁面，功能開發，串接API',
       type: '',
       classes: 'isShadow',
       list: [
@@ -46,7 +46,7 @@ export function getContentList( _, data) {
       ],
     },
     sd: {
-      title: '開獎系統使用 vue2 + queaer 框架製作符合設計稿的頁面，功能開發，串接API',
+      title: '開獎系統使用 vue2 + quasar 框架製作符合設計稿的頁面，功能開發，串接API',
       type: '',
       classes: 'isShadow',
       list: [
@@ -60,7 +60,7 @@ export function getContentList( _, data) {
       ],
     },
     admin: {
-      title: '後台系統使用 vue3 + queaer 框架製作，各種需求功能開發，UIUX設計，串接API',
+      title: '後台系統使用 vue3 + quasar 框架製作，各種需求功能開發，UIUX設計，串接API',
       type: '',
       classes: 'isShadow',
       list: [
