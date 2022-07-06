@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>本站僅為作品展示用</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/shared.js"></script>
+    <!--css-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/shared.css" rel="stylesheet" type="text/css">
+    <link href="css/cstar.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript">
+        var s1,s2;
+        var starS = [];
+        $(document).ready(function(){
+            $(".contList").click(slideUp);
+            $(".contBox2 .btn2").click(slideLR);
+            $(".starList div").click(slideLRG);
+            $(".contBox4 .btn2").click(pageLR);
+            $(".coverB").click(function(){
+                tOff();
+            });
+            $("#seeReport").click(function(){
+                seeReport();
+            });
+            $(".Cinfo").click(function(e){
+                e.stopPropagation();
+            });
+            $(window).scroll(appearBn1);
+            $(".contBox4").mouseenter(function(){
+                $(".contBox4 .btn2").css("opacity","1");
+            }).mouseleave(function(){
+                $(".contBox4 .btn2").css("opacity","0");
+            });
+            
+            
+            
+            s1 = new starTurn(".mer",3000,2000,1000,600,1500,2000);
+            s2 = new starTurn(".nep",4000,3000,2000,1600,2500,2000);
+            
+            //top星球hover字出現
+            $(".starM").mouseenter(function(){
+                $(this).next().css("opacity","1");
+                $(this).next().next().css("opacity","1");
+            }).mouseleave(function(){
+                $(this).next().css("opacity","0");
+                $(this).next().next().css("opacity","0");
+            });
+            //topBar gotop 切換
+            $(window).scroll(function(){
+                appearTopBar();
+                goTop();
+            });
+            
+            
+            starS[0] = new starAppearMove("#infntUra");
+            starS[0].play();
+            starS[1] = new starAppearMove("#infntMer");
+            starS[2] = new starAppearMove("#infntNep");
+            starS[3] = new starAppearMove("#infntPlu");
+            starS[4] = new starAppearMove("#infntVen");
+            starS[5] = new starAppearMove("#infntMar");
+            starS[6] = new starAppearMove("#infntSat");
+            starS[7] = new starAppearMove("#infntJup");
+            starS[8] = new starAppearMove("#infntEar");
+            
+            svgMove();
+            svgBlinking();
+            starMove();
+            counter = $(".numberY");
+            testCount = 764532;
+            setTimeout("topMainNumber(" + (testCount - 1000) + ");", 1);
+            setTimeout(rehight,500);
+            setTimeout(overHideHight,500);
+        });
+        $(window).resize(function(){
+            rehight();
+            overHideHight();
+            BnFont();
+        });
+        
+        /*範例開合*/
+        function slideUp(){
+            var c = $(this).hasClass("contListY");
+            $(this).next("div").slideToggle().siblings(".contList+div").slideUp();
+            if(c==false){
+                $(this).addClass("contListY").siblings(".contList").removeClass("contListY");
+                $(this).find(".icon-icon-05").addClass("icon-icon-06").removeClass("icon-icon-05");
+                $(this).siblings().find(".icon-icon-06").removeClass("icon-icon-06").addClass("icon-icon-05");
+            }
+            else{
+                $(this).removeClass("contListY");
+                $(this).find(".icon-icon-06").addClass("icon-icon-05").removeClass("icon-icon-06");
+            }
+            appearIceM();
+        }
+        /*topBar 切換*/
+        function appearTopBar(){
+            var h = $("html,body").scrollTop();
+            if(h>700){
+                $(".topBar").slideDown();
+            }
+            else{
+                $(".topBar").slideUp();
+                $(".topBar>ul").hide();
+            }
+        }
+        //重測跳窗
+        function seeReport(){
+            $(".coverB").css("display","block");
+        }
+        function tOff(){
+            $(".coverB").css("display","none");
+        }
+        /*changeBox 星球滑動切換*/
+        var maxPos = 8, currentPos = 0, nextPos = 0, nd, cd, lock=false;
+        function slideLR(){
+            if(lock==false){
+                lock=true;
+                starS[nextPos].stopS();
+                if (this.id == "btnR") {
+                    nextPos += 1;
+                    if (nextPos > maxPos) nextPos = 0;
+                    nd = "100%";
+                    cd = "-100%";
+                } else{
+                    nextPos -= 1;
+                    if (nextPos < 0) nextPos = maxPos;
+                    nd = "-100%";
+                    cd = "100%";
+                }
+                LRrun();
+            }
+        }
+        function LRrun(){
+            var ps = $(".cover .changeBox");
+            var width = ps.eq(currentPos).width();
+            ps.eq(currentPos).css({ width: width }).animate({ left: cd }, 400, function () {
+                $(this).css({ width: "100%", left: 0, visibility: "hidden" });
+            });
+            ps.eq(nextPos).css({ width: width, left: nd, visibility: "visible" }).animate({ left: "0" }, 400, function () {
+                $(this).css({ width: "100%" });
+                currentPos = nextPos;
+                starS[nextPos].play();
+                lock=false;
+            });
+            //灰點點顏色
+            $(".starList").children("div").eq(nextPos).addClass("chg").siblings().removeClass("chg");
+        }
+        
+        //灰點點切換
+        function slideLRG(){
+            if(!lock){
+                lock=true;
+                nextPos = $(this).index();
+                starS[currentPos].stopS();
+                if(currentPos < nextPos){ //從右邊滑入
+                    nd = "100%";
+                    cd = "-100%";
+                }
+                else{
+                    nd = "-100%";
+                    cd = "100%";
+                }
+                currentPos != nextPos?LRrun():lock=false;
+            }
+        }
+        
+        /*changeBox 星球滑動overflow高度*/
+        function rehight(){
+            var h = $(".changeBox:eq(0)").height()+20+"px";
+            $(".cover").css("height",h);
+        }
+        /*Logopage overflow 寬高度*/
+        function overHideHight(){
+            var h = $(".logoPage:eq(0)").height();
+            var w = $(".contBox4>h3").width();
+            $(".overHide").css({height:h,width:w});
+        }
+        /*Logopage 切換*/
+        var maxPage = 2,nowPage = 0,nextPage = 0,Pa,Pb,Pluck=false;
+        function pageLR(){
+            if(!Pluck){
+                Pluck = true;
+                if(this.id == "pageL"){
+                    if(nowPage > 0){
+                        nextPage -= 1;
+                        Pa = "-100%";
+                        Pb = "110%";
+                        pageRun();
+                    }
+                    else{
+                        Pluck=false;
+                    }
+                }
+                else{
+                    if(nowPage < maxPage){
+                        nextPage += 1;
+                        Pa = "100%";
+                        Pb = "-100%";
+                        pageRun();
+                    }
+                    else{
+                        Pluck=false;
+                    }
+                }
+            }
+        }
+        function pageRun(){
+            var pg = $(".logoPage");
+            pg.eq(nextPage).css({left:Pa,width:"100%",display:"block"});
+            pg.eq(nowPage).animate({left:Pb,width:"100%"},400);
+            pg.eq(nextPage).animate({left:15,width:"100%"},400,function(){
+                Pluck=false;
+            });
+            nowPage = nextPage;
+        }
+        
+//動畫類
+        /*累積數字跑*/
+        var testCount = 0, counter;
+        function topMainNumber(v){
+            counter.text(thousandComma(v));
+            var minNum = 10, maxNum = 15;  
+            v+=Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+            if (v <= testCount) 
+                setTimeout("topMainNumber(" + v + ")",50);
+            else
+                setTimeout("counter.text(thousandComma(" + testCount + "))",50);
+        }
+        function thousandComma(v){
+             var n = v.toString();
+             var pattern = /(-?\d+)(\d{3})/;
+             while(pattern.test(n)){
+                n = n.replace(pattern, "$1,$2");
+             }
+             return n;
+        }
+        
+        /*bn1 svg旋轉*/
+        var deg=0, r = 160;
+        function svgMove(){
+            var hu = deg*(Math.PI/180);
+            var x = Math.round((r*(Math.cos(hu))*1000))/1000;
+            var y = Math.floor((r*(Math.sin(hu))*1000))/1000;
+            $("#move")[0].setAttribute('transform', "translate(" + x + "," + y + ")");
+            deg+=2;
+            if (deg >360) deg=0;
+            setTimeout(svgMove, 60);
+        }
+        /*bn1svg 閃*/
+        function svgBlinking(){
+            $(".st2").delay(3000).animate({opacity:0},3000,function(){
+                $(".st2").animate({opacity:1},1000)
+            });
+            $(".st3").delay(6000).animate({opacity:0},400,function(){
+                $(".st3").animate({opacity:1},2000)
+            });
+            setTimeout(svgBlinking, 8000);
+        }
+        /*bn1 出場順序*/
+        function appearBn1(){
+            var hw = $("html,body").scrollTop();
+            var b = $(".contBn .i2").css("bottom");
+            if(hw>300){
+                $(".contBn .i1").animate({opacity:"1"},600);
+                $(".contBn .s1").delay(400).animate({opacity:"1"},600);
+                $(".contBn .s2").delay(600).animate({opacity:"1"},600);
+                $(".contBn .i2").css("bottom","70%").delay(1000).animate({opacity:"1",bottom:b},1000,function(){
+                    $(".contBn .i2").attr("src","img/bn2.png");
+                });
+                $(".contBn .svgBox1").delay(1000).animate({opacity:"1"},600);
+                $(".contBn .s3").delay(1000).animate({opacity:"1"},600);
+                $(".contBn .s4").delay(1000).animate({opacity:"1"},600);
+                $(".contBn .s5").delay(2000).animate({opacity:"1"},600);
+                $(window).unbind( "scroll",appearBn1);
+            }
+            BnFont();
+        }
+        /*bn1 替換字*/
+        function BnFont(){
+            var w = $(window).width();
+            if(w<=689 && w>=505){
+                $(".s1 b").text("什麼樣的人");
+            }
+            else if(w<=505 ){
+                $(".s1 b").html("什麼樣的人<br/>需要使用九大職能星？");
+            }
+            else{
+                $(".s1 b").text("什麼樣");
+            }
+        }
+        /*iceM冰山*/
+        function appearIceM(){
+            var a = $(".contList:eq(2)").hasClass("contListY");
+            var w = $(window).width();
+            
+            if( a==true && w >= 1200){
+                $(".iceM img").css("bottom","-7%").animate({opacity:1,bottom:"4%"},800);
+            }
+            if( a==true && w >= 992 && w <= 1199){
+                $(".iceM img").css("bottom","-7%").animate({opacity:1,bottom:"8%"},800);
+            }
+            if( a==true && w >= 768 && w <= 991){
+                $(".iceM img").css("bottom","-7%").animate({opacity:1,bottom:"8.5%"},800);
+            }
+            if( a==true && w <= 767){
+                $(".iceM img").css("bottom","-7%").animate({opacity:1,bottom:"13.5%"},800);
+            }
+            if(!a){
+                $(".iceM img").delay(600).animate({opacity:0},1);
+            }
+        }
+        /*top星球動畫物件*/
+        function starTurn(cn,t,d,d2,d3,d4,d5){
+            var ninja = this;
+            var main = $(cn);
+            var img = main.find("img:eq(1)");
+            var delay = d;
+            var delay2 = d2;
+            var delay3 = d3;
+            var delay4 = d4;
+            var delay5 = d5;
+            var atime = t;
+            
+            this.play = function () {
+                main.animate({ backgroundPositionX: -100 },atime);
+                img.delay(delay).animate({ opacity: 1 }, 1000, function () {
+                    main.next().delay(200).animate({ opacity: 1 }, 400).delay(delay2).animate({ opacity: 0 }, 400);
+                    main.next().next().delay(600).animate({ opacity: 1 }, 400).delay(delay3).animate({ opacity: 0 }, 400);
+                });
+                img.delay(delay4).animate({ opacity: 0 }, 1000);
+                main.delay(delay5).animate({ backgroundPositionX: -240 }, 2500);
+            }
+        }
+        /*top星球動畫*/
+        function starMove(){
+            $(".topStar").delay(600).animate({opacity:1},1000);
+            s1.play();
+            s2.play();
+        }
+        /*changeBox 星球動畫*/
+        function starAppearMove(e){
+            var nj=this;
+            var main = $(e);
+            this.play = function(){
+                run();
+            }
+            this.stopS = function(){
+                main.stop();
+            }
+            function run(){
+                main.animate({ backgroundPosition: "-=5" },120,run);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="wp">
+        <div id="header" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topBar hidden-xs">
+                    <a href="cstar.htm"><img src="img/CstarLogo-s.png" alt="" style="margin:-5px 0 0;">九大職能星</a>
+                    <a href="#">OOO 登出</a>
+                    <a href="cstar_consult.htm">線上諮詢</a>
+                    <a href="cstar_report.htm">結果報告</a>
+                    <a href="cstar_start.htm">開始測驗</a>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topBar hidden-sm hidden-md hidden-lg">
+                    <a href="cstar.htm"><img src="img/CstarLogo-s.png" alt="" style="margin:-5px 0 0;">九大職能星</a>
+                    <i class="icon-icon-01"></i>
+                    <ul>
+                        <li><a href="cstar_start.htm">開始測驗</a></li>
+                        <li><a href="cstar_report.htm">結果報告</a></li>
+                        <li><a href="cstar_consult.htm">線上諮詢</a></li>
+                        <li><a href="#">OOO 登出</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="absl hidden-xs">
+                            <div class="topStar">
+                                <!--地球-->
+                                <img src="img/earth.png" alt="" style="top:-80px;left:-65%;width:20%;">
+                                <h5 style="top:20px;left:-45%;">Earth</h5>
+                                <!--水星-->
+                                <div class="starM mer">
+                                    <img src="img/s2-1.png" alt="" style="height:100%;left:0px;top:0px;" class="abs">
+                                    <img src="img/Mercury-1.png" alt="" style="width:101%;height:101%;opacity:0;top:-2px;" class="abs">
+                                    <img src="img/white.png" alt="" class="imgW">
+                                </div>
+                                <h2 style="top:160px;left:-35%;">Mercury</h2>
+                                <h5 style="top:210px;left:-35%;">Type:Terrestrial</h5>
+                                <!--木星-->
+                                <img src="img/Jupiter.png" alt="" style="top:500px;left:-50%;width:15%;">
+                                <h5 style="top:580px;left:-35%;">Jupiter</h5>
+                                <!--土星-->
+                                <img src="img/Saturn.png" alt="" style="top:-20px;right:-60%;width:20%;">
+                                <h5 style="top:20px;right:-63%;">Saturn</h5>
+                                <!--海王星-->
+                                <div class="starM nep">
+                                    <img src="img/s1-1.png" alt="" style="height:100%;left:0px;top:0px;" class="abs">
+                                    <img src="img/Neptune-1.png" alt="" style="width:101%;height:101%;opacity:0;top:-2px;" class="abs">
+                                    <img src="img/white.png" alt="" class="imgW">
+                                </div>
+                                <h2 style="top:210px;left:123%;">Neptune</h2>
+                                <h5 style="top:260px;left:123%;">Type:IceGiant</h5>
+                                <!--金星-->
+                                <img src="img/Venus.png" alt="" style="top:450px;right:-60%;width:20%;">
+                                <h5 style="top:550px;right:-40%;">Venus</h5>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 topMain">
+                            <img src="img/CstarLogo.png" alt="" class="cstarlogo">
+                            <h1>九大職能星</h1>
+                            <h3>經過這些年的點滴累積與磨練付出<br/>現在的你，是什麼模樣?</h3>
+                            <h4>累計探險發光數</h4>
+                            <p class="numberY">764,532</p>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4 topMain2">
+                            <a href="cstar_start.htm"><div class="btn1">開始測驗</div></a>
+                            <a href="#" style="text-decoration:underline;" id="seeReport">看報告</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="container">
+            <!--第1段 bn-->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contBn">
+                    <img src="img/bn1.png" alt="" class="i1">
+                    <div class="svgBox1">
+                        <svg version="1.1" id="" viewBox="0 0 350 350" preserveAspectRatio="xMinYMin meet" width="100%" height="100%" style="width:100%;height:100%;">
+                            <style type="text/css">
+                                .st2{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#00A892;stroke-miterlimit:10;}
+                                .st3{fill-rule:evenodd;clip-rule:evenodd;fill:#00A892;}
+                            </style>
+                            <circle class="st2" cx="170" cy="170" r="160"/>
+                            <circle class="st3" cx="170" cy="170" r="6" id="move"></circle>
+                        </svg>
+                    </div>
+                    <span class="s1"><b>什麼樣</b></span>
+                    <span class="s2"><b>的人</b></span>
+                    <span class="s3">Everybody needs C-star</span>
+                    <span class="s4">Everybody needs C-star</span>
+                    <img src="img/bn2-2.png" alt="" class="i2">
+                    <span class="s5"><b>需要使用九大職能星？</b></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pm0">
+                    <hr class="pm0">
+                </div>
+            </div>
+            <!--第1段 3圖-->
+            <div class="row rel">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 contBox1">
+                    <img src="img/01.png" alt="" class="img-responsive">
+                    <P>不考慮科系，單純地透過職能和興趣來釐清自己未來職涯和求職方向。</P>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 contBox1">
+                    <img src="img/02.png" alt="" class="img-responsive">
+                    <P>從專業職能測驗來評估最適任的職務，做為轉職規劃的參考。</P>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 contBox1">
+                    <img src="img/03.png" alt="" class="img-responsive">
+                    <P>透過職能測驗找到最適合的求職者，降低企業人員流動率。</P>
+                </div>
+                <img src="img/fly1.png" alt="" class="abs fly1">
+            </div>
+            <!--第2段 bn-->
+            <div class="row">
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 contBn2 rel">
+                    <span>最根本的你，適合哪些工作?</span>
+                    <h4>透過測驗可以發現自己的潛在能力</h4>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 contBn2 rel">
+                    <div class="svgBox2">
+                        <svg version="1.1" id="" viewBox="0 0 340 340" preserveAspectRatio="xMinYMin meet" width="100%" height="100%" style="">
+                            <style type="text/css">
+                                .st0{fill:none;stroke:#41B4B0;stroke-miterlimit:10;}
+                                .st1{fill:#41B4B0;}
+                            </style>
+                            <path class="st0" d="M17.9,134.1c44.8-84.9,150-117.4,234.9-72.6c67.9,35.9,93.9,120,58,187.9c-28.7,54.3-96,75.1-150.3,46.4c-43.5-22.9-60.1-76.8-37.1-120.3c18.4-34.8,61.4-48.1,96.2-29.7c27.8,14.7,38.5,49.1,23.8,77c-11.7,22.3-39.3,30.8-61.6,19c-17.8-9.4-24.6-31.5-15.2-49.3c7.5-14.2,25.2-19.7,39.4-12.2c11.4,6,15.8,20.1,9.7,31.5"/>
+                            <circle class="st1" cx="0" cy="0" r="7.2"> 
+                                <animateMotion dur="10s" path="M17.9,134.1c44.8-84.9,150-117.4,234.9-72.6c67.9,35.9,93.9,120,58,187.9c-28.7,54.3-96,75.1-150.3,46.4c-43.5-22.9-60.1-76.8-37.1-120.3c18.4-34.8,61.4-48.1,96.2-29.7c27.8,14.7,38.5,49.1,23.8,77c-11.7,22.3-39.3,30.8-61.6,19c-17.8-9.4-24.6-31.5-15.2-49.3c7.5-14.2,25.2-19.7,39.4-12.2c11.4,6,15.8,20.1,9.7,31.5" repeatCount="indefinite" rotate="auto" keyPoints="0;1;0" keyTimes="0;.5;1"/> 
+                            </circle>
+                        </svg>
+                    </div>
+                    <img src="img/bn3.png" alt="" class="ast2">
+                    <img src="img/fly2.png" alt="" class="abs fly2">
+                    <img src="img/fly3.png" alt="" class="abs fly3">
+                </div>
+            </div>
+            <!--第2段 星球工作類型-->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="contBox2">
+                        <div class="cover">
+                           <div class="changeBox" style="visibility: visible;">
+                                <div class="row" >
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div id="infntUra" class="anmt">
+                                            <img src="img/s5-1.png" alt="" style="height:100%;left:0px;top:0px;" class="abs">
+                                            <img src="img/white.png" alt="" class="imgW">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                        <ul>
+                                            <li><h2>天王星 研究型</h2></li>
+                                            <li style="padding:0 0 30px;">Uranus</li>
+                                            <li>擁有打破砂鍋問到底的精神，喜歡汲取知識追求真相，擅長思考與分析，也很願意傳播各種知識。偏向需要思考、組織理解的開發性活動。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="changeBox">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div id="infntMer" class="anmt">
+                                            <img src="img/s2-1.png" alt="" style="height:100%;left:0px;top:0px;" class="abs">
+                                            <img src="img/white.png" alt="" class="imgW">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                        <ul>
+                                            <li><h2>水星 業務型</h2></li>
+                                            <li style="padding:0 0 30px;">Mercury</li>
+                                            <li>處事圓融、做事彈性大，擅於與人溝通協調，願意追求較具挑戰性的目標。偏向與人接觸，進行溝通協調並進行心理說服的活動。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="changeBox">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div id="infntNep" class=" anmt">
+                                            <img src="img/s1-1.png" alt="" style="height:100%;left:0px;top:0px;" class="abs">
+                                            <img src="img/white.png" alt="" class="imgW">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                        <ul>
+                                            <li><h2>海王星 服務型</h2></li>
+                                            <li style="padding:0 0 30px;">Neptune</li>
+                                            <li>熱於協助、指導他人，擅於同理他人情緒並喜歡在團隊工作。偏向提供時間、產品、地點進行各種利益或心理滿足的情緒勞務活動。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="changeBox">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div id="infntPlu" class="anmt">
+                                            <img src="img/s2-1.png" alt="" style="height:100%;left:0px;top:0px;" class="abs">
+                                            <img src="img/white.png" alt="" class="imgW">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                        <ul>
+                                            <li><h2>冥王星 商業型</h2></li>
+                                            <li style="padding:0 0 30px;">Pluto</li>
+                                            <li>能夠洞徹環境掌握趨勢並做出最適當的選擇，行事沉著冷靜。偏向與時事結合並能夠創造契機並影響他人的目的性活動。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="changeBox">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div id="infntVen" class="anmt">
+                                            <img src="img/s3-1.png" alt="" style="height:100%;left:0px;top:0px;" class="abs">
+                                            <img src="img/white.png" alt="" class="imgW">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                        <ul>
+                                            <li><h2>金星 藝術型</h2></li>
+                                            <li style="padding:0 0 30px;">Venus</li>
+                                            <li>重視感受，擅於表達內心的情感，具有自己的審美價值觀。偏向需要獨立自主、無規則可循且較無形之創造性的活動。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="changeBox">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div id="infntMar" class="anmt">
+                                            <img src="img/s3-1.png" alt="" style="height:100%;left:0px;top:0px;" class="abs">
+                                            <img src="img/white.png" alt="" class="imgW">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                        <ul>
+                                            <li><h2>火星 社會型</h2></li>
+                                            <li style="padding:0 0 30px;">Mars</li>
+                                            <li>充滿能量與活力，擅於用自身的經驗或想法去影響、改變他人，看重自身價值的展現與社會義務的達成。偏向能夠幫助和提昇別人的活動。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="changeBox">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div id="infntSat" class="anmt">
+                                            <img src="img/s8.png" alt="" style="height:100%;left:0px;top:0px;" class="abs">
+                                            <img src="img/white.png" alt="" class="imgW">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                        <ul>
+                                            <li><h2>土星 應用型</h2></li>
+                                            <li style="padding:0 0 30px;">Saturn</li>
+                                            <li>能夠舉一反三，有效掌握所學知識並運用在實務上，或延伸發展其他可能性。偏向使用專業知識進行應用與統整或分析的活動。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="changeBox">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div id="infntJup" class="anmt">
+                                            <img src="img/s3-1.png" alt="" style="height:100%;left:0px;top:0px;" class="abs">
+                                            <img src="img/white.png" alt="" class="imgW">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                        <ul>
+                                            <li><h2>木星 領導型</h2></li>
+                                            <li style="padding:0 0 30px;">Jupiter</li>
+                                            <li>能辨識團隊文化及了解團隊成員的能力及特性，帶領團隊成功地完成任務。偏向組織與主導團體，並進行策略規劃與任務分配管理型活動。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="changeBox">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        <div id="infntEar" class="anmt">
+                                            <img src="img/s7-1.png" alt="" style="height:100%;left:0px;top:0px;" class="abs">
+                                            <img src="img/white.png" alt="" class="imgW">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                        <ul>
+                                            <li><h2>地球 傳統型</h2></li>
+                                            <li style="padding:0 0 30px;">Earth</li>
+                                            <li>喜歡一步一步按計劃辦事，遵守規章制度，做事細心且謹慎，穩定性很高不易搖擺決定。偏向清楚明確、規範、有序的任務性活動。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="btn2" id="btnL" style="left:0;">
+                            <i class="icon-icon-08"></i>
+                        </div>
+                        <div class="btn2" id="btnR" style="right:0;">
+                            <i class="icon-icon-07" style="padding-left:5px;"></i>
+                        </div>
+                        <div class="starList hidden-xs"><div class="chg"></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    </div>
+                </div>
+            </div>
+            <!--第3段-->
+            <div class="row contBox3">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contList">
+                    <h3>
+                        <i class="icon-icon-04"></i> 報告範例 
+                        <i class="icon-icon-05"></i>
+                    </h3>
+                </div>
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-12 hidden-xs">
+                            <img src="img/repo.png" alt="" class="img-responsive">
+                        </div>
+                        <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                            <img src="img/repo2.png" alt="" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+                <!--第3段 選項2-->
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contList">
+                    <h3>
+                        <i class="icon-icon-03"></i> 全面分析15項職能
+                        <i class="icon-icon-05"></i>
+                    </h3>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h3><b>職能是與工作有關，並能預測或影響行為或績效的綜合特質。</b></h3>
+                    <h4>九大職能星歸納出台灣職場重視的15個向度，各向度定義如下：</h4>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="whiteBG">
+                                <h3>成就動機</h3>
+                                <h4>個人從事自己認為重要或有價值的工作時，會向困難桃戰、努力以赴，並且力求完美。</h4>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="whiteBG">
+                                <h3>工作控管</h3>
+                                <h4>能區分工作任務之優先順序，並有效分配時間和資源，確實掌握工作流程和進度。</h4>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="whiteBG">
+                                <h3>團隊精神</h3>
+                                <h4>能與組織成員共同合作、分享重要資訊，並能增加成員參與感以達成目標或工作任務。</h4>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="whiteBG">
+                                <h3>負責承擔</h3>
+                                <h4>個針對自己的行動與決定所造成之結果負責，不會以他人不佳作為藉口，且確實達到工作要求。</h4>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="whiteBG">
+                                <h3>執行能力</h3>
+                                <h4>能徹底成功完成工作任務，並將組織策略或工作計畫轉化為行動並有效落實，達成目標。</h4>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="whiteBG">
+                                <h3>溝通協調</h3>
+                                <h4>能清楚表達自己的想法，並具體展現出來，並將原先各自不同的意見，整合一致的共識。</h4>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="whiteBG">
+                                <h3>人脈拓展</h3>
+                                <h4>有能力利用自己的知識、見解或特質影響他人，建立或維持緊密、溫暖的關係和聯繫網路。</h4>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="whiteBG">
+                                <h3>顧客關係</h3>
+                                <h4>以顧客觀點為主，能主動瞭解、滿足甚至預測顧客之需求，並且與顧客維持良好的關係。</h4>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="whiteBG">
+                                <h3>同理關懷</h3>
+                                <h4>能傾聽及體會他人的想法、感覺及考量並對他人的感覺感同身受。</h4>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="whiteBG">
+                                <h3>自我提升</h3>
+                                <h4>對於自我要求較高，會持續尋找及善用各種學習發展機會，達到提高自我競爭力的目的。</h4>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="whiteBG">
+                                <h3>適應能力</h3>
+                                <h4>在面對工作內容和情境變動時，可以快速了解改變並依照情況需求來調整行為以適應改變。</h4>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="whiteBG">
+                                <h3>抗壓能力</h3>
+                                <h4>在工作和任務中遭遇壓力時，能保持穩定之情緒，不以防衛或退縮的態度，維持應有的表現。</h4>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="whiteBG">
+                                <h3>正向樂觀</h3>
+                                <h4>對一切事物採正面看法的觀點，遭遇困難和挫折時，相信自己有足夠的能力可以承受一切。</h4>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="whiteBG">
+                                <h3>分析思考</h3>
+                                <h4>能蒐集彙整相關資訊，並能有系統、條理分明的解析複雜問題，進而推論出解決的方法。</h4>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="whiteBG">
+                                <h3>創造能力</h3>
+                                <h4>不會受到現有框架的限制，能提出不同于傳統之想法。</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--第3段 選項3-->
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contList">
+                    <h3>
+                        <i class="icon-icon-02"></i> 理論基礎與信效度檢核
+                        <i class="icon-icon-05"></i>
+                    </h3>
+                    
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h3><b>職能冰山理論</b> <span style="font-size:16px;">Spencer ＆ Spencer （1993）</span></h3>
+                    <h4>人的潛在特質（包含動機、人格特質、價值觀等較深沉穩定部分）就像海面下的冰山，深層、不易訓練，卻是預測人們在複雜的工作情境及擔當重任時行為表現的重要指標，9大職能星測驗即為有效檢測潛在特質的有效工具。</h4>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="iceM">
+                                <div class="underIce"></div>
+                                <img src="img/ice.png" alt="" class="icemove">
+                                <div class="iceFont">
+                                    <h3 style="color:#15323e;">必備專業技能</h3>
+                                    <h3 style="color:#15323e;">特定專業知識</h3><br/><br/>
+                                    <h3>可決定行為的內在動機</h3>
+                                    <h3>人格與智力(個人特質)</h3>
+                                    <h3>對人、事、物的態度(價值觀)</h3>
+                                </div>
+                                <h3 class="f1">海面上冰山：<br/>易察覺、可訓練的後天知識與技能</h3>
+                                <h3 class="f2">海面下冰山：<br/>不易訓練與養成的天份、潛在能力</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <h3><b>信效度檢核</b></h3>
+                    <div class="whiteBG" style="margin:0 0 30px;">
+                        <h3>信度 <span style="font-size:16px;">reliability</span></h3>
+                        <h4>是指測驗的可靠性或一致性。<br/>
+                            信度好的指標在同樣或類似的條件下重複操作，可以得到一致或穩定的結果。<br/>
+                            以Cronbach's α測量內部一致性信度，9大職能星測驗各向度的信度α皆介於0.70~0.79之間。
+                        </h4>
+                    </div>
+                    <div class="whiteBG">
+                        <h3>效度 <span style="font-size:16px;">validity</span></h3>
+                        <h4>是指測驗的概念定義及操作化定義間是否契合。<br/>
+                            以統計學角度來說，測驗的準確度有兩種指標─信度與效度。<br/>
+                            以下分別說明<br/>
+                            <p>效標關聯效度：</p>
+                            以職場適應與表現為效標關聯效度進行檢核，9大職能星測驗效標關聯效度的均達顯著水準(P＜.001)，相關係數介於0.69~0.78之間。<br/>
+                            <p>專家效度：</p>
+                            經過1111人資顧問專業顧問團隊檢核，九大職能星測驗具備專家效度。
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <!--第4段-->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="contBox4">
+                        <h3>知名企業與教育單位認可合作</h3>
+                        <hr>
+                        <div class="row rel">
+                            <div class="col-xs-12 overHide">
+                                <!-- 第1頁 -->
+                                <div class="logoPage" style="display:block;">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="https://www.1111.com.tw/corp/51852249/"><img src="img/logo/Logo_B_01.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_B_02.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_B_03.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_B_04.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_B_05.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_B_06.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_07.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_08.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_09.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_10.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_11.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_12.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 第2頁 -->
+                                <div class="logoPage">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="https://www.1111.com.tw/corp/51852249/"><img src="img/logo/Logo_B_13.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_B_14.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_B_15.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_B_16.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_B_17.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_B_18.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_19.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_20.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_21.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_22.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_23.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_24.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 第3頁 -->
+                                <div class="logoPage">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="https://www.1111.com.tw/corp/51852249/"><img src="img/logo/Logo_B_25.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_B_26.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_B_27.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_B_28.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_B_29.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_B_30.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_31.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_32.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_33.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_34.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_35.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                                            <div class="stableHight">
+                                                <a href="#"><img src="img/logo/Logo_S_36.jpg" alt="" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <!--按鈕-->
+                            <div class="btn2" id="pageL" style="left:0;">
+                                <i class="icon-icon-08"></i>
+                            </div>
+                            <div class="btn2" id="pageR" style="right:0;">
+                                <i class="icon-icon-07" style="padding-left:5px;"></i>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="footer" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footBg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul>
+                                    <li><a href="#">九大職能星</a></li>
+                                    <li><a href="#">開始測驗</a></li>
+                                    <li><a href="#">結果報告</a></li>
+                                    <li><a href="#">聯絡我們</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul>
+                                    <li><a href="#">其他測驗</a></li>
+                                    <li><a href="#">個人特質測驗</a></li>
+                                    <li><a href="#">TAT轉職測驗</a></li>
+                                    <li><a href="#">服務型職能測驗</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul>
+                                    <li><a href="#">其他服務</a></li>
+                                    <li><a href="#">職涯網</a></li>
+                                    <li><a href="#">訂閱電子報</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul class="icfSize">
+                                    <li><a href="#"></a></li>
+                                    <li>
+                                        <a href="#" class="icon-facebook"></a>
+                                        <a href="#" class="icon-google-plus"></a>
+                                        <a href="#" class="icon-linkedin2"></a>
+                                        <a href="#" class="icon-icon-10"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copyright">
+                    <h5 class="hidden-xs">建議您使用 google Chrome 瀏覽器以取得最佳、最快的瀏覽效果！</h5>
+                    <h5>全球華人股份有限公司版權所有 © 1111 Job Bank All Rights Reserved </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="coverB">
+        <div class="Cinfo">
+            <p>已符合再次施測的資格(距上次施測183天以上)查閱舊報告?</p>
+            <a href="cstar_report.htm"><button type="button" class="btnCheck">看舊報告</button></a>
+            <a href="cstar_start.htm"><button type="button" class="btnCheck">重新施測</button></a>
+        </div>
+    </div>
+    <div id="gotop">
+        <div class="line" style="transform: rotate(45deg);top:22px;right:11px;"></div>
+        <div class="line" style="transform: rotate(-45deg);top:22px;right:21px;"></div>
+    </div>
+</body>
+</html>

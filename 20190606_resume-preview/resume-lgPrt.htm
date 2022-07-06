@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>列印求職者履歷表</title>
+    <!--css-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="" rel="stylesheet" id="firefoxPrint">
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        var bigFont;
+        $(document).ready(function(){
+            bigFont = true;
+            var agent = navigator.userAgent.toLowerCase();
+            /*瀏覽器判斷增加列印css*/
+            if(agent.indexOf('firefox')>0){
+                $("#firefoxPrint").attr("href","111.css");
+            }
+            $(".menuBox button").click(function(){
+                var b = $(this).attr("data-btn");
+                switch(b){
+                    case "1":
+                        var a;
+                        if($(".pic").css("display") == "none"){
+                            $(".pic").removeAttr("style");
+                            a = "隱藏大頭照";
+                        }
+                        else{
+                            $(".pic").hide();
+                            a = "顯示大頭照"
+                        }
+                        $(this).text(a);
+                        break;
+                    case "2":
+                        if($(".content").css("fontSize") == "16px" ){
+                            $(".content,h4:not(.topBar h4)").css({fontSize:13,lineHeight:"18px"});
+                            $(".education li").css({lineHeight:"22px"});
+                            $(".l").css({width:"10%"});
+                            $(".lineBox hr").css({marginTop:"15px"});
+                            $(this).text("切換成大字型");
+                            $("#bigFont").attr("href","");
+                            bigFont = false;
+                        }
+                        else{
+                            $(".content,h4,.education li,.l,.lineBox hr").removeAttr("style");
+                            $(this).text("切換成小字型");
+                            $("#bigFont").attr("href","css/lgPrt_big.css");
+                            bigFont = true;
+                        }
+                        break;
+                    case "3":
+                        if(!bigFont){
+                            $(".content,h4,.education li,.l,.lineBox hr").removeAttr("style");
+                            setTimeout(function(){
+                                $(".content,h4:not(.topBar h4)").css({fontSize:13,lineHeight:"18px"});
+                                $(".education li").css({lineHeight:"22px"});
+                                $(".l").css({width:"10%"});
+                                $(".lineBox hr").css({marginTop:"15px"});
+                            },400);
+                        }
+                        window.print();
+                        break;
+                    case "4":
+                        window.close();
+                        break;
+                } 
+            });
+        });
+    </script>
+    <style type="text/css">
+        body{font-family: 微軟正黑體;color: #333;letter-spacing: 0.5px;font-size: 16px;line-height: 26px;}
+        h5{font-size: 12px;font-weight: 600;}
+        h4{font-size: 14px}
+        h3{font-size: 18px}
+        h2{font-size: 21px;display: inline-block;}
+        .w8{width: 8%}
+        .w10{width: 10%}
+        .w15{width: 15%;}
+        .w20{width: 20%}
+        .w24{width: 24%;}
+        .w30{width: 30%;}
+        .w53{width: 53%;}
+        .w80{width: 80%;}
+        .w75{width: 75%;}
+        ul{padding: 0;margin: 0;}
+        ul li{list-style: none;vertical-align: top;}
+        a:hover,a:link,a:visited,a:active{text-decoration:none;}
+        .adown{width: 25px;height: 15px;background: url(images/adown.png)97% center no-repeat;display: inline-block;}
+        .aup{width: 25px;height: 15px;background: url(images/aup.png)97% center no-repeat;display: inline-block;}
+        .triangle{width: 0;height: 0;border-style: solid;border-width: 10px 13px 0 13px;border-color: #248dc1 transparent transparent transparent;position: absolute;bottom: -7px;right: 125px;z-index: 999;}
+        
+        .gFont{color: #666;}
+        .bFont{color: #333;}
+        .b3Font{color: #b3b3b3;padding: 0 6px;}
+        .rFont{color: #c90202;}
+        
+        .topBar{background: #f2f2f2;text-align: center;}
+        .header{background: #fff;height: 70px;width: 1170px;}
+        .logo{margin: 16px 0;}
+        .menuBox{margin-top: 30px;text-align: right;}
+        .menuBox button{background: #4f6b92;border: 0;color: #fff;padding: 0px 15px;font-size: 14px;display: inline-block;border-radius: 6px;margin-right: 5px;box-shadow: 2px 2px 2px #b9c2ca;}
+        .menuBox button:hover{background: #7895b2;}
+        
+        .bBar{height: 5px;background: #248dc1;color: #fff;}
+        
+        .content{background: #f0f0f0;font-size: 16px;}
+        .contBox{box-shadow: 1px 1px 5px #999;background: #fff;padding: 15px;}
+        .blueBar{width: 100%;height: 30px;background: #199ed8;color: #fff;line-height: 30px;padding-left: 15px;padding-right: 15px;box-shadow: 1px 1px 5px #999;margin-top: 20px;}
+        .blueBar h4{display: inline-block;margin: 0 8px 0 0;}
+        .blueBar>div{display: inline-block;width: 100%;vertical-align: top;}
+        
+        .mainBox{border-bottom: 1px solid #c2d8e1;padding-bottom: 10px;padding-top: 10px;}
+        .mainBox:last-child{border: 0;}
+        .mainBox>div{display: inline-block;vertical-align: top;}
+        .mainBox h4,.mainBox h3,.mainBox h2,.mainBox h1{display: inline-block;}
+        .personal{text-align: center;padding-right: 10px;padding-left: 10px;}
+        .pic{width: 110px;border: 5px solid #fff;display: inline-block;box-shadow: 2px 2px 5px #999;overflow: hidden;}
+        .lineBox{position: relative;margin: 15px 0;}
+        .lineBox hr{border-top: 1px solid #ccc;margin-top: 30px;}
+        .lineBox .triangle{border-width: 6px 10px 0 10px;border-color: #ccc transparent transparent transparent;position: absolute;top: 0px;right: 87px;}
+        .mainBox .memo{line-height: 20px;text-align: left;color: #666;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;}
+        
+        .personalInfo{padding: 0 10px;}
+        .personalInfo h2{margin-top: 0;font-weight: 600;}
+        .personalInfo b{display: block;margin-bottom: 4px;}
+        .personalInfo>span{font-size: 14px;color: #666;}
+        .personalInfo .pTag{color: #248dc1;border: 1px solid #3e93ca;padding: 0 8px;margin: 0 4px;font-size: 12px;}
+        .lr li{display: inline-block;vertical-align: top;margin: 2px 0;}
+        .l{color: #666;width: 12%;}
+        .r{font-weight: 600;width: 87%;}
+        .l2{color: #666;width: 7%;}
+        
+        .mRight{padding: 0 10px;}
+        .mLeft{text-align: right;color: #1385b7;font-weight: 900;font-size: 18px;padding: 3px 10px 0 0;}
+        
+        .education li{color: #1385b7;display: inline-block;padding: 0px 0 4px 10px;line-height: 30px;}
+        .education li:first-child{border-left: 5px solid #1385b7;font-weight: 600;padding: 0px 0 0px 10px;}
+        .education h4{margin: 0;}
+        .education .w15{line-height: 20px;margin-top: 5px;}
+        
+        .company{padding-left: 10px;border-left: 5px solid #1385b7;color: #1385b7;margin-top: 8px;}
+        .company h3{font-weight: 600;margin: 0;width: 70%;}
+        .company h4{text-align: right;width: 180px;}
+        .company b{display: block;}
+        .conpany2{padding-left: 15px;}
+        .ud{color: #666;}
+        .u{margin: 4px 0;}
+        .d{border-left: 1px solid #ccc;padding-left: 15px;margin-left: 6px;color: #333;font-weight: 600;}
+        .mRight a{text-decoration:underline;vertical-align: middle;}
+        
+        .footer{text-align: center;padding: 5px;}
+        .footer a{text-decoration: underline;}
+        
+        
+        
+        /*xs*/
+        @media only screen and (max-width: 767px){
+            body{font-size: 14px; line-height: 20px;}
+            h5{font-size: 8px;}
+            h4{font-size: 12px;}
+            h3{font-size: 14px;}
+            h2{font-size: 16px;}
+            .header{width: 100%;height: 81px;}
+            .logo{margin: 5px 0;}
+            
+            .menuBox{display: none;}
+/*            .blueBar .text-left{width: 100%;}*/
+            
+            .w75,.w24{width: 100%;}
+            .mLeft{text-align: left;}
+            
+            .l{width: 100%;}
+            .r{width: 100%;}
+            .l2{width: 100%;}
+            .education .w15{width: 100%;}
+            .education .w53{width: 100%;}
+            .education .w30{width: 100%;}
+            .company h3{width: 100%;vertical-align: top;}
+            .company h4{width: 100%;margin: 0;}
+        }
+        /*sm*/
+        @media (min-width: 768px) and (max-width: 991px){
+            .header{width: 750px;height: 81px;}
+            .logo{margin: 5px 0;}
+            .menuBox{margin-top: 10px}
+/*            .blueBar .text-left{width: 100%;}*/
+            .lineBox .triangle{right: 44px;}
+            .l{width: 18%;}
+            .r{width: 80%;}
+            .l2{width: 10%;}
+            .education .w15{width: 22%;}
+            .education .w53{width: 47%;}
+            .education .w30{width: 28%;}
+            .company h3{width: 63%;vertical-align: top;}
+            .company h4{width: 130px;margin: 0;}
+        }
+        /*md*/
+        @media (min-width: 992px) and (max-width: 1199px){
+            .header{width: 970px;}
+            .lineBox .triangle{right: 63px;}
+            .l{width: 14%;}
+            .r{width: 85%;}
+            .education .w15{width: 16%;}
+            .education .w53{width: 46%;}
+            .education .w30{width: 36%;}
+            .company h3{width: 63%;}
+        }
+        /*lg*/
+        @media (min-width: 1200px){}
+        
+        @media print{
+            .menuBox.col-sm-9.col-md-10.col-lg-10,.bBar.col-xs-12{display: none;}
+            .blueBar{margin: 0;border-bottom: 1px solid #000;}
+            .logo,.topBar h4{margin-top: 0;}
+            
+            body{font-size: 12pt;}
+            h5{font-size: 8pt;}
+            h4{font-size: 10pt}
+            h3{font-size: 14pt}
+            h2{font-size: 16pt;}
+            a[href]:after {content: none !important;}
+            .wp,.container,.content{width: 1350px;}
+            .content .col-xs-offset-1{margin: 0;}
+            .contInfo{border: 1px solid #ccc;margin-top: 0;}
+            .mainBox .w24{width: 20%;}
+            .mainBox .w75{width: 79%;}
+            .education .w30{text-align: right;}
+            .education .w15{width: 12%;}
+            .education .w53{width: 56%;}
+            .company h4{width: 220px;}
+            .l{width: 10%;}
+            .r{width: 89%;}
+            .mainBox{display: flex;width: 100%;}
+            /*火狐才需要*/
+            .content >.col-xs-10.col-xs-offset-1{width: 100%;}
+        }
+        @page{
+            size: A4 portrait;
+            margin: 0.5cm;
+            orphans:4;
+            widows:2;
+        }
+    </style>
+    <link href="css/lgPrt_big.css" rel="stylesheet" id="bigFont">
+</head>
+<body>
+    <div class="wp">
+        <div class="container">
+            <div class="row">
+                <div class="topBar col-xs-12">
+                    <h4>主動應徵名單列印 共2人</h4>
+                </div>
+                <div class="header">
+                    <div class="col-xs-3 col-sm-3 col-md-2"><img src="images/logo.png" alt="" class="logo"></div>
+                    <div class="menuBox col-sm-9 col-md-10 col-lg-10">
+                        <button type="button" data-btn="1">隱藏大頭照</button>
+                        <button type="button" data-btn="2">切換成小字型</button>
+                        <button type="button" data-btn="3">列印</button>
+                        <button type="button" data-btn="4">關閉</button>
+                    </div>
+                </div>
+                <div class="bBar col-xs-12"></div>
+                <div class="content col-xs-12">
+                    <div class="col-xs-10 col-xs-offset-1">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="blueBar">
+                                    <div class="text-left">
+                                        <h4>1. 投遞時間：2019/06/24</h4>
+                                        <h4>最後修改：2019/08/02</h4>
+                                        <h4>最後登入：2019/08/02</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="contBox">
+                                    <div class="mainBox">
+                                        <div class="w24 personal">
+                                            <div class="pic"><img src="images/pic.jpg" alt="" width="100%;"></div>
+                                            <h4>履歷狀態：關閉中</h4>
+                                            <div class="lineBox"><hr><span class="triangle"></span></div>
+                                            <h4 class="memo">這邊會顯示輸入的便利貼內容最多3行，這邊會顯示輸入的便利貼內容最多3行。最多3行最多3行最多3行</h4>
+                                        </div>
+                                        <div class="w75 personalInfo">
+                                            <h2>王大明</h2>
+                                            <span>代碼50973970</span>
+                                            <span class="pTag">守約</span>
+                                            <a class="pTag" href="123456846413513513131">影音</a>
+                                            <a class="pTag" href="">九大</a>
+                                            <b>24歲 中國香港特別行政區 男(待業中)<span class="b3Font">|</span>83年次<span class="b3Font">|</span>1994年<span class="b3Font">|</span>雙子座<span class="b3Font">|</span>狗</b>
+                                            <ul class="lr">
+                                                <li class="l">身高體重</li>
+                                                <li class="r">175公分<span class="b3Font">/</span>60公斤</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">兵役狀況</li>
+                                                <li class="r">待役(符合研發替代役資格)</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">婚姻狀況</li>
+                                                <li class="r">單身</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">聯絡時間</li>
+                                                <li class="r">上午10：00至下午18：00</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">聯絡電話</li>
+                                                <li class="r">0951234567<span class="b3Font">|</span>(02) 12345678<span class="b3Font">|</span>其他電話文字123456789132456789</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">電子郵件</li>
+                                                <li class="r">123456@gmail.com</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">聯絡地址</li>
+                                                <li class="r">台北市松山區XXXXXXX路</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">持有駕照</li>
+                                                <li class="r">普通重型機車(自備)、普通小型車(自備)</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">其他身份</li>
+                                                <li class="r">身心障礙者(有殘障手冊;視覺障礙中度、智能障礙重度、重要器官失去功能重度;輔助工具 輪椅)、原住民(鄒族),</li>
+                                            </ul>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="mainBox">
+                                        <div class="w24 mLeft">教育程度</div>
+                                        <div class="w75 mRight">
+                                            <ul class="education">
+                                                <li class="w15">碩士 <h4>畢業</h4></li>
+                                                <li class="w53">
+                                                    國立交通大學<br/>
+                                                    <b class="bFont">資訊工程學系 (資訊工程學類)</b><br/>
+                                                </li>
+                                                <li class="w30"><h4 class="gFont">(台灣)2015/09 ~ 2017/06</h4></li>
+                                            </ul>
+                                            <ul class="education">
+                                                <li class="w15">大學 <h4>畢業</h4></li>
+                                                <li class="w53">
+                                                    國立交通大學<br/>
+                                                    <b class="bFont">資訊工程學系 (資訊工程學類)</b><br/>
+                                                    <b class="bFont">應用數學系 (應用數學學類)</b><br/>
+                                                </li>
+                                                <li class="w30"><h4 class="gFont">(台灣)2015/09 ~ 2017/06</h4></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mainBox">
+                                        <div class="w24 mLeft">應徵職務條件</div>
+                                        <div class="w75 mRight">
+                                            <ul class="lr">
+                                                <li class="l">理想職稱</li>
+                                                <li class="r">經營管理主管 (全職)<span class="b3Font">|</span>願意接受「派遣」工作</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">應徵類別</li>
+                                                <li class="r">經營管理主管、專案管理主管、軟體專案主管</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">期望薪資</li>
+                                                <li class="r">月薪 NT. 80,000 - 100,000 元</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">可上班日</li>
+                                                <li class="r">經錄取後兩週</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">上班地點</li>
+                                                <li class="r">新北市蘆洲區、新北市新店區、台北市</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">理想產業</li>
+                                                <li class="r">軟體／網路全部、婚紗／攝影／美髮／美容全部、住宿</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">上班時段</li>
+                                                <li class="r">日班,中班,假日班,短期(六個月內)</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">休假制度</li>
+                                                <li class="r">週休二日,固定休六、日</li>
+                                            </ul>
+                                            <b>願意接受「企業實習」工作 / 時段：暑期實習、學期實習、學年實習</b>
+                                        </div>
+                                    </div>
+                                    <div class="mainBox">
+                                        <div class="w24 mLeft">工作經驗</div>
+                                        <div class="w75 mRight">
+                                            <ul class="lr">
+                                                <li class="l">累計年資</li>
+                                                <li class="r">5~6年工作經驗</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">累計經驗</li>
+                                                <li class="r">網頁程式設計師 4~5年<span class="b3Font">|</span>廣告AE 0~1年</li>
+                                            </ul>
+                                            <div class="company">
+                                                <h3>一家公司名稱很長的公司</h3>
+                                                <h4 class="gFont">(台灣)2014/09 ~ 2010/05</h4>
+                                                <b>網頁設計師（全職-2年1個月）</b>
+                                            </div>
+                                            <div class="conpany2">
+                                                <ul class="lr">
+                                                    <li class="l">產業規模</li>
+                                                    <li class="r">非金屬家具／家飾／裝設品製造 （501～1000人）</li>
+                                                </ul>
+                                                <ul class="lr">
+                                                    <li class="l">工作待遇</li>
+                                                    <li class="r gFont">求職者隱藏</li>
+                                                </ul>
+                                                <ul class="lr">
+                                                    <li class="l">工作地點</li>
+                                                    <li class="r">台北市松山區</li>
+                                                </ul>
+                                                <ul class="lr">
+                                                    <li class="l">工作說明</li>
+                                                    <li class="r">網站程式ASP撰寫資料庫管理ASP系統規劃撰寫維護對外合作案，網站程式ASP撰寫資料庫管理ASP系統規劃撰寫維護對外合作案。</li>
+                                                </ul>
+                                            </div>
+                                            <div class="company">
+                                                <h3 class="gFont">(求職者隱藏)</h3>
+                                                <h4 class="gFont">(台灣)2014/09 ~ <span class="rFont">在職中</span></h4>
+                                                <b>字很多的職稱long long name（兼職-1年0個月）</b>
+                                            </div>
+                                            <div class="conpany2">
+                                                <ul class="lr">
+                                                    <li class="l">產業規模</li>
+                                                    <li class="r">非金屬家具／家飾／裝設品製造 （100人）</li>
+                                                </ul>
+                                                <ul class="lr">
+                                                    <li class="l">工作待遇</li>
+                                                    <li class="r">月薪 30,000元、保障年薪14個月</li>
+                                                </ul>
+                                                <ul class="lr">
+                                                    <li class="l">工作地點</li>
+                                                    <li class="r">台北市松山區</li>
+                                                </ul>
+                                                <ul class="lr">
+                                                    <li class="l">工作說明</li>
+                                                    <li class="r">
+                                                        網站程式ASP撰寫<br/>
+                                                        ASP系統規劃撰寫<br/>
+                                                        資料庫管理<br/>
+                                                        維護對外合作案<br/>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mainBox">
+                                        <div class="w24 mLeft">校園幹部/社團經驗</div>
+                                        <div class="w75 mRight">
+                                            <ul class="lr">
+                                                <li class="l">名　　稱</li>
+                                                <li class="r">網球社</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">職　　務</li>
+                                                <li class="r">社長</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">累計年資</li>
+                                                <li class="r">01年12個月</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mainBox">
+                                        <div class="w24 mLeft">語文能力</div>
+                                        <div class="w75 mRight">
+                                            <ul class="lr">
+                                                <li class="l2">英文</li>
+                                                <li class="r">聽-中等<span class="b3Font">|</span>說-中等<span class="b3Font">|</span>讀-中等<span class="b3Font">|</span>寫-中等</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l2">日文</li>
+                                                <li class="r">聽-中等<span class="b3Font">|</span>說-中等<span class="b3Font">|</span>讀-中等<span class="b3Font">|</span>寫-中等</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l2">台語</li>
+                                                <li class="r">略通</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mainBox">
+                                        <div class="w24 mLeft">電腦專長</div>
+                                        <div class="w75 mRight">
+                                            <ul class="ud">
+                                                <li class="u">辦公室應用</li>
+                                                <li class="d">Word,Excel,PowerPoint,Outlook</li>
+                                            </ul>
+                                            <ul class="ud">
+                                                <li class="u">電腦繪圖 / 影像處理 / 工程製圖</li>
+                                                <li class="d">ASP,JavaScript,Visualbasic,VBScript,XML ,ASP.NET ,VB.NET ,C# .NET ,AJAX ,HTTP ,jQuery</li>
+                                            </ul>
+                                            <ul class="ud">
+                                                <li class="u">中文打字</li>
+                                                <li class="d">新注音每分鐘50字</li>
+                                            </ul>
+                                            <ul class="ud">
+                                                <li class="u">英文打字</li>
+                                                <li class="d">每分鐘50字</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mainBox">
+                                        <div class="w24 mLeft">專業證照</div>
+                                        <div class="w75 mRight">
+                                            <ul class="ud">
+                                                <li class="u">設計／美工相關類</li>
+                                                <li class="d">IT Expert 3D動畫科技藝術-模型製作與材質設定專業人員-角色製作,IT Expert 3D動畫科技藝術-模型製作與材質設定專業人員-場景製作</li>
+                                            </ul>
+                                            <ul class="ud">
+                                                <li class="u">電腦／網路相關類</li>
+                                                <li class="d">Sybase Certified Professional -- Adaptive Server Administrator,Sybase Certified Professional -- Enterprise Application Server Developer</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mainBox">
+                                        <div class="w24 mLeft">工作技能</div>
+                                        <div class="w75 mRight">
+                                            <ul class="ud">
+                                                <li class="u">補教進修</li>
+                                                <li class="d">幼兒教保活動規劃與執行的能力,瞭解兒童產業趨勢與服務能力</li>
+                                            </ul>
+                                            <ul class="ud">
+                                                <li class="u">其他</li>
+                                                <li class="d">測試文字測試文字測試文字測試文字測試文字測試文字測試文字測試文字測試文字測試文字測試文字測試文字測試文字測試文字測試文字測試文字測試文字測試文字測試文字測試文字</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mainBox">
+                                        <div class="w24 mLeft">自　　傳</div>
+                                        <div class="w75 mRight">
+                                            <p>我擁有全盤思考的能力，可以綜合內外環境因素。我總是能有條理的分析，做出準確的判斷，將可能面臨的風險降至最低。在工作能力方面，我在工作上可以反省自己的錯誤、做出回應、調整並改正，並透過各種管道來了解自己，更好的規畫自我，我興趣廣泛，能夠多元善用各方資源。同時，我喜歡嘗試新事物與新方法，我能夠運用這些資源精進我在求職領域的專業知識。<br/><br/>
+
+                                            因為不必當兵，我很幸運的可以省下更多時間，在職場上有所發輝。我會將學校裡學到的知識充份運用在工作上，以專業思維時時思考，如何使工作更佳有效率、更加創新。<br/><br/>
+
+                                            我的上一個工作是在全球華人股份有限公司擔任行銷企劃專員，負責協助社群行銷與廣告投放。，任職2 年 6 個月，而我擁有的工作經驗累計已有1~2年工作經驗之久。由於我對工作的熱忱以及極佳的領悟力，我總是能用最快的速度，將舊的業務處理得更妥善，並且能迅速熟悉新的業務。<br/><br/>
+
+                                            現今社會中，工作隨時都需要運用到電腦，所以具備資訊能力已經是進入職場工作的要件。我能有效的運用Android,Word,Excel,PowerPoint,Windows XP,Windows 7,Word,Outlook,SPSS,Openoffice Draw,AS400,LINUX,OS,等。除此之外我也取得了TOEIC 多益(Gold860-990分),JLPT第一級,After Effects,AutoCad 3D,3D Studio Max 認證,員工發展管理師,大陸的專業資格證明，但目前仍持續進修，希望能繼續提升實力。<br/><br/>
+
+                                            素聞貴公司前瞻性的經營理念以及完善的人才培育計畫，我相當期待能在這次人員甄選中脫穎而出，希望貴公司能給我面試的機會。</p>
+                                        </div>
+                                    </div>
+                                    <div class="mainBox">
+                                        <div class="w24 mLeft">附件作品</div>
+                                        <div class="w75 mRight">
+                                            <a href="">附件1我的作品</a>、
+                                            <a href="">附件2我的作品</a>、
+                                            <a href="">附件3我的作品</a>
+                                        </div>
+                                    </div>
+                                    <div class="mainBox">
+                                        <div class="w24 mLeft">推薦人</div>
+                                        <div class="w75 mRight">
+                                            <b>王小明　創意無限設計有限公司(行銷部副理)</b>
+                                            <ul class="lr">
+                                                <li class="l">聯絡電話</li>
+                                                <li class="r">27776666<span class="b3Font">|</span>0933111222</li>
+                                            </ul>
+                                            <ul class="lr">
+                                                <li class="l">E-Mail</li>
+                                                <li class="r">12366547895541@gmail.com</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <h4 class="footer">本資料僅提供內部徵才使用，請勿做個資收集或其他用途，以避免觸犯 <a href="">個人資料保護法</a> 相關規定。</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

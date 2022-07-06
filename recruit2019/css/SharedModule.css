@@ -1,0 +1,27 @@
+.listTitle{color: #808080;width: 12%;text-align: right;vertical-align: top;display: inline-block;}
+.listCont{width: 85%;padding-left: 10px;position: relative;display: inline-block;}
+
+/*通訊錄寄件者*/
+.mailAdd{font-size: 13px;color: #666;width: 320px;display: inline-block;vertical-align: top;}
+.listCont .bntAddBook{position: absolute;right: 0;top: 5px;color: #fff;}
+.listCont a.bntAddBook:hover{color: #fff;}
+
+/*通訊錄副本收件人*/
+.sendBox{min-height: 20px;}
+.recipient{display: inline-block;border: 1px solid #ccc;height: 25px;line-height: 25px;padding: 0 10px;margin-right: 8px;position: relative;color: #333;}
+
+/*通知職務*/
+.fa-times{color: #808080;}
+.fa-times:hover{cursor: pointer;color: #4d4d4d;}
+
+/*附加檔案*/
+.btnAddFile+span{margin: 0 15px;color: #999;}
+.downloadFile{color: #1385b7;background: #e7ecf5;font-size: 13px;padding: 0 8px;text-decoration: none;display: inline-block;vertical-align: top;height: 23px;line-height: 23px;margin: 7px 20px 0 0;position: relative;}
+.downloadFile:first-child{margin-left:0;}
+.downloadFile i{margin-right: 3px;}
+.downloadFile .fa-times{position: absolute;top: 5px;right: -18px;}
+
+/*信件類別*/
+#mailSampleDiv{width:80%;display:inline-block;margin-right:15px;}
+
+

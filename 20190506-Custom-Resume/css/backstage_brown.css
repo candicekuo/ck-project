@@ -1,0 +1,26 @@
+﻿/*主題色*/
+.mbg{background: #6e4742;opacity: 0;}
+.mfont,.sbTitle span,.expBox p,.aboutMe h3,.exCount::before, .exCount::after,.amBox3 span::before{color: #6e4742;}
+.mbtn{color: #fff;background: #f9beb6;}
+.mbtn:hover{background: #be8677;cursor: pointer;}
+
+.leftBar .userName,.bTitle{color:#be8677;}
+.bTitle:before, .bTitle:after,.amBox2{background: #be8677;}
+/*.bg1{background: linear-gradient(135deg, #9e6760 0%,#edbbaa 36%,#edbbaa 59%,#b1676a 83%,#f9beb6 100%);}*/
+.bg1{background: linear-gradient(135deg, rgb(204, 140, 143) 0%, rgb(222, 147, 160) 10%, rgb(222, 147, 160) 27%, rgb(209, 117, 128) 36%, rgb(209, 117, 128) 47%, rgb(209, 117, 128) 60%, rgb(204, 140, 143) 68%, rgb(204, 140, 143) 100%);}
+.schoolBox,.bg2{background: #feefed;}
+.sbCont .triangle{border-color: transparent transparent transparent #feefed;}
+.schoolBox .sbCont,.spTitle1{background: #9e6760;}
+.circle{border: 3px solid #6e4742;}
+.separate{border-left: 2px solid #e0cdca;}
+.bg3,.bg4{background: #e6e3e2;}
+.spTitle2{background: #f9beb6;}
+.spTitle3{background: #b1676a;}
+.spTitle4{background: #83868c;}
+.expBox{box-shadow: 15px 5px 40px #e6e3e2;}
+.expBox .exCount{border-left: 15px solid #fdefed;}
+.amBox{border-top: 2px dotted #be8677;}
+
+
+
+

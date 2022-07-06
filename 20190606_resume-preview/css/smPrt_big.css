@@ -1,0 +1,14 @@
+@media print{
+    /**大字體*/
+    body .content .row{font-size: 16pt;line-height: 1.6em}
+    h5{font-size: 12pt;}
+    h4{font-size: 14pt}
+    h3{font-size: 18pt}
+    h2{font-size: 20pt;}
+    .l{width: 18%;}
+    .r{width: 80%;}
+    .l3{width: 24%;}
+    .r3{width: 74%;}
+    .w6.mLeft{line-height: 24px;font-size: 16pt;}
+
+}

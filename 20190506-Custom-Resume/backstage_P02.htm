@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>匯出履歷編輯器</title>
+    <!--css-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/backstage.css" rel="stylesheet">
+    <link href="css/backstage_P02_blue_main.css" rel="stylesheet">
+    <link href="" rel="stylesheet" id="mcolor">
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/changeM.js"></script>
+    <script type="text/javascript" src="js/backstage_menu.js"></script>
+    <!--輸出animate 匯出預覽用-->
+    <!-- <link href="css/animate.css" rel="stylesheet" type="text/css" media="all"> -->
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript">new WOW().init();</script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".mbg").animate({opacity:1},1000);
+            $(".rightBar").css("opacity",0).animate({opacity:1},1000);
+            
+            /*leftBar 外部連結開關*/
+            $(".linkBtn,.olClose").click(function(){
+                (this.className == "linkBtn")?$(".outLinkCtl").fadeIn(400):$(".outLinkCtl").fadeOut(200);
+            });
+            /*leftBar 外部連結 再編輯*/
+            $(".outLink").on("click",".reOl",function(){
+                $(".outLinkCtl").show(400);
+            });
+            /*leftBar 外部連結 圖標開關*/
+            $(".stMoveOL .rel i").click(function(){
+                var t = $(this).next();
+                if(t.css("display") == "block"){
+                    t.fadeOut(200);
+                }else{
+                    t.fadeIn(400).closest(".stMoveOL").siblings().children(".rel").children(".olTips").fadeOut();
+                }
+            });
+            /*leftBar 外部連結 圖標選擇*/
+            $(".olTips div").click(function(){
+                var t = $(this);
+                var a = this.className;
+                var b = t.closest(".stMoveOL").index(); t.parent().prev().attr("class",a).text("").css({backgroundSize:"93%",backgroundPositionX:0,backgroundPositionY:0,height:25,width:25});
+                $(".stMoveOL2 .viewIcon").eq(b).attr("class","viewIcon "+a).css("border",0);
+                t.closest(".olTips").fadeOut(200).closest("li").css("background","#eee");
+            });
+            /*leftBar 外部連結 清除*/
+            $(".olDel").click(function(){
+                var t = $(this);
+                var b = t.closest(".stMoveOL").index();
+                t.closest("li").prev().children().val("").removeAttr("style").end().prev().children("i").attr("class","material-icons").text("edit");
+                $(".stMoveOL2 .viewIcon").eq(b).attr("class","viewIcon").removeAttr("style");
+                t.closest(".stMoveOL").children("li:nth-child(2)").css("background","#999");
+                $(".PromptText").empty();
+            });
+            /*leftBar 外部連結 儲存*/
+            $(".olSave").click(function(){
+                var alink = [], error = false, pass=false;
+                var btnHtml = '';
+                $(".stMoveOL li:nth-child(2) i").each(function(i){
+                    var cn = this.className;
+                    var lv = $(this).closest("li").next().children().val();
+                    if(lv.length > 0 || (cn == "fbIcon"||cn == "inIcon"||cn == "trIcon"||cn == "beIcon")){
+                        pass=false;
+                        if(lv.length < 1)
+                        {
+                            $(".PromptText").empty().css({color:"#ff6f6d",fontWeight:600}).text("尚未輸入連結");
+                            $(this).closest("li").next().children().css("border","1px solid #ff6f6d");
+                            pass=true;
+                        }
+                        if(!(cn == "fbIcon"||cn == "inIcon"||cn == "trIcon"||cn == "beIcon"))
+                        {
+                            $(".PromptText").empty().css({color:"#ff6f6d",fontWeight:600}).text("尚未選擇圖標");
+                            $(this).closest("li").css("background","#ff6f6d");
+                            pass=true;
+                        }
+                        if (!pass){
+//                            btnHtml += '<a class="'+cn+'" data-index="' + i + '" href="'+lv+'" target="_blank"></a>';
+                            alink[i] = '<a class="'+cn+'" href="'+lv+'" target="_blank"></a>';
+                        } else {
+                            error = true;
+                        }
+                    }
+                });
+                if(!error && alink.length > 0){ //有值
+                    $(".outLink a").remove();
+                    $(".linkBtn").hide();
+                    $(".outLink").css({background:"none",height:"initial"}).append(alink);
+                    $(".outLinkCtl").fadeOut(200);
+                    $(".outLink > i").removeClass("hidden").addClass("reOl");
+                }else if(!error && alink.length < 1){ //無值
+                    $(".outLink a").remove();
+                    $(".linkBtn").show();
+                    $(".outLink").removeAttr("style");
+                    $(".outLinkCtl").fadeOut(200);
+                    $(".outLink > i").removeClass("reOl").addClass("hidden");
+                }
+            });
+            $("#olk input").focusout(function(){
+                if($(this).val().length>0){
+                    $(this).css("border","1px solid #999");
+                }
+            });
+            /*leftBar 加分 影音 顯示板塊位子*/
+            $(".leftBar").on("click",">.eShow,>.vShow",function(){
+                var a = ($(this).hasClass("eShow"))?".rightBar .eShow":".rightBar .vShow";
+                var h = $(a).offset().top -100;
+                $("html,body").animate({scrollTop:h},600);
+            });
+            
+            /*leftBar 外部連結 拖曳換位子*/
+            $("#olk").sortable({
+                axis:"y", 
+                cursor: 'move', 
+                handle: ".stm",
+                start: function(e, ui) {
+                    str = ui.item.index();
+                },
+                update: function(e, ui) {
+                    end = ui.item.index();
+                    rightMove(str,end,".stMoveOL2 .viewIcon");
+                }
+            }).disableSelection();
+        });
+        function rightMove(s,e,c){
+            var li = $(c).css("position", "relative");
+            if(e > s){ //往下
+                if(e == li.length-1){
+                    li.eq(e).after(li.eq(s));
+                }
+                li.eq(s).insertBefore(li.eq(e+1));
+            }
+            else{ //往上
+                if(e == 0){
+                    li.eq(s).insertBefore(li.eq(0));
+                }
+                li.eq(s).insertBefore(li.eq(e));
+            }
+        }
+        //menuBoxBelow 新增自訂版塊
+        function buildUp(f,g,h){ //f:col幾 g:轉幾次 h:1是一大格2是分別 
+            var li = '<li class="col-xs-12 wow slideInUp">',
+                liend = '</li>',
+                div = '<div class="row customizeBox">',
+                divend = '</div>',
+                div2 = '<div class="col-xs-'+f+'">',
+                div3t = '<div class="cusTitle ct">',
+                div3c = '<div class="cusCont cc">',
+                cont = [],
+                all;
+            var st2 = "<li>自訂版塊</li>"
+            if(h==2){
+                for(var i=0;i<g;i++){
+                    cont.push(div2+div3t+divend+divend);
+                }
+            }
+            for(var i=0;i<g;i++){
+                cont.push(div2+div3c+divend+divend);
+            }
+            all = li + div + cont.join("") + divend + liend;
+            $(".stMove3").append(all);
+            $(".stMove2").append(st2);
+            $("#copySt").clone().show().appendTo("#stb").removeAttr("id");
+            getPos();
+            setPos();
+            $("html,body").animate({scrollTop:ary[ary.length-1]},400);
+        }
+    </script>
+</head>
+<body>
+    <div class="wp">
+        <div class="container-fluid">
+            <!--header-->
+            <div class="row header">
+                <div class="col-xs-10">
+                    <img src="images/logo.png" alt="">
+                    <span>匯出履歷編輯</span>
+                    <button type="button" class="btnView">匯出預覽</button>
+                    <button type="button" class="btnPublish">發佈更新</button>
+                    <span class="hp rel">
+                        <i class="material-icons">help</i>
+                        <div class="helpBox">
+                            <div class="triangle"></div>
+                            <p class="SystemBlue">什麼是發佈更新?</p>
+                            <div>
+                                為避免修改中的履歷被已取得連結的企業瀏覽，<br/>
+                                目前編輯的版本將會被儲存為草稿，需點擊「發佈更新」後，<br/>
+                                才會覆蓋您之前發布的版本。
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <div class="col-xs-2 alignR">
+                    <a href="backstage_P02-print.htm" class="btnPrint">列印履歷設定</a>
+                </div>
+            </div>
+            <div class="hh"></div>
+            <!--header end-->
+            <!--content-->
+            <div class="cont">
+                <div class="row">
+                    <!--main-->
+                    <div class="col-xs-12 main">
+                        <div class="topBar">
+                            目前編輯版本： 網頁版（列印時，因紙本排版限制將有些許差異，背景色及色塊將不會被列印,您可於「列印履歷設定」預覽列印狀態 ）
+                        </div>
+                        <div class="leftBar mbg">
+                            <div class="pic">
+                                <div><img src="images/pic.png" alt="" class="img-responsive"></div>
+                            </div>
+                            <p class="userName">你你你</p>
+                            <ul class="stMove2">
+                                <li>學歷資料</li>
+                                <li>工作經歷</li>
+                                <li>技能專長</li>
+                                <li>推薦人</li>
+                                <li>自傳</li>
+                                <li>聯絡我</li>
+                                <li>自訂版塊</li>
+                            </ul>
+                            <div class="outLink">
+                                <button class="linkBtn"><span>新增外部連結</span><i class="material-icons">add</i></button>
+                                <i class="material-icons hidden" title="編輯">create</i>
+                                <div class="outLinkCtl">
+                                    <p>新增外部連結</p>
+                                    <i class="material-icons olClose">close</i>
+                                    <ul class="stMoveOL2">
+                                        <li class="w20 text-left">預覽</li>
+                                        <li class="viewIcon"></li>
+                                        <li class="viewIcon"></li>
+                                        <li class="viewIcon"></li>
+                                        <li class="viewIcon"></li>
+                                    </ul>
+                                    <hr>
+                                    <ul>
+                                        <li class="w10">排序</li>
+                                        <li class="w10 ">圖標</li>
+                                        <li class="w60">連結</li>
+                                        <li class="w10">清除</li>
+                                    </ul>
+                                    <div id="olk">
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <span class="PromptText"></span>
+                                    </div>
+                                    <button type="button" class="olSave">儲存</button>
+                                </div>
+                            </div>
+                            <div class="mbtn eShow"><span>加分亮點</span></div>
+                            <div class="mbtn vShow"><span>影音履歷</span></div>
+                        </div>
+                        <div class="col-xs-12 rightBar">
+                            <div class="row">
+                                <div class="bgw"><!--col-xs-12 col-lg-10 col-lg-offset-1-->
+                                    <ul>
+                                        <li class="box col-xs-12">
+                                            <div class="personal">
+                                                <div class="jobName">物料管理員,倉儲物流人員,品管人員</div>
+                                                
+                                                <div class="userMainInfo rbgone">
+                                                    <hr class="line-dashed-w"></hr>
+                                                    <div class="photoBorder">
+                                                        <div class="photo"><img src="images/pic.png"></div>
+                                                    </div>
+                                                    <h3>你你你<span class="eName">Ni nini</span></h3>
+                                                    <div class="info">
+                                                        <span>台北市松山區</span>&frasl;
+                                                        <span>女性</span>&frasl;
+                                                        <span>36歲</span>
+                                                    </div>
+                                                </div>
+                                                <div class="InfoBox">
+                                                    <hr class="line-solid">
+                                                    <p>有鑒於過去跨領域的經歷，我對於學習新知總是持續不斷的接受挑戰。 感謝我過去多元的背景，大學時我主修政治學。政治學喚起了我的同理心以及與他人建立正向關係的熱情，這也使我得意以關懷社會上不同人群的訴求並幫助需要幫助的人（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。得意以關懷社會上不同人群的訴求得意以關懷社會上不同人群的訴求。</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="stMove3">
+                                        <li class="box col-xs-12">
+                                            <div class="content rbgbox education">
+                                                <div class="bTitle">
+                                                    <hr class="line-dashed"></hr>
+                                                    <h3>
+                                                        學歷資料<span class="eName">Education</span>
+                                                    </h3>
+                                                </div>
+                                                <div class="listBox">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="icon ibg"></div>
+                                                            <h4>大阪藝術學院大阪藝術學院</h4>
+                                                            <div class="schoolName textcolor">研究所畢業</div>
+                                                            <div class="department">資訊工程學系</div>
+                                                            <div>資訊工程學類</div>
+                                                            <div class="location"><span>台灣</span><span>在職專班</span></div>
+                                                            <div class="period">2000/3～2004/9</div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon ibg"></div>
+                                                            <h4>1111大學</h4>
+                                                            <div class="schoolName textcolor">大學畢業</div>
+                                                            <div class="department">中國語文學系</div>
+                                                            <div>中國語文學類</div>
+                                                            <div class="location"><span>台灣</span><span>日間部</span></div>
+                                                            <div class="period">2000/3～2004/9</div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon ibg"></div>
+                                                            <h4>斗六高級中學</h4>
+                                                            <div class="schoolName textcolor">高中職畢業</div>
+                                                            <div class="department">普通科</div>
+                                                            <div>普通綜合學類</div>
+                                                            <div class="location"><span>台灣</span><span>日間部</span></div>
+                                                            <div class="period">2000/3～2004/9</div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon ibg"></div>
+                                                            <h4>1111大學</h4>
+                                                            <div class="schoolName textcolor">大學畢業</div>
+                                                            <div class="department">中國語文學系</div>
+                                                            <div>中國語文學類</div>
+                                                            <div class="location"><span>台灣</span><span>日間部</span></div>
+                                                            <div class="period">2000/3～2004/9</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="box col-xs-12">
+                                            <div class="content rbgbox experience">
+                                                <div class="bTitle">
+                                                    <hr class="line-dashed"></hr>
+                                                    <h3>
+                                                        工作經歷<span class="eName">Experience</span>
+                                                    </h3>
+                                                </div>
+                                                <div class="oneBox">
+                                                    <div class="boxTitle">
+                                                        <span class="bigNum textcolor">1</span>
+                                                        <span class="subTitle">這是一間有限公司</span>
+                                                        <span class="period">2015/9~2018/6</span>
+                                                    </div>
+                                                    <div class="plBox">
+                                                        <div class="job">
+                                                            <span>企劃</span>
+                                                            <span>&bull;</span>
+                                                            <span>全職</span>
+                                                        </div>
+                                                        <ul class="jobInfo rbgtwo">
+                                                            <li>台北市 內湖區<span>&frasl;</span></li>
+                                                            <li>工作待遇：隱藏<span>&frasl;</span></li>
+                                                            <li>公司規模：100人以上<span>&frasl;</span></li>
+                                                            <li>管理人數：5-10人</li>
+                                                        </ul>
+                                                        <p>有鑒於過去跨領域的經歷，我對於學習新知總是持續不斷的接受挑戰。 感謝我過去多元的背景，大學時我主修政治學。政治學喚起了我的同理心以及與他人建立正向關係的熱情，這也使我得意以關懷社會上不同人群的訴求並幫助需要幫助的人（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。得意以關懷社會上不同人群的訴求得意以關懷社會上不同人群的訴求。</p>
+                                                    </div>
+                                                </div>
+                                                <div class="oneBox">
+                                                    <div class="boxTitle">
+                                                        <span class="bigNum textcolor">2</span>
+                                                        <span class="subTitle">這是一間有限公司</span>
+                                                        <span class="period">2015/9~2018/6</span>
+                                                    </div>
+                                                    <div class="plBox">
+                                                        <div class="job">
+                                                            <span>企劃</span>
+                                                            <span>&bull;</span>
+                                                            <span>全職</span>
+                                                        </div>
+                                                        <ul class="jobInfo rbgtwo">
+                                                            <li>台北市 內湖區<span>&frasl;</span></li>
+                                                            <li>工作待遇：隱藏<span>&frasl;</span></li>
+                                                            <li>公司規模：100人以上<span>&frasl;</span></li>
+                                                            <li>管理人數：5-10人</li>
+                                                        </ul>
+                                                        <p>有鑒於過去跨領域的經歷，我對於學習新知總是持續不斷的接受挑戰。 感謝我過去多元的背景，大學時我主修政治學。政治學喚起了我的同理心以及與他人建立正向關係的熱情，這也使我得意以關懷社會上不同人群的訴求並幫助需要幫助的人（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。得意以關懷社會上不同人群的訴求得意以關懷社會上不同人群的訴求。</p>
+                                                    </div>
+                                                </div>
+                                                <div class="oneBox">
+                                                    <div class="boxTitle">
+                                                        <span class="bigNum textcolor">3</span>
+                                                        <span class="subTitle">這是一間有限公司</span>
+                                                        <span class="period">2015/9~2018/6</span>
+                                                    </div>
+                                                    <div class="plBox">
+                                                        <div class="job">
+                                                            <span>企劃</span>
+                                                            <span>&bull;</span>
+                                                            <span>全職</span>
+                                                        </div>
+                                                        <ul class="jobInfo rbgtwo">
+                                                            <li>台北市 內湖區<span>&frasl;</span></li>
+                                                            <li>工作待遇：隱藏<span>&frasl;</span></li>
+                                                            <li>公司規模：100人以上<span>&frasl;</span></li>
+                                                            <li>管理人數：5-10人</li>
+                                                        </ul>
+                                                        <p>有鑒於過去跨領域的經歷，我對於學習新知總是持續不斷的接受挑戰。 感謝我過去多元的背景，大學時我主修政治學。政治學喚起了我的同理心以及與他人建立正向關係的熱情，這也使我得意以關懷社會上不同人群的訴求並幫助需要幫助的人（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。得意以關懷社會上不同人群的訴求得意以關懷社會上不同人群的訴求。</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="box col-xs-12">
+                                            <div class="content rbgbox skill">
+                                                <div class="bTitle">
+                                                    <hr class="line-dashed"></hr>
+                                                    <h3>
+                                                        技能專長<span class="eName">Skill</span>
+                                                    </h3>
+                                                </div>
+                                                <div class="oneBox">
+                                                    <div class="boxTitle">
+                                                        <span class="bigNum textcolor">1</span>
+                                                        <span class="subTitle">語文能力</span>
+                                                    </div>
+                                                    <div class="plBox">
+                                                        <ul class="skillList">
+                                                            <li>中文：聽/精通，說/精通，讀/精通，寫/精通</li>
+                                                            <li>英文：聽/精通，說/精通，讀/精通，寫/精通</li>
+                                                            <li>客語：精通</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="oneBox">
+                                                    <div class="boxTitle">
+                                                        <span class="bigNum textcolor">2</span>
+                                                        <span class="subTitle">校園幹部/社團經驗</span>
+                                                    </div>
+                                                    <div class="plBox">
+                                                        <ul class="skillList">
+                                                            <li>學生會：會長<span>1年1個月</span></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="oneBox">
+                                                    <div class="boxTitle">
+                                                        <span class="bigNum textcolor">3</span>
+                                                        <span class="subTitle">電腦專長</span>
+                                                    </div>
+                                                    <div class="plBox">
+                                                        <ul class="skillList">
+                                                            <li>辦公室應用：Excel,Outlook,LibreOffice W riter</li>
+                                                            <li>作業系統：AIX,AS400,FreeBSD,NOVELL,SUN OS,W indows Server 2000-2012,Windows XP,Windows 7</li>
+                                                            <li>硬體開發/韌體設計類：USB技術,Firmware,PLC</li>
+                                                            <li>其他：(其他電腦專長，可自行輸入500字)</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="oneBox">
+                                                    <div class="boxTitle">
+                                                        <span class="bigNum textcolor">4</span>
+                                                        <span class="subTitle">專業證照</span>
+                                                    </div>
+                                                    <div class="plBox">
+                                                        <ul class="skillList">
+                                                            <li>辦公室應用：Excel,Outlook,LibreOffice W riter</li>
+                                                            <li>作業系統：AIX,AS400,FreeBSD,NOVELL,SUN OS,W indows Server 2000-2012,Windows XP,Windows 7</li>
+                                                            <li>硬體開發/韌體設計類：USB技術,Firmware,PLC</li>
+                                                            <li>其他：(其他電腦專長，可自行輸入500字)</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="oneBox">
+                                                    <div class="boxTitle">
+                                                        <span class="bigNum textcolor">5</span>
+                                                        <span class="subTitle">其他專長</span>
+                                                    </div>
+                                                    <div class="plBox">
+                                                        <ul class="skillList">
+                                                            <li>辦公室應用：Excel,Outlook,LibreOffice W riter</li>
+                                                            <li>作業系統：AIX,AS400,FreeBSD,NOVELL,SUN OS,W indows Server 2000-2012,Windows XP,Windows 7</li>
+                                                            <li>硬體開發/韌體設計類：USB技術,Firmware,PLC</li>
+                                                            <li>其他：(其他電腦專長，可自行輸入500字)</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="box col-xs-12">
+                                            <div class="content rbgbox referrer">
+                                                <div class="bTitle">
+                                                    <hr class="line-dashed"></hr>
+                                                    <h3>
+                                                        推薦人<span class="eName">Referrer</span>
+                                                    </h3>
+                                                </div>
+                                                <div class="listBox">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="icon ibg"></div>
+                                                            <h4>張小明</h4>
+                                                            <div class="schoolName textcolor">有間公司股份有限公司</div>
+                                                            <div class="department">部門主管</div>
+                                                            <div class="contactInfo">
+                                                                <div>手機：0987654321</div>
+                                                                <div>公司電話：(02)111111111 #123</div>
+                                                                <div>E-Mail：123131@1111.com.tw</div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon ibg"></div>
+                                                            <h4>王大大</h4>
+                                                            <div class="schoolName textcolor">一間公司股份有限公司</div>
+                                                            <div class="department">部門主管</div>
+                                                            <div class="contactInfo">
+                                                                <div>手機：0987654321</div>
+                                                                <div>公司電話：(02)111111111 #123</div>
+                                                                <div>E-Mail：123131@1111.com.tw</div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon ibg"></div>
+                                                            <h4>張小明</h4>
+                                                            <div class="schoolName textcolor">有間公司股份有限公司</div>
+                                                            <div class="department">部門主管</div>
+                                                            <div class="contactInfo">
+                                                                <div>手機：0987654321</div>
+                                                                <div>公司電話：(02)111111111 #123</div>
+                                                                <div>E-Mail：123131@1111.com.tw</div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon ibg"></div>
+                                                            <h4>張小明</h4>
+                                                            <div class="schoolName textcolor">有間公司股份有限公司</div>
+                                                            <div class="department">部門主管</div>
+                                                            <div class="contactInfo">
+                                                                <div>手機：0987654321</div>
+                                                                <div>公司電話：(02)111111111 #123</div>
+                                                                <div>E-Mail：123131@1111.com.tw</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="box col-xs-12">
+                                            <div class="content rbgbox autobiography">
+                                                <div class="bTitle">
+                                                    <hr class="line-dashed"></hr>
+                                                    <h3>
+                                                        自傳<span class="eName">Autobiography</span>
+                                                    </h3>
+                                                </div>
+                                                <div class="autobiographyBox">
+                                                    <div class="innerBox rbgthree">
+                                                        我是一個的人，我講求效率，且具有十足行動力，我叫內部測試帳號。大就讀1111大學資訊管理系，在學期間修習另外，我在團隊合作時能找出矛盾和不合理之處，進一步釐清問題，有系統地蒐集資訊、研究並提出解決方案，我能夠多元善用各方資源，精進我在求職領域的專業知識，為日後成為企劃奠定的良好基礎。<br>
+                                                        我的工作經驗並不多，上一個工作是在1111人力銀行擔任企劃，負責工作說明工作說明工作說明工作 說明工作說明工作說明工作說明工作說明工作說明工作說明工作說明工作說明工作說明工作說明工作說 明工作說明工作說明工作說明等相關事務，任職1 年 8 個月。雖然任職不長，但已使我熟習職場生 活、揮別校園的青澀。未來我期待能夠繼續充分運用所學的專業知能，做最好的發揮。<br><br>
+
+                                                        電子化時代到來，持續精進自己的電腦能力是必要的，我能夠得心應手的運用Access,FoxPro,MS SQL,MySQL,Visual Foxpro,FileMaker,MongoDB,PhotoImpact,SOLIDW ORKS,SolidEdge,OSLO 光,。我領有國際 標準ISO 14000主導稽核員,服務業品質專業師(CSQP),國際製造管理師認證-設施／系統設計,中級非 破壞檢測,的專業證照，具備絕對的專業實力。<br><br>
+                                                        人生在世，不免碰到幾回逆境，但我從不放棄領悟自我、發現理想，然後一步步實踐自己美麗的目標。 我是個上進的企劃，所擅長的工作項目是：1.廣告／行銷企劃主管：研訂行銷策略及規劃行銷活動，從 事行銷企劃與廣告業務之規劃、組織、協調、指導、管制及考核等活動的管理 2.行銷企劃人員：蒐集市場資訊，擬定產品或活動行銷企劃案，運用各種行銷工具以達成產品或活動最 佳的曝光效果 3.遊戲企劃人員：構思遊戲內容整體架構，再交由美術和程式設計人員製作，並與之溝通協調 4.網站企劃人員：進行網站規劃或透過網路行銷的方式，達到品牌、產品、活動之推廣 5.行銷企劃助理：協助執行行銷企劃案及處理相關日常事務性工作 。期待能與 貴公司結好緣；我將會讓辛苦的汗水化為甜蜜的果實，以報答提攜之恩。
+                                                    </div>
+                                                    <div class="innerBox rbgthree">
+                                                        Growing up in a middle-class traditional Chinese family as the oldest child, I am actually quite energetic and adventurous. I always enjoyed many extra-curricular activities going on during my elementary school years, such as calligraphy, creative writing, swimming, and piano lessons. After graduating from high school, I went to Los Angeles, CA to pursuit my college education at CSUF. Majoring in International Business, I had much opportunities to encounter many international students and local American students in the classes. I think the best advantage of studying abroad is exploring the world through interacting with those from different parts of the world so that I truly appreciate my cross-cultural experience.<br><br>
+                                                        Growing up in a middle-class traditional Chinese family as the oldest child, I am actually quite energetic and adventurous. I always enjoyed many extra-curricular activities going on during my elementary school years, such as calligraphy, creative writing, swimming, and piano lessons. After graduating from high school, I went to Los Angeles, CA to pursuit my college education at CSUF. Majoring in International Business, I had much opportunities to encounter many international students and local American students in the classes. I think the best advantage of studying abroad is exploring the world through interacting with those from different parts of the world so that I truly appreciate my cross-cultural experience.<br><br>
+                                                        Growing up in a middle-class traditional Chinese family as the oldest child, I am actually quite energetic and adventurous. I always enjoyed many extra-curricular activities going on during my elementary school years, such as calligraphy, creative writing, swimming, and piano lessons. After graduating from high school, I went to Los Angeles, CA to pursuit my college education at CSUF. Majoring in International Business, I had much opportunities to encounter many international students and local American students in the classes. I think the best advantage of studying abroad is exploring the world through interacting with those from different parts of the world so that I truly appreciate my cross-cultural experience.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="box col-xs-12">
+                                            <div class="content rbgbox contactMe">
+                                                <div class="bTitle">
+                                                    <hr class="line-dashed"></hr>
+                                                    <h3>
+                                                        聯絡我<span class="eName">Contact me</span>
+                                                    </h3>
+                                                </div>
+                                                <div class="InfoBox">
+                                                    <div class="inlineList">
+                                                        <ul class="mr10">
+                                                            <li class="remark rbgone">錄取後1周可上班</li>
+                                                            <li class="inform textcolor">在職中請優先以信件連繫</li>
+                                                            <li>連絡時間 09:00-10:00</li>
+                                                        </ul>
+                                                    </div>
+                                                    <hr class="line-dashed m15"></hr>
+                                                    
+                                                    <div class="boxLeft">
+                                                        <div class="inlineList mb10 mr10">
+                                                            <ul>
+                                                                <li class="userName">你你你<span class="eName">Ni nini</span></li>
+                                                                <li>原住民(鄒族),身心障礙者,僑生</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="inlineList rbgthree mb10">
+                                                            <ul>
+                                                                <li>女性<span>&frasl;</span></li>
+                                                                <li>36歲<span>&frasl;</span></li>
+                                                                <li>159cm<span>&frasl;</span></li>
+                                                                <li>48Kg</li>
+                                                            </ul>
+                                                            <ul>
+                                                                <li>蒲隆地人<span>&frasl;</span></li>
+                                                                <li>未婚<span>&frasl;</span></li>
+                                                                <li>屆退伍( 2020/02/02)</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="inlineList fs14">
+                                                            <ul>
+                                                                <li>聲音/語言機能障礙(中度)<span>&frasl;</span></li>
+                                                                <li>有殘障手冊<span>&frasl;</span></li>
+                                                                <li>輔助工具(金點一號,特殊滑鼠設計)</li>
+                                                            </ul>
+                                                            <ul>
+                                                                <li>輕型機車-駕照,車輛<span>&frasl;</span></li>
+                                                                <li>普通小型車-駕照,車輛<span>&frasl;</span></li>
+                                                                <li>普通大貨車-車輛</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="boxRight">
+                                                        <ul class="ListBox fs14">
+                                                            <li><div class="icon rbgfour iconImg01"></div><span>098765432111</span></li>
+                                                            <li><div class="icon rbgfour iconImg02"></div><span>(02)1111111111</span></li>
+                                                            <li><div class="icon rbgfour iconImg03"></div>daisylee@staff.1111.com.tw</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="resumeCode">履歷代碼&frasl;狀態:00000000(關閉中)</div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="box col-xs-12 wow slideInUp">
+                                            <div class="content other rbgbox clearfix customizeBox">
+                                                <div class="row">
+                                                    <div class="col-xs-4">
+                                                        <div class="cusTitle" contenteditable="true">123</div>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <div class="cusTitle ct"></div>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <div class="cusTitle ct"></div>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <div class="cusCont" contenteditable="true">456</div>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <div class="cusCont cc"></div>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <div class="cusCont cc"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content other rbgbox clearfix customizeBox">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <div class="cusTitle" contenteditable="true">123</div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="cusTitle ct"></div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="cusCont"  contenteditable="true">456</div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="cusCont cc"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content other rbgbox clearfix customizeBox clearfix">
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div class="cusCont" contenteditable="true">123</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="box col-xs-12 eShow wow bounceInRight">
+                                            <div class="content other rbgbox" style="min-height: 600px;">加分亮點放這</div>
+                                        </li>
+                                        <li class="box col-xs-12 vShow wow bounceInRight">
+                                            <div class="content other rbgbox" style="min-height: 600px;">影音履歷放這</div>
+                                        </li>
+                                        <li class="box col-xs-12 evPrent">
+                                            <div class="content other rbgbox">
+                                                <div class="inlineBox">
+                                                    <p>加分亮點</p>
+                                                    <img src="images/t1.png" alt="" class="img-responsive">
+                                                </div>
+                                                <div class="inlineBox">
+                                                    <p>影音履歷</p>
+                                                    <img src="images/t1.png" alt="" class="img-responsive">
+                                                </div>
+                                                <p>掃瞄QRcode後將連結至 1111人力銀行網站，請安心使用</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footer">1111人力銀行</div>
+                        </div>
+                    </div>
+                    <!--main end-->
+                    <!--menu-->
+                    <div class="menu">
+                        <div class="col-xs-2 menuBoxBelow" >
+                           <div id="hidInfoBox">
+                               <br/><p>履歷版塊</p>
+                               <i class="material-icons btnClz">close</i>
+                               <div class="hidBox hbNone">
+                                   <p>無隱藏內容</p>
+                                   <p>當您隱藏履歷版塊後<br/>版塊將被存放於此</p>
+                               </div>
+                           </div>
+                           <div class="adCtzBox">
+                                <ul>
+                                    <li>自訂版塊</li>
+                                    <li class="useBox">(已使用<span>0</span>/2)</li>
+                                </ul>
+                                <img src="images/v01.png" alt="" class="img-responsive rel" id="adNewBox1">
+                                <img src="images/v02.png" alt="" class="img-responsive rel" id="adNewBox2">
+                                <img src="images/v03.png" alt="" class="img-responsive rel" id="adNewBox3">
+                           </div>
+                        </div>
+                        <div class="showC" title="顯示編輯器"><i class="material-icons">keyboard_arrow_right</i></div>
+                        <div class="col-xs-2 menuBox">
+                            <div class="saveBox">上次儲存草稿時間<br/><b>2019.03.15 12:21</b></div>
+                            <div class="menuHid" title="隱藏編輯器"><i class="material-icons">keyboard_arrow_left</i></div>
+                            <div class="sHeight">
+                                <p>主題配色</p>
+                                <select name="cmc" id="changeMColor" class="pySelect">
+                                    <option value="0" selected="selected">1111經典藍白</option>
+                                    <option value="14">黑藍</option>
+                                    <option value="15">黑綠</option>
+                                    <option value="16">黑黃</option>
+                                    <option value="17">藍綠</option>
+                                    <option value="18">黃綠</option>
+                                </select>
+                                <p>版型樣式</p>
+                                <select name="cm" id="changeMain" class="pySelect">
+                                    <option value="0">A款</option>
+                                    <option value="1">B款</option>
+                                    <option value="2">C款</option>
+                                    <option value="3">D款</option>
+                                    <option value="4" selected="selected">E款</option>
+                                    <option value="5">F款</option>
+                                    <option value="6">G款</option>
+                                    <option value="7">H款</option>
+                                    <option value="8">I款</option>
+                                    <option value="9">J款</option>
+                                    <option value="10">K款</option>
+                                </select>
+                                <hr/>
+                                <p>履歷版塊管理</p>
+                                <div class="rSortable">
+                                    <ul>
+                                        <li class="st">關於我</li>
+                                    </ul>
+                                    <ul id="stb" class="stBox">
+                                        <li class="stMove">
+                                            <div class="w15"><i class="material-icons stm" title="拖動排序">import_export</i></div>
+                                            <div class="stInfo">
+                                                <span>學歷資料</span>
+                                            </div>
+                                            <div class="w10 tipsBox">
+                                                <i class="material-icons">more_vert</i>
+                                                <div class="tips">
+                                                    <div class="triangle"></div>
+                                                    <span class="stHid">隱藏</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="stMove">
+                                            <div class="w15"><i class="material-icons stm" title="拖動排序">import_export</i></div>
+                                            <div class="stInfo">
+                                                <span>工作經歷</span>
+                                            </div>
+                                            <div class="w10 tipsBox">
+                                                <i class="material-icons">more_vert</i>
+                                                <div class="tips">
+                                                    <div class="triangle"></div>
+                                                    <span class="stHid">隱藏</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="stMove">
+                                            <div class="w15"><i class="material-icons stm" title="拖動排序">import_export</i></div>
+                                            <div class="stInfo">
+                                                <span>技能專長</span>
+                                            </div>
+                                            <div class="w10 tipsBox">
+                                                <i class="material-icons">more_vert</i>
+                                                <div class="tips">
+                                                    <div class="triangle"></div>
+                                                    <span class="stHid">隱藏</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="stMove">
+                                            <div class="w15"><i class="material-icons stm" title="拖動排序">import_export</i></div>
+                                            <div class="stInfo">
+                                                <span>推薦人</span>
+                                            </div>
+                                            <div class="w10 tipsBox">
+                                                <i class="material-icons">more_vert</i>
+                                                <div class="tips">
+                                                    <div class="triangle"></div>
+                                                    <span class="stHid">隱藏</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="stMove">
+                                            <div class="w15"><i class="material-icons stm" title="拖動排序">import_export</i></div>
+                                            <div class="stInfo">
+                                                <span>自傳</span>
+                                            </div>
+                                            <div class="w10 tipsBox">
+                                                <i class="material-icons">more_vert</i>
+                                                <div class="tips">
+                                                    <div class="triangle"></div>
+                                                    <span class="stHid">隱藏</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="stMove">
+                                            <div class="w15"><i class="material-icons stm" title="拖動排序">import_export</i></div>
+                                            <div class="stInfo">
+                                                <span>聯絡資訊</span>
+                                            </div>
+                                            <div class="w10 tipsBox">
+                                                <i class="material-icons">more_vert</i>
+                                                <div class="tips">
+                                                    <div class="triangle"></div>
+                                                    <span class="stHid">隱藏</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="stMove">
+                                            <div class="w15"><i class="material-icons stm" title="拖動排序">import_export</i></div>
+                                            <div class="stInfo">
+                                                <span contenteditable="false" >自訂版塊</span>
+                                            </div>
+                                            <div class="w10 tipsBox">
+                                                <i class="material-icons">more_vert</i>
+                                                <div class="tips">
+                                                    <div class="triangle"></div>
+                                                    <span class="chgName">變更名稱</span>
+                                                    <hr/>
+                                                    <span class="del">刪除</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <!--拷貝用-->
+                                    <li class="stMove" id="copySt" style="display: none;">
+                                        <div class="w15"><i class="material-icons stm" title="拖動排序">import_export</i></div>
+                                        <div class="stInfo">
+                                            <span contenteditable="false">自訂版塊</span>
+                                        </div>
+                                        <div class="w10 tipsBox">
+                                            <i class="material-icons">more_vert</i>
+                                            <div class="tips">
+                                                <div class="triangle"></div>
+                                                <span class="chgName">變更名稱</span>
+                                                <hr/>
+                                                <span class="del">刪除</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--拷貝用 結束-->
+                                </div>
+                                <div class="btnBox">
+                                    <button class="addBtn"><span>新增履歷板塊</span><i class="material-icons">add</i></button>
+                                </div>
+                                <hr/>
+                                <p>加分亮點</p>
+                                <select name="exs" id="exhibitShow" class="pySelect">
+                                    <option value="0" selected="selected">顯示</option>
+                                    <option value="1">不顯示</option>
+                                </select>
+                                <p>影音履歷</p>
+                                <select name="vis" id="videoShow" class="pySelect">
+                                    <option value="0" selected="selected">顯示</option>
+                                    <option value="1">不顯示</option>
+                                </select>
+                            </div>
+                            <div class="leftFoot">1111人力銀行<br/><a href="https://25.cami.yesing.com/tw/service/MTExMWpvYmJhbms" target="_blank">求職客服</a> |  <a href="https://www.1111.com.tw/help/faq.asp" target="_blank">Q＆A</a>  | <a href="http://www.1111.com.tw/help/service.asp" target="_blank">意見反應</a></div>
+                        </div>
+                    </div>
+                    <!--menu end-->
+                </div>
+            </div>
+            <!--content end-->
+            <!--跳窗-->
+            <div>
+                <div class="msgFullBg"></div>
+                <div class="msgBox">
+                    <div class="msgInfo">
+                        <b>已發佈您的履歷為最新編輯版本</b>
+                        <i class="material-icons btnClose">close</i>
+                        <hr>
+                        <p>任何擁有此連結的人，皆可瀏覽您的履歷資料</p>
+                        <input id="icopy" type="text" value="http://google.com">
+                        <button type="button" class="btnCopy">複製連結</button>
+                    </div>
+                </div>
+            </div>
+            <!--跳窗 end-->
+        </div>
+    </div>
+</body>
+</html>

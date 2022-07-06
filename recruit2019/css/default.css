@@ -1,0 +1,158 @@
+﻿.gray{color: #979797;}/*808080*/
+.font21{font-size: 21px;}
+.titleFont{color: #4F6B90;margin: 0 0 5px;display: inline-block;}
+.seeMore{text-align: right;display: inline-block;font-size: 16px;}
+hr{background: #4F6B90;}/*border: .5px solid #4F6B90;*/
+.fontNew{font-size: 12px;color: #FF7B62;font-weight: 600;}
+.blue{color: #4F6B90;font-weight: 600;}
+.relative{position: relative;}
+.triangle{width: 0;height: 0;border-style: solid;border-width: 0 10px 8px 10px;border-color: transparent transparent #1383B5 transparent;position: absolute;z-index: 999;}
+
+
+
+/*首頁區塊*/
+.content{background: #F0F0F0;min-width: 1200px;}
+.content .cont{width: 1170px;margin: auto;padding: 15px 0;font-size: 0;position: relative;animation: loadAnimate 1s ease 0s 1 alternate;}
+.cont>div{font-size: 14px;}
+
+@keyframes loadAnimate{
+    0%{top: 100px;opacity: 0.2;}
+    100%{top: 0;opacity: 1;}
+}
+
+.mainBox,.initiativeBox,.jobBox,.toolBox,.newsBox,.tipsBox,.recruitListBox,.adBox{border-radius: 10px;background: #fff;margin-bottom: 20px;box-shadow: 1px 1px 5px #B1B1B1;padding: 15px;display: inline-block;box-sizing: border-box;vertical-align: top;}
+
+.lBox,.rBox{vertical-align: top;display: inline-block;}
+.lBox{width: 64.9%;margin-right: 20px;}
+.rBox{width: 390px;}
+.lBox>div,.rBox>div{width: 100%;}
+
+/*廣告*/
+.newsBar{margin-bottom: 10px;overflow: hidden;height: 30px;}
+.newsBar>div{display: inline-block;vertical-align: top;}
+.newsBar img{vertical-align: middle;margin-right: 8px;}
+.newsBar a{display: inline-block;width: 100%;height: 30px;line-height: 30px;margin-left: 4px;position: absolute;top: -30px;}
+
+/*主要訊息區*/
+.mainBox{margin-right: 20px;}
+.mainBox ul li{vertical-align: top;height: 124px;}
+
+.modeBox .logoBox{width: 115px;height: 75px;border: 1px solid #CACACA;overflow: hidden;border-radius: 4px;margin-bottom: 15px;}
+.modeBox .logoBox:hover img{transform:scale(1.1,1.1);transition: transform .5s;}
+.modeBox .logoBox img{width: 100%;transition: transform .5s;}
+.modeBox span{width: 115px;text-align: center;display: inline-block;}
+.modeBox span>.open{color: #51D547;margin-right: 4px;}
+.modeBox span>.close{color: #666;margin-right: 4px;}
+
+.userBox h1{font-size: 21px;font-weight: 100;margin-bottom: 5px;}
+.userBox .gray{margin-right: 8px;}
+.userBox .btnB{font-size: 16px;margin-top: 25px;padding: 1px 40px;}
+
+.contractBox .btnB{font-size: 16px;margin-top: 9px;padding: 1px 40px;}
+.contractBox p{line-height: 26px;margin: 0;min-height: 82px;}
+.contractBox p .font21{margin: 0 5px;}
+.contractBox .renew{background: #4F6B90;color: #fff;border-radius: 4px;text-decoration: none;padding: 0 4px;line-height: 20px;display: inline-block;margin-left: 4px;}
+.contractBox .renew:hover{color: #fff;background: #3E4F66;}
+.contractBox .vipEnd{display: inline-block;width: 80%;font-size: 16px;font-weight: 600;color: #FF7B62;border: 1px solid #FF7B62;text-align: center;margin: 10px 0;}
+.contractBox .vipEnd+.renew{margin-left: 55px;}
+
+.mainBox>ul>.customerService{border-left: 1px solid #CACACA;padding-left: 20px;}
+.customerService p{line-height: 26px;margin: 8px 0 0;}
+.customerService .gray{margin-right: 8px;}
+
+/*主動應徵*/
+.initiativeBox{width: 24.2%;height: 154px;}
+.initiativeBox img{display: inline-block;width: 65px;margin: 12px 0 0 15px;}
+.initiativeBox div{display: inline-block;vertical-align: top;margin: 8px 0 0 15px;}
+.initiativeBox div p{margin: 10px 0;}
+.initiativeBox div a{margin: 0 10px;}
+
+/*職缺管理*/
+.jobBox .btnAddJob{font-size: 16px;background: #4F6B90;padding: 2px 15px;color: #fff;border-radius: 4px;text-decoration: none;}
+.jobBox .btnAddJob:hover{color: #fff;background: #3E4F66;}
+.jobBox>span::before{content: "|";margin: 0 12px 0 6px;color: #B1B1B1;font-size: 20px;}
+
+.jobBox .titleFont i{color: #999;font-size: 16px;cursor: pointer;}
+
+.jobBox .jobTitle{position: relative;text-align: center;top: -45px;left: 110px;margin: auto;}
+.jobBox .jobTitle span{display: inline-block;padding: 6px 30px;font-size: 16px;background: #E4E4E4;border-top-right-radius: 8px;border-top-left-radius: 8px;border:1px solid #E4E4E4;cursor: pointer;}
+.jobBox .jobTitle .jobChk,.jobBox .jobTitle span:hover{background: #fff;border: 1px solid #4F6B90;border-bottom: 3px solid #fff;}
+
+.jobBox .jobCont{position: relative;top: -30px;box-sizing: border-box;}
+.jobBox>ul{height: 235px;}
+.jobBox .jobCont ul li{width: 100%;height: 40px;line-height: 40px;border-bottom: 1px solid #E4E4E4;padding: 0 5px;box-sizing: border-box;}
+.jobBox .jobCont ul .jobMenu{height: 34px;line-height: 34px;background: #E5EAF3;border: 0;}
+.jobBox .jobCont ul li:last-child{border: 0;}
+.jobBox .jobCont ul li span{display: inline-block;text-align: center;vertical-align: top;}
+.jobBox .jobCont .textLeft{text-align: left;}
+.jobBox .iconA,.jobBox .iconB,.jobBox .iconC,.jobBox .iconD{margin: 5px 10px 0 0;}
+.jobBox .iconE,.jobBox .iconF{margin-right: 5px;}
+
+/*公告訊息*/
+.newsBox ul li{width: 100%;box-sizing: border-box;}
+.newsBox ul .newsInfo{height: 40px;line-height: 40px;padding: 0 5px;border-bottom: 1px solid #E4E4E4;}
+.newsBox ul .newsInfo:hover:not(.newsTitle){background: #FFFDE3;cursor: pointer;}
+.newsBox ul .newsShow{line-height: 26px;border: 1px solid #E4E4E4;border-top: 0;padding: 20px 43px;background: #FFFDE3;list-style: none;display: none;}
+.newsBox ul .newsTitle{background: #FDF5BF;}
+.newsBox ul li span{display: inline-block;vertical-align: top;}
+.newsBox ul li .fontNew{animation: newAnimate .5s ease 0s infinite alternate;}
+
+@keyframes newAnimate{
+    0%{color: transparent;}
+    100%{color: #FF7B62;}
+}
+
+/*徵才小幫手提醒*/
+.tipsBox ul li{height: 30px;line-height: 30px;padding: 0 5px;box-sizing: border-box;}
+
+/*招募數據與名單*/
+.recruitListBox ul li img{margin: 8px 0 8px 10px;}
+.recruitListBox ul li h2{display: inline-block;vertical-align: top;margin: 13px 0 0 15px;font-weight: 100;}
+.recruitListBox ul li h2 a,.recruitListBox ul li h2 span{font-size: 24px;padding: 0 20px;}
+
+/*廣告稿輪撥器*/
+.adBox{height: 105px;margin-top: 36px;padding: 0;overflow: hidden;position: relative;}
+.adBox:hover #btnAdLeft,.adBox:hover #btnAdRight{opacity: 1;transition: opacity 1s;}
+.adBox ul li{position: absolute;left: -390px;}
+.adBox img{width: 390px;}
+
+#btnAdLeft,#btnAdRight{position: absolute;top: 33px;background: rgba(19,131,181,.5);color: #fff;font-size: 22px;padding: 8px;opacity: 0;transition: opacity 1s;}
+#btnAdLeft:hover,#btnAdRight:hover{cursor: pointer;background: rgba(19,131,181,.9);}
+#btnAdLeft{border-bottom-right-radius: 8px;border-top-right-radius: 8px;left: 0;}
+#btnAdRight{border-bottom-left-radius: 8px;border-top-left-radius: 8px;right: 0;}
+
+/*常用工具*/
+.toolBox ul li{width: 13.3%;}
+.toolBox ul li a{vertical-align: top;margin-top: 15px;display: inline-block;padding-left: 5px;}
+
+
+
+/*步驟說明跳窗*/
+.messageBox{width: 100%;height: 100%;background: rgba(0,0,0,0.5);position: absolute;top: 0;display: none;}
+.messageBox .bubbleBox{height: 600px;top: 376px;position: relative;display: none;}
+
+.step00 h2{color: #e13912;}
+.step00 span{line-height: 26px;}
+.btnBox{margin-top: 28px;text-align: center;}
+.btnBox div{width: 100px;border-radius: 4px;text-align: center;display: inline-block;margin: 0 10px;}
+.btnBox .introduceBtn{background: #0072BC;color: #fff;}
+.btnBox .doneBtn{border: 1px solid #fff;color: #fff;}
+.btnBox .introduceBtn:hover,.textBox .nextBtn:hover,.textBox .prevBtn:hover{cursor: pointer;background: #005A94;}
+.btnBox .doneBtn:hover{cursor: pointer;opacity: .7;}
+.step01{background-image: url(../images/pic_step01.jpg);background-position: top center;background-repeat: no-repeat;}
+.textBox{width: 350px;padding: 16px;color: #fff;background: #0072BC;line-height: 26px;position: absolute;border-radius: 6px;box-shadow: 2px 2px 8px #333;}
+.textBox h3{margin-bottom: 5px;}
+.step01 .textBox{top: 315px;left: 320px;}
+.textBox .btnBox{margin-top: 15px;}
+.step01 .btnBox div,.step02 .btnBox div,.step03 .btnBox div,.step04 .btnBox div{font-size: 13px;width: 90px;}
+.textBox .nextBtn,.textBox .prevBtn{background: #5fa4ef;padding: 0px;}
+.textBox .starBtn{background: #FE6684;padding: 0px;}
+.textBox .starBtn:hover{background: #E34E69;cursor: pointer;}
+.textBox .triangle{border-width: 0 10px 10px 10px;border-color: transparent transparent #0072BC transparent;top: -6px;left: 170px;}
+.cAbs{position: absolute;top: 15px;right: 15px;}
+.cAbs:hover{opacity: 0.7;cursor: pointer;}
+.step02{background-image: url(../images/pic_step02.jpg);background-position: top center;background-repeat: no-repeat;}
+.step02 .textBox{bottom: 110px;right: 188px;}
+.step03{background-image: url(../images/pic_step03.jpg);background-position: top center;background-repeat: no-repeat;}
+.step03 .textBox{bottom: 133px;right: 104px;}
+

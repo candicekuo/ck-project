@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>匯出履歷編輯器-列印履歷設定</title>
+    <!--css-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/backstage-print.css" rel="stylesheet">
+    <link href="css/backstage_3-print_main.css" rel="stylesheet">
+    <link href="" rel="stylesheet" id="mcolor">
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/backstage-print_menu.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            /*取消編輯*/
+            $(".introduction").attr("contenteditable","false");
+        });
+    </script>
+</head>
+<body>
+    <div class="wp">
+        <div class="container-fluid">
+            <!--header-->
+            <div class="row header">
+                <div class="col-xs-8">
+                    <img src="images/logo.png" alt="">
+                    <span>匯出履歷編輯</span>
+                    <a href="backstage_3.htm" class="btnBack">←返回版型編輯</a>
+                    <button type="button" class="btnSave">儲存列印版型</button>
+                </div>
+                <div class="col-xs-4 alignR">
+                   <button type="button" class="btnDownload">下載</button>
+                   <button type="button" class="btnPrint">列印</button>
+                   <button type="button" class="btnCPrint">超商列印</button>
+                </div>
+            </div>
+            <div class="hh"></div>
+            <!--header end-->
+            <!--content-->
+            <div class="cont">
+                <div class="row">
+                    <!--main-->
+                    <div class="col-xs-12 main">
+                        <div class="topBar">
+                            目前編輯版本： 網頁版（列印時，因紙本排版限制將有些許差異，背景色及色塊將不會被列印,您可於「列印履歷設定」預覽列印狀態 ）
+                        </div>
+                        <div class="leftBar mbg">
+                            <div class="pic">
+                                <div><img src="images/pic.png" alt="" class="img-responsive"></div>
+                            </div>
+                            <p class="userName">金泰亨</p>
+                            <ul class="stMove2">
+                                <li>學歷資料</li>
+                                <li>工作經歷</li>
+                                <li>技能專長</li>
+                                <li>推 薦 人</li>
+                                <li>自　　傳</li>
+                                <li>聯絡資訊</li>
+                                <li>自訂版塊</li>
+                            </ul>
+                            <div class="outLink">
+                                <button class="linkBtn"><span>新增外部連結</span><i class="material-icons">add</i></button>
+                                <i class="material-icons hidden" title="編輯">create</i>
+                                <div class="outLinkCtl">
+                                    <p>新增外部連結</p>
+                                    <i class="material-icons olClose">close</i>
+                                    <ul class="stMoveOL2">
+                                        <li class="w20 text-left">預覽</li>
+                                        <li class="viewIcon"></li>
+                                        <li class="viewIcon"></li>
+                                        <li class="viewIcon"></li>
+                                        <li class="viewIcon"></li>
+                                    </ul>
+                                    <hr>
+                                    <ul>
+                                        <li class="w10">排序</li>
+                                        <li class="w10 ">圖標</li>
+                                        <li class="w60">連結</li>
+                                        <li class="w10">清除</li>
+                                    </ul>
+                                    <div id="olk">
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <span class="PromptText"></span>
+                                    </div>
+                                    <button type="button" class="olSave">儲存</button>
+                                </div>
+                            </div>
+                            <div class="mbtn eShow"><span>加分亮點</span></div>
+                            <div class="mbtn vShow"><span>影音履歷</span></div>
+                        </div>
+                        <div class="col-xs-12 rightBar">
+                            <div class="row">
+                                <div class="col-xs-12 col-lg-10 col-lg-offset-1 bgw"><!--col-xs-12 col-lg-10 col-lg-offset-1-->
+                                    <ul>
+                                        <li class="col-xs-12">
+                                            <h2 class="jobName">物料管理員,倉儲物流人員,品管人員</h2>
+                                            <h2 class="wow fadeInLeft"><span>金泰亨</span></h2>
+                                            <h4 class="wow fadeInLeft">台北市松山區 | 女性 | 63歲</h4>
+                                            <div class="introduction wow fadeInRight" contenteditable="true">有鑒於過去跨領域的經歷，我對於學習新知總是持續不斷的接受挑戰。 感謝我過去多元的背景，大學時我主修政治學。政治學喚起了我的同理心以及與他人建立正向關係的熱情，這也使我得意以關懷社會上不同人群的訴求並幫助需要幫助的人（公平貿易、偏鄉教育）。</div>
+                                        </li>
+                                    </ul>
+                                    <ul class="stMove3">
+                                        <li class="col-xs-12 wow fadeInUp">
+                                            <div class="bTitle">
+                                                <img src="images/svg/education.svg" alt="">
+                                                <b class="f24">學歷資料</b>
+                                                <b class="c3d f24">Education</b>
+                                            </div>
+                                            <div class="schoolBox wow fadeInUp">
+                                                <div>
+                                                    <div class="col-xs-12 col-sm-4"><b class="circle">2011 / 09 - 2016 / 02</b></div>
+                                                    <div class="col-xs-12 col-xs-8">
+                                                        <b>德明財經科技大學</b> <span class="cb6">台灣 夜間部</span><br/>
+                                                        <span class="c80">博士 畢業</span><br/>
+                                                        <p>視覺傳達系 - 電腦語言(美術學類)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="schoolBox wow fadeInUp">
+                                                <div>
+                                                    <div class="col-xs-12 col-sm-4"><b class="circle">2011 / 09 - 2016 / 02</b></div>
+                                                    <div class="col-xs-12 col-sm-8">
+                                                        <b>德明財經科技大學</b> <span class="cb6">台灣 夜間部</span><br/>
+                                                        <span class="c80">博士 畢業</span><br/>
+                                                        <p>視覺傳達系 - 電腦語言(美術學類)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12">
+                                            <div class="bTitle">
+                                                <img src="images/svg/experience.svg" alt="">
+                                                <b class="f24">工作經歷</b>
+                                                <b class="c3d f24">Experience</b>
+                                            </div>
+                                            <div class="schoolBox">
+                                                <div>
+                                                    <div class="col-xs-12 col-sm-4 wow fadeInUp">
+                                                        <b class="circle">升學輔導老師</b>
+                                                        <h4>2015 / 01 - 在職中</h4>
+                                                        <span class="c80">共計 2 年 3 個月</span>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-8 wow fadeInUp">
+                                                        <b>康橋國際學校</b> <span class="cb6">台灣 / 台北市</span><br/>
+                                                        <p>工作性質：全職　公司規模：100人以上　管理人數：5-10人　薪資待遇：隱藏</p>
+                                                        <p class="c80">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="schoolBox">
+                                                <div>
+                                                    <div class="col-xs-12 col-sm-4 wow fadeInUp">
+                                                        <b class="circle">升學輔導老師</b>
+                                                        <h4>2012 / 02 - 2014 / 03</h4>
+                                                        <span class="c80">共計 2 年 3 個月</span>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-8 wow fadeInUp">
+                                                        <b>康橋國際學校</b> <span class="cb6">台灣 / 台北市</span><br/>
+                                                        <p>工作性質：全職　公司規模：100人以上　管理人數：5-10人　薪資待遇：隱藏</p>
+                                                        <p class="c80">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="schoolBox">
+                                                <div>
+                                                    <div class="col-xs-12 col-sm-4 wow fadeInUp">
+                                                        <b class="circle">升學輔導老師</b>
+                                                        <h4>2012 / 02 - 2014 / 03</h4>
+                                                        <span class="c80">共計 2 年 3 個月</span>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-8 wow fadeInUp">
+                                                        <b>Adjunct Instructor</b> <span class="cb6">台灣 / 台北市</span><br/>
+                                                        <p>工作性質：全職　公司規模：100人以上　管理人數：5-10人　薪資待遇：隱藏</p>
+                                                        <p class="c80">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12 skillBox">
+                                            <div class="bTitle">
+                                                <img src="images/svg/skills.svg" alt="">
+                                                <b class="f24">技能專長</b>
+                                                <b class="c3d f24">Skills</b>
+                                            </div>
+                                            <b><span class="mfont">◆</span> 語文能力 - 外語</b>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="skTitle">中文</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-6 wow fadeInLeft">
+                                                            <p>聽 - 不懂</p>
+                                                            <div class="skillBar"><div class="w25"></div></div>
+                                                        </div>
+                                                        <div class="col-xs-6 wow fadeInRight">
+                                                            <p>說 - 略懂</p>
+                                                            <div class="skillBar"><div class="w50"></div></div>
+                                                        </div>
+                                                        <div class="col-xs-6 wow fadeInLeft">
+                                                            <p>讀 - 中等</p>
+                                                            <div class="skillBar"><div class="w75"></div></div>
+                                                        </div>
+                                                        <div class="col-xs-6 wow fadeInRight">
+                                                            <p>寫 - 精通</p>
+                                                            <div class="skillBar"><div class="w100"></div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="skTitle">英文</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-6 wow fadeInLeft">
+                                                            <p>聽 - 不懂</p>
+                                                            <div class="skillBar"><div class="w25"></div></div>
+                                                        </div>
+                                                        <div class="col-xs-6 wow fadeInRight">
+                                                            <p>說 - 略懂</p>
+                                                            <div class="skillBar"><div class="w50"></div></div>
+                                                        </div>
+                                                        <div class="col-xs-6 wow fadeInLeft">
+                                                            <p>讀 - 中等</p>
+                                                            <div class="skillBar"><div class="w75"></div></div>
+                                                        </div>
+                                                        <div class="col-xs-6 wow fadeInRight">
+                                                            <p>寫 - 精通</p>
+                                                            <div class="skillBar"><div class="w100"></div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <b><span class="mfont">◆</span> 語文能力 - 方言</b>
+                                            <div class="row wow fadeInUpBig">
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="skTitle">台語</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-12">
+                                                            <p>略通</p>
+                                                            <div class="skillBar"><div class="w25"></div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="skTitle">粵語</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-12">
+                                                            <p>普通</p>
+                                                            <div class="skillBar"><div class="w75"></div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <b><span class="mfont">◆</span> 電腦專長</b>
+                                            <div class="row wow fadeInUpBig">
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="skTitle">中文打字</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-12">
+                                                            <p><img src="images/svg/chinese.svg" alt="">每分鐘 50 字 (注音)</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="skTitle">英文打字</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-12">
+                                                            <p><img src="images/svg/english.svg" alt="">每分鐘 60 字</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="skTitle">辦公室應用</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-12">
+                                                            <div class="skts">Word</div>
+                                                            <div class="skts">Excel</div>
+                                                            <div class="skts">Photoshop</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="skTitle">作業系統</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-12">
+                                                            <div class="skts">Windows XP</div>
+                                                            <div class="skts">Windows Vista</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="skTitle">ERP / POS系統</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-12">
+                                                            <div class="skts">鼎新TIPTOP ERP</div>
+                                                            <div class="skts">POS銷售點管理系統</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="skTitle">通訊 / 資訊</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-12">
+                                                            <div class="skts">SAN / NAS</div>
+                                                            <div class="skts">Veritas</div>
+                                                            <div class="skts">GIS</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <div class="skTitle">其他</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-12 sktsCount">
+                                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <b><span class="mfont">◆</span> 專業證照</b>
+                                            <div class="row wow fadeInUpBig">
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="skTitle">語言認證類</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-12">
+                                                            <div class="skts">Word</div>
+                                                            <div class="skts">Excel</div>
+                                                            <div class="skts">Photoshop</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="skTitle">財會金融相關類</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-12">
+                                                            <div class="skts">Windows XP</div>
+                                                            <div class="skts">Windows Vista</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <div class="skTitle">其他</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-12 sktsCount">
+                                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <b><span class="mfont">◆</span> 其他技能</b>
+                                            <div class="row wow fadeInUpBig">
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="skTitle">管理行政</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-12">
+                                                            <div class="skts">Word</div>
+                                                            <div class="skts">Excel</div>
+                                                            <div class="skts">Photoshop</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="skTitle">業務門市</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-12">
+                                                            <div class="skts">Windows XP</div>
+                                                            <div class="skts">Windows Vista</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <div class="skTitle">其他</div>
+                                                    <div class="row sktBox">
+                                                        <div class="col-xs-12 sktsCount">
+                                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12 reference">
+                                            <div class="bTitle">
+                                                <img src="images/svg/reference.svg" alt="">
+                                                <b class="f24">推薦人</b>
+                                                <b class="c3d f24">Reference</b>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="expBox wow slideInRight">
+                                                        <p>全球華人股份有限公司</p>
+                                                        <div class="exCount">
+                                                            <div class="exCountL">
+                                                                <img src="images/svg/profile.svg" alt="">
+                                                            </div>
+                                                            <div class="exCountR">
+                                                                <h4>天母克里斯益凡 <span>美國隊長</span></h4>
+                                                                <p>0911 - 111 - 111</p>
+                                                                <p>02-87871111 #6666</p>
+                                                                <p>Barrylin0208@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="expBox wow slideInLeft">
+                                                        <p>全球華人股份有限公司</p>
+                                                        <div class="exCount">
+                                                            <div class="exCountL">
+                                                                <img src="images/svg/profile.svg" alt="">
+                                                            </div>
+                                                            <div class="exCountR">
+                                                                <h4>天母克里斯益凡 <span>美國隊長</span></h4>
+                                                                <p>0911 - 111 - 111</p>
+                                                                <p>02-87871111 #6666</p>
+                                                                <p>Barrylin0208@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12">
+                                            <div class="bTitle">
+                                                <img src="images/svg/autobiography.svg" alt="">
+                                                <b class="f24">自傳</b>
+                                                <b class="c3d f24">Autobiography</b>
+                                            </div>
+                                            <div class="autobiographyBox wow zoomIn">
+                                                <b class="cb6"><span class="mfont">◆</span> 中文自傳</b>
+                                                <div>
+                                                    辦進時的山布味持，畫象華工數、解以眾斯醫望語能子；定現把覺則很公軍學下目不念便好們自趣了而不後請資示克 子不市於卻……子今當心：是去策我，失會法獎根相華、飯神難要之驗，牛不的可於倒來二自漸來門委義究富有元！ 行經人不哥然示也大果除間歌樣輕境的書雨沒係用有！傳性了；道電其好提術來兒公我標們無動廣指廣美收告傳戰 多，的一飛的於，是然有法學整法所要感：歌來地外十，手奇要夫告以論心人起是選們蘭三朋藥品望人高……現的 總。地星仍生下別們係保第引麼藝主爭們造新感境東接美前根開卻策，倒藥規龍本任制應始已客度的方山全小和海氣 過拿站！東很未？招主後；陽持斷無視少得報民樓眼屋一是社怎不件，一些走日大近，考定進童我比有經間媽放人不 其定不造有面灣半就是說電這可熱成業景張處門地起時的林以出外傳路是得、生地黃要全人大真知成組興積前但家不 因食行條看腳注亞一口好自觀叫而檢。不快生理數可議不的小大提己公被正是直油子因班此保。 <br/><br/>
+                                                    以立大是代；回我已語一護曾開運早些學滿喜改，帶排作品上關了價，電德民詩經，房世時的滿子容？高爸改安校國 理和的如、兒機洋兒果你學身表世一念年物大時教所稱試辦路早，路讓一否位團，朋沒輪！作漸西城？萬文看裡有見 看濟不什大情、我寫出。十路改他。目生小向究性；民病在設受唱，克技石謝夜命，兩路話間！
+                                                </div>
+                                                <b class="cb6"><span class="mfont">◆</span> 英文自傳</b>
+                                                <div>
+                                                    But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure? On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure? On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I.
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12 wow slideInUp">
+                                            <div class="bTitle">
+                                                <img src="images/svg/contact.svg" alt="">
+                                                <b class="f24">聯絡 / 關於</b>
+                                                <b class="c3d f24">Contact / About</b>
+                                            </div>
+                                            <div class="aboutBox">
+                                                <p>
+                                                    <span>男性（原住民）</span>
+                                                    <span>28 歲</span>
+                                                    <span>183Cm、70Kg</span>
+                                                    <span>未婚</span>
+                                                    <span>役畢（退伍：2017／4）</span>
+                                                </p>
+                                                <p class="cb6">視覺障礙(重度)／殘障手冊／輔助工具(輪椅/金點一號)</p>
+                                                <p>
+                                                    <span>0960-740479</span>
+                                                    <span>(02)8787-1111</span>
+                                                    <span>+886960740479</span>
+                                                    <span>台北市 士林區 中山北路</span>
+                                                </p>
+                                                <p class="cb6">連絡時間 - 09:00 ~ 18:00</p>
+                                                <p>履歷代碼 - 00000000 (開啟中)</p>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-7">
+                                                        <a href="">Barrylin0208@gmail.com</a>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-5 rel h40">
+                                                        <div class="abBox">錄取後1周可上班</div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <img src="images/svg/moto.svg" alt="">
+                                                        <ul class="licenseBox">
+                                                            <li>輕型機車</li>
+                                                            <li><span class="license">持有</span>駕照、車輛</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <img src="images/svg/lorry.svg" alt="">
+                                                        <ul class="licenseBox">
+                                                            <li>普通大貨車</li>
+                                                            <li><span class="license">持有</span>駕照、車輛</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12 wow slideInUp">
+                                            <div class="row customizeBox">
+                                                <div class="col-xs-4">
+                                                    <div class="cusTitle" contenteditable="true">123</div>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <div class="cusTitle ct"></div>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <div class="cusTitle ct"></div>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <div class="cusCont" contenteditable="true">456</div>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <div class="cusCont cc"></div>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <div class="cusCont cc"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row customizeBox">
+                                                <div class="col-xs-6">
+                                                    <div class="cusTitle" contenteditable="true">123</div>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="cusTitle ct"></div>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="cusCont"  contenteditable="true">456</div>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="cusCont cc"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row customizeBox">
+                                                <div class="col-xs-12">
+                                                    <div class="cusCont" contenteditable="true">123</div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="col-xs-12 eShow  wow bounceInRight">
+                                            <div style="min-height: 600px;">加分亮點放這</div>
+                                        </li>
+                                        <li class="col-xs-12 vShow  wow bounceInRight">
+                                            <div style="min-height: 600px;">影音履歷放這</div>
+                                        </li>
+                                        <li class="col-xs-12 evPrent">
+                                            <div>
+                                                <p>加分亮點</p>
+                                                <img src="images/t1.png" alt="" class="img-responsive">
+                                            </div>
+                                            <div>
+                                                <p>影音履歷</p>
+                                                <img src="images/t1.png" alt="" class="img-responsive">
+                                            </div>
+                                            <p>掃瞄QRcode後將連結至 1111人力銀行網站，請安心使用</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--main end-->
+                    <!--menu-->
+                    <div class="menu">
+                        <div class="col-xs-2 menuBox">
+                            <div class="sHeight">
+                                <p>履歷換頁設定</p>
+                                <div class="rSortable">
+                                    <ul>
+                                        <li>關於我</li>
+                                    </ul>
+                                    <ul id="stb" class="stBox">
+                                        <li>學歷資料</li>
+                                        <li>工作經歷</li>
+                                        <li>技能專長</li>
+                                        <li>推薦人</li>
+                                        <li>自傳</li>
+                                        <li>聯絡資訊</li>
+                                        <li>自訂版塊</li>
+                                    </ul>
+                                    <!--拷貝用-->
+                                    <li class="stMove" id="copyPgbk" style="display: none;">
+                                        <div class="w15"><i class="material-icons stm" title="拖動排序">import_export</i></div>
+                                        <div class="stInfo">
+                                            <span contenteditable="false">Page Break</span>
+                                        </div>
+                                        <div class="w10 tipsBox">
+                                            <i class="material-icons del">close</i>
+                                        </div>
+                                    </li>
+                                    <!--拷貝用 結束-->
+                                </div>
+                                <div class="btnBox">
+                                    <button class="addBtn"><span>Page Break</span><i class="material-icons">add</i></button>
+                                </div>
+                                <hr/>
+                                <p>QR code 顯示設定</p>
+                                <div class="rSortable qrbox">
+                                    <ul>
+                                        <li data-qr="on"><i class="material-icons">check_box</i> <span class="qrcToggle">加分亮點</span></li>
+                                        <li data-qr="on"><i class="material-icons">check_box</i> <span class="qrcToggle">影音履歷</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="leftFoot">1111人力銀行<br/><a href="https://25.cami.yesing.com/tw/service/MTExMWpvYmJhbms" target="_blank">求職客服</a> |  <a href="https://www.1111.com.tw/help/faq.asp" target="_blank">Q＆A</a>  | <a href="http://www.1111.com.tw/help/service.asp" target="_blank">意見反應</a></div>
+                        </div>
+                    </div>
+                    <!--menu end-->
+                </div>
+            </div>
+            <!--content end-->
+            <!--跳窗-->
+            <div>
+                <div class="msgFullBg"></div>
+                <div class="msgBox">
+                    <div class="msgInfo">
+                        <b>已發佈您的履歷為最新編輯版本</b>
+                        <i class="material-icons btnClose">close</i>
+                        <hr>
+                        <p>任何擁有此連結的人，皆可瀏覽您的履歷資料</p>
+                        <input id="icopy" type="text" value="http://google.com">
+                        <button type="button" class="btnCopy">複製連結</button>
+                    </div>
+                </div>
+            </div>
+            <!--跳窗 end-->
+        </div>
+    </div>
+</body>
+</html>

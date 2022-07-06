@@ -1,0 +1,14 @@
+﻿/*主題色*/
+.mbg{background: #91B493;opacity: 0;}
+.mfont{color: #76A180;}
+.mline{border: 0.5px solid #76A180;}
+.mbtn{color: #fff;background: #678B72;border: 1px solid #fff;}
+.mbtn:hover{background: #76A180;cursor: pointer;}
+.mbgcg{background: #f4f7f4;}
+/*照片*/
+.leftBar .pic{border: 1px solid #fff;}
+.leftBar .pic div{border: 3px solid #91B493;}
+/*項目*/
+.circle{background: #678B72;}
+.expBox,.skillBox .separate{border-left: 2px solid #678B72}
+.separate{border-right: 2px solid #678B72;}

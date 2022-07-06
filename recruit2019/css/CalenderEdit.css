@@ -1,0 +1,31 @@
+.wp{width: 690px;}
+.header{border-bottom: 3px solid #199ed8;padding:0 15px 10px;margin:0 -15px;}
+.header span{display: inline-block;}
+.header img{vertical-align:bottom;}
+.header .hTitle{font-size: 21px;font-weight: 600;color: #4f6b92;}
+.header .hTitle +span{font-size: 14px;color: #808080;}
+
+.recipient i{position: absolute;background: #fff;color: #e25656;right: -8px;top: -4px;border-radius: 100px;}
+.recipient i:hover{cursor: pointer;color: #b43336;}
+.listCont .sended{background: #ffe6e0;}
+
+.listCont .letterCont{width: 80%;max-width: 567px;}
+.listCont .textAttention{display: block;line-height: 10px;padding-left: 0;}
+.listCont .kind{margin-bottom: 10px;}
+
+
+.footer{background: #f5f5f5;border-top: 2px solid #199ed8;margin: 0 -15px -15px;}
+.footer div{width: 255px;margin: auto;}
+
+/*月曆樣式*/
+#tbDates{background: url(../images/dateico.png)no-repeat 97% center;background-size: 13%;margin-right: 5px;}
+#tbDates1,#tbDates2{width: 22px;}
+#kindDate img{vertical-align: sub;margin-left: -8px;}
+.ui-widget.ui-widget-content{font-family: "微軟正黑體";box-shadow: 3px 3px 5px #ccc;background: #f5f5ff;}
+.ui-widget-header{background: #4f6b92;color: #fff;}
+.ui-state-default, .ui-widget-content .ui-state-default{background: #fff;text-align: center;border-radius: 3px;}
+.ui-state-hover,.ui-widget-content .ui-state-hover,.ui-widget-header .ui-state-hover{border: 1px solid #4f6b92;background: rgba(255,255,255,.2);}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight{border: 1px solid #dad55e;background: #fffa90;color: #777620;}
+.ui-state-active, .ui-widget-content .ui-state-active{background: #7084c3;border: 1px solid #4f6b92;}
+.ui-widget-header .ui-icon {background-image: url(../images/ui-icons_ffffff_256x240.png);}
+.ui-datepicker th {padding: 0.5em 0.3em;}

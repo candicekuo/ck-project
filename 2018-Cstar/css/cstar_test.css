@@ -1,0 +1,211 @@
+/*9大職能星css 線上諮詢*/
+.topBar{
+    display: block;
+}
+.highBox{
+    margin: 80px 0 0;
+}
+.Hbox{
+    height: 250px;
+}
+.topBox{
+    width: 100%;
+    min-height: 200px;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    z-index: 9998;
+    background: rgba(21,50,62,.5);
+}
+.topBox div,.topBox img,.topBox h4{
+    position: absolute;
+}
+.topBox .ansPercent{
+    width: 100%;
+    height: 30px;
+/*    border: 1px solid #fff;*/
+    left: -15px;
+    top: 146px;
+}
+.topBox .ansPercent .ansColor{
+    width: 200px;
+    height: 100%;
+    background: #ffdf4d;
+    left: 0;
+    top: 0;
+}
+.topBox img{
+    width: 113px;
+    top: 44px;
+    left: 120px;
+}
+.topBox h4{
+    top: 100px;
+    left: 40px;
+}
+
+
+/*
+.topBox2{
+    width: 100%;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    z-index: 99999;
+    text-align: center;
+}
+.topBox2 .ansPercent{
+    width: 100%;
+    height: 15px;
+    left: -15px;
+    top: 146px;
+}
+.topBox2 .ansPercent .ansColor{
+    width: 20px;
+    height: 100%;
+    background: #ffdf4d;
+    left: -15px;
+    top: 0;
+}
+*/
+
+
+
+.questionBox{
+    margin: 150px 0 0px;
+}
+.questionBox:first-child{
+     margin: 0;
+}
+.questionBox h3{
+    color: #ffdf4d;
+    font-weight: 600;
+}
+.questionBox ul{
+    padding: 0;
+    list-style: none;
+    margin-top: 30px;
+}
+.questionBox ul li{
+    padding: 8px 30px;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    margin: 20px 0;
+}
+.questionBox label{
+    width: 100%;
+    padding: 10px 30px;
+/*    border: 1px solid #fff;*/
+    border-radius: 30px;
+    margin: 10px 0;
+    font-weight: 100;
+    background: #fff;
+    color: #2b5970;
+}
+.questionBox label:hover{
+    color: #2b5970;
+    background: #ffef92;
+    cursor: pointer;
+}
+.questionBox label input[type="radio"]{
+    display: none;
+}
+.questionBox .checks{
+    color: #2b5970;
+    background: #ffd852;
+    font-weight: 600;
+}
+
+.blueBg{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+/*    top: 85%;*/
+    left: 0;
+    background: rgba(21,50,62,.5);
+}
+
+/*跳窗*/
+.coverB{
+    display: none;
+}
+
+
+
+
+
+
+
+
+/*xs*/
+@media (max-width: 767px){
+    .topBar{
+        box-shadow: 0 0 0 0;
+    }
+    .Hbox{
+        height: 100px;
+    }
+   .questionBox{
+        margin: 100px 0 0px;
+    }   
+    /*黃底長度*/
+    .topBox{
+        z-index: 9998;
+/*        background: 0;*/
+        min-height: 50px;
+    }
+    .topBox .ansPercent{
+        height: 15px;
+        top: 0;
+    }
+    .topBox .ansPercent .ansColor{
+        width: 20px;
+        left: 0;
+    }
+    .topBox img{
+        display: none;
+    }
+    .topBox h4{
+        top: 10px;
+        left: 50%;
+        margin-left: -60px;
+    }
+    .blueBg{
+        height: 0;
+    }
+    /*跳窗尺寸*/
+    .Cinfo{
+        width: 300px;
+        height: 220px;
+        margin: -110px 0 0 -150px;
+    }
+    .btnCheck{
+        padding: 4px 20px;
+        margin: 60px 0 20px;
+    }
+}
+/*sm*/
+@media (min-width: 768px) and (max-width: 991px){
+   /*黃底長度*/
+    .topBox .ansPercent .ansColor{
+        width: 180px;
+    }
+    .topBox h4{
+        left: 10px;
+    }
+}
+/*md*/
+@media (min-width: 992px) and (max-width: 1199px){
+    /*黃底長度*/
+    .topBox .ansPercent .ansColor{
+        width: 180px;
+    }
+    .topBox h4{
+        left: 20px;
+    }
+}
+/*lg*/
+@media (min-width: 1200px){
+    
+}
+

@@ -1,0 +1,127 @@
+/*9大職能星css 線上諮詢*/
+.topBar{
+    display: block;
+}
+
+.highBox{
+    margin: 80px 0 0;
+}
+.contBox{
+    
+}
+.contBox .contList{
+    border-bottom: 2px solid #41b4b0;
+}
+.contBox .contList:hover{
+    color: #ffd852;
+    cursor: pointer;
+}
+.contBox .contList:hover .line{
+    background: #ffd852;
+}
+.contBox .contList+div{
+    padding: 30px 15px;
+    display: none;
+}
+    
+.subminBox{
+    margin-top: 80px;
+    padding: 30px 60px 45px;
+    background: #fff;
+    border-radius: 10px;
+    color: #4d4d4d;
+}
+.subminBox h3{
+    font-weight: 600;
+    padding-bottom: 10px;
+    color: #2b5970;
+}
+.subminBox input{
+    margin: 10px 0;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid #000;
+}
+.subminBox textarea{
+    width: 100%;
+    margin: 30px 0 0;
+    background: none;
+    border: 1px solid #000;
+}
+.subminBox button{
+    padding: 8px 90px;
+    background: #d44859;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #ccc;
+    color: #fff;
+    letter-spacing: 3px;
+}
+.subminBox button:hover{
+    background: #b94859;
+}
+.subminBox h4{
+    margin: 0 0 20px;
+    text-align: center;
+    color: #407a99;
+}
+
+
+
+/*預設內容變色*/
+/*
+::-webkit-input-placeholder { 
+    color: #ccc;
+}
+:-moz-placeholder { 
+    color: #ccc;
+}
+::-moz-placeholder { 
+    color: #ccc;
+}
+:-ms-input-placeholder { 
+    color: #ccc;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*xs*/
+@media (max-width: 767px){
+    .subminBox{
+        padding: 30px 20px 45px;
+    }
+    h3{
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .icon-icon-06:before,.icon-icon-05:before{
+        font-size: 18px;
+        line-height: 25px;
+    }
+}
+/*sm*/
+@media (min-width: 768px) and (max-width: 991px){
+   
+}
+/*md*/
+@media (min-width: 992px) and (max-width: 1199px){
+    
+}
+/*lg*/
+@media (min-width: 1200px){
+    
+}
+

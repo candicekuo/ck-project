@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>通訊錄</title>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="css/all.min.css" rel="stylesheet" type="text/css"><!--fontawesome-->
+    <link rel="stylesheet" href="css/boxPage.css"><!--共用-->
+    <link rel="stylesheet" href="css/noticemail_addBookShow.css">
+    <style type="text/css">
+    </style> 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".btnAddLiaison").click(function(){
+                $(".addLiaison").animate({height:0},400);
+            });
+            $(".btnAdd").click(function(){
+                var t =$(this).closest(".cmdZone").prev().height();
+                var a;
+                (t == 0)?a=46:a=0;
+                $(".addLiaison").animate({height:a},400);
+            });
+            $(".listBox >div").click(function(){
+                var t = $(this);
+                t.addClass("setJobs").siblings().removeClass();
+            });
+            $(".pageBox >span").click(function(e){
+                var t = $(this);
+                if(t.index()>=2 && t.index()<=6){
+                    t.addClass("setPage").siblings().removeClass("setPage");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wp box">
+        <div class="header">通訊錄</div>
+        <form action="#" method="">
+            <div class="content">
+                <div class="addLiaison">
+                    <div>
+                        增加聯絡人 
+                        <input class="w20" type="text" placeholder="姓名">
+                        <input type="text" placeholder="Email">
+                        <input type="checkBox" id="chk">
+                        <label for="chk">加到通訊錄</label>
+                        <div class="btnAddLiaison">新增</div>
+                    </div>
+                </div>
+                <ul class="cmdZone">
+                    <li>
+                        <div class="btnAdd">手動新增聯絡人</div>
+                    </li>
+                    <li class="searchBox">
+                        <input type="text" placeholder="搜尋聯絡人/Email">
+                        <span class="btnSearch"><i class="fas fa-search"></i></span>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="choseList">
+                        <div class="infoBar">
+                            <span>選擇通知職缺</span>
+                            <div>共 <b>16</b> 筆 / 每頁10筆</div>
+                        </div>
+                        <div class="listBox">
+                            <div>台北市松山區　求才實習職缺測試，請勿應徵</div>
+                            <div>台北市松山區　(1HR統計數據測試)請勿投遞履歷_勿關勿動勿勿關勿動勿勿關勿動勿勿關勿動勿勿關勿</div>
+                            <div>台北市信義區　2求才實習職缺測試，請勿應徵</div>
+                            <div>台北市松山區　2求才實習職缺測試，請勿應徵正式機上傳.docx</div>
+                            <div>台北市大安區　2求才實習職缺測試，請勿應徵0707 企劃測試.doc</div>
+                            <div>台北市松山區　2求才實習職缺測試，請勿應徵新進人員基本資料.doc</div>
+                            <div>台北市松山區　2求才實習職缺測試，請勿應徵員工手冊.doc</div>
+                            <div>台北市大安區　2求才實習職缺測試，請勿應徵企劃test0620.docx</div>
+                            <div>台北市松山區　2求才實習職缺測試，請勿應徵正式機上傳.docx</div>
+                            <div>台北市松山區　2求才實習職缺測試，請勿應徵0707 企劃測試.doc</div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="pageBox">
+                    <span>«</span><span>上一頁</span><span class="setPage">1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>下一頁</span><span>»</span>
+                </div>
+            </div>
+            <div class="footer">
+                <div>
+                    <button type="button" class="btnCancel">取消</button>
+                    <button type="submit" class="btnSend">加入</button>
+                </div>
+            </div>
+        </form>
+        <!--說明文字-->
+        <div class="infoBox">
+            <div class="triangle"></div>
+            <span class="infoS"></span>
+        </div>
+        <!--說明文字end-->
+    </div>
+</body>
+</html>

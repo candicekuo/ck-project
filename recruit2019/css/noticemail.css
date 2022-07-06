@@ -1,0 +1,56 @@
+.wp{width: 690px;}
+.header{border-bottom: 3px solid #199ed8;padding:0 15px 10px;margin:0 -15px;}
+.header span{display: inline-block;}
+.header img{vertical-align:bottom;}
+.header .hTitle{font-size: 21px;font-weight: 600;color: #4f6b92;}
+.header .viewingCount{width: 79%;text-align: right;}
+
+.content .listTitle{color: #808080;width: 12%;text-align: right;vertical-align: top;}
+.content .listCont{width:85%;padding-left: 10px;position: relative;}
+.listTitle,.listCont{display: inline-block;}
+.listCont .mailAdd{font-size: 13px;color: #666;width: 320px;display: inline-block;vertical-align: top;}
+.listCont .bntAddBook{position: absolute;right: 0;top: 5px;color: #fff;text-decoration: none;}
+.listCont a.bntAddBook:hover{color: #fff;}
+.listCont .sendBox{min-height: 20px;}
+.listCont .recipient{display: inline-block;border: 1px solid #ccc;height: 25px;line-height: 25px;padding: 0 10px;margin-right: 8px;position: relative;color: #333;}
+.recipient i{position: absolute;background: #fff;color: #e25656;right: -8px;top: -4px;border-radius: 100px;}
+.recipient i:hover{cursor: pointer;color: #b43336;}
+.listCont .sended{background: #ffe6e0;}
+.listCont .fa-times{color: #808080;}
+.listCont .fa-times:hover{cursor: pointer;color: #4d4d4d;}
+.btnAddFile+span{margin: 0 15px;color: #999;}
+.downloadFile{color: #1385b7;background: #e7ecf5;font-size: 13px;padding: 0 8px;text-decoration: none;display: inline-block;vertical-align: top;height: 23px;line-height: 23px;margin: 7px 20px 0 0;position: relative;cursor: pointer;}
+.downloadFile:hover{color: #23527c;}
+.downloadFile:first-child{margin-left:0;}
+.downloadFile i{margin-right: 3px;}
+.downloadFile .fa-times{position: absolute;top: 5px;right: -18px;}
+
+.listCont .textAttention{display: block;line-height: 10px;}
+.listCont .kind{margin-bottom: 10px;}
+.listCont .labelSet{line-height: 26px;margin-top: 5px;}
+
+#tbDates{background: url(../images/dateico.png)no-repeat 97% center;background-size: 13%;margin-right: 5px;}
+#tbDates1,#tbDates2{width: 22px;}
+#kindDate img{vertical-align: sub;margin-left: -8px;}
+
+.listCont .letterCont{width: 80%;max-width: 567px;}
+
+.footer{background: #f5f5f5;border-top: 2px solid #199ed8;margin: 0 -15px -15px;}
+.footer div{width: 305px;margin: auto;}
+
+
+/*說明問號*/
+.infoBox{position: absolute;padding: 10px 15px;font-size: 13px;color: #fff;border-radius: 4px;background: #808080;box-shadow: 3px 3px 5px #ccc;z-index: 999;left: -18px;top: 25px;width: 260px;text-align: left;line-height: 21px;display: none;}
+.triangle{width: 0;height: 0;border-style: solid;border-width: 0 8px 6px 10px;border-color: transparent transparent #808080 transparent;position: absolute;top: -6px;left: 15px;z-index: 999;}     
+.fa-question-circle{color: #808080;margin: 0 2px;position: relative;cursor: help;letter-spacing: 1px;}
+.fa-question-circle .infoBox{font-family: "微軟正黑體";}
+
+/*月曆樣式*/
+.ui-widget.ui-widget-content{font-family: "微軟正黑體";box-shadow: 3px 3px 5px #ccc;background: #f5f5ff;}
+.ui-widget-header{background: #4f6b92;color: #fff;}
+.ui-state-default, .ui-widget-content .ui-state-default{background: #fff;text-align: center;border-radius: 3px;}
+.ui-state-hover,.ui-widget-content .ui-state-hover,.ui-widget-header .ui-state-hover{border: 1px solid #4f6b92;background: rgba(255,255,255,.2);}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight{border: 1px solid #dad55e;background: #fffa90;color: #777620;}
+.ui-state-active, .ui-widget-content .ui-state-active{background: #7084c3;border: 1px solid #4f6b92;}
+.ui-widget-header .ui-icon {background-image: url(../images/ui-icons_ffffff_256x240.png);}
+.ui-datepicker th {padding: 0.5em 0.3em;}

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>本站僅為作品展示用</title>
+    <link rel="stylesheet" href="../css/msgBox.css" />
+    <style type="text/css">
+        body,html { margin:0; padding:0; font-family: "Microsoft JhengHei","微軟正黑體","PMingLiU","新細明體",sans-serif; letter-spacing: 1px;}
+        ul { list-style-type:none; font-size:14px; }
+        ul li { line-height:23px; height:23px; margin-bottom:4px; }
+        .page { width:100%; display:none; font-size:14px; }
+        .page .formbox { width:100%; background: repeat-x bottom; }
+        .page .formbox table { width:830px; margin:auto auto; background-image: url(images/bg.jpg); border-collapse:collapse; }
+        .page .formbox table th { margin:0px; padding:0px; }
+        .page .formbox table td { ; margin:0px; padding:0px; }
+        .page .formbox table td.tl { height:10px; line-height:10px;  }
+        .page .formbox table td.tag { vertical-align:top; width:100px; }
+        .page .formbox table td.tag div { width:100px; height:27px; background:#5296fa; margin-top:0px; padding-left:10px; line-height:27px; color:#fff; font-size:18px; }
+        .page .formbox table td.tagText { vertical-align:top; }
+        .page .formbox table td.tagText div { height:24px; margin-top:0px; margin-bottom:4px; margin-left:30px; line-height:27px; color:#5296fa; font-size:18px; font-weight:bolder; text-align:left;  }
+/*        .page .formbox table td.tr { width:100px; }*/
+        /*頁面基礎樣式*/
+        .titleBlock { width:97%; min-height:20px; background:#00908d; color:#fff; font-weight:bolder; padding-left:1em; margin-top:auto; margin-bottom:5px; font-size:18px; border:1px solid #00908d; line-height:2em; *padding-top:5px; *line-height:1.5em;} 
+        .descBlock { width:95%; min-height:20px; background:#e1dcd8; color:#00908d; font-weight:bolder; padding-left:1em; margin-top:auto; margin-bottom:5px; font-size:16px; border:1px solid #e1dcd8; line-height:25px; *padding-top:5px; *line-height:16px; padding: 5px 1em; } 
+        .quizBlock { width:100%; min-height:60px; border-bottom:1px solid #00908d; margin-bottom:10px; } 
+        /*元件基礎樣式*/
+        label.error{ color:#be0000; margin-left:10px; }
+        .radio { position:relative; }
+        .radio input { display:inline-block; margin:0 8px 0 0; vertical-align:middle; cursor:pointer; }
+        .radio label { cursor:pointer; margin-left:2px; }
+        .radio div { position:absolute; left:0px; top:0px; width:23px; height:23px; cursor:pointer; }
+        .radio div.on { background: url(images/icon.png) no-repeat -482px -154px; }
+        .radio div.off { background: url(images/icon.png) no-repeat -482px -124px; }
+        .check { position:relative; }
+        .check input { display:inline-block; margin:0 8px 0 0; vertical-align:middle; }
+        .check label { margin-left:2px; cursor:pointer; }
+        .check div { position:absolute; left:0px; top:0px; width:24px; height:23px; cursor:pointer; }
+        .check div.on { background:#fff url(images/icon.png) no-repeat -520px -420px; }
+        .check div.off { background:#fff url(images/icon.png) no-repeat -520px -390px; }
+        /*題型一般樣式*/
+        .quiz { min-height:10px; height:auto; }
+        .quiz p { line-height:1.5em; margin:4px; padding:0px; }
+        .quiz p span { color:#00908d; }
+        .quiz div.note { color:RED; margin-top:10px; }
+        .quiz div.note p { text-indent:-1em; margin-left:1em;  }
+        .quiz select { margin-top:10px; margin-left:10px; margin-top:10px; }
+        .quiz textarea { margin:10px 10px; min-width:600px; min-height:200px; width:600px; height:200px; }
+        .quiz .hideText { display:none; }
+        .quiz input[type=text] { margin:10px 10px; min-width:240px; width:240px; text-align:left; }
+        .quiz input[type=text].hideText { margin:0 4px; min-width:60px; width:120px; }
+        /*複合式題型樣式*/
+        .page .quiz .cxTable { width:100%; margin:10px auto; background:#fff; border-collapse:collapse; font-size:14px; }
+        .page .quiz .cxTable tr { background:#99ccff }
+        .page .quiz .cxTable th { background:#00908d; height:30px; line-height:1.5em; color:#fff; border:1px solid #fff; }
+        .page .quiz .cxTable th:first-child { min-width:160px; }
+        .page .quiz .cxTable td { height:28px; line-height:20px; border:1px solid #fff; }
+        .page .quiz .cxTable tr.row0 td { background:#f2e3c4; color:#00908d; font-weight: bold;}
+        .page .quiz .cxTable tr.row1 td { background:#fff5df; color:#00908d; font-weight: bold;}
+        .page .quiz .cxTable td.ot { padding-left:10px; }
+        .page .quiz .cxTable td.oi { width:80px; text-align:center; }
+        .page .quiz .cxTable td.oi .radio { position:relative; text-align:center; vertical-align:top; }
+        .page .quiz .cxTable td.oi .radio input { margin:0 auto; }
+        .page .quiz .cxTable td.oi .radio div { position:absolute; left:50%; top:0px; margin-left:-8px; margin-top:-1px; *margin-top:-2px; width:23px; height:23px; }
+        .page .quiz .cxTable tr.row0 td.oi .radio div.on { background:url(images/icon.png) no-repeat -482px -154px; }
+        .page .quiz .cxTable tr.row1 td.oi .radio div.on { background:url(images/icon.png) no-repeat -482px -154px; }
+        .page .quiz .cxTable tr.row0 td.oi .radio div.off { background:url(images/icon.png) no-repeat -482px -124px; }
+        .page .quiz .cxTable tr.row1 td.oi .radio div.off { background:url(images/icon.png) no-repeat -482px -124px; }
+        
+        /*李克特題型樣式*/
+        .page .quiz .lkTable { width:100%; margin:10px auto; background:#fff; border-collapse:collapse; font-size:14px; }
+        .page .quiz .lkTable th { background:#00908d; height:30px; line-height:1.5em; color:#fff; border:1px solid #fff; }
+        .page .quiz .lkTable th.empty { border:none; }
+        .page .quiz .lkTable td { height:28px; line-height:20px; border:1px solid #fff; background:#e1dcd8; }
+        .page .quiz .lkTable td.oi { width:80px; text-align:center; }
+        .page .quiz .lkTable td.oi .radio { position:relative; text-align:center; vertical-align:top; }
+        .page .quiz .lkTable td.oi .radio input { margin:0 auto; }
+        .page .quiz .lkTable td.oi .radio div { position:absolute; left:50%; top:-6px; margin-left:-12px; width:23px; height:23px; }
+        .page .quiz .lkTable td.oi .radio div.on { background:#e1dcd8 url(images/icon.png) no-repeat -478px -147px; }
+        .page .quiz .lkTable td.oi .radio div.off { background:#e1dcd8 url(images/icon.png) no-repeat -478px -117px; }
+        /*按鈕樣式*/
+        .cmd { text-align:center; margin-top:10px; margin-bottom:20px; }
+        .cmd button { width:218px; height:54px; border:none; outline: none; cursor:pointer; background-image:url(images/icon.png); background-repeat:no-repeat; background-color:transparent; }
+        .cmd button.next { background-position:-251px -122px; } 
+        .cmd button.next:hover { background-position:-24px -122px; } 
+        .cmd button.done { background-position:-251px -179px; margin-top: 20px; } 
+        .cmd button.done:hover { background-position:-24px -179px; } 
+        /* msgbox */
+        .msg { width:100%; height:100%; position:fixed; left:0px; top:0px; display:none; }
+        .msg .bg { position: absolute; top:0; left:0; width:100%; height:100%; background-color: #000; filter:alpha(opacity=40); -moz-opacity:0.4; opacity:0.4; } 
+        .msg .view { width:100%; height:100%; position: absolute; top:50%; left:0; margin-top:-36px; color:#fff; text-align:center; }
+        .msg .view span { font-weight:bolder; font-size:28px; }
+        .msg .view img { margin-right:20px; margin-bottom:10px; vertical-align:middle; }
+        .msg .view button { width:120px; height:30px; line-height:19px; border:1px solid #fff; background:#656565; color:#fff; font-size: 19px; font-weight: bold; font-family: "微軟正黑體"; }
+
+/*
+        #start { width:268px; height:82px; border:none; outline: none; cursor:pointer; background-image:url(images/icon.png); background-repeat:no-repeat; background-color:transparent; background-position:-305px -36px;}
+        #start:hover { background-position:-24px -36px; }
+*/
+
+        #event { width: 182px; height: 126px; border: none; outline: none; cursor: pointer; background-image: url(images/award_02.png); background-repeat: no-repeat; background-color: transparent; position: absolute; top: 28px; right: 120px; }
+        #event:hover { background-image: url(images/award_01.png); }
+
+        @-moz-document url-prefix() 
+        {
+            .page .quiz .cxTable td.oi .radio div { margin-top:3px; }
+            .page .quiz .cxTable tr.row1 td.oi .radio div.on { background:#ececec url(images/icon.png) no-repeat -482px -154px; }
+            .page .quiz .cxTable tr.row1 td.oi .radio div.off { background:#ececec url(images/icon.png) no-repeat -482px -124px; }
+            .page .quiz .lkTable td.oi .radio div { margin-top:3px; }
+        }
+    </style>
+    <style type="text/css">
+        ol{
+            padding: 0 0 0 20px;
+        }
+        .btn{
+            display: inline-block;
+            color: white;
+            font-size: 18px;
+            padding: 5px 30px;
+            cursor: pointer;
+            width: 180px;
+            background: #f5a625;
+        }
+        .btn:first-child{
+            margin: 15px 50px 15px 0;
+        }
+        .btn:hover{
+            background: #f5ca84;
+            color: white;
+        }
+        .box{
+            display: inline-block;
+            width: 250px;
+            height: 130px;
+            border: 1px solid #999;
+            margin: 30px;
+            position: relative;
+        }
+        .box div,.box img,.box p{
+            position: absolute;
+        }
+        .wbox{
+            width: 250px;
+            height: 10px;
+            background: #3aaf44;
+            right: -10px;
+            bottom: -10px;
+        }
+        .hbox{
+            width: 10px;
+            height: 130px;
+            background: #3aaf44;
+            right: -10px;
+            bottom: -10px;
+        }
+        p{
+            font-size: 16px;
+        }
+        hr{
+            border: 0;
+            height: 1px;
+            background:#ccc;
+        }
+        .cmd button{
+            margin-top: 20px;
+        }
+        .radioGroup{
+            font-weight:900;
+            padding: 10px 0;
+        }
+    </style>
+    <!--[if IE 8]>
+        <style>
+            .page .quiz .cxTable td.oi .radio div { margin-top:1px; }
+            .page .quiz .lkTable td.oi .radio div { margin-top:3px; }
+        </style>
+    <![endif]-->
+
+    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.json-2.4.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../js/usopp-1.05.min.js"></script>
+    <script type="text/javascript" src="../js/msgBox.min.js"></script>
+    <script type="text/javascript">
+        var engine, msg;
+        $(document).ready(function () {
+            //msg = new msgbox();
+            //engine = new usopp(
+            //    $("#quiZone"),
+            //    {
+            //        project: 15,
+            //        useQN: false,
+            //        autoWait: 3,
+            //        endMsg: "問卷資料已送出，感謝您的耐心填答。網頁將於7秒後自動跳轉。<br />抽獎時間：2016/09/22(四)，得獎名單將以Email通知得獎者",
+            //        loaded: function () {
+            //            $("#prePage, #surveyPage").toggle();
+            //        },
+            //        beforeSave: function () {
+            //            if ($(".email").val().trim().length < 1) {
+            //                msg.display("quiz", "小提醒：填寫e-Mail才能獲得抽獎資格唷！", "", function () {
+            //                    engine.save();
+            //                }, null, null, "不填寫直接送出", "返回填寫");
+            //            } else
+            //                engine.save();
+            //        }
+            //    }
+            //);
+            //$("#start").click(function () {
+            //    $(this).remove();
+            //    engine.load();
+            //});
+            msg = new msgbox();
+            engine = new usopp(
+                $("#quiZone"),
+                {
+                    project: 15,
+                    useQN: false,
+                    autoWait: 3,
+                    endMsg: "問卷資料已送出，感謝您的耐心填答。網頁將於3秒後自動跳轉。",
+                    loaded: function () {
+                        $("#prePage, #surveyPage").toggle();
+                    },
+                    beforeSave: function () {
+                        if ($(".email").val().trim().length < 1) {
+                            msg.display("quiz", "小提醒：填寫e-Mail才能獲得抽獎資格唷！", "", function () {
+                                engine.save();
+                            }, null, null, "不填寫直接送出", "返回填寫");
+                        } else
+                            engine.save();
+                    }
+                }
+            );
+            $("#start").click(function () {
+                $(this).remove();
+                engine.load();
+            });
+        });
+        function openWindow() { window.open("list.html"); }
+    </script>
+</head>
+<body>
+    <div style="width:830px; height:209px; position:relative; margin:auto auto; background:url(images/title.jpg) no-repeat center; border:1px solid #ccc; border-bottom:none;"></div>
+    <div style="width:830px; min-height:250px; margin:-8px auto auto auto; border:1px solid #ccc;">
+        <div id="prePage" class="page" style="display:block;">
+            <div class="formbox">
+                <table>
+                    <tr>
+                        <td class="tl">&nbsp;</td>
+                        <td style="min-height:280px; vertical-align:top; padding:30px 0 10px 0; width: 630px; color:#4d4d4d;">
+                            <p style="font-size:18px; font-weight:bolder; line-height:18px;">各位業界先進您好：</p>
+                            <p style="line-height:1em; line-height:30px; text-indent:2em;">
+                                感謝　貴公司接受本校校友加入工作行列，為了瞭解　貴公司對本校校友在工作上的表現之滿意程度，並關心本校校友目前的就業現況，希望藉由本問卷彙整業界先進們的意見，作為學校人才培育的參考，以期能提供更符合業界需求之人才。敬請　貴公司人資部門及技術部門或相關主管協助填寫本問卷，謝謝您！並祝　貴公司
+                            </p>
+                            <p style="line-height:1em; line-height:25px;">鴻猷大展，駿業肇興</p>
+                            <p style="text-align:right; font-weight:bolder; ">國立雲林科技大學&nbsp;敬啟</p>
+                        </td>
+                        <td class="tr">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="tl">&nbsp;</td>
+                        <td><hr></td>
+                        <td class="tr">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="tl">&nbsp;</td>
+                        <td style="text-align: center;">
+                        <div class="btn" id="start"><b>開始填答問卷</b></div>
+                        <div class="btn" onclick="openWindow()"><b>中獎名單<span style="font-size:14px;">(10/17公開)</span></b></div>
+                        </td>
+                        <td class="tr">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="tl">&nbsp;</td>
+                        <td><hr></td>
+                        <td class="tr">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="tl">&nbsp;</td>
+                        <td style="text-align: center;">
+                            <img src="../ytu2017/images/cont1.png" style="margin:20px 0;">
+                            <div class="wpbox">
+                                <div class="box">
+                                    <div class="wbox"></div>
+                                    <div class="hbox"></div>
+                                    <img src="../ytu2017/images/btn-1.png" style="top:-20px;left:-20px;">
+                                    <img src="../ytu2017/images/btn-3.png" style="top:40px;left:40px;">
+                                    <p style="bottom:-60px;left:15px;font-size:17px;">Line Coin 100點 - 100組</p>
+                                </div>
+                                <div class="box">
+                                   <div class="wbox" style="background:#d6a887;"></div>
+                                    <div class="hbox" style="background:#d6a887;"></div>
+                                    <img src="../ytu2017/images/btn-2.png" style="top:-20px;left:-20px;">
+                                    <img src="../ytu2017/images/btn-4.png" style="top:-20px;left:40px;">
+                                    <img src="../ytu2017/images/btn-5.png" style="top:-10px;right:-70px;">
+                                    <p style="bottom:-60px;left:15px;font-size:17px;">OSIM uMoby捏捏樂 - 一台</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="tr">&nbsp;</td>
+                    </tr>
+                    <tr style="margin-top:60px;">
+                        <td class="tl">&nbsp;</td>
+                        <td>
+                            <table style="margin:40px 0;width:630px;line-height: 25px; color:#009fa0;">
+                                <tr style="height:70px;">
+                                    <td>
+                                        <img src="../ytu2017/images/btn-6.png" style="padding-right:30px;">
+                                    </td>
+                                    <td style="width:519px;"><b>即日起至2017/10/16(一)止，次日2017/10/17(二)公布得獎名單。</b></td>
+                                </tr>
+                                <tr style="height:70px;">
+                                    <td>
+                                        <img src="../ytu2017/images/btn-7.png">
+                                    </td>
+                                    <td><b>符合填寫資格且完整填寫問卷前100名，免抽即送Line Coin 100點。<br/>完整填寫問卷另可獲得OSIM uMoby捏捏樂抽獎資格。</b></td>
+                                </tr>
+                                <tr style="height:70px;">
+                                    <td>
+                                        <img src="../ytu2017/images/btn-8.png">
+                                    </td>
+                                    <td><b>現任(或曾任)人力資源單位、技術部門或相關主管者，只要您(曾)認識同事或下屬為雲林科技大學畢業生，皆符合本問卷參加資格。</b></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="tr">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="tl">&nbsp;</td>
+                        <td><hr></td>
+                        <td class="tr">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="tl">&nbsp;</td>
+                        <td style="color: #575757; padding: 0px 0px 40px 0px;line-height: 30px;">
+                            <p>注意事項：</p>
+                            <ol>
+                                <li>問卷所蒐集之個人資料，僅供主辦單位針對本次問卷發送得獎名單者之特定目的範圍內處理與利用，本公司將遵守個人資料保護法之規定，善盡個人資料檔案安全維護之責任。</li>
+                                <li>主辦單位有權將無效資料移除，請完整填寫問卷，避免喪失抽獎資格。</li>
+                                <li>抽獎結束後，得獎名單將以E-mail通知得獎者。</li>
+                                <li>本活動贈品寄送地區僅限台、澎、金、馬，主辦單位不處理贈品郵寄至海外地區之事宜。</li>
+                                <li>中獎人所提供之資料(姓名、電話、Email)應正確無誤，如因所提供之資料錯誤、不清楚、不完整、虛偽不實或無法判讀者，造成無法聯繫及寄送，視同放棄得獎權益，主辦單位將不負相關責任。</li>
+                                <li>中華民國稅法規定，得獎人需依規定填寫並繳交相關收據。獎項金額若超過1,000元至20,000元，不需預先扣繳，但獎項所得將列入個人年度綜合所得稅申報。</li>
+                                <li>本活動贈品以本網站公告的資料為準，不得要求折換現金，如遇不可抗拒之因素，主辦單位保留更換其他等值獎項之權利。</li>
+                                <li>本辦法如有未盡事宜，主辦單位保留修改、取消、中止本活動及變更本活動截止日期之權利，將不另做解釋或通知。</li>
+                            </ol>
+                        </td>
+                        <td class="tr">&nbsp;</td>
+                    </tr>
+                </table>
+                <div style="height:5px; background:#f5a625; "></div>
+            </div>
+        </div>
+        <div id="surveyPage" class="page">
+            <div class="formbox">
+                <table>
+                    <tr><th style="height:0px; line-height:0px;" colspan="3">&nbsp;</th></tr>
+                    <tr>
+                        <td class="tl">&nbsp;</td>
+                        <td style="padding-top:10px;">
+                            <div id="quiZone" style="width:630px; min-height:150px; margin:auto auto;"></div>
+                        </td>
+                        <td class="tr">&nbsp;</td>
+                    </tr>
+                </table>
+                <div style="height:5px;background: #f5a625;"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

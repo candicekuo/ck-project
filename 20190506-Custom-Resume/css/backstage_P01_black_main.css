@@ -1,0 +1,274 @@
+﻿/*主題色*/
+.mbg{background: #888888;opacity: 0;}
+.mbtn{color: #fff;background: #000;}
+.mbtn:hover{background: #333; cursor: pointer;}
+/*.mbgcg{background: #f5faff;}*/
+
+/*主要顯示區版型*/
+.main{position: relative;padding: 0 0 0 580px;font-size: 0;}
+.main .topBar{font-size: 13px;background: #2981c4;color: #fff;padding: 2px 5px;position: fixed;right:0;left: 240px;max-height: 22px;z-index: 10;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.leftBar,.rightBar{padding: 0 15px;font-size: 15px;vertical-align: top;}
+
+.main .leftBar{width: 340px;text-align: center;position: fixed;top: 92px;bottom: 0;left: 240px;color: #fff; letter-spacing: 10px;}
+.leftBar .stMove2 li:hover,.leftBar .userName:hover{cursor: pointer;opacity: .9;}
+.main .leftBar .outLink{letter-spacing: 0;}
+.leftBar .pic{width: 105px;height: 105px;overflow: hidden;margin: 50px auto 10px;}
+.leftBar .pic div{width: 100%;height: 100%;overflow: hidden;}
+.leftBar .pic div img{margin: auto;}
+.leftBar .userName{font-size: 21px;font-weight: 600;color: #fff; margin: 0 0 20px;}
+.leftBar .stMove2 li{padding: 8px 0; font-size: 16px;}
+.leftBar .outLink{background: url("../images/outLink.png") no-repeat center;height: 80px;margin: 20px 0;position: relative;}
+.outLink .reOl{color: #666;position: absolute;top: 8px;right: 30px;display: none;}
+.outLink .reOl:hover{opacity: .7;}
+.outLink:hover .reOl{display: block;}
+.linkBtn{background: #4f5152;width: 50%;min-width: 150px; margin-top: 27px;height: 30px;font-size: 16px;padding-top: 2px;border: 1px solid #999;color: #fff;}
+.outLinkCtl{position: absolute;right: 0;bottom: 0;width: 310px;border: 1px solid #2981c4;background: #fff;box-shadow: 2px 2px 5px #333;padding-bottom: 15px;font-size: 14px;display: none;color: #333;}
+.outLinkCtl>p{background: #2981c4;color: #fff;padding: 4px 0;font-size: 16px;}
+.outLinkCtl .olClose{position: absolute;right: 5px;top: 5px;color: #fff;font-size: 20px;}
+.outLinkCtl .olClose:hover{opacity: .8;}
+.outLinkCtl i{color: #999;}
+.outLinkCtl hr{border: 0.5px solid #2981c4; margin: 12px 10px 10px;}
+.outLinkCtl ul li{display: inline-block;vertical-align: middle;}
+.outLinkCtl ul li input{width: 100%;}
+
+#olk{background: #eee;padding-top: 10px;padding-bottom:1px;}
+.stMoveOL li:nth-child(2){background: #999;width: 23px;height: 23px;border-radius: 50%;}
+.stMoveOL li:nth-child(2)>i{font-size: 16px;padding-top: 3px;color: #fff;}
+.olTips{width: 150px;height: 40px;background: #ddd;box-shadow: 2px 2px 5px #999;position: absolute;left: -30px;top: 35px;z-index: 999;display: none;}
+.olTips .triangle{border-width: 0 11px 10px 11px;border-color: transparent transparent #ddd transparent;left: 30px;top: -6px;}
+.olTips .fbIcon,.olTips .inIcon,.olTips .trIcon,.olTips .beIcon{width: 30px;height: 30px;background-size: 100%;margin-top: 5px;}
+.olSave{background: #2981c4;color: #fff;border: 0;padding: 2px 50px;font-size: 16px;margin-top: 15px;}
+.olSave:hover,.outLinkCtl i:hover:not(.stm){opacity: .8;}
+.mbtn{padding: 10px 0 6px;width: 80%;margin: 15px auto;font-size: 16px;}
+
+.main .rightBar{width: 100%; margin: 15px 0 0 0; padding-top: 10px; background-color: #eeeeee;}
+.main .rightBar a{color: #333;}
+.rightBar ul li.box{padding: 10px 75px; position: relative;}
+.rightBar ul li.box2{padding: 10px 75px;position: relative;}
+.rightBar ul li .content{padding: 15px 20px 15px 10px;background-color: #fff; border-left: 10px solid #000; box-shadow: 0px 0px 10px rgba(162, 162, 162, 0.3);}
+.rightBar hr{margin: 6px 0;}
+.rightBar ul li .content.other{box-shadow:none;}
+
+.bTitle{margin: 0 0 10px; font-size: 24px; font-weight: 800; position: relative;}
+.bTitle ul li{color: #282828; display: inline-block; vertical-align: middle;}
+.bTitle ul li .icon{display: inline-block; width: 60px; text-align: center;}
+.bTitle ul li .icon:after{color: #717171; font-size: 45px; font-weight: normal; font-family: "FontAwesome";}
+.bTitle ul li .photo{border: 1px solid #e5e5e5; width: 90px; height: 90px; overflow: hidden; display: inline-block; vertical-align: middle;}
+.bTitle ul li .photo img{width: 100%; height: auto;}
+.userMainInfo{position: absolute; top: 0; left: 170px;}
+.userMainInfo .name{color: #282828;}
+.bTitle .eName{color: #bababa; font-weight: normal; padding-left: 10px;}
+.InfoBox{padding-left: 66px; line-height: 24px; letter-spacing: 1px;}
+.InfoBox .subtitle{font-size: 18px; color: #555; font-weight: 800;}
+.Plist{font-size: 0;}
+.userMainInfo .Plist li{font-size: 18px; display: inline-block; color: #555; font-weight: normal; border-right: 1px solid #c4cbd9; padding: 0px 10px; line-height: 20px;}
+.Plist li:first-child{padding-left: 0px;}
+.Plist li:last-child{padding-right: 0px; border: 0px;}
+.line-dashed{border:none; border-bottom: 1px dashed #c7c7c7;}
+
+.ListBox{word-wrap: break-word; word-break: break-all;}
+.ListBox > li{border: 1px solid #ddd; border-left: 5px solid #c7c7c7; background-color: #fff; padding: 4px 10px; margin: 10px 0;}
+.ListBox p{text-align: justify; text-justify: auto;}
+.inlineList ul{font-size: 0;}
+.inlineList li{display: inline-block; font-weight: normal; color: #282828; padding: 2px 0; font-size: 16px;}
+.inlineList li:after{content: '\007C'; font-size: 16px; padding: 0 5px; color: #c4cbd9;}
+.inlineList li:last-child:after{content: ''; padding: 0;}
+.inlineList.fs14 li, .inlineList .fs14, .fs14{font-size: 14px;}
+
+.personal .bTitle ul li{vertical-align: top;}
+.personal .bTitle ul li .icon:after{ content: "\f2be";}
+.personal .Plist{padding-right: 5px;}
+.personal .jobName{display: inline-block; font-weight: 800; font-size: 14px;}
+
+.education .bTitle ul li .icon:after{ content: "\f19d"; font-size: 38px;}
+.education .bTitle i{font-size: 42px;}
+.education .ListBox h2{margin: 0px; padding: 2px 0;}
+.education .ListBox h2 span{color: #282828; font-weight: normal; font-size: 14px; padding-left: 10px;}
+.education .ListBox .schoolName{font-weight: 800; font-size: 18px;}
+.education .ListBox .department{font-weight: 800;}
+
+.experience .bTitle ul li .icon:after{ content: "\f0f2"; font-size: 38px;}
+.experience .bTitle i{font-size: 44px;}
+.experience .inlineList.position ul{font-size: 0px;}
+.experience .inlineList.position ul li{font-size: 18px;}
+.experience .inlineList.position ul li.interval{font-size: 16px; }
+.experience .ListBox li h4{margin: 5px 0px; }
+
+.skill .bTitle ul li .icon:after{ content: "\f200"; font-size: 42px;}
+
+.referrer .bTitle ul li .icon:after{ content: "\f164";}
+.referrer .inlineList li{padding-right: 7px;}
+.referrer .inlineList li:after{content: none;}
+
+.autobiography .bTitle ul li .icon:after{ content: "\f15c"; font-size: 38px;}
+.autobiographyBox{padding: 20px; background-color: #fff; border: 1px solid #c7c7c7; margin: 5px auto 20px; word-wrap: break-word; word-break: break-all; text-align: justify; text-justify: auto;}
+
+.contactMe .bTitle ul li .icon:after{ content: "\f095";}
+.contactMe .userName{font-size: 24px; font-weight: 800; margin-right: 10px;}
+.contactMe .userName:after{content: none;}
+.contactMe .inlineList{font-size: 16px;}
+.contactMe .inlineList ul{line-height: 20px;}
+.contactMe .inlineList li{padding: 0px;}
+.contactMe .inlineList.color2{margin-bottom: 10px;}
+.contactMe .inlineList.color2 li{color: #282828; padding: 0px;}
+.contactMe .inlineList .remark{font-size: 18px; color: #666666; text-decoration: underline;}
+.contactMe .ListBox .remark{font-weight: 800; color: #666666;}
+.contactMe .resumeCode{font-size: 16px; text-decoration: underline ;margin-bottom: 10px;}
+
+
+
+
+.skillBox .skTitle{line-height: 28px;}
+.skTitle b{font-size: 20px;}
+.separate{border-left: 2px solid #999;position: relative;padding: 0 15px 25px;}
+.circle{width: 20px;height: 20px;background: #fff;border: 3px solid #127a8b;border-radius: 50%;position: absolute;right: -11px;top: 0px;z-index: 9;}
+.separate h4{margin: 0 0 10px;font-size: 20px;}
+.separate b{border-bottom: 1px dotted #000;padding-bottom: 5px;width: 100%;display: inline-block;}
+.separate span{padding: 5px 0;display: inline-block;line-height: 26px;}
+
+
+.specialty{background: #fff;min-height: 295px;margin-bottom: 15px;}
+.spTitle1,.spTitle2,.spTitle3,.spTitle4{color: #fff;padding: 15px;font-size: 20px;height: 70px;line-height: 44px;}
+.spTitle1 p,.spTitle2 p,.spTitle3 p,.spTitle4 p{display: inline-block;}
+.spTitle1{background: #4d6bab;}
+.spTitle2{background: #4ec6f8;}
+.spTitle3{background: #117a8b;}
+.spTitle4{background: #248cc9;}
+.faIcon{font-size: 4.5vmin;padding:0 15px 0 10px;float: left;}
+.spcount{padding: 15px 30px;margin-left: 15px;}
+.spcount ul li{border: 0;padding: 0;list-style: disc;line-height: 26px;}
+
+.expBox{padding: 15px;box-shadow: 15px 5px 40px #c2e9ef;}
+.expBox p{color: #17a2b8;font-size: 20px;font-weight: 600;}
+.expBox span{padding-bottom: 10px;display: inline-block;}
+.expBox .exCount{border-left: 15px solid #aee0f5;padding: 0 50px 15px;;margin-left: -15px;margin-bottom: -15px;line-height: 26px;position: relative;}
+.exCount::before,.exCount::after{font-family: 'FontAwesome';position: absolute;font-size: 5em;opacity: 0.3;font-style: normal;color: #17a2b8;}
+.exCount::before{content: "\201C";top: 20px;left: 10px;}
+.exCount::after{content: "\201D";bottom: 0;right: 10px;}
+
+
+.bg4{background: #d1ecf1;}
+.aboutMe h3{font-size: 20px;color: #126f7d;font-weight: 600;line-height: 28px;margin-top: 0;}
+.amBox{border-top: 2px dotted #9ecbd2;padding: 8px 0;font-size: 16px;}
+.amBox span::after{content: "/";color: #ea4c89;margin-left: 4px;}
+.amBox span:last-child::after{content: "";}
+.amBox2{background: #17a2b8;color: #fff;letter-spacing: 4px;text-align: center;padding: 15px;}
+.amBox3 span{display: block;line-height: 28px;position: relative;margin-left: 15px;}
+.amBox3 span::before{content: "•";margin-right: 5px;font-size: 25px;color: #126f7d;position: absolute;left: -15px;top: 0;}
+
+.cusTitle,.cusCont{border: 1px dashed #000; padding: 15px;margin-bottom: 15px;}
+.ct{background: url(../images/ct1.png) no-repeat center center transparent;}
+.cc{background: url(../images/cc1.png) no-repeat center center transparent;}
+.ct:hover,.cc:hover{opacity: 0.7;cursor: pointer;}
+.cusTitle{min-height: 54px;}
+.cusCont{min-height: 200px;}
+.evPrent{text-align: center; display: none;}
+.rightBar ul li.evPrent{padding: 5px 0px;}
+.evPrent .inlineBox{display: inline-block;width: 30%;}
+.evPrent p{margin: 6px 0;}
+.evPrent .inlineBox img{display: initial;margin: auto;}
+
+.footer{background: #343a40;color: #fff;text-align: center;padding: 4px 0;margin-left: -15px;margin-right: -15px;}
+
+.msgFullBg{width: 100%;background: rgba(0,0,0,0.5);position: fixed;top: 0;bottom: 0;left: 0;z-index: 9999; display: none;}
+.msgBox{position: fixed;z-index: 9999;display: none;}
+.msgBox .msgInfo{width: 480px;height: 200px;background: #fff;position: relative;padding: 40px;box-shadow: 1px 1px 20px #333;line-height: 28px;letter-spacing: 1px;color: #666;text-align: center;border: 1px solid #2590fc;}
+.msgBox .msgInfo b{color: #2981c4;font-size: 18px;}
+.msgBox .msgInfo i{position: absolute;right: 10px;top: 10px;}
+.msgBox .msgInfo i:hover{color: #999;}
+.msgBox .msgInfo hr{border: .5px solid #2981c4;}
+.msgBox .msgInfo input{width: 230px;}
+.msgBox .msgInfo .btnCopy{margin: auto;padding: 0px 20px;color: #fff;background: #4077C9;border-radius: 4px;border: 0;}
+.msgBox .msgInfo .btnCopy:hover{background: #005a94;cursor: pointer;}
+
+/*xs*/
+@media only screen and (max-width: 767px){
+    .main .leftBar{display: none;}
+    .main{padding: 0;}
+    .main .leftBar{width: 240px;left: 0}
+    .main .topBar{left: 0;}
+    .schoolBox .sbTitle{background: none;}
+    .schoolBox .sbTitle{text-align: center;}
+    .sbTitle span{padding: 0;}
+    .spcount ul li{padding: 0;}
+    .circle{display: none;}
+    .separate{margin-left: 18px;padding-top: 15px;}
+    .introduction{width: 100%;}
+
+    .rightBar ul li.box{padding: 10px 15px;}
+    .rightBar ul li.box2{padding: 10px 15px;}
+    .InfoBox{padding-left: 5px;}
+    .Plist li{line-height: 16px; padding: 0px 5px;}
+    .bTitle{font-size: 20px;}
+    .bTitle ul li .icon{width: 40px;}
+    .bTitle ul li .icon:after{font-size: 35px;}
+    .education .bTitle ul li .icon:after{font-size: 30px;}
+    .experience .bTitle ul li .icon:after{font-size: 30px;}
+    .skill .bTitle ul li .icon:after{font-size: 35px;}
+    .rightBar ul li .content{padding: 15px 15px 15px 10px;}
+    .autobiographyBox{padding: 10px;}
+    .userMainInfo {left: 150px;}
+}
+
+@media only screen and (max-width: 497px){
+    .inlineList li{display: block; }
+    .inlineList li:after{ content: none;}
+    .experience .inlineList.position ul li{display: inline-block; padding-right: 10px;}
+    .contactMe .inlineList li{display: inline-block;}
+    .contactMe .userName{font-size: 18px;}
+    .contactMe .inlineList .remark{font-size: 14px;}
+    .userMainInfo {position:static; padding-left: 5px;}
+    .bTitle ul li .icon{display: none;}
+}
+
+/*sm*/
+@media (min-width: 768px) and (max-width: 991px){
+    .main{padding: 0 0 0 240px;}
+    .main .leftBar{width: 240px;left: 0}
+    .outLinkCtl{right: -16px;width: 240px;}
+    .viewIcon{width: 30px;height: 30px;}
+    .fbIcon{background: url(../images/fb.png) 45% 45% no-repeat transparent;}
+    .inIcon{background: url(../images/in.png)no-repeat 45% 45% transparent;}
+    .trIcon{background: url(../images/tr.png)no-repeat 45% 45% transparent;}
+    .beIcon{background: url(../images/be.png)no-repeat 45% 45% transparent;}
+    .outLink .reOl{right: -6px;}
+    .userMainInfo {position:static; padding-left: 66px;}
+}
+/*md*/
+@media (min-width: 992px) and (max-width: 1199px){
+    .main{padding: 0 0 0 480px;}
+    .main .leftBar{width: 240px;}
+    .outLinkCtl{right: -30px;width: 250px;}
+    .viewIcon{width: 30px;height: 30px;}
+    .fbIcon{background: url(../images/fb.png) 45% 45% no-repeat transparent;}
+    .inIcon{background: url(../images/in.png)no-repeat 45% 45% transparent;}
+    .trIcon{background: url(../images/tr.png)no-repeat 45% 45% transparent;}
+    .beIcon{background: url(../images/be.png)no-repeat 45% 45% transparent;}
+    .outLink .reOl{right: -6px;}
+    .userMainInfo {position:static; padding-left: 66px;}
+}
+/*lg*/
+@media (min-width: 1200px) and (max-width: 1699px){}
+/*lgBig*/
+@media (min-width: 1700px){
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

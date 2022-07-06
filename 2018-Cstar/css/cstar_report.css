@@ -1,0 +1,1107 @@
+/*9大職能星css 線上諮詢*/
+.printLogo{
+        display: none;
+    }
+.topBar{
+    display: block;
+}
+.highBox{
+    margin: 80px 0 0;
+}
+
+.s5{
+    background: url(../img/star5.png) no-repeat;
+    width: 103px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: top;
+    background-position: 0 1px;
+}
+.s4{
+    background: url(../img/star4.png) no-repeat;
+    width: 103px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: top;
+    background-position: 0 1px;
+}
+.s3{
+    background: url(../img/star3.png) no-repeat;
+    width: 103px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: top;
+    background-position: 0 1px;
+}
+.s2{
+    background: url(../img/star2.png) no-repeat;
+    width: 103px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: top;
+    background-position: 0 1px;
+}
+.s1{
+    background: url(../img/star1.png) no-repeat;
+    width: 103px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: top;
+    background-position: 0 1px;
+}
+.s1+span,.s2+span,.s3+span,.s4+span,.s5+span{
+    font-weight: 600;
+}
+.showBox{
+    display: none;
+}
+.contUser{
+    margin: 50px auto 0;
+    width: 70%;
+    height: 158px;
+}
+
+.Ubox{
+    display: inline-block;
+    position: relative;
+    margin: 0 30px;
+}
+.Ubox>div{
+    opacity: 0;
+}
+.Ubox h2:first-child{
+    font-size: 32px;
+}
+.Ubox h2{
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 40px;
+}
+.Ubox h4,.Ubox span,.Ubox form,.Ubox select{
+    display: inline-block;
+}
+.Ubox select{
+    cursor: pointer;
+}
+.Ubox .Ulist h4{
+    margin: 20px 0 10px 0;
+}
+.Ubox option,.Ubox select{
+    font-size: 16px;
+    background: none;
+    border: 0;
+    padding: 5px;
+    margin: 0 10px;
+}
+.Ubox option{
+    color: #333;
+}
+.explain,.explain2{
+    position: absolute;
+    bottom: -180px;
+    width: 100%;
+    height: 180px;
+    background: #fff;
+    border-radius: 6px;
+    z-index: 10;
+    display: none;
+}
+.explain h4,.explain2 h4{
+    margin: 10px 0 0;
+    padding: 0 15px;
+    color: #333;
+}
+/*企業瀏覽說明*/
+.Ulist .explain h4{
+    margin: 10px 0 0;
+    padding: 0 15px;
+    color: #333;
+}
+.Ulist>h4:hover{
+    cursor: help;
+}
+.Ulist>h4:hover ~.explain,.Ulist>.pbox:hover ~.explain{
+    display: block;
+}
+/*認真作答度說明*/
+.Ubox>div>h4:first-child:hover ~.explain{
+    display: block;
+}
+.Ubox>div>h4:first-child:hover{
+    cursor: help;
+}
+/*測驗可靠度說明*/
+.Ubox>div>h4+h4:hover ~.explain2{
+    display: block;
+}
+.Ubox>div>h4+h4:hover{
+    cursor: help;
+}
+.Ubox>div>h4+h4:hover ~.explain2>.triangle{
+    left: 65%;
+}
+.triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 13px 10px 13px;
+    border-color: transparent transparent #fff transparent;
+    position: absolute;
+    top: -8px;
+    left: 40px;
+}
+.fontSiz{
+    font-size: 30px;
+}
+.btnI{
+    padding: 20px;
+    background: rgba(21,50,62,.7);
+    border-radius: 20px;
+    border: 2px solid #fff;
+    position: absolute;
+    width: 340px;
+    top: 0;
+    left: 110%;
+    display: none;
+}
+.btnI li{
+    display: inline-block;
+    border-left: 1px solid #fff;
+    padding: 0 5px 0 10px ;
+    font-size: 16px;
+    height: 16px;
+    line-height: 16px;
+}
+.btnI li:first-child{
+    border: 0;
+}
+.btnI li:hover{
+    color: #ddd;
+    cursor: pointer;
+}
+.Ubox .pls,.Lrun,.Lrun2,.frame,.frame2,.frame3,.frame4{
+    position: absolute;
+}
+.frame,.frame3{
+    width: 1px;/*50*/
+    height: 1px;/*1*/
+    background: #41b4b0;
+}
+.frame2,.frame4{
+    width: 1px;/*1*/
+    height: 1px;/*50*/
+    background: #41b4b0;
+}
+/*框框動畫*/
+.Lrun{
+    top: 30%;/*-3%*/
+    left: 40%;/*-10%*/
+}
+.Lrun2{
+    top: 30%;/*70%*/
+    left: 40%;/*98.5%*/
+}
+.frame,.frame2{
+    top: 12%;
+    left: -7%;
+}
+.frame3,.frame4{
+    bottom: 5%;
+    right: -7%;
+}
+
+
+
+
+
+
+.contTitle h2{
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin: 60px 0 ;
+    font-weight: 600;
+}
+
+.pTitle{
+    color: #ffd852;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.contType ul{
+    padding: 0;
+    list-style: none;
+}
+.contType ul li{
+    padding: 2px 0;
+}
+.contType h2{
+    font-size: 26px;
+}
+.contTypeBox{
+    float: left;
+    margin: 20px 0;
+}
+
+/*圓*/
+.roundHalf{
+    width: 180px;
+    height: 180px;
+    position: relative;
+    margin: 40px auto 0;
+}
+.roundHalf div{
+    position: absolute;
+}
+.box1,.box2{
+    width: 90px;
+    height: 180px;
+    overflow: hidden;
+}
+.box2{
+    right: 0;
+}
+.round1,.round2{
+    width: 180px;
+    height: 180px;
+    border-radius: 180px;
+    border: 6px solid #fff;
+    border-left-color: #ffd852;
+    border-bottom-color: #ffd852;
+    transform: rotate(225deg);
+}
+.round2{
+    transform: rotate(45deg);
+    right: 0;
+}
+.nb{
+    top: 50%;
+    left: 50%;
+    margin: -14px 0 0 -50px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.nb span{
+    font-size: 72px;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+.seeMore{
+    margin: auto;
+    text-align: center;
+}
+.seeMore p{
+    margin: 25px 0;
+}
+.seeMore p:hover{
+    cursor: pointer;
+    color: #ffd852;
+}
+.seeMore p:hover~.line{
+    background: #ffd852;
+}
+
+.contdigi ul{
+    padding: 0;
+    margin: 10px auto;
+}
+.contdigi ul li{
+    display: inline-block;
+    padding: 0 20px 0 0;
+}
+.contdigi select{
+    color: #333;
+    font-size: 14px;
+    padding: 0 5px 4px;
+}
+/*
+.contdigi .self{
+    padding: 10px 0;
+    color: #ffd852;
+    border-bottom: 1px solid #b3b3b3;
+}
+.contdigi .self li,.contdigi .self+ul li{
+    width: 6%;
+    padding: 0;
+}
+*/
+
+.contdigi table{
+    width: 100%;
+    text-align: center;
+    margin: 40px 0 20px;
+}
+.contdigi table tr{
+    height: 40px;
+}
+.contdigi table tr td{
+    border: 1px solid #fff;
+}
+.digiTitle td{
+    font-size: 14px;
+}
+.contdigi .self{
+    color: #ffd852;
+}
+
+.btnSent{
+    color: #000;
+    height: 25px;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 13px;
+}
+
+.jobBox{
+    background: #fff;
+    color: #436677;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px auto;
+    min-height: 396px;
+}
+.jobBox .ranking{
+    margin: 50px 0 0;
+}
+.jobBox .ranking h2,.jobBox .ranking h4{
+    font-weight: 600;
+}
+
+/*job下的圓*/
+.jobBox .round1,.jobBox .round2{
+    border: 6px solid #436677;
+    border-left-color: #ffd852;
+    border-bottom-color: #ffd852;
+    width: 140px;
+    height: 140px;
+    border-radius: 140px;
+}
+.jobBox .roundHalf{
+    width: 140px;
+    height: 140px;
+}
+.jobBox .box1,.jobBox .box2{
+    width: 70px;
+    height: 140px;
+    overflow: hidden;
+}
+
+
+.upgrade{
+    background: #fff;
+    color: #436677;
+    border-radius: 10px;
+    padding: 60px 15px 15px;
+    margin: 15px auto;
+    position: relative;
+    min-height: 423px;
+}
+.upgrade ul li{
+    font-size: 16px;
+}
+.upgrade ul{
+    padding-left: 20px;
+}
+.upgrade .Utitle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #65c8d0;
+    color: #fff;
+    width: 100%;
+    padding: 12px 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+.btnPink{
+    padding: 8px 20px;
+    margin: 20px 0 20px;
+    display: none;
+}
+
+
+
+/*豬鼻子開關*/
+.pbox{
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    background: #d44859;
+    border-radius: 60px;
+    cursor: pointer;
+    position: relative;
+    top: 5px;
+}
+.pbox h5{
+    position: absolute;
+    top: -6px;
+}
+.pbox .o{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 1px #b3b3b3;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+/*符號*/
+.icon-icon-06:before,.icon-icon-05:before{
+    float: inherit;
+    line-height: 0;
+    font-size:20px;
+}
+/*跳窗*/
+.coverB{
+    display: none;
+}
+
+
+
+
+
+
+
+
+/*341下*/
+@media only screen and (max-width: 341px){
+  .contUser{
+      width: 100%;
+      margin: 20px auto;
+      height: 280px;
+    }
+    /*分數匡最小高度*/
+    .jobBox{
+        min-height: 0;
+    }
+    .upgrade{
+        min-height: 0;
+    }
+    /*姓名大小*/
+    .Ubox h2:first-child{
+        font-size: 21px;
+    }
+    .Ubox h2{
+        font-size: 24px;
+    }
+    .Ubox option, .Ubox select{
+        padding: 0;
+        margin: 0;
+    }
+    .btnI{
+        left: -18.5%;
+        top: -10%;
+        background: rgba(21,50,62,.9);
+        width: 315px;
+    }
+    .btnI li{
+        padding: 0 3px 0 5px;
+    }
+    .fontSiz{
+        font-size: 24px;
+    }
+    .frame, .frame2{
+        top: 1%;
+        left: -9%;
+    }
+    .frame3, .frame4{
+        bottom: -52%;
+        right: -10%;
+    }
+    .Ubox h4{
+        letter-spacing: 1px;
+    }
+    /*圓分數高度*/
+    .roundHalf{
+        margin: 0 auto;
+    }
+    
+    .contTitle h2{
+        margin: 60px 0 40px;
+        font-size: 28px;
+    }
+    .jobBoxTitle{
+        margin: 0 0 20px;
+    }
+    .jobBox .ranking{
+        margin: 10px 0 0;
+    }
+    /*企業瀏覽說明*/
+    .Ubox .Ulist .explain{
+        height: 230px;
+        bottom: -200px;
+    }
+    /*認真作答度說明*/
+    .Ubox .explain{
+        bottom: -140px;
+        height: 190px;
+    }
+    /*測驗可靠度說明*/
+    .Ubox>div>h4+h4:hover ~.explain2>.triangle{
+        left: 40px;
+    }
+    .Ubox .explain2{
+        height: 200px;
+        bottom: -200px;
+    }
+    /*跳窗尺寸*/
+    .Cinfo{
+        width: 300px;
+        height: 280px;
+        margin: -140px 0 0 -150px;
+    }
+    .btnCheck{
+        padding: 4px 20px;
+        margin: 60px 0 20px;
+    }
+}
+/*342-365*/
+@media only screen and (min-width: 342px) and (max-width: 365px){
+  .contUser{
+      width: 100%;
+      margin: 20px auto;
+      height: 210px;
+    }
+    /*分數匡最小高度*/
+    .jobBox{
+        min-height: 0;
+    }
+    .upgrade{
+        min-height: 0;
+    }
+    /*姓名大小*/
+    .Ubox h2:first-child{
+        font-size: 21px;
+    }
+    .Ubox h2{
+        font-size: 24px;
+    }
+    .Ubox option, .Ubox select{
+        padding: 0;
+        margin: 0;
+    }
+    .btnI{
+        left: -10%;
+        top: -10%;
+        background: rgba(21,50,62,.9);
+        width: 315px;
+    }
+    .btnI li{
+        padding: 0 3px 0 5px;
+    }
+    .fontSiz{
+        font-size: 24px;
+    }
+    .frame, .frame2{
+        top: 1%;
+        left: -9%;
+    }
+    .frame3, .frame4{
+        bottom: -69%;
+        right: -10%;
+    }
+    .Ubox h4{
+        letter-spacing: 1px;
+    }
+    /*圓分數高度*/
+    .roundHalf{
+        margin: 0 auto;
+    }
+    
+    .contTitle h2{
+        margin: 60px 0 40px;
+        font-size: 28px;
+    }
+    .jobBoxTitle{
+        margin: 0 0 20px;
+    }
+    .jobBox .ranking{
+        margin: 10px 0 0;
+    }
+    /*企業瀏覽說明*/
+    .Ubox .Ulist .explain{
+        height: 200px;
+        bottom: -170px;
+    }
+    /*認真作答度說明*/
+    .Ubox .explain{
+        bottom: -130px;
+        height: 180px;
+    }
+    /*測驗可靠度說明*/
+    .Ubox>div>h4+h4:hover ~.explain2>.triangle{
+        left: 40px;
+    }
+    .Ubox .explain2{
+        height: 180px;
+        bottom: -180px;
+    }
+    /*跳窗尺寸*/
+    .Cinfo{
+        width: 300px;
+        height: 280px;
+        margin: -140px 0 0 -150px;
+    }
+    .btnCheck{
+        padding: 4px 20px;
+        margin: 60px 0 20px;
+    }
+}
+/*ssss*/
+@media only screen and (min-width: 366px) and (max-width: 373px){
+  .contUser{
+      width: 100%;
+      margin: 20px auto;
+      height: 200px;
+    }
+    /*分數匡最小高度*/
+    .jobBox{
+        min-height: 0;
+    }
+    .upgrade{
+        min-height: 0;
+    }
+    /*姓名大小*/
+    .Ubox h2:first-child{
+        font-size: 21px;
+    }
+    .Ubox h2{
+        font-size: 24px;
+    }
+    .Ubox option, .Ubox select{
+        padding: 0;
+        margin: 0;
+    }
+    .btnI{
+        left: -15%;
+        top: -7%;
+        background: rgba(21,50,62,.9);
+    }
+    .fontSiz{
+        font-size: 24px;
+    }
+    .frame, .frame2{
+        top: 6%;
+        left: -5%;
+    }
+    .frame3, .frame4{
+        bottom: -70%;
+        right: -7%;
+    }
+    .Ubox h4{
+        letter-spacing: 1px;
+    }
+    /*圓分數高度*/
+    .roundHalf{
+        margin: 0 auto;
+    }
+    
+    .contTitle h2{
+        margin: 60px 0 40px;
+        font-size: 28px;
+    }
+    .jobBoxTitle{
+        margin: 0 0 20px;
+    }
+    .jobBox .ranking{
+        margin: 10px 0 0;
+    }
+    /*企業瀏覽說明*/
+    .Ulist .explain{
+        height: 200px;
+    }
+    /*跳窗尺寸*/
+    .Cinfo{
+        width: 300px;
+        height: 280px;
+        margin: -140px 0 0 -150px;
+    }
+    .btnCheck{
+        padding: 4px 20px;
+        margin: 60px 0 20px;
+    }
+}
+/*sss*/
+@media only screen and (min-width: 374px) and (max-width: 481px){
+  .contUser{
+      width: 100%;
+      margin: 20px auto;
+/*      height: 250px;*/
+    }
+    /*分數匡最小高度*/
+    .jobBox{
+        min-height: 0;
+    }
+    .upgrade{
+        min-height: 0;
+    }
+    /*姓名大小*/
+    .Ubox h2:first-child{
+        font-size: 21px;
+    }
+    .Ubox h2{
+        font-size: 28px;
+    }
+    .Ubox option, .Ubox select{
+        padding: 0;
+        margin: 0;
+    }
+    .btnI{
+        left: -9%;
+        top: -7%;
+        background: rgba(21,50,62,.9);
+    }
+    .fontSiz{
+        font-size: 24px;
+    }
+    .frame, .frame2{
+        top: 6%;
+        left: -5%;
+    }
+    .frame3, .frame4{
+        bottom: -35%;
+        right: -7%;
+    }
+    .Ubox h4{
+        letter-spacing: 1px;
+    }
+    /*圓分數高度*/
+    .roundHalf{
+        margin: 0 auto;
+    }
+    
+    .contTitle h2{
+        margin: 60px 0 40px;
+        font-size: 28px;
+    }
+    .jobBoxTitle{
+        margin: 0 0 20px;
+    }
+    .jobBox .ranking{
+        margin: 10px 0 0;
+    }
+    /*企業瀏覽說明*/
+    .Ulist .explain{
+        height: 200px;
+    }
+    /*跳窗尺寸*/
+    .Cinfo{
+        width: 300px;
+        height: 280px;
+        margin: -140px 0 0 -150px;
+    }
+    .btnCheck{
+        padding: 4px 20px;
+        margin: 60px 0 20px;
+    }
+}
+/*xs*/
+@media only screen and (min-width: 482px) and (max-width: 767px){
+  .contUser{
+      width: 470px;
+/*      height: 250px;*/
+    }
+    /*分數匡最小高度*/
+    .jobBox{
+        min-height: 0;
+    }
+    .upgrade{
+        min-height: 0;
+    }
+    .btnI{
+        left: 20%;
+        top: -6%;
+        background: rgba(21,50,62,.9);
+    }
+    .frame3, .frame4{
+        bottom: -25%;
+        right: -7%;
+    }
+    /*圓分數高度*/
+    .roundHalf{
+        margin: 0 auto;
+    }
+    
+    .jobBoxTitle{
+        margin: 0 0 20px;
+    }
+    .jobBox .ranking{
+        margin: 10px 0 0;
+    }
+    .contUser{
+        height: 175px;
+    }
+    .contTitle h2{
+        margin: 40px 0;
+    }
+}
+/*sm*/
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    /*分數匡最小高度*/
+    .jobBox{
+        min-height: 426px;
+    }
+    .btnI{
+        left: 20%;
+        top: -6%;
+        background: rgba(21,50,62,.9);
+    }
+    .upgrade{
+        min-height: 449px;
+    }
+    .frame3, .frame4{
+        bottom: -25%;
+        right: -7%;
+    }
+    .contUser{
+        height: 175px;
+    }
+    .contTitle h2{
+        margin: 40px 0;
+    }
+}
+/*md*/
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+    .contUser{
+        width: 90%;
+    }
+    /*分數匡最小高度*/
+    .jobBox{
+        min-height: 555px;
+    }
+    .upgrade{
+        min-height: 526px;
+    }
+    /*表現幾顆星排版*/
+    .roundHalf{
+        margin: 20px auto 0;
+    }
+    .jobBox .ranking{
+        margin: 20px 0 0;
+    }
+}
+/*lg*/
+@media only screen and (min-width: 1200px){
+    .contUser{
+        width: 75%;
+    }
+}
+/*列印*/
+@media print{
+    @page {
+        size: 330mm 427mm;
+        margin: 14mm;
+    }
+    .container {
+        width: 1200px !important;
+    }
+    a[href]:after {
+        content: "";
+      }
+    h1,h2,h3,h4,h5{
+        color: #000;
+    }
+    p{
+        line-height: 24px;
+    }
+    .s5,.s4,.s3,.s2,.s1{
+        display: none;
+    }
+    .s5+span:before,.s4+span:before,.s3+span:before,.s2+span:before,.s1+span:before{
+        font-family: 'icomoon' !important;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .s5+span:before{
+        content: "\e9d9 \e9d9 \e9d9 \e9d9 \e9d9";
+    }
+    .s4+span:before{
+        content: "\e9d9 \e9d9 \e9d9 \e9d9 \e9d7";
+    }
+    .s3+span:before{
+        content: "\e9d9 \e9d9 \e9d9 \e9d7 \e9d7";
+    }
+    .s2+span:before{
+        content: "\e9d9 \e9d9 \e9d7 \e9d7 \e9d7";
+    }
+    .s1+span:before{
+        content: "\e9d9 \e9d7 \e9d7 \e9d7 \e9d7";
+    }
+    body{
+        font-size: 12pt;
+        color: #000 !important;
+        letter-spacing: 1px;
+    }
+    .printLogo{
+        display: block;
+    }
+    .topBar{
+        position: relative;
+        display: none;
+    }
+    .highBox{
+        display: none;
+    }
+    .Lrun{
+        top: -5% !important;
+        left: -10% !important;
+    }
+    .Lrun2{
+        top: 70% !important;
+        left: 98.5% !important;
+    }
+    .pbox{
+        display: none;
+    }
+    .Ubox h2:first-child{
+        font-size: 14pt;
+    }
+    .Ubox h2{
+        font-size: 18pt;
+    }
+    .btnI{
+        display: none !important;
+    }
+    .contTypeBox{
+        margin: 5px 0 ;
+    }
+    .contTitle h2{
+        border-top: 1px solid #666;
+        border-bottom: 1px solid #666;
+        margin: 0;
+        font-size: 18pt;
+    }
+    /*圓*/
+    .roundHalf{
+        width: 120px;
+        height: 120px;
+    }
+    .box1,.box2{
+        width: 60px;
+        height: 120px;
+    }
+    .round1, .round2{
+        border: 6px solid #ccc;
+        border-left-color: #666;
+        border-bottom-color: #666;
+        width: 120px;
+        height: 120px;
+        border-radius: 120px;
+    }
+    .nb{
+        margin: -12px 0 0 -35px
+    }
+    .nb span{
+        font-size: 48px;
+    }
+    
+    .contType h2{
+        font-size: 18pt;
+    }
+    .pTitle{
+        margin: 0;
+        font-size: 12pt;
+    }
+    .contType ul li{
+        font-size: 12pt;
+        line-height: 24px;
+        padding: 0;
+    }
+    #Highcharts_1,.highcharts-background{
+        height: 200px !important;
+    }
+    
+    .showBox{
+        display: block !important;
+        margin-bottom: 20px;
+    }
+    .seeMore p{
+        display: none;
+    }
+    .contdigi{
+        margin: 20px 0 0;
+    }
+    .contdigi table{
+        margin: 0 0 20px;
+    }
+    .contdigi table tr{
+        height: 30px;
+    }
+    .contdigi table tr td{
+        border: 1px solid #ddd;
+    }
+    .jobBox{
+        margin: 0;
+        min-height: 0;
+        height: 290px;
+        float: left;
+    }
+    .jobBox .ranking{
+        margin-top: 25px;
+    }
+    /*圓2*/
+    .jobBox .roundHalf{
+        width: 120px;
+        height: 120px;
+        margin: 20px auto 0;
+    }
+    .jobBox .box1, .jobBox .box2{
+        width: 60px;
+        height: 120px;
+    }
+    .jobBox .round1, .jobBox .round2{
+        border: 6px solid #ccc;
+        border-left-color: #666;
+        border-bottom-color: #666;
+        width: 120px;
+        height: 120px;
+        border-radius: 120px;
+    }
+    .upgrade{
+        margin: 0;
+        min-height: 0;
+        height: 260px;
+    }
+    .upgrade .Utitle{
+        text-align: left;
+        padding: 20px 0 0 20px;
+    }
+    .upgrade ul{
+        margin-top: -10px;
+    }
+    
+    #footer{
+        display: none;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+

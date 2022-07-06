@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>面試行事曆</title>
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
+    
+    <!--css-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="css/all.min.css" rel="stylesheet" type="text/css"><!--fontawesome-->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet" type="text/css" >
+    <!--共用 boxPage SharedModule -->
+    <link rel="stylesheet" href="css/lightBox/boxPage.css">
+    <link rel="stylesheet" href="css/lightBox/SharedModule.css">
+    <link rel="stylesheet" href="css/CalenderEdit.css">
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //取消收件人
+//            $(".sendBox").on("click" ,".recipient>.fa-times-circle",function(){
+//                 $(this).closest(".recipient").fadeOut(200,function(){
+//                    $(this).remove();
+//                });
+//            });
+            //月曆
+            $( "#tbDates" ).datepicker({
+                dateFormat: "yy-mm-dd",
+                monthNames: [ "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月" ],
+                dayNamesMin:["日", "一", "二", "三", "四", "五", "六"]
+            });
+            /*fancybox*/
+            $('[data-fancybox]').fancybox({
+                toolbar  : false,
+                smallBtn : true,
+                iframe : {
+                    preload : false,
+                    css: {
+                        width: 602,
+                        autoDimensions:true,
+                        backgroundColor: "transparent",
+                        autoScale:true
+                    }
+                }
+            });
+            
+        });
+        
+    </script>
+</head>
+<body>
+    <div class="wp box">
+        <div class="header">
+            <img src="images/ico-calendar.png" alt="">
+            <span class="hTitle">面試行事曆</span>
+            <span>新增排程</span>
+        </div>
+        <form action="#" method="">
+            <div class="content">
+                <ul>
+                    <li>
+                        <div class="listTitle"><span class="Required">＊</span>履歷代碼</div>
+                        <div class="listCont">
+                            <input type="text" value="52409601">
+                            <div class="btnfind">搜尋人才庫</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="listTitle">應徵人員</div>
+                        <div class="listCont">
+                            <div class="sendBox">
+                                <div class="recipient">王大明</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="listTitle">排程種類</div>
+                        <div class="listCont">
+                            <select class="pySelect">
+                                <option value ="0" selected="selected">面試</option>
+                                <option value="1">第一次複試</option>
+                                <option value="2">第二次複試</option>
+                                <option value="3">到職</option>
+                                <option value="4">員工訓練</option>
+                                <option value="5">其他</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="listTitle">職務選擇</div>
+                        <div class="listCont">
+                            <a href="noticemail_jobListShow.htm" data-fancybox="" data-type="iframe"><input class="jobList w80" type="text" placeholder="這邊帶入預設職缺"></a>
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="listTitle">主試人員</div>
+                        <div class="listCont">
+                            <input type="text">
+                        </div>
+                    </li>
+                    <li><hr class="dash"></li>
+                    <li>
+                        <div class="listTitle">日期時間</div>
+                        <div class="listCont">
+                            <div class="kind">
+                                <div id="kindDate">
+                                    <input type="text" id="tbDates" placeholder="選擇日期">
+                                    <input type="text" id="tbDates1" value="10">
+                                    <img src="images/spin-button.png" alt=""> <span>點</span>
+                                    <input type="text" id="tbDates2" value="30">
+                                    <img src="images/spin-button.png" alt=""> <span>分</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="listTitle">備註內容</div>
+                        <div class="listCont">
+                            <textarea rows="3" class="letterCont"></textarea>
+                            <span class="textAttention">※限3000個字以內，已輸入 120 個字。</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer">
+                <div>
+                    <button type="button" class="btnCancel">取消</button>
+                    <button type="submit" class="btnSend">加入行事曆</button>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</body>
+</html>

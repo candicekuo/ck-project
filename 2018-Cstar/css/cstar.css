@@ -1,0 +1,1355 @@
+/*9大職能星css 首頁*/
+.absl{
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    margin-left: -20%;
+    width: 40%;
+    height: 600px;
+}
+.cstarlogo{
+    max-width:30%;
+}
+.topStar{
+    position: relative;
+    opacity: 0;
+}
+.topStar h2,.topStar h5{
+/*    display: none;*/
+    opacity: 0;
+}
+.topStar>img:hover,.topStar .starM:hover{
+/*    box-shadow:4px 4px 12px 4px rgba(255,223,77,0.5);*/
+    -webkit-filter:drop-shadow(0px 0px 12px #fff3b3);
+    -moz-filter:drop-shadow(0px 0px 12px #fff3b3);
+}
+.topStar img:hover+h5{
+/*    display: block;*/
+    opacity: 1;
+}
+.topStar img:hover+h2{
+/*    display: block;*/
+    opacity: 1;
+}
+.topStar img:hover+h2+h5{
+/*    display: block;*/
+    opacity: 1;
+}
+.topStar img,.topStar h5,.topStar h2,.topStar div,.starM{
+    position: absolute;
+}
+.topStar h5,.topStar h2{
+    color: #ddd;
+}
+.topStar .imgW,.imgW{
+    width:100%;
+    position:relative;
+    opacity:0;
+}
+.starM{
+    min-width: 130px;
+    min-height: 100px;
+    background-repeat: repeat;
+    background-position: center;
+    border-radius: 50%;
+/*    overflow: hidden;*/
+    
+}
+.mer{
+    top:50px;
+    left:-20%;
+    width: 30%;
+    background-image: url(../img/s2.png);
+}
+.nep{
+    top: 220px;
+    right: -30%;
+    width: 36%;
+    background-image: url(../img/s1.png);
+}
+
+.topMain{
+    text-align: center;
+    padding: 150px 0 0px;
+}
+.topMain h1 {
+    padding: 0 0 60px;
+    letter-spacing: 10px;
+    font-size: 28px;
+}
+.topMain h3{
+    padding: 10px 10px 60px;
+    font-size: 24px;
+    line-height: 40px;
+}
+/*
+.topMain p span{
+    color: #ffdf4d;
+    font-size: 54px;
+}
+*/
+.topMain .numberY{
+    color: #ffdf4d;
+    font-size: 50px;
+    padding-top: 10px;
+}
+.topMain2{
+    text-align: center;
+   padding: 0 0 150px;
+}
+.topMain2 .btn1{
+    height: 65px;
+    margin: 50px auto 20px;
+    background: #d44859;
+    color: #fff;
+    line-height: 65px;
+    font-size: 21px;
+    font-weight: 500px;
+    border-radius: 10px;
+}
+.topMain2 .btn1:hover{
+    background: #b94859;
+}
+.contBn{
+    position: relative;
+    height: 450px;
+}
+.contBn img,.contBn span,.contBn .svgBox1{
+    position: absolute;
+    opacity: 0;
+}
+.contBn span{
+    font-size:40px;
+    line-height: 40px;
+}
+.contBn .i1{
+    width:30%;
+    bottom:0;
+    left:21%;
+}
+.contBn .i2{
+    width:23%;
+    bottom:26%;
+    left:20.5%;
+}
+.contBn .s1{
+    font-size:64px;
+    bottom:80%;
+    left:6%;
+    letter-spacing:10px;
+}
+.contBn .s2{
+    font-size:30px;
+    bottom:63%;
+    left:17%;
+}
+.contBn .s3{
+    font-size:16px;
+    bottom:30%;
+    left:8%;
+    color:#d44859;
+    letter-spacing: 0;
+}
+.contBn .s4{
+    font-size:16px;
+    bottom:23%;
+    left:10%;
+    color:#d44859;
+    letter-spacing: 0;
+}
+.contBn .s5{
+    bottom:63%;
+    left:45%;
+    letter-spacing:8px;
+}
+.svgBox1{
+    left: 5%;
+    bottom: 0;
+    width: 50%;
+    height: 450px;
+}
+.contBox1{
+    margin: 40px 0 0px;
+}
+.contBox1 img{
+    margin: 0 auto 20px;
+}
+.contBox1 p{
+    padding: 0 20px;
+    line-height: 32px;
+}
+
+.contBn2{
+    margin: 150px 0 0;
+    height: 300px;
+}
+.contBn2 span{
+    position: absolute;
+    font-size:40px;
+    letter-spacing:8px;
+    top:40%;
+    right:10%;
+}
+.contBn2 h4{
+    position: absolute;
+    letter-spacing:25px;
+    top:55%;
+    right:9%;
+}
+.svgBox2{
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+}
+.ast2{
+    position: absolute;
+    top: 20%;
+    right: 25%;
+    animation: ast2 5s infinite linear;
+}
+@keyframes ast2{
+    0% {top:20%;right: 25%;}
+    50% {top:30%;right: 30%; transform: rotate(10deg);}
+    100% {top:20%;right: 25%;}
+}
+
+.fly1{
+    width:5%;
+    top:50%;
+    left:-20%;
+    animation: fly1 10s infinite linear;
+}
+.fly2{
+    width:15%;
+    bottom:-20%;
+    left:110%;
+    animation: fly2 4s infinite linear;
+}
+.fly3{
+    width:20%;
+    bottom:-190%;
+    left:-240%;
+    animation: fly3 5s infinite linear;
+}
+.icemove{
+    animation: icemove 1s linear;
+}
+ @keyframes fly1{
+    0% {left:-20%;top:50%;}
+    10% {left:-10%;top:40%; transform: rotate(-10deg);}
+    40% {left:50%;top:-70%; transform: rotate(0deg);}
+    55% {left:40%;top:-40%; transform: rotate(-120deg);}
+    65% {left:30%;top:-50%; transform: rotate(-180deg);}
+    75% {left:20%;top:-30%; transform: rotate(-180deg);}
+    85% {left:0%;top:0%; transform: rotate(-180deg);}
+    100% {left:-20%;top:50%; transform: rotate(-360deg);}
+}
+@keyframes fly2{
+    0% {left: 110%;bottom: -20%;}
+    50% {transform: rotateY(180deg);}
+    100% {left: 110%;bottom: -20%;}
+}
+@keyframes fly3{
+    0% {left:-240%;bottom:-190%;}
+    25% {left:-242%;bottom:-195%; transform: rotate(-20deg) rotateY(90deg);}
+    50% {left:-240%;bottom:-200%; transform: rotate(0deg);}
+    75% {left:-238%;bottom:-195%; transform: rotate(-10deg);}
+    100% {left:-240%;bottom:-190%;}
+}
+@keyframes icemove{
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(0deg);}
+    50% { transform: rotate(1deg);}
+    70% { transform: rotate(-1deg);}
+    80% { transform: rotate(0deg);}
+    90% { transform: rotate(-1deg);}
+    100% { transform: rotate(0deg);}
+}
+.anmt{
+    animation: anmt 2s infinite ;
+}
+@keyframes anmt{
+    0% { top:0;}
+    50% { top:10px;}
+    100% { top:0;}
+}
+
+
+
+
+
+
+
+.contBox2{
+    margin: 40px 0 0px;
+    width: 100%;
+    position: relative;
+    padding: 30px 0;
+/*    border: 1px solid yellow;*/
+}
+
+.contBox2 .btn2{
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background: rgba(255,255,255,0.6);
+    border-radius: 30px;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    font-size: 26px;
+    text-align: center;
+}
+.contBox2 .btn2:hover{
+    background: rgba(255,255,255,0.8);
+    cursor: pointer;
+}
+.contBox2 .btn2 i{
+    line-height: 40px;
+}
+
+.contBox2 .starList{
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    margin: 0 0 0 -140px;
+}
+.contBox2 .starList div{
+    width: 10px;
+    height: 10px;
+    background: #b3b3b3;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0 0 0 20px;
+    cursor: pointer;
+}
+.contBox2 .starList .chg{
+    background: #fff;
+}
+.cover{
+    width: 85%;
+    height: 278px; /*暫時改固定高*/
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+/*    border: 1px solid #fff;*/
+}
+.cover .changeBox{
+    position: absolute;
+    visibility: hidden;
+    width:100%;
+}
+.changeBox ul{
+    padding: 0;
+}
+.changeBox ul li{
+    list-style: none;
+}
+.changeBox .starImg{
+/*    width: 85%;*/
+    display: block;
+    margin: auto;
+}
+/*星球工作類型 動畫*/
+#infntNep,#infntMer,#infntUra,#infntPlu,#infntVen,#infntMar,#infntSat,#infntJup,#infntEar{
+    border-radius: 50%;
+    width: 77%;
+    background-repeat: repeat-x;
+/*    background-position: center;*/
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+}
+#infntNep{
+    background: url(../img/s1.png);
+}
+#infntMer{
+    background: url(../img/s2.png);
+}
+#infntUra{
+    background: url(../img/s5.png);
+}
+#infntPlu{
+    background: url(../img/s4.png);
+}
+#infntVen{
+    background: url(../img/s9.png);
+}
+#infntMar{
+    background: url(../img/s3.png);
+}
+#infntJup{
+    background: url(../img/s6.png);
+}
+#infntEar{
+    background: url(../img/s7.png);
+}
+
+
+
+
+
+
+
+
+
+.contBox3{
+    margin: 150px 0 40px;
+}
+.contList{
+    border-bottom: 2px solid #41b4b0;
+}
+.contList:hover{
+    color: #ffd852;
+    cursor: pointer;
+}
+.contList:hover .line{
+    background: #ffd852;
+}
+.contList+div{
+    padding: 30px 15px;
+    display: none;
+}
+
+
+.whiteBG{
+    min-height: 167px;
+    background: #fff;
+    color: #666;
+    border-radius: 15px;
+    padding: 1px 15px 10px;
+    margin: 15px 0;
+}
+.whiteBG h3{
+    color: #2b5970;
+    font-weight: 600;
+}
+.whiteBG p{
+    color: #838bc5;
+    font-weight: 600;
+    margin: 10px 0 0;
+}
+
+
+.iceM{
+    width: 100%;
+    height: 420px;
+    position: relative;
+    margin: 15px 0;
+    overflow: hidden;
+}
+.iceM img{
+    position: absolute;
+    right: 0;
+    bottom: 4%;
+    width:55%;
+    opacity: 0;
+}
+.iceM > h3{
+    position: absolute;
+    left:1%;
+    color:#90cbeb;
+}
+.iceM > .f1{
+    top:25%;
+}
+.iceM > .f2{
+    top:65%;
+}
+.iceM .underIce{
+    width: 100%;
+    height: 40%;
+    background: #076696;
+    position: absolute;
+    bottom: 0;
+}
+.iceM .iceFont{
+    position: absolute;
+    text-align: center;
+    right: 14%;
+    bottom: 3%;
+}
+.iceM .iceFont h3{
+    margin: 0;
+    padding: 7px;
+}
+
+
+
+.contBox4{
+    background: #fff;
+    color: #666;
+    border: 3px solid #407a99;
+    border-radius: 15px;
+    padding: 1px 15px 10px;
+    margin: 60px 15px 0;
+}
+.contBox4 h3{
+    text-align: center;
+    color: #407a99;
+    font-weight: 600;
+}
+.contBox4 hr{
+    border:0.5px solid #407a99;
+}
+.stableHight{
+    margin: 10px 0;
+    border: 0.5px solid #ddd;
+    overflow: hidden;
+}
+.stableHight img{
+    margin: auto;
+    padding: 5px 0;
+}
+.contBox4 .overHide{
+    overflow: hidden;
+    position: relative;
+    margin: 0 15px;
+}
+.contBox4 .logoPage{
+    position: absolute;
+    margin-left: -15px;
+    display: none;
+}
+
+.contBox4 .btn2{
+    width: 30px;
+    height: 40px;
+    color: #fff;
+    background: rgba(200,200,200,0.6);
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    font-size: 26px;
+    text-align: center;
+    opacity: 0;
+}
+.contBox4 .btn2:hover{
+    background: rgba(200,200,200,0.8);
+    cursor: pointer;
+}
+.contBox4 .btn2 i{
+    line-height: 40px;
+    font-size: 24px;
+}
+
+/*跳窗*/
+.coverB{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*ssss*/
+@media (max-width: 449px){
+    .topMain{
+        padding: 40px 0 0;
+    }
+    .topMain h1{
+        font-size: 28px;
+        padding: 0 0 40px;
+        letter-spacing: 10px;
+    }
+    .topMain h2{
+        font-size: 24px;
+    }
+    .topMain h3{
+        padding: 10px 10px 40px;
+        font-size: 20px;
+    }
+    .topMain .numberY{
+        font-size: 36px;
+    }
+    /*bn1*/
+    .contBn .i1{
+        left:4%;
+        width: 38%;
+    }
+    .contBn .i2{
+        bottom:16%;
+        left:4%;
+        width: 32%;
+    }
+    .svgBox1{
+        left: -4%;
+        width: 45%;
+        bottom: -130%;
+    }
+    .contBn .s1{
+        bottom:30%;
+        left:39%;
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    .contBn .s2{
+        bottom:48%;
+        left:55%;
+        font-size: 28px;
+        letter-spacing: 2px;
+        display: none;
+    }
+    .contBn .s3{
+        display: none;
+    }
+    .contBn .s4{
+        display: none;
+    }
+    .contBn .s5{
+        left: 40%;
+        bottom:35%;
+        font-size: 28px;
+        letter-spacing: 2px;
+        display: none;
+    }
+    
+    
+    .topMain2{
+        padding: 0 0 50px;
+    }
+    .contBn{
+        height: 200px;
+    }
+    /*bn1下小圖字*/
+    .contBox1 p{
+        text-align: center;
+    }
+    /*bn2*/
+    .contBn2{
+        margin: 90px 0 0;
+        height: 250px;
+    }
+    .contBn2 span{
+        font-size:24px;
+        letter-spacing:5px;
+        padding: 0 0 0 15px;
+    }
+    .contBn2 h4{
+        letter-spacing:9px;
+        padding: 0 0 0 15px;
+    }
+    .svgBox2{
+        bottom: 0%;
+    }
+    .ast2{
+        top: 40%;
+        width: 90%;
+    }
+    @keyframes ast2{
+        0% {top:30%;right: 25%;}
+        50% {top:40%;right: 30%; transform: rotate(10deg);}
+        100% {top:30%;right: 25%;}
+    }
+    
+    /*bn2下星球圖*/
+    .changeBox .starImg{
+        width: 40%;
+    }
+    .contBox2{
+        margin: 0;
+    }
+    .contBn2 span{
+        font-size:21px;
+        letter-spacing:1px;
+        padding: 0 0 0 15px;
+        line-height: 32px;
+    }
+    .contBn2 h4{
+        font-size: 15px;
+        letter-spacing:3.5px;
+        padding: 0 0 0 15px;
+        display: none;
+    }
+    
+    
+    /*跳動星球位置*/
+    .anmt{
+        width: 60%;
+    }
+    .contBox3{
+        margin: 40px 0;
+    }
+    
+    .changeBox h2{
+        font-size: 26px;
+    }
+    .contBox2 .btn2{
+        width: 28px;
+        height: 28px;
+    }
+    .contBox2 .btn2 i{
+        line-height: 16px;
+    }
+    .contBox2 .btn2 i:before{
+        font-size: 16px;
+    }
+    .contBox2 .btn2{
+        margin-top: -150px;
+    }
+    
+    /*冰山*/
+    .iceM{
+        height: 480px;
+    }
+    .iceM img{
+        width: 80%;
+        min-width: 517.5px;
+        bottom: 11.5%;
+    }
+    .iceM .iceFont{
+        left: 0;
+        bottom: 18%;
+        text-align: left;
+        width: 100%;
+    }
+    .iceM .iceFont h3{
+        font-size: 17px;
+        padding: 0 5px;
+    }
+    .iceM > h3{
+        font-size: 17px;
+    }
+    .iceM > .f1{
+        top: 9%;
+    }
+    .iceM > .f2{
+        top: 80%;
+    }
+    .fly1,.fly2,.fly3{
+        display: none;
+    }
+    /*跳窗尺寸*/
+    .Cinfo{
+        width: 300px;
+        height: 220px;
+        margin: -110px 0 0 -150px;
+    }
+    .btnCheck{
+        padding: 4px 20px;
+        margin: 10px 0 0;
+    }
+    /*符號*/
+    .icon-icon-06:before,.icon-icon-05:before{
+        font-size: 18px;
+        line-height: 25px;
+    }
+}
+/*sss*/
+@media (min-width: 450px) and (max-width: 504px){
+    /*bn1*/
+    .contBn .i1{
+        left:10%;
+        width: 35%;
+    }
+    .contBn .i2{
+        bottom:20%;
+        left:10%;
+        width: 30%;
+    }
+    .svgBox1{
+        left: -4%;
+        width: 43%;
+        bottom: -90%;
+    }
+    .contBn .s1{
+        bottom:40%;
+        left:42%;
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+    .contBn .s2{
+        bottom:48%;
+        left:55%;
+        font-size: 28px;
+        letter-spacing: 2px;
+        display: none;
+    }
+    .contBn .s3{
+        display: none;
+    }
+    .contBn .s4{
+        display: none;
+    }
+    .contBn .s5{
+        left: 40%;
+        bottom:35%;
+        font-size: 28px;
+        letter-spacing: 2px;
+        display: none;
+    }
+    
+    
+    .topMain2{
+        padding: 0 0 50px;
+    }
+    .contBn{
+        height: 250px;
+    }
+    /*bn1下小圖字*/
+    .contBox1 p{
+        text-align: center;
+    }
+    /*bn2*/
+    .contBn2{
+        margin: 90px 0 0;
+        height: 250px;
+    }
+    .contBn2 span{
+        font-size:24px;
+        letter-spacing:5px;
+        padding: 0 0 0 15px;
+    }
+    .contBn2 h4{
+        letter-spacing:9px;
+        padding: 0 0 0 15px;
+    }
+    .svgBox2{
+        bottom: 0%;
+    }
+    .ast2{
+        top: 40%;
+        width: 70%;
+    }
+    
+    /*bn2下星球圖*/
+    .changeBox .starImg{
+        width: 40%;
+    }
+    .contBox2{
+        margin: 0;
+    }
+    .contBn2 span{
+        font-size:21px;
+        letter-spacing:1px;
+        padding: 0 0 0 15px;
+    }
+    .contBn2 h4{
+        font-size: 15px;
+        letter-spacing:3.5px;
+        padding: 0 0 0 15px;
+        display: none;
+    }
+    @keyframes ast2{
+        0% {top:30%;right: 25%;}
+        50% {top:40%;right: 30%; transform: rotate(10deg);}
+        100% {top:30%;right: 25%;}
+    }
+    /*跳動星球位置*/
+    .anmt{
+        width: 60%;
+    }
+    .contBox3{
+        margin: 40px 0;
+    }
+    
+    /*冰山*/
+    .iceM{
+        height: 480px;
+    }
+    .iceM img{
+        width: 80%;
+        min-width: 517.5px;
+        bottom: 11.5%;
+    }
+    .iceM .iceFont{
+        left: 0;
+        bottom: 18%;
+        text-align: left;
+        width: 100%;
+    }
+    .iceM .iceFont h3{
+        font-size: 17px;
+        padding: 0 5px;
+    }
+    .iceM > h3{
+        font-size: 17px;
+    }
+    .iceM > .f1{
+        top: 9%;
+    }
+    .iceM > .f2{
+        top: 80%;
+    }
+    .fly1,.fly2,.fly3{
+        display: none;
+    }
+    /*跳窗尺寸*/
+    .Cinfo{
+        width: 300px;
+        height: 220px;
+        margin: -110px 0 0 -150px;
+    }
+    .btnCheck{
+        padding: 4px 20px;
+        margin: 10px 0 0;
+    }
+    /*符號*/
+    .icon-icon-06:before,.icon-icon-05:before{
+        font-size: 18px;
+        line-height: 25px;
+    }
+}
+/*ss*/
+@media (min-width: 505px) and (max-width: 689px){
+    .cstarlogo{
+        max-width:25%;
+    }
+    /*bn1*/
+    .contBn .i1{
+        left:10%;
+    }
+    .contBn .i2{
+        bottom:16%;
+        left:10%;
+        width: 25%;
+    }
+    .svgBox1{
+        left: -4%;
+        width: 43%;
+        bottom: -65%;
+    }
+    .contBn .s1{
+        bottom:48%;
+        left:40%;
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+    .contBn .s2{
+        bottom:48%;
+        left:55%;
+        font-size: 28px;
+        letter-spacing: 2px;
+        display: none;
+    }
+    .contBn .s3{
+        display: none;
+    }
+    .contBn .s4{
+        display: none;
+    }
+    .contBn .s5{
+        left: 40%;
+        bottom:35%;
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+    
+    
+    .topMain2{
+        padding: 0 0 50px;
+    }
+    .contBn{
+        height: 250px;
+    }
+    /*bn1下小圖字*/
+    .contBox1 p{
+        text-align: center;
+    }
+    /*bn2*/
+    .contBn2{
+        margin: 90px 0 0;
+        height: 250px;
+    }
+    .contBn2 span{
+        font-size:21px;
+        letter-spacing:1px;
+        padding: 0 0 0 15px;
+    }
+    .contBn2 h4{
+        font-size: 15px;
+        letter-spacing:3.5px;
+        padding: 0 0 0 15px;
+    }
+    .svgBox2{
+        bottom: 0%;
+    }
+    .ast2{
+        top: 40%;
+        width: 70%;
+    }
+    
+    /*bn2下星球圖*/
+    .changeBox .starImg{
+        width: 40%;
+    }
+    .contBox2{
+        margin: 0;
+    }
+    
+    /*跳動星球位置*/
+    .anmt{
+        width: 60%;
+    }
+    .contBox3{
+        margin: 40px 0;
+    }
+    
+    /*冰山*/
+    .iceM{
+        height: 480px;
+    }
+    .iceM img{
+        width: 80%;
+        min-width: 517.5px;
+        bottom: 11.5%;
+    }
+    .iceM .iceFont{
+        left: 5%;
+        bottom: 18%;
+        width: 100%;
+    }
+    .iceM .iceFont h3{
+        font-size: 17px;
+        padding: 0 5px;
+    }
+    .iceM > h3{
+        font-size: 17px;
+    }
+    .iceM > .f1{
+        top: 9%;
+    }
+    .iceM > .f2{
+        top: 80%;
+    }
+    .fly1,.fly2,.fly3{
+        display: none;
+    }
+    /*符號*/
+    .icon-icon-06:before,.icon-icon-05:before{
+        font-size: 18px;
+        line-height: 25px;
+    }
+}
+/*xs*/
+@media (min-width: 690px) and (max-width: 767px){
+    .cstarlogo{
+        max-width:25%;
+    }
+    /*bn1*/
+    .contBn .i1{
+        left:18%;
+    }
+    .contBn .i2{
+        bottom:22%;
+        left:18%;
+    }
+    .svgBox1{
+        left: -4%;
+        width: 43%;
+        bottom: -35%;
+    }
+    .contBn .s1{
+        bottom:68%;
+        left:1%;
+        font-size: 54px;
+        letter-spacing: 6px;
+    }
+    .contBn .s2{
+        bottom:50%;
+        left:12%;
+        font-size: 24px;
+    }
+    .contBn .s3{
+        bottom:25%;
+        left:1%;
+        font-size: 14px;
+    }
+    .contBn .s4{
+        bottom:18%;
+        left:3%;
+        font-size: 14px;
+    }
+    .contBn .s5{
+        bottom:50%;
+        font-size: 32px;
+    }
+    
+    
+    .topMain2{
+        padding: 0 0 50px;
+    }
+    .contBn{
+        height: 350px;
+    }
+    /*bn1下小圖字*/
+    .contBox1 p{
+        text-align: center;
+    }
+    /*bn2*/
+    .contBn2{
+        margin: 90px 0 0;
+        height: 250px;
+    }
+    .contBn2 span{
+        font-size:24px;
+        letter-spacing:5px;
+        padding: 0 0 0 15px;
+    }
+    .contBn2 h4{
+        letter-spacing:9px;
+        padding: 0 0 0 15px;
+    }
+    .svgBox2{
+        bottom: 0%;
+    }
+    .ast2{
+        top: 40%;
+        width: 70%;
+    }
+    
+    /*bn2下星球圖*/
+    .changeBox .starImg{
+        width: 40%;
+    }
+    .contBox2{
+        margin: 0;
+    }
+    
+    /*跳動星球位置*/
+    .anmt{
+        width: 60%;
+    }
+    .contBox3{
+        margin: 40px 0;
+    }
+    
+    /*冰山*/
+    .iceM{
+        height: 480px;
+    }
+    .iceM img{
+        width: 80%;
+        min-width: 517.5px;
+        bottom: 11.5%;
+    }
+    .iceM .iceFont{
+        right: 21%;
+        bottom: 12%;
+    }
+    .iceM .iceFont h3{
+        font-size: 18px;
+    }
+    .iceM > h3{
+        font-size: 18px;
+    }
+    .iceM > .f1{
+        top: 9%;
+    }
+    .iceM > .f2{
+        top: 80%;
+    }
+    .fly1,.fly2,.fly3{
+        display: none;
+    }
+    /*符號*/
+    .icon-icon-06:before,.icon-icon-05:before{
+        font-size: 18px;
+        line-height: 25px;
+    }
+}
+/*sm*/
+@media (min-width: 768px) and (max-width: 991px){
+    .cstarlogo{
+        max-width:20%;
+    }
+    /*bn1*/
+    .contBn .i1{
+        left:18%;
+    }
+    .contBn .i2{
+        bottom:22%;
+        left:18%;
+    }
+    .svgBox1{
+        left: -4%;
+        width: 43%;
+        bottom: -35%;
+    }
+    .contBn .s1{
+        bottom:68%;
+        left:0%;
+        font-size: 54px;
+    }
+    .contBn .s2{
+        bottom:50%;
+        left:12%;
+        font-size: 24px;
+    }
+    .contBn .s3{
+        bottom:25%;
+        left:0%;
+        font-size: 14px;
+    }
+    .contBn .s4{
+        bottom:18%;
+        left:3%;
+        font-size: 14px;
+    }
+    .contBn .s5{
+        bottom:50%;
+        font-size: 32px;
+    }
+    
+    
+    .topMain2{
+        padding: 0 0 50px;
+    }
+    .contBn{
+        height: 350px;
+    }
+    
+    /*bn2*/
+    .contBn2{
+        margin: 50px 0 0;
+    }
+    .contBn2 span{
+        font-size:28px;
+        letter-spacing:7px;
+    }
+    .contBn2 h4{
+        letter-spacing:14px;
+    }
+    .ast2{
+        top: 20%;
+        width: 65%;
+    }
+    
+    /*bn2下星球圖*/
+    .changeBox .starImg{
+        margin: 20% auto 0;
+        width: 90%;
+    }
+    .contBox2{
+        margin: 0;
+    }
+    
+    /*跳動星球位置*/
+    .anmt{
+        margin: 60px auto 0;
+    }
+    
+    /*冰山*/
+    .iceM{
+        height: 450px;
+    }
+    .iceM img{
+        width: 75%;
+        bottom: 8.5%;
+    }
+    .iceM .iceFont{
+        right: 19%;
+        bottom: 8%;
+    }
+    .iceM .iceFont h3{
+        font-size: 18px;
+    }
+    .iceM > h3{
+        font-size: 18px;
+    }
+    .iceM > .f1{
+        top: 5%;
+    }
+    .iceM > .f2{
+        top: 78%;
+    }
+    .iceM .underIce{
+        height: 37%;
+    }
+    /*火箭飛*/
+    @keyframes fly1{
+        0% {left:-20%;top:50%;}
+        10% {left:-10%;top:40%; transform: rotate(-10deg);}
+        40% {left:50%;top:-50%; transform: rotate(0deg);}
+        55% {left:40%;top:-30%; transform: rotate(-120deg);}
+        65% {left:30%;top:-40%; transform: rotate(-180deg);}
+        75% {left:20%;top:-20%; transform: rotate(-180deg);}
+        85% {left:0%;top:0%; transform: rotate(-180deg);}
+        100% {left:-20%;top:50%; transform: rotate(-360deg);}
+    }
+}
+/*md*/
+@media (min-width: 992px) and (max-width: 1199px){
+    /*bn1*/
+    .svgBox1{
+        left: 0;
+        width: 43%;
+        bottom: -5%;
+    }
+    .contBn .i2{
+        bottom:22%;
+        left:20.5%;
+    }
+    .contBn .s1{
+        bottom:67%;
+        left:3%;
+    }
+    .contBn .s2{
+        bottom:51%;
+        left:15%;
+    }
+    .contBn .s3{
+        bottom:26%;
+        left:5%;
+    }
+    .contBn .s4{
+        bottom:19%;
+        left:8%;
+    }
+    .contBn .s5{
+        bottom:55%;
+    }
+    .topMain2{
+        padding: 0 0 50px;
+    }
+    
+    /*bn2*/
+    .contBn2{
+        margin: 100px 0 0;
+    }
+    .contBn2 span{
+        font-size:32px;
+        letter-spacing:8px;
+    }
+    .contBn2 h4{
+        letter-spacing:18px;
+    }
+    
+    /*bn2下星球圖*/
+    .changeBox .starImg{
+        margin: 5% auto 0;
+        width: 85%;
+    }
+    
+    /*跳動星球位置*/
+    .anmt{
+        margin: 25px auto 0;
+    }
+    
+    /*冰山*/
+    .iceM img{
+        width: 60%;
+        bottom: 6%;
+    }
+    /*火箭飛*/
+    @keyframes fly1{
+        0% {left:-20%;top:50%;}
+        10% {left:-10%;top:40%; transform: rotate(-10deg);}
+        40% {left:50%;top:-65%; transform: rotate(0deg);}
+        55% {left:40%;top:-40%; transform: rotate(-120deg);}
+        65% {left:30%;top:-50%; transform: rotate(-180deg);}
+        75% {left:20%;top:-30%; transform: rotate(-180deg);}
+        85% {left:0%;top:0%; transform: rotate(-180deg);}
+        100% {left:-20%;top:50%; transform: rotate(-360deg);}
+    }
+}
+/*lg*/
+@media (min-width: 1200px){
+    
+}

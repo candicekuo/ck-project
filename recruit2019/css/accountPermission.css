@@ -1,0 +1,73 @@
+﻿.gray{color: #979797;}/*808080*/
+.font21{font-size: 21px;}
+.titleFont{color: #4F6B90;margin: 0 0 5px;display: inline-block;}
+.seeMore{text-align: right;display: inline-block;font-size: 16px;}
+hr{border: .5px solid #4F6B90;}
+.fontNew{font-size: 12px;color: #FF7B62;font-weight: 600;}
+.fontDel{font-size: 18px;color: #E25656;cursor: pointer;}
+.fontDel:hover{color: #B43336;}
+.blue{color: #4F6B90;font-weight: 600;}
+.red{color: #E25656;font-weight: 600;}
+.lightBlue{color: #1385B7;font-weight: 600;}
+.relative{position: relative;}
+.triangle{width: 0;height: 0;border-style: solid;border-width: 0 10px 8px 10px;border-color: transparent transparent #1383B5 transparent;position: absolute;z-index: 999;}
+.textCenter{text-align: center;}
+
+/*首頁區塊*/
+.content{background: #F0F0F0;min-width: 1200px;}
+.content .cont{width: 1170px;margin: auto;padding: 15px 0;font-size: 0;position: relative;animation: loadAnimate 1s ease 0s 1 alternate;}
+
+/*
+@keyframes loadAnimate{
+    0%{top: 100px;opacity: 0.2;}
+    100%{top: 0;opacity: 1;}
+}
+*/
+
+.cont>div{border-radius: 10px;background: #fff;margin-bottom: 20px;box-shadow: 1px 1px 5px #B1B1B1;padding: 15px;display: inline-block;box-sizing: border-box;vertical-align: top;font-size: 14px;}
+
+
+/*個人帳號資料*/
+.userBox ul{margin-top: 15px;}
+.userBox ul li{height: 35px;line-height: 35px;box-sizing: border-box;}
+.userBox .userTitle{background: #E5EAF3;}
+.userBox ul li span{display: inline-block;text-align: center;vertical-align: top;}
+
+/*帳密權限管理*/
+.titleFont + span{font-size: 16px;margin-left: 5px;}
+
+.toolBox{font-size: 16px;}
+.toolBox > div{display: inline-block;vertical-align: middle;margin-top: 8px;}
+.toolBox > div > span{padding: 2px 8px;}
+.toolBox > div > span>i{margin-right: 4px;}
+.toolBox > div > span>a{text-decoration: none;color: inherit;}
+.toolBox > div > .lightBlue:hover{background: #DBF3FF;border-radius: 100px;cursor: pointer;}
+.toolBox > div > .relative:hover .reviseList{display: block;}
+.toolBox > div > .red:hover{background: #FFEAEB;border-radius: 100px;cursor: pointer;}
+.toolBox > div > span>a:hover{color: inherit;}
+
+.toolBox .reviseList{position: absolute;width: 80px;border: 2px solid #1385B7;background: #fff;text-align: center;font-weight: 600;color: #1385B7;left: -6px;top: 25px;display: none;}
+.toolBox .reviseList a{display: block;padding: 4px 10px;text-decoration: none;}
+.toolBox .reviseList a:hover{background: #DBF3FF;}
+
+.authorityManagement .toolBox ul{margin: 0;text-align: right;}
+.authorityManagement .toolBox ul li{padding: 0 0 0 15px;}
+.toolBox ul .pySelect{width: 80px;}
+.toolBox .searchBox{position: relative;}
+.toolBox .searchBox:hover .btnDel{display: inherit;}
+.toolBox .searchBox input{width: 250px;margin-right: -6px;height: 19px;}
+.searchBox .btnDel{color: #808080;position: absolute;right: 45px;top: 4px;cursor: pointer;display: none;}
+
+.authorityManagement .userTitle{background: #E5EAF3;}
+.authorityManagement>ul{margin-top: 4px;margin-bottom: 15px;}
+.authorityManagement>ul li{height: 45px;line-height: 45px;box-sizing: border-box;padding: 0 15px;border-bottom: 1px solid #E4E4E4;}
+.authorityManagement .userTitle{background: #E5EAF3;border: 0;height: 35px;line-height: 35px;}
+.authorityManagement ul li span{display: inline-block;vertical-align: top;}
+
+
+
+
+
+
+
+

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>追蹤履歷</title>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <!--fontawesome-->
+    <link href="css/all.min.css" rel="stylesheet" type="text/css">
+    <!--共用 boxPage SharedModule -->
+    <link rel="stylesheet" href="css/lightBox/boxPage.css">
+<!--    <link rel="stylesheet" href="css/lightBox/SharedModule.css">-->
+    <link rel="stylesheet" href="css/rPool_Collect.css">
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var ary=[];
+            //新增
+            $(".btnAddLiaison").click(function(){
+                $(".addLiaison").animate({height:0},400);
+            });
+            //手動新增按鈕
+            $(".btnAdd").click(function(){
+                var t =$(this).closest(".cmdZone").prev().prev().height();
+                var a;
+                (t == 0)?a=46:a=0;
+                $(".addLiaison").animate({height:a},400);
+            });
+            //選擇追蹤資料夾
+            $(".listBox >div").click(function(){
+                var t = $(this);
+                var v = t.data("v");
+                var n = t.children("span").text();
+                if(t.hasClass("setJobs")){//取消添加
+                    for(var i = ary.length - 1, t; i > -1;i--){
+                        t = ary[i];
+                        if (t.v == v){   
+                            ary.splice(i, 1);
+                            break;
+                        }
+                    }
+                    checkList();
+                }else{
+                    if (!$(".sendBox").find("div[data-v="+v+"]").length > 0) {
+                        ary.push({v:v, n:n});
+                    } else {
+                        return;
+                    }
+                    checkList();
+                }
+            });
+            //取消追蹤
+            $(".sendBox").on("click" ,".recipient>.fa-times-circle",function(){
+                var t = $(this);
+                t.closest(".recipient").fadeOut(150,function(){
+                    var v = $(this).data("v");
+                    for(var i = ary.length - 1, t; i > -1;i--){
+                        t = ary[i];
+                        if (t.v == v){   
+                            ary.splice(i, 1);
+                            break;
+                        };
+                    };
+                    $(this).remove();
+                    checkList();
+                });
+                
+            });
+            //檢查追蹤資料夾
+            function checkList(){
+                var topBox = $(".sendBox").empty(), bottomBox = $(".listBox");
+                bottomBox.find(">div").removeClass("setJobs");
+                for(var i = 0, t; i<ary.length ;i++){
+                    t = ary[i];
+                    topBox.append('<div class="recipient" data-v="'+t.v+'">'+t.n+'<i class="fas fa-times-circle"></i></div>')
+                    bottomBox.find("div[data-v=\"" + t.v + "\"]").addClass("setJobs");
+                };
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="wp box">
+        <div class="header">
+            <img src="images/ico-file.png" alt="">
+            <span class="hTitle">追蹤履歷</span>
+        </div>
+        <form action="#" method="">
+            <div class="content">
+                <div class="addLiaison">
+                    <div>
+                        新增追蹤資料夾 
+                        <input class="" type="text" placeholder="請輸入資料夾名稱">
+                        <div class="btnAddLiaison">新增</div>
+                    </div>
+                </div>
+                <div class="addUserList">
+                    <b>追蹤資料夾</b>
+                    <div class="sendBox">
+<!--
+                        <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+                        <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+-->
+                    </div>
+                </div>
+                <ul class="cmdZone">
+                    <li>
+                        <div class="btnAdd">新增資料夾</div>
+                    </li>
+                    <li class="searchBox">
+                        <input type="text" placeholder="追蹤資料夾關鍵字">
+                        <span class="btnSearch"><i class="fas fa-search"></i></span>
+                        <a onclick="return ResetKey();" id="btnReset" class="firstbtn" href="javascript:__doPostBack('btnReset','')">清除篩選</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="choseList">
+                        <div class="infoBar">
+                            <span>選擇欲加入追蹤的資料夾</span>
+                            <div>共 <b>16</b> 筆 / 每頁15筆</div>
+                        </div>
+                        <div class="listBox">
+                            <div data-v="1"><span>行銷企劃</span></div>
+                            <div data-v="2"><span>網站企劃</span></div>
+                            <div data-v="3"><span>業務人員</span></div>
+                            <div data-v="4"><span>###TEST###</span></div>
+                            <div data-v="5"><span>翁小楨測試2</span></div>
+                            <div data-v="6"><span>公關秘書</span></div>
+                            <div data-v="7"><span>櫃台助理</span></div>
+                            <div data-v="8"><span>我的追蹤標籤(資料夾)</span></div>
+                            <div data-v="9"><span>bingbingTest123</span></div>
+                            <div data-v="10"><span>11331test</span></div>
+                            <div data-v="11"><span>公關秘書</span></div>
+                            <div data-v="12"><span>櫃台助理</span></div>
+                            <div data-v="13"><span>我的追蹤標籤(資料夾)</span></div>
+                            <div data-v="14"><span>bingbingTest123</span></div>
+                            <div data-v="15"><span>11331test</span></div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="pageBox">
+                    <span>«</span><span>上一頁</span><span class="setPage">1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>下一頁</span><span>»</span>
+                </div>
+            </div>
+            <div class="footer">
+                <div>
+                    <button type="button" class="btnCancel">取消</button>
+                    <button type="submit" class="btnSend">加入</button>
+                </div>
+            </div>
+        </form>
+        <!--說明文字-->
+        <div class="infoBox">
+            <div class="triangle"></div>
+            <span class="infoS"></span>
+        </div>
+        <!--說明文字end-->
+    </div>
+</body>
+</html>

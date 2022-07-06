@@ -1,0 +1,16 @@
+﻿/*主題色*/
+.mbg{background: #353866;opacity: 0;}
+.mfont{color: #C8B3D3;}
+.mline{border: 0.5px solid #CBA6C3;}
+.mbtn{color: #fff;background: #CBA6C3;border: 1px solid #fff;}
+.mbtn:hover{background: #b984ae;cursor: pointer;}
+.mbgcg{background: #FFFBFE;}
+
+.leftBar .pic{border: 1px solid #C8B3D3;}
+.leftBar .pic div{border: 3px solid #C8B3D3;}
+
+.circle{background: #CBA6C3;}
+.expBox,.skillBox .separate{border-left: 2px solid #CBA6C3}
+.separate{border-right: 2px solid #CBA6C3;}
+
+.main .leftBar{color: #fff;}

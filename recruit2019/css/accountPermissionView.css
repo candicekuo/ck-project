@@ -1,0 +1,30 @@
+﻿
+body{overflow-x: hidden;}
+.wp{width: 570px;background: #fff;border-radius: 4px;}
+.header{border-bottom: 1px solid #4f6b92;padding:0 0 10px;font-size: 21px;font-weight: 600;color: #4f6b92;position: relative;}
+.header span{font-size: 14px;color: #808080;padding-left: 10px;font-weight: 100;}
+
+
+
+.content .listTitle{width: 13%;}
+.content .listCont{width: 84%;}
+
+.recipient i{position: absolute;background: #fff;color: #e25656;right: -8px;top: -4px;border-radius: 100px;}
+.recipient i:hover{cursor: pointer;color: #b43336;}
+.listCont .sended{background: #ffe6e0;}
+
+.content li .dash{margin: 0;}
+
+.listCont .checkboxChk{border: 0;padding: 0;margin: 0;color: #333;}
+.listCont span::after{content: "、";}
+.listCont span:last-child::after{content: "";}
+.listCont .checkboxChk:hover{cursor: default;background: transparent;border: 0;}
+.listCont input[type="checkbox"]:checked + .checkboxChk{background: transparent;color: #333;border: 0;}
+
+
+
+
+.footer{background: #f5f5f5;margin: 0 -15px -15px;margin-top: 10px;}
+.footer div{width: 200px;margin: auto;}
+.footer .btnSend{color: #fff;text-decoration: none;display: inline-block;line-height: 36px;}
+.footer .btnSend:hover{color: #fff;}

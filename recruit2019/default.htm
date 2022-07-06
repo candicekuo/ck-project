@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>本站僅為作品展示用</title>
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
+    
+    <!--css-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!--fontawesome-->
+    <link href="css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet" type="text/css" >
+    <!--共用 boxPage SharedModule -->
+    <link rel="stylesheet" href="css/lightBox/boxPage.css">
+    <link rel="stylesheet" href="css/default.css">
+    
+    <script type="text/javascript">
+        if (window.history.scrollRestoration && (window.history.scrollRestoration=="auto"))
+        window.history.scrollRestoration="manual";
+        var adBoxWidth,picMax,flag =false,picNow =0,picNext =0,adBoxTick;
+        var newsMax,newsNext = 0,newsNow =0,newsTick;
+        $(document).ready(function(){
+            //跑馬燈輪播
+            newsMax = $(".newsBar a").length-1;
+            newsNext = newsMax;
+            var newsBar = $(".newsBar a").length
+            if(newsBar>1){
+                newsBarAuto();
+            }else{
+                $(".newsBar a").css("top",0);
+            }
+            
+            $(".newsBar").mouseenter(function(){
+                clearTimeout(newsTick);
+            }).mouseleave(function(){
+                if(newsBar>1){
+                    newsTick = setTimeout(newsBarAuto, 3000);
+                }
+            });
+            //職缺管理
+            $(".jobTitle span").click(function(){
+                $(this).addClass("jobChk").siblings().removeClass("jobChk");
+            });
+            //公告訊息開關
+            $(".newsBox").on("click",".newsInfo",function(){
+                var t = $(this);
+                t.next().slideToggle().siblings(".newsShow").slideUp();
+                if(t.hasClass("newsTitle")){
+                    t.removeClass("newsTitle");
+                }else{
+                    t.addClass("newsTitle").siblings(".newsInfo").removeClass("newsTitle");
+                }
+            });
+            //廣告輪撥器
+            picMax = $(".adBox ul li").length-1;
+            picNext = picMax;
+            var adBox = $(".adBox li").length;
+            if(adBox>1){
+                adBoxSlideAuto();
+            }else{
+                $(".adBox li").css("left","0");
+            }
+            
+            $("#btnAdLeft,#btnAdRight").on( "click", adBoxSlideLR );
+            $(".adBox").mouseenter(function(){
+                clearTimeout(adBoxTick);
+            }).mouseleave(function(){
+                if(adBox>1){
+                    adBoxTick = setTimeout(adBoxSlideAuto, 3000);
+                }
+            });
+            //職缺管理說名步驟
+            var windowHeight = $("html").height();
+            $(".messageBox").height(windowHeight);
+            $(".jobBoxInfo").click(function(){
+                $(".messageBox,.bubbleBox:eq(0)").fadeIn();
+            });
+            $(".messageBox").on("click", function(){
+                $(this).fadeOut().children().fadeOut();
+            }).on("click","> *",function(e){
+                e.stopPropagation(); 
+            }).on("click",".doneBtn,.cAbs,.introduceBtn,.nextBtn,.prevBtn",function(){
+                var o = $(this).closest(".bubbleBox");
+                switch(this.className){
+                    case "introduceBtn":
+                        o.hide().next().fadeIn();
+                        break;
+                    case "nextBtn":
+                        o.hide().next().show().children(".textBox").hide().fadeIn();
+                        break;
+                    case "prevBtn":
+                        o.hide().prev().show().children(".textBox").hide().fadeIn();
+                        break;
+                    case "doneBtn":
+                    case "fas fa-times cAbs":
+                        o.parent().fadeOut().children().fadeOut();
+                        break;
+                }
+            });
+            bubBoxCenter();
+            /*fancybox*/
+            $('[data-fancybox]').fancybox({
+                toolbar  : false,
+                smallBtn : true,
+                iframe : {
+                    preload : false,
+                    css: {
+                        width: 602,
+                        autoDimensions:true,
+                        backgroundColor: "transparent",
+                        autoScale:true
+                    }
+                }
+            });
+        });
+        //跑馬燈輪播
+        function newsBarAuto(){ //自動撥放
+            var t = $(".newsBar a");
+            newsNext += 1;
+            if(newsNext > newsMax) newsNext = 0;
+            t.eq(newsNow).animate({top:-30},400);
+            t.eq(newsNext).css("top",30).animate({top:0},400,function(){
+                newsNow = newsNext;
+            });
+            newsTick = setTimeout(newsBarAuto, 3000);
+        }
+        //廣告輪撥器
+        function adBoxSlideAuto(){ //自動撥放
+            adBoxWidth = $(".adBox").width();
+            picNext += 1;
+            if(picNext > picMax) picNext = 0;
+            adBoxSlide();
+            adBoxTick = setTimeout(adBoxSlideAuto, 3000);
+        }
+        function adBoxSlideLR(){ //算數值
+            if(!flag){
+                flag = true;
+                adBoxWidth = $(".adBox").width();
+                if(this.id == "btnAdLeft"){ //圖往右
+                    picNext -= 1;
+                    if(picNext < 0) picNext = picMax;
+                    adBoxWidth = -adBoxWidth;
+                }else{ //圖往左
+                    picNext += 1;
+                    if(picNext > picMax) picNext = 0;
+                }
+                adBoxSlide();
+            }
+        }
+        function adBoxSlide(){ //動作
+            var t = $(".adBox ul li");
+            t.eq(picNow).animate({left:-adBoxWidth},400);
+            t.eq(picNext).css("left",adBoxWidth).animate({left:0},400,function(){
+                picNow = picNext;
+                flag = false;
+            });
+        }
+        //bubbleBox置中
+        function bubBoxCenter(){
+            var wh = $( window ).height();
+            var bh = wh/2 - 135;
+            $(".step00").css("margin-top",bh);
+        }
+    </script>
+</head>
+<body>
+    <div class="wp page">
+        <div class="topBar">
+            <ul>
+                <li><a href="#" target="_blank">XXXX網站</a></li>
+                <li><a href="">訂閱電子報</a></li>
+                <li><a href="">滿意度調查</a></li>
+                <li class="topBarInfo">
+                    <div>
+                        <span>上次登入訊息</span>
+                        <div class="infoShow">
+                            <span class="triangle"></span>
+                            <div class="w30">
+                                <p>登入帳號</p>
+                                <p>登入IP</p>
+                                <p>ISP名稱</p>
+                                <p>登入時間</p>
+                            </div>
+                            <div class="w67">
+                                <p class="redFont">guest****</p>
+                                <p>101.123.47.156</p>
+                                <p>台灣大哥大(台灣)</p>
+                                <p>2019-12-02 15:55</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="topBarInfo">
+                    <div>
+                        <span>客服人員</span>
+                        <div class="infoShow">
+                            <span class="triangle"></span>
+                            <p>貴公司本期VIP剩餘 333 天</p>
+                            <p>已續約，下期合約剩餘XXX天</p>
+                            <div class="w30">
+                                <p class="gray">客服人員</p>
+                                <p class="gray">服務專線</p>
+                            </div>
+                            <div class="w67">
+                                <p>王大明先生 <a href=""><i class="far fa-envelope"></i></a></p>
+                                <p>(02)8787-1111#6280</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="header">
+            <ul>
+                <li class="w70 lBar">
+                    <a href=""><img src="images/logo.png" alt=""></a>
+                    <h2>XXX股份有限公司</h2>
+                </li>
+                <li class="w29 rBar">
+                    <a href="default_applyShow.htm" data-fancybox="" data-type="iframe" title="主動應徵通知"><img src="images/ico-apply.jpg" alt=""><span class="noticeBox">2</span></a>
+                    <a href="default_replyShow.htm" data-fancybox="" data-type="iframe" title="求職者回覆通知"><img src="images/ico-reply.jpg" alt=""><span class="noticeBox">10</span></a>
+                    <a href="default_visitorsShow.htm" data-fancybox="" data-type="iframe" title="來訪人才通知"><img src="images/ico-visitors.jpg" alt=""><span class="noticeBox">200</span></a>
+                    <span><a href="" class="btnLogInOut">登出</a></span>
+                </li>
+            </ul>
+        </div>
+        <!--關權中 尚未成為VIP 已到期狀態 樓下class加 menuBarClose -->
+        <div class="menuBar">
+            <ul>
+                <li>
+                    <h2>公司管理 <i class="fas fa-angle-down"></i></h2>
+                    <ul>
+                        <li><a href="">公司資料修改</a></li>
+                        <li><a href="">公司刊登預覽</a></li>
+                        <li><a href="">形象廣告</a></li>
+                        <li><a href="">相關訊息</a></li>
+                        <li><a href="">公司環境</a></li>
+                        <li><a href="">帳密權限管理</a></li>
+                        <li><a href="">通訊錄管理</a></li>
+                        <li><a href="">開/關權設定</a></li>
+                        <li><a href="">附加檔案上傳</a></li>
+                    </ul>
+                </li><li>
+                    <h2>職缺管理 <i class="fas fa-angle-down"></i></h2>
+                    <ul>
+                        <li><a href="">開啟中職缺（<b class="redFont">12</b>）</a></li>
+                        <li><a href="">關閉中職缺（<b class="redFont">251</b>）</a></li>
+                        <li><a href="">未刊登職缺（<b class="redFont">0</b>）</a></li>
+                        <li><a href="">新增職缺</a></li>
+                        <li><a href="">修改排序</a></li>
+                        <li><a href="">職缺移轉</a></li>
+                        <li><a href="">職缺自動更新</a></li>
+                        <li><a href="">求職者提問 </a></li>
+                    </ul>
+                </li><li>
+                    <h2>人才招募 <i class="fas fa-angle-down"></i></h2>
+                    <ul>
+                        <li><a href="">主動應徵（<b class="redFont">371</b>）</a></li>
+                        <li><a href="">追蹤名單（<b class="redFont">298</b>）</a></li>
+                        <li><a href="">通知紀錄</a></li>
+                        <li><a href="">配對匯入（<b class="redFont">47</b>）</a></li>
+                        <li><a href="">履歷還原</a></li>
+                        <li><a href="">招募行事曆</a></li>
+                        <li><a href="">招募設定</a></li>
+                        <li><a href="">簡訊服務</a></li>
+                        <li><a href="">追蹤資料夾管理</a></li>
+                        <li><a href="">信件╱簡訊範本管理</a></li>
+                        <li><a href="">求職者封鎖管理</a></li>
+                        <li><a href="">求職者失約回報</a></li>
+                        <li><a href="">求職者問題回報</a></li>
+                    </ul>
+                </li><li>
+                    <h2>人才搜尋 <i class="fas fa-angle-down"></i></h2>
+                    <ul>
+                        <li><a href="">線上配對</a></li>
+                        <li><a href="">簡易搜尋</a></li>
+                        <li><a href="">進階搜尋</a></li>
+                        <li><a href="">大專人才搜尋</a></li>
+                        <li><a href="">履歷代碼查詢</a></li>
+                    </ul>
+                </li><li>
+                    <h2>紀錄管理 <i class="fas fa-angle-down"></i></h2>
+                    <ul>
+                        <li><a href="">帳號使用紀錄</a></li>
+                        <li><a href="">履歷瀏覽紀錄</a></li>
+                        <li><a href="">人才來訪紀錄</a></li>
+                        <li><a href="">數據統計查詢</a></li>
+                        <li><a href="">人才點數統計查詢<b class="orangeFont">{內</b></a></li>
+                    </ul>
+                </li><li>
+                    <h2>貼心服務 <i class="fas fa-angle-down"></i></h2>
+                    <ul>
+                        <li><a href="">職缺同步</a></li>
+                        <li><a href="">薪資調查報告</a></li>
+                        <li><a href="">線上續約</a></li>
+                        <li><a href="">購買優先排序</a></li>
+                        <li><a href="">廣告排程設定</a></li>
+                        <li><a href="">人事表格下載</a></li>
+                        <li><a href="">求才文件下載</a></li>
+                        <li><a href="">紅利點數(5297點)</a></li>
+                        <li><a href="">廣告版位刊登</a></li>
+                        <li><a href="">查詢電子發票</a></li>
+                        <li><a href="">HR系統免費試用</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+        <!--關權中 尚未成為VIP 已到期狀態-->
+        <div class="modeBar">
+            <ul>
+                <li>會員已到期</li>
+                <li><a href="">我要續約</a></li>
+            </ul>
+        </div>
+        <!--關權中 尚未成為VIP 已到期狀態 end-->
+        <div class="content">
+            <div class="cont">
+                <div class="newsBar">
+                    <div class="w3">
+                        <img src="images/ico-marquee.png" alt="">
+                    </div>
+                    <div class="w96 relative">
+                        <a href="">2019幸福企業大賞「製造業及營建代銷」票選中！投票抽500元禮券！</a>
+                        <a href="">2019幸福企業大賞「製造業及營建代銷」票選中！投票抽500元禮券！2222222222</a>
+                        <a href="">2019幸福企業大賞「製造業及營建代銷」票選中！投票抽500元禮券！33333</a>
+                    </div>
+                    
+                    
+                </div>
+                <div class="mainBox w74">
+                    <ul>
+                        <li class="modeBox w18">
+                            <div class="logoBox"><a href=""><img src="images/no-pic.jpg" alt=""></a></div>
+                            <span><i class="fas fa-check-circle open"></i>會員開啟中</span>
+<!--                            <span><i class="fas fa-minus-circle close"></i>會員暫停中</span>-->
+                        </li>
+                        <li class="userBox w22">
+                            <h1>設計測試</h1>
+                            <span><span class="gray">帳號</span>nancytang8001</span>
+                            <a href="" class="btnB">帳密設定</a>
+                        </li>
+                        <li class="contractBox w26">
+                            <p>
+                                本期合約剩餘<span class="font21">111</span>天
+                                <a href="">2019/12/12 到期</a>
+                                <a href="" class="renew">續約</a><br/>
+                                <span class="gray">已續約，下期合約剩餘XXX天</span>
+                            </p>
+                            <a href="" class="btnB">合約開/關設定</a>
+                        </li>
+                        <!--尚未成為VIP VIP已到期 狀態-->
+<!--
+                        <li class="contractBox w26">
+                            <p>
+                                <span class="vipEnd">尚未成為VIP會員</span>
+                                <a href="" class="renew">線上續約</a>
+                            </p>
+                        </li>
+-->
+                        <!--尚未成為VIP VIP已到期 狀態 end-->
+                        <li class="customerService w28">
+                            <p>
+                                <span class="gray">企業紅利</span>1234 點 <a href=""><i class="fas fa-gift"></i></a><br/>
+                                <span class="gray">人才剩餘點數</span>5746  點<br/>
+                                <span class="gray">客服人員</span>王大明先生 <a href=""><i class="far fa-envelope"></i></a><br/>
+                                <span class="gray">服務專線</span>(02)8787-1111#6280<br/>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="initiativeBox">
+                    <img src="images/ico-applyB.jpg" alt="">
+                    <div>
+                        <p>應徵履歷未讀<a href="">50</a>筆</p>
+                        <p>限時履歷未回<a href="">50</a>筆</p>
+                        <p>總數<a href="">100</a>筆</p>
+                    </div>
+                </div>
+                <div class="jobBox w100">
+                    <h1 class="titleFont w81">職缺管理 <i class="fas fa-question-circle jobBoxInfo" title="職缺管理說明"></i></h1>
+                    <a href="" class="seeMore w7">查看更多</a>
+                    <span><a href="" class="btnAddJob w12">新增職缺</a></span>
+                    <hr>
+                    <ul>
+                        <li class="jobTitle w70">
+                            <span class="jobChk">全部</span>
+                            <span>全職</span>
+                            <span>兼職</span>
+                            <span>工讀</span>
+                            <span>中高階</span>
+                            <span>限時</span>
+                        </li>
+                        <li class="jobCont w100">
+                            <ul>
+                                <li class="jobMenu">
+                                    <span class="w47">職務名稱</span>
+                                    <span class="w15">工作地</span>
+                                    <span class="w7">修改日</span>
+                                    <span class="w7">主動應徵</span>
+                                    <span class="w7">配對名單</span>
+                                    <span class="w7">月來訪</span>
+                                    <span class="w7">月點擊</span>
+                                </li>
+                                <li>
+                                    <span class="w47 textLeft over">
+                                        <i class="iconA">全</i>
+                                        <a href="">整合行銷企劃整合行銷企劃整合行銷企劃整合行銷整合行銷整合行銷整合行銷企劃整合行銷企劃整合行銷企劃整合行銷整合行銷整合行銷</a>
+                                    </span>
+                                    <span class="w15">台北市松山區</span>
+                                    <span class="w7">10/27</span>
+                                    <span class="w7"><a href="">25</a></span>
+                                    <span class="w7"><a href="">名單</a></span>
+                                    <span class="w7"><a href="">60</a></span>
+                                    <span class="w7">10</span>
+                                </li>
+                                <li>
+                                    <span class="w47 textLeft over">
+                                        <i class="iconB">兼</i>
+                                        <i class="iconE">1天</i>
+                                        <a href="">整合行銷企劃整合行銷企劃整合行</a>
+                                    </span>
+                                    <span class="w15">台北市松山區</span>
+                                    <span class="w7">10/27</span>
+                                    <span class="w7"><a href="">25</a></span>
+                                    <span class="w7"><a href="">名單</a></span>
+                                    <span class="w7"><a href="">60</a></span>
+                                    <span class="w7">10</span>
+                                </li>
+                                <li>
+                                    <span class="w47 textLeft over">
+                                        <i class="iconC">工</i>
+                                        <i class="iconF">精選</i>
+                                        <a href="">整合行銷企劃整合行銷</a>
+                                    </span>
+                                    <span class="w15">台北市松山區</span>
+                                    <span class="w7">10/27</span>
+                                    <span class="w7"><a href="">25</a></span>
+                                    <span class="w7"><a href="">名單</a></span>
+                                    <span class="w7"><a href="">60</a></span>
+                                    <span class="w7">10</span>
+                                </li>
+                                <li>
+                                    <span class="w47 textLeft over">
+                                        <i class="iconD">高</i>
+                                        <span class="gray">【80216924 <b class="orangeFont">{內</b>】</span>
+                                        <a href="">整合行銷企劃整合行銷企劃整合行銷企劃</a>
+                                    </span>
+                                    <span class="w15">台北市松山區</span>
+                                    <span class="w7">10/27</span>
+                                    <span class="w7"><a href="">25</a></span>
+                                    <span class="w7"><a href="">名單</a></span>
+                                    <span class="w7"><a href="">60</a></span>
+                                    <span class="w7">10</span>
+                                </li>
+                                <li>
+                                    <span class="w47 textLeft over">
+                                        <i class="iconA">全</i>
+                                        <a href="">整合行銷企劃整合行銷企劃整合行銷</a>
+                                    </span>
+                                    <span class="w15">台北市松山區</span>
+                                    <span class="w7">10/27</span>
+                                    <span class="w7"><a href="">25</a></span>
+                                    <span class="w7"><a href="">名單</a></span>
+                                    <span class="w7"><a href="">60</a></span>
+                                    <span class="w7">10</span>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lBox">
+                    <div class="newsBox">
+                        <h1 class="titleFont w89">公告訊息</h1>
+                        <a href="http://192.168.1.195/Announce.aspx" class="seeMore w10">查看更多</a>
+                        <hr>
+                        <ul>
+                            <li class="newsInfo">
+                                <span class="w5 fontNew">NEW</span>
+                                <span class="w12 gray">2019/12/15</span>
+                                <span class="w81 over">2019幸福企業大賞「製造業及營建代銷」票選中！投票抽500元禮券！</span>
+                            </li>
+                            <li class="newsShow">
+                                親愛的求才會員 您好：<br/>
+                                為提升求職對職缺限時回應好感度，並有更高的應徵意願，原本在公司刊登頁，顯示的限時回應分數，全面更新，改顯示回覆率勳章，
+                                配分與勳章樣式說明如下：
+                                ●回覆率100% 顯示「回覆模範生」
+                                ●回覆率90-99% 顯示「回覆率特優」
+                                ●回覆率80-89% 顯示「回覆率優良」
+                                新的限時回應說明頁面，將於近日上線，上線後會再次發布公告給您。
+                                感謝您的愛護與支持。
+                            </li>
+                            <li class="newsInfo">
+                                <span class="w5 fontNew">NEW</span>
+                                <span class="w12 gray">2019/12/11</span>
+                                <span class="w81 over"><span class="blue">【功能調整】</span>學歷相關設定規則調整，現可用複選方式對外顯示學歷條件或學歷相關設定規則調整，現可用複選方式對外顯示學歷條件或</span>
+                            </li>
+                            <li class="newsShow">123</li>
+                            <li class="newsInfo">
+                                <span class="w5 fontNew"></span>
+                                <span class="w12 gray">2019/12/01</span>
+                                <span class="w81 over">百萬級的閱覽量，上刊機會只有現在！幸福特刊現正開放報名！</span>
+                            </li>
+                            <li class="newsShow">123</li>
+                            <li class="newsInfo">
+                                <span class="w5 fontNew"></span>
+                                <span class="w12 gray">2019/10/21</span>
+                                <span class="w81 over"><span class="blue">【注意】</span>107/12/27開始新增之職缺請以明年基本薪資為主</span>
+                            </li>
+                            <li class="newsShow">123</li>
+                            <li class="newsInfo">
+                                <span class="w5 fontNew"></span>
+                                <span class="w12 gray">2019/09/08</span>
+                                <span class="w81 over"><span class="blue">【重要通知】</span>11/29前請務必修正職缺薪資範圍，以免受罰！</span>
+                            </li>
+                            <li class="newsShow">123</li>
+                        </ul>
+                    </div>
+                    <div class="tipsBox">
+                        <h1 class="titleFont">徵才小幫手提醒</h1>
+                        <hr>
+                        <ul>
+                            <li>1. 當貴公司刊登的職務已找到人時，建議先關閉職務。</li>
+                            <li>2. 在已找到人，卻未關閉職務的狀態下；若有求職者來電，建議使用以下方式回應↓</li>
+                            <li class="gray">．「本公司人事已將您的個人資料建入資料庫，爾後若有適合您的職務，我們將主動與您聯絡！」</li>
+                            <li class="gray">．個人資料保護法-聲明：本招募系統僅提供徵才使用，請勿搜集、利用、或詐騙，避免觸犯 個人資料保護法。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="rBox">
+                    <div class="recruitListBox">
+                        <h1 class="titleFont">招募數據與名單</h1>
+                        <hr>
+                        <ul>
+                            <li>
+                                <img src="images/ico-rlb.jpg" alt="">
+                                <h2>主動應徵數<a href="">100</a>筆</h2>
+                            </li>
+                            <li>
+                                <img src="images/ico-rlb2.jpg" alt="">
+                                <h2>人才來訪數<a href="">100</a>筆</h2>
+                            </li>
+                            <li>
+                                <img src="images/ico-rlb3.jpg" alt="">
+                                <h2>追蹤名單數<a href="">100</a>筆</h2>
+                            </li>
+                            <li>
+                                <img src="images/ico-rlb4.jpg" alt="">
+                                <h2>月點擊總數<span>100</span>筆</h2>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="adBox">
+                        <ul>
+                            <li><a href=""><img src="images/s_banner01.jpg" alt=""></a></li>
+                            <li><a href=""><img src="images/s_banner02.jpg" alt=""></a></li>
+                            <li><a href=""><img src="images/s_banner03.jpg" alt=""></a></li>
+                        </ul>
+                        <i class="fas fa-chevron-left" id="btnAdLeft"></i>
+                        <i class="fas fa-chevron-right" id="btnAdRight"></i>
+                    </div>
+                </div>
+                <div class="toolBox w100">
+                    <h1 class="titleFont">常用工具</h1>
+                    <hr>
+                    <ul>
+                        <li>
+                            <img src="images/ico-tool7.jpg" alt="">
+                            <a href="" target="_blank">品牌行銷</a>
+                        </li>
+                        <li>
+                            <img src="images/ico-tool.jpg" alt="">
+                            <a href="https://recruit.1111.com.tw/d1HrSystem.aspx#attendance" target="_blank">差勤打卡</a>
+                        </li>
+                        <li>
+                            <img src="images/ico-tool2.jpg" alt="">
+                            <a href="https://recruit.1111.com.tw/d1HrSystem.aspx?agent=evca1_recruit_product_1hrtest#evaluation" target="_blank">企業測評</a>
+                        </li>
+                        <li>
+                            <img src="images/ico-tool3.jpg" alt="">
+                            <a href="https://recruit.1111.com.tw/DownloadHr.aspx" target="_blank">表格下載</a>
+                        </li>
+                        <li>
+                            <img src="images/ico-tool4.jpg" alt="">
+                            <a href="https://www.jobforum.tw/groupindex.asp?cat=hrfriend" target="_blank">HR好朋友</a>
+                        </li>
+                        <li>
+                            <img src="images/ico-tool5.jpg" alt="">
+                            <a href="https://www.1111.com.tw/dayoff/" target="_blank">一例一休</a>
+                        </li>
+                        <li>
+                            <img src="images/ico-tool6.jpg" alt="">
+                            <a href="https://www.hr.org.tw/qalist.asp" target="_blank">勞資Q＆A</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footInfo">
+                <div class="lInfo">
+                    <p>
+                        ＯＯＯＯ股份有限公司版權所有 © 2020 XXXX XXX XXXX All Rights Reserved.<br/>
+                        <span>本網站建議使用 IE10 以上版本瀏覽器及以1024ｘ768以上解析度，以獲得最佳瀏覽體驗</span>
+                    </p>
+                </div>
+                <div class="rInfo">
+                    <p>
+                        求才企業服務<br/>
+                        週一 ~ 週五 8:30 ~ 21:00，週六、週日、國定假日 9:00 ~ 21:00<br/>
+                        苗栗以北 (02)1234-5678  |  中部地區 (04)1234-5678  |  南部地區 (07)123-5678
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <div class="footInfo2">
+                <span>ＯＯＯＯ股份有限公司(私業許字第XXXX號)</span>
+                <span>ＯＯＯＯ股份有限公司臺中分公司(中市私立就服第XXX號)</span>
+                <span>ＯＯＯＯ股份有限公司高雄分公司(高市就服字第XXXX號)</span>
+            </div>
+        </div>
+        <!--步驟說明跳窗-->
+        <div class="messageBox">
+            <div class="step01 bubbleBox">
+                <div class="textBox">
+                    <h3>1. 職缺項目</h3>
+                    <span>依近期職缺修改日的時間顯示這五筆職缺。</span>
+                    <div class="btnBox">
+                        <div class="nextBtn">下一步</div>
+                    </div>
+                    <span class="fas fa-times cAbs"></span>
+                </div>
+            </div>
+            <div class="step02 bubbleBox">
+                <div class="textBox">
+                    <h3>2. 月來訪</h3>
+                    <span>自昨日往前推30天內開啟履歷的求職者，關閉履歷不會納入統計。</span>
+                    <div class="btnBox">
+                        <div class="prevBtn">上一步</div>
+                        <div class="nextBtn">下一步</div>
+                    </div>
+                    <span class="fas fa-times cAbs"></span>
+                </div>
+            </div>
+            <div class="step03 bubbleBox">
+                <div class="textBox">
+                    <h3>3. 月點擊</h3>
+                    <span>自昨日往前推30天內累計職缺的點閱計次數。</span>
+                    <div class="btnBox">
+                        <div class="prevBtn">上一步</div>
+                        <div class="doneBtn">完成</div>
+                    </div>
+                    <span class="fas fa-times cAbs"></span>
+                </div>
+            </div>
+        </div>
+        <!--messageBox end-->
+    </div>
+</body>
+</html>
