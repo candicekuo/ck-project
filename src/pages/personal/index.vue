@@ -46,7 +46,7 @@ export default {
     min-width: 450px;
     margin: auto;
     box-shadow: -60px -60px 0px rgba(208, 103, 76, 0.4);
-    // 看要不要改 befour
+    // 看要不要改 before
 
     .enter_btn {
       position: absolute;
