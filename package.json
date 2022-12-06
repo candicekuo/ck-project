@@ -38,6 +38,7 @@
       "node": true
     },
     "extends": [
+      ".vue",
       "plugin:vue/essential",
       "eslint:recommended",
       "@vue/prettier"
