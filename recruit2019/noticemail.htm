@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>信件通知</title>
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
+    
+    <!--css-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="css/all.min.css" rel="stylesheet" type="text/css"><!--fontawesome-->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" href="css/boxPage.css"><!--共用-->
+    <link rel="stylesheet" href="css/noticemail.css">
+    <style type="text/css">
+    </style> 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            btnClearSH();
+            var infoText=[
+                "寄件者預設為每個帳號聯絡人的電子郵件",
+                '紅底 <div class="recipient sended">王大明</div>表示30天內已有發信通知記錄'
+            ];
+            var tick;
+            //說明文字
+            $(".fa-question-circle").mouseenter(function(){
+                var info = $(this);
+                tick =window.setTimeout(function(){
+                    $(".infoBox .infoS").html(infoText[info.data("info")]).parent().appendTo(info).fadeIn();
+                },300);
+            }).mouseleave(function(){
+                $(this).children().fadeOut();
+                window.clearTimeout(tick);
+            }).on("mouseenter", ".infoBox", function(e){
+                e.stopPropagation();
+            });
+            //取消收件人
+            $(".sendBox").on("click" ,".recipient>.fa-times-circle",function(){
+                 $(this).closest(".recipient").fadeOut(200,function(){
+                    $(this).remove();
+                    btnClearSH();
+                });
+            });
+            //清除已發送過
+            $(".listCont").on("click" ,".btnClear",function(){
+                var t = $(this).parent();
+                t.prev().children().filter(".sended").remove();
+                t.hide();
+            });
+            //取消附加檔案
+            $(".fileBox").on("click" ,"> span >.fa-times",function(){
+                var t = $(this)
+                t.parent().fadeOut(200,function(){
+                    t.remove();
+                });
+            });
+            //信件內容選項
+            $(".kind .pySelect").change(function(){
+                var t = $(this).val();
+                var a = $(this).children().eq(t).text();
+                if(t == 0)a = "";
+                $("#kindDate .chgT").text(a);
+            });
+            //取消通知職務職缺
+            $(".jobList + .fa-times").click(function(){
+                $(this).prev().val("");
+                confirm("請選擇職缺");
+            });
+            //月曆
+            $( "#tbDates" ).datepicker({
+                dateFormat: "yy-mm-dd",
+                monthNames: [ "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月" ],
+                dayNamesMin:["日", "一", "二", "三", "四", "五", "六"]
+            });
+            /*fancybox*/
+            $('[data-fancybox]').fancybox({
+                toolbar  : false,
+                smallBtn : true,
+                iframe : {
+                    preload : false,
+                    css: {
+                        width: 602,
+                        autoDimensions:true,
+                        backgroundColor: "transparent",
+                        autoScale:true
+                    }
+                }
+            });
+            
+        });
+        
+        function btnClearSH(){//清除已發送過按鈕出不出來判斷
+            if(!$(".sendBox").children().hasClass("sended")){
+                $(".btnClear").parent().hide();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="wp box">
+        <div class="header">
+            <img src="images/ico-letter.png" alt="">
+            <span class="hTitle">信件通知</span>
+            <span class="viewingCount">今日可瀏覽履歷數： 99 封</span>
+        </div>
+        <form action="#" method="">
+            <div class="content">
+                <ul>
+                    <li>
+                        <div class="listTitle">信件主旨</div>
+                        <div class="listCont">XXXX公司於1111人力銀行對您發出【測試職缺，請勿應徵】面試邀請</div>
+                    </li>
+                    <li>
+                        <div class="listTitle"><span class="Required">＊</span>寄件者<i class="fas fa-question-circle" data-info="0"></i></div>
+                        <div class="listCont">
+                            <input type="text" value="使用者名稱">
+                            <span class="mailAdd over">1234＠staff.1111.com.tw</span>
+                            <a href="noticemail_addBookShow.htm" data-fancybox="" data-type="iframe" class="bntAddBook">通訊錄</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="listTitle"><span class="Required">＊</span>收件者</div>
+                        <div class="listCont">
+                            <div class="sendBox">
+                                <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+                                <div class="recipient sended">王大明<i class="fas fa-times-circle"></i></div>
+                                <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+                                <div class="recipient sended">王大明<i class="fas fa-times-circle"></i></div>
+                            </div>
+                            <div>
+                                <div class="btnClear">清除已發送過</div>
+                                <i class="fas fa-question-circle" data-info="1"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="listTitle">副本收件人</div>
+                        <div class="listCont">
+                            <div class="w88 sendBox">
+                                <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+                                <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+                                <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+                                <div class="recipient">王大明<i class="fas fa-times-circle"></i></div>
+                            </div>
+                            <a href="noticemail_addBookShow2.htm" data-fancybox="" data-type="iframe" class="bntAddBook">通訊錄</a>
+                        </div>
+                    </li>
+                    <li><hr class="dash"></li>
+                    <li>
+                        <div class="listTitle"><span class="Required">＊</span>通知職務</div>
+                        <div class="listCont">
+                            <a href="noticemail_jobListShow.htm" data-fancybox="" data-type="iframe"><input class="jobList w80" type="text" placeholder="這邊帶入預設職缺"></a>
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="listTitle">附加檔案</div>
+                        <div class="listCont">
+                            <a href="noticemail_attachShow.htm" data-fancybox="" data-type="iframe"><div class="btnAddFile">新增檔案</div></a>
+                            <span>|</span>
+                            <a href="">檢視上傳檔案</a>
+                            <div class="fileBox">
+                                <span class="downloadFile"><i class="far fa-file-word"></i>新進人員報到通知.doc <i class="fas fa-times"></i></span>
+                                <span class="downloadFile"><i class="far fa-file-word"></i>新進人員基本資料.doc <i class="fas fa-times"></i></span>
+                                <span class="downloadFile"><i class="far fa-file-word"></i>員工手冊.doc <i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="listTitle"><span class="Required">＊</span>信件類別</div>
+                        <div class="listCont">
+                            <a href="noticemail_letterTemplateShow.htm" data-fancybox="" data-type="iframe"><input class="jobList w80" type="text" placeholder="選擇類別及範本"></a><a href="">編輯範本</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="listTitle"><span class="Required">＊</span>信件內容</div>
+                        <div class="listCont">
+                            <div class="kind">
+                                <select class="pySelect">
+                                    <option value ="0" selected="selected">設定邀約種類</option>
+                                    <option value="1">參加面試</option>
+                                    <option value="2">參加第一次複試</option>
+                                    <option value="3">參加第二次複試</option>
+                                    <option value="4">參加員工訓練</option>
+                                    <option value="5">其他</option>
+                                </select>
+                                <div id="kindDate">
+                                    <input type="text" id="tbDates" placeholder="選擇日期">
+                                    <input type="text" id="tbDates1" value="10">
+                                    <img src="images/spin-button.png" alt=""> <span>點</span>
+                                    <input type="text" id="tbDates2" value="30">
+                                    <img src="images/spin-button.png" alt=""> <span>分,至本公司【<span class="chgT"></span>】。</span>
+                                </div>
+                            </div>
+                            <textarea rows="2" class="letterCont"></textarea>
+                            <span class="textAttention">※限1000個字以內，已輸入 120 個字。</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="listTitle">其他設定</div>
+                        <div class="listCont">
+                            <div class="labelSet">
+                                <div>
+                                    <input type="checkBox" id="chk">
+                                    <label for="chk">我要收取回條 <span class="textGray">(回條將寄至「寄件者」信箱)</span></label>
+                                </div>
+                                <div>
+                                    <input type="checkBox" id="chk2">
+                                    <label for="chk2">並加入招募行事曆當日面試排程</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer">
+                <div>
+                    <button type="button" class="btnCancel">取消</button>
+                    <button type="button" class="btnView">預覽</button>
+                    <button type="submit" class="btnSend">寄出</button>
+                </div>
+            </div>
+        </form>
+        <!--說明文字-->
+        <div class="infoBox">
+            <div class="triangle"></div>
+            <span class="infoS"></span>
+        </div>
+        <!--說明文字end-->
+    </div>
+</body>
+</html>

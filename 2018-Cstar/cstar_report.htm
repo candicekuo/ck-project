@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>本站僅為作品展示用</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript" src="js/shared.js"></script>
+    
+    <!--css-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/shared.css" rel="stylesheet" type="text/css">
+    <link href="css/cstar_report.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            
+            //五角形
+            Highcharts.setOptions({
+                colors: ["#65c8d0","#838bc5","#cd9eb2","#ffd852" ] //#2b908f',"#90ee7e
+            });
+            
+            Highcharts.chart('Highcharts_1', {
+                
+                chart: {
+                    polar: true,
+                    type: 'line'
+                },
+
+                title: {
+                    text: '',
+                    x: -140
+                },
+
+                pane: {
+                    size: '80%',
+                    center: ['65%', '58%']
+                },
+
+                xAxis: {
+                    categories: ['工作控管', '負責承擔', '執行能力', '自我提昇',
+                            '思考分析'],
+                    tickmarkPlacement: 'on',
+                    lineWidth: 0,
+                    labels:{
+                        style:{
+                            fontSize:'13'
+                        }
+                    }
+                },
+
+                yAxis: {
+                    gridLineInterpolation: 'polygon',
+                    lineWidth: 0,
+                    min: 0,
+                    max: 100,
+                    tickInterval: 50
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.0f} 分</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true,
+                },
+
+                legend: {
+                    align: 'right',
+                    verticalAlign: 'top',
+                    y: 0,
+                    layout: 'vertical'
+                },
+
+                series: [{
+                    type: 'area',
+                    name: '大眾',
+                    data: [44, 88, 63, 69, 94],
+                    pointPlacement: 'on'
+                }, {
+                    type: 'area',
+                    name: '自己',
+                    data: [70, 50, 76, 63, 94],
+                    pointPlacement: 'on'
+                }],
+                
+                exporting: {
+                    enabled: false,
+                },
+                
+                credits: {
+                    enabled: false
+                }
+            });
+            
+            //Highcharts2
+             Highcharts.chart('Highcharts_2', {
+                
+                chart: {
+                    polar: true,
+                    type: 'line'
+                },
+
+                title: {
+                    text: '',
+                    x: -140
+                },
+
+                pane: {
+                    size: '80%',
+                    center: ['65%', '58%']
+                },
+
+                xAxis: {
+                    categories: ['工作控管', '負責承擔', '執行能力', '自我提昇',
+                            '思考分析'],
+                    tickmarkPlacement: 'on',
+                    lineWidth: 0,
+                    labels:{
+                        style:{
+                            fontSize:'13'
+                        }
+                    }
+                },
+
+                yAxis: {
+                    gridLineInterpolation: 'polygon',
+                    lineWidth: 0,
+                    min: 0,
+                    max: 100,
+                    tickInterval: 50
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.0f} 分</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true,
+                },
+
+                legend: {
+                    align: 'right',
+                    verticalAlign: 'top',
+                    y: 0,
+                    layout: 'vertical'
+                },
+
+                series: [{
+                    type: 'area',
+                    name: '大眾',
+                    data: [44, 88, 63, 69, 94],
+                    pointPlacement: 'on'
+                }, {
+                    type: 'area',
+                    name: '自己',
+                    data: [70, 50, 76, 63, 94],
+                    pointPlacement: 'on'
+                }],
+                
+                exporting: {
+                    enabled: false,
+                },
+                
+                credits: {
+                    enabled: false
+                }
+            });
+            
+            
+            //長條圖
+            Highcharts.chart('Highcharts_L', {
+                chart: {
+                    type: 'column',
+                    marginTop: 60,
+                    marginLeft: 50,
+                    marginRight: 30,
+                },
+                title: {
+                    text: ''
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: [
+                        '成就動機',
+                        '工作控管',
+                        '團隊精神',
+                        '負責承擔',
+                        '執行能力',
+                        '溝通協調',
+                        '人脈拓展',
+                        '顧客關係',
+                        '同理關懷',
+                        '自我提升',
+                        '適應能力',
+                        '抗壓能力',
+                        '正向樂觀',
+                        '分析思考',
+                        '創造能力'
+                    ],
+                    crosshair: true
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: ''
+                    },
+                    ceiling: 100
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.0f} 分</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true,
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: '大眾',
+                    data: [49, 71, 80, 86, 91, 95, 84, 72, 94, 36, 78, 87, 87, 87, 87]
+
+                }, {
+                    name: '自己',
+                    data: [63, 78, 68, 54, 95, 48, 60, 87, 68, 83, 87,68,68,68,68],
+                    //加黑框
+//                    borderColor: '#303030',
+//                    borderWidth: 2
+                }, {
+                    name: '16-20歲',
+                    data: [48, 30, 39, 41, 47, 48, 39, 39, 42, 65, 53, 51, 51, 51, 51]
+
+                }, {
+                    name: '大學',
+                    data: [42, 33, 34, 39, 52, 75, 57, 60, 47, 39, 46, 51, 46, 46, 46]
+
+                }],
+                
+                exporting: {
+                    enabled: false,
+                },
+                
+                credits: {
+                    enabled: false
+                },
+                
+            },function(c){
+                //圈圈黑框
+//                $(c.series[1].legendSymbol.element).attr({ "stroke-width": "2", "stroke": "#303030" });
+            });
+            
+            $(".pbox").click(openClose);
+            $(".pls").click(plsShow);
+            $(".seeMore").click(seeMore);
+            $("#repeatChk").click(repeatTest);
+            $("#printRp").click(printReport);
+            $("#turnOff").click(function(){
+                tOff();
+            });
+            $(".coverB").click(function(){
+                tOff();
+            });
+            $(".Cinfo").click(function(e){
+                e.stopPropagation();
+            });
+            titleInfo();
+            jobBoxMover();
+            
+            var o = true;
+            $(window).scroll(function(){
+                var h = $("html,body").scrollTop();
+                if(h>1400 && o){
+                    f1.run(87);
+                    f2.run(99);
+                    f3.run(25);
+                    o = false;
+                }
+            });
+            
+            t1 = new circlePercent("#t1");
+            t1.run(63);
+            t2 = new circlePercent("#t2");
+            f1 = new circlePercent("#f1");
+            f2 = new circlePercent("#f2");
+            f3 = new circlePercent("#f3");
+            f4 = new circlePercent("#f4");
+            f5 = new circlePercent("#f5");
+            f6 = new circlePercent("#f6");
+            
+        });
+        var t1,t2,f1,f2,f3,f4,f5,f6;
+         
+        //top資訊resize
+        var tick = 0;
+        $(window).resize(function(){
+            clearTimeout(tick);
+            tick = setTimeout(function () {
+                chkTopSize();
+                $(".Lrun").css({ top: a, left: b });
+                $(".Lrun2").css({ top: c, left: d });
+                jobBoxMover();
+            }, 100);
+        });
+        
+        //列印報告
+        function printReport(){
+            f1.runPrint(87);
+            f2.runPrint(92);
+            f3.runPrint(25);
+            f4.runPrint(67);
+            f5.runPrint(79);
+            f6.runPrint(87);
+            t2.runPrint(10);
+            //職能說明列印搬移
+            jobBoxMoverPrint();
+            
+            setTimeout(function(){
+                window.print();
+            },100);
+        }
+        //豬鼻開關
+        var on = true;
+        function openClose(){
+            var L=0,c="";
+            if(on){
+                L = 2;
+                c = "#e6e6e6";
+                on=false;
+            }
+            else{
+                L = 28;
+                c = "#d44859";
+                on=true;
+            }
+            $(".o").animate({left:L},100);
+            $(".pbox").css({background:c});
+        }
+        //pls開關
+        function plsShow(){
+            $(".pls").toggleClass("plsTf");
+            $(".btnI").slideToggle();
+        }
+        //重測跳窗
+        function repeatTest(){
+            $(".coverB").css("display","block");
+        }
+        function tOff(){
+            $(".coverB").css("display","none");
+        }
+        //sm版塊移動
+        function jobBoxMover(){
+            var w = $(window).width();
+            var v = $("#jobViewer"), m = $("#jobMore");
+            doMove(w, v, m);
+            v = $("#desViewer"), m = $("#desMore");
+            doMove(w, v, m);
+        }
+        function doMove(w, v, m) {
+            var c = v.find(">div"), o;
+            if (w >= 768 && w <= 991) {
+                //上移下
+                if (c.length == 3) {
+                    o = c.eq(2);
+                    m.prepend(o);
+                }
+            } else {
+                //下移上
+                if (c.length != 3) {
+                    o = m.find(">div:eq(0)");
+                    v.append(o);
+                }
+            }
+        }
+        //列印頁 版塊移動
+        function jobBoxMoverPrint(){
+            var v = $("#jobViewer"), m = $("#jobMore");
+            doMovePrint(v, m);
+            v = $("#desViewer"), m = $("#desMore");
+            doMovePrint(v, m);
+        }
+        function doMovePrint(v, m) {
+            var c = v.find(">div"), o;
+            if (c.length == 3) {
+                o = c.eq(2);
+                m.prepend(o);
+            }
+            setTimeout(function(){
+                if (c.length != 3) {
+                    o = m.find(">div:eq(0)");
+                    v.append(o);
+                }
+            },5000);
+        }
+        //看更多
+        function seeMore(){
+            var nj = this
+            var s = $(this).prev(".showBox").css("display");
+            var a,b;
+            
+            $(this).prev(".showBox").slideToggle();
+            if(s == "none"){
+                a = "收合內容 ";
+                b = "icon-icon-06";
+            }
+            else{
+                a = "展開看更多 ";
+                b = "icon-icon-05";
+            }
+            $(this).find("P").html("<p>"+ a + "<i class="+ b +"></i></p>");
+            
+            //跑圓分數
+            roundGo(nj);
+        }
+        //跑圓分數
+        var jBox=true , ctBox=true;
+        function roundGo(nj){
+            var i = $(nj).prev(".showBox").data("run");
+            if( i == "jBox" && jBox){
+                f4.run(67);
+                f5.run(78);
+                f6.run(87);
+                jBox = false;
+            }
+            else if( i == "ctBox" && ctBox ){
+                t2.run(10);
+                ctBox = false;
+            }
+        }
+//動畫類
+        //最上方資訊動畫
+        var a,b,c,d;
+        function titleInfo(){
+            chkTopSize();
+            $(".Pmove").animate({opacity:1},600,function(){
+                $(".Lrun").animate({top:a,left:b},400);
+                $(".Lrun2").animate({top:c,left:d},400);
+            });
+            $(".Ubox>div").delay(800).animate({opacity:1},400);
+            $(".frame").delay(1000).animate({width:50,height:1},1000);
+            $(".frame3").delay(1000).animate({width:50,height:1},1500);
+            $(".frame2").delay(1000).animate({width:1,height:50},2000);
+            $(".frame4").delay(1000).animate({width:1,height:50},2500);
+        }
+        function chkTopSize(){
+            var w = $(window).width();
+            if(w >= 992){
+                a = "3%";
+                b = "-10%";
+                c = "70%";
+                d = "98.5%";
+            }
+            else if(w <= 991 && w >=482){
+                a = "3%";
+                b = "-10%";
+                c = "100%";
+                d = "98.5%";
+            }
+            else if(w<= 481 && w >=374){
+                a = "-3%";
+                b = "-10%";
+                c = "113%";
+                d = "97%";
+            }
+            else if(w<= 373 && w >=366){
+                a = "-3%";
+                b = "-10%";
+                c = "148%";
+                d = "96%";
+            }
+            else if(w<= 365 && w >=342){
+                a = "-8%";
+                b = "-14%";
+                c = "148%";
+                d = "99%";
+            }
+            else if(w<= 341){
+                a = "-5%";
+                b = "-15%";
+                c = "135%";
+                d = "96%";
+            }
+        }
+        //% 分數動畫-圓左右跑
+        function circlePercent(e){
+            var nj = this;
+            var main = $(e);
+            var lefthaft = main.find(".round1");
+            var righthaft = main.find(".round2");
+            var nb = main.find(".nb span");
+            var rmax,lmax,c;
+            this.run = function(v){
+                rmax = v > 50 ? 50 : v;
+                lmax = v > 50 ? v-50: 0;
+                c=0;
+                rightRun();
+            }
+            function rightRun(){
+                c++;
+                righthaft.css("transform", "rotate(" + ((c*3.6) + 45) + "deg)");
+                nb.text(c);
+                if(c==50) {
+                    c=0;
+                    setTimeout(leftRun,30);
+                } else {
+                    if (c<rmax) setTimeout(rightRun,30);
+                }
+            }
+            function leftRun(){
+                c++;
+                lefthaft.css("transform", "rotate(" + ((c*3.6)+225) + "deg)");
+                nb.text(c + 50);
+                if(c<lmax){
+                    setTimeout(leftRun,30);
+                }
+            }
+            //列印用
+            this.runPrint = function(v){
+                rmax = v > 50 ? 50 : v;
+                lmax = v > 50 ? v-50: 0;
+                righthaft.css("transform", "rotate(" + ((rmax*3.6) + 45) + "deg)");
+                lefthaft.css("transform", "rotate(" + ((lmax*3.6) + 225) + "deg)");
+                nb.text(v);
+            }
+        }
+        
+    </script>
+    
+</head>
+<body>
+    <div id="wp">
+        <div id="header" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topBar hidden-xs">
+                    <a href="cstar.htm"><img src="img/CstarLogo-s.png" alt="" style="margin:-5px 0 0;">九大職能星</a>
+                    <a href="#">OOO 登出</a>
+                    <a href="cstar_consult.htm">線上諮詢</a>
+                    <a href="cstar_report.htm">結果報告</a>
+                    <a href="cstar_start.htm">開始測驗</a>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topBar hidden-sm hidden-md hidden-lg">
+                    <a href="cstar.htm"><img src="img/CstarLogo-s.png" alt="" style="margin:-5px 0 0;">九大職能星</a>
+                    <i class="icon-icon-01"></i>
+                    <ul>
+                        <li><a href="cstar_start.htm">開始測驗</a></li>
+                        <li><a href="cstar_report.htm">結果報告</a></li>
+                        <li><a href="cstar_consult.htm">線上諮詢</a></li>
+                        <li><a href="#">OOO 登出</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row printLogo"><div class="col-xs-12"><img src="img/CstarLogoBK.png" alt="" style="width:234px;height:51px;"></div></div>
+        </div>
+        <div id="content" class="container">
+            <div class="row highBox"></div>
+            <!--基本資訊 -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="contUser">
+                        <div class="Ubox">
+                            <div class="Pmove">
+                                <img src="img/L1.png" alt="" class="Lrun">
+                                <img src="img/L2.png" alt="" class="Lrun2">
+                                <div class="frame"></div>
+                                <div class="frame2"></div>
+                                <div class="frame3"></div>
+                                <div class="frame4"></div>
+                            </div>
+                            <div>
+                                <h2>林鐵支</h2>
+                                <h2>天王星研究型</h2>
+                                <i class="pls"></i>
+                                <ul class="btnI">
+                                    <li><a href="cstar_jobType.htm">各型職務配對列表</a></li>
+                                    <li id="repeatChk">重測</li>
+                                    <li id="printRp">列印</li>
+                                </ul>
+                                <div class="Ulist">
+                                    <h4>企業瀏覽</h4>
+                                    <div class="pbox">
+                                        <h5 style="left: 8px;">開</h5>
+                                        <h5 style="right: 8px;color:#000">關</h5>
+                                        <div class="o"></div>
+                                    </div>
+                                    <form>
+                                        <select name="test" id="">
+                                            <option value="">2018/01/11 施測時間 16分鐘</option>
+                                            <option value="">2018/02/22 施測時間 10分鐘</option>
+                                        </select>
+                                    </form>
+                                    <div class="explain">
+                                        <div class="triangle"></div>
+                                        <h4><b>「企業瀏覽」是什麼？</b></h4>
+                                        <h4>開啟「企業瀏覽」後，企業將能經由您的履歷（若您有開啟履歷）查看您的測驗結果報告，據調查，有近50%企業優先搜尋有測驗報告的求職者。</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="Ubox">
+                            <div>
+                                <h4>認真作答度 <span class="fontSiz">80</span>%</h4>
+                                <h4>測驗可靠度 <span class="fontSiz">80</span>%</h4>
+                                <div class="explain">
+                                    <div class="triangle"></div>
+                                    <h4><b>認真作答度是什麼?</b></h4>
+                                    <h4>經由檢測方式，瞭解您在作答過程中是否認真閱讀題目內容還是隨意作答，一般來說90%以上代表認真作答。</h4>
+                                </div>
+                                <div class="explain2">
+                                    <div class="triangle"></div>
+                                    <h4><b>測驗可靠度是什麼?</b></h4>
+                                    <h4>經由檢測方式，瞭解您在作答過程中是否有社會期許刻意猜題等現象，一般來說80%以上代表測驗結果可靠。</h4>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--最適合你的工作類型 -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="contTitle">
+                        <h2>最適合你的工作類型</h2>
+                    </div>
+                </div>
+            </div>
+            <!--類型內容 -->
+            <div class="row">
+                <div class="col-xs-12 contType">
+                    <div class="row">
+                        <div class="contTypeBox">
+                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                <div class="roundHalf" id="t1">
+                                    <div class="box1">
+                                        <div class="round1"></div>
+                                    </div>
+                                    <div class="box2">
+                                        <div class="round2"></div>
+                                    </div>
+                                    <div class="nb"><span>63</span>%</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                                <h2>天王星 研究型</h2>
+                                <p>擁有打破砂鍋問到底的精神，喜歡汲取知識追求真相，擅長思考與分析，也很願意傳播各種知識。偏向需要思考、組織理解的開發性活動。</p>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-md-6 col-lg-6">
+                                        <p class="pTitle">研究型的人適合什麼職務?</p>
+                                        <ul>
+                                            <li><a href="#">金融研究人員</a></li>
+                                            <li><a href="#">霹靂小組</a></li>
+                                            <li><a href="#">拆彈專家</a></li>
+                                        </ul>
+                                        <a href="#"><button class="btnPink">其他配對職務</button></a>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+                                        <div id="Highcharts_1" style="height: 250px; margin: 0 auto"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 showBox" data-run="ctBox">
+                            <div class="row">
+                                <div class="contTypeBox">
+                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                        <div class="roundHalf" id="t2">
+                                            <div class="box1">
+                                                <div class="round1"></div>
+                                            </div>
+                                            <div class="box2">
+                                                <div class="round2"></div>
+                                            </div>
+                                            <div class="nb"><span>63</span>%</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                                        <h2>水星 業務型</h2>
+                                        <p>處事圓融、做事彈性大，擅於與人溝通協調，願意追求較具挑戰性的目標。偏向與人接觸，進行溝通協調並進行心理說服的活動。</p>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-4 col-md-6 col-lg-6">
+                                                <p class="pTitle">研究型的人適合什麼職務?</p>
+                                                <ul>
+                                                    <li><a href="#">金融研究人員</a></li>
+                                                    <li><a href="#">霹靂小組</a></li>
+                                                    <li><a href="#">拆彈專家</a></li>
+                                                </ul>
+                                                <a href="#"><button class="btnPink">其他配對職務</button></a>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+                                                <div id="Highcharts_2" style="height: 250px; margin: 0 auto"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xs-12 seeMore">
+                            <p>展開看更多 <i class="icon-icon-05"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--用圖表找出你的優勢 -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="contTitle">
+                        <h2>你的職能 vs. 大眾職能</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 contdigi">
+                    <ul>
+                        <li>大眾常模人數 <span>854167</span></li>
+                        <li> 
+                            <form>
+                                年齡
+                                <select name="age" id="">
+                                    <option value="" selected="selected">16~20歲</option>
+                                    <option value="">21~25歲</option>
+                                    <option value="">26~30歲</option>
+                                    <option value="">31~35歲</option>
+                                </select>
+                            </form>
+                        </li>
+<!--                        <li class="hidden-xs">常模人數 <span>8541</span></li>-->
+                        <li>
+                            <form>
+                                學歷
+                                <select name="education" id="">
+                                    <option value="">國中/國小</option>
+                                    <option value="">高中職</option>
+                                    <option value="">專科</option>
+                                    <option value="" selected="selected">大學</option>
+                                    <option value="">碩士</option>
+                                    <option value="">博士</option>
+                                </select>
+                            </form>
+                        </li>
+                        <li><button class="btnSent">送出</button></li>
+<!--                        <li class="hidden-xs">常模人數 <span>8541</span></li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="Highcharts_L" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                </div>
+            </div>
+            <div class="row">
+               <div class="col-xs-12 contdigi">
+                   <table class="hidden-xs">
+                       <tr class="digiTitle">
+                           <td></td>
+                           <td>成就<br/>動機</td>
+                           <td>工作<br/>控管</td>
+                           <td>團隊<br/>精神</td>
+                           <td>負責<br/>承擔</td>
+                           <td>執行<br/>能力</td>
+                           <td>溝通<br/>協調</td>
+                           <td>人脈<br/>拓展</td>
+                           <td>顧客<br/>關係</td>
+                           <td>同理<br/>關懷</td>
+                           <td>自我<br/>提升</td>
+                           <td>適應<br/>能力</td>
+                           <td>抗壓<br/>能力</td>
+                           <td>正向<br/>樂觀</td>
+                           <td>分析<br/>思考</td>
+                           <td>創造<br/>能力</td>
+                       </tr>
+                       <tr class="self">
+                           <td>自己</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                       </tr>
+                       <tr>
+                           <td>大眾</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                           <td>87</td>
+                       </tr>
+                   </table>
+                   <table class="hidden-lg hidden-md hidden-sm">
+                       <tr>
+                           <td></td>
+                           <td class="self">自己</td>
+                           <td>大眾</td>
+                       </tr>
+                       <tr>
+                           <td>成就動機</td>
+                           <td class="self">87</td>
+                           <td>87</td>
+                       </tr>
+                       <tr>
+                           <td>工作控管</td>
+                           <td class="self">87</td>
+                           <td>87</td>
+                       </tr>
+                       <tr>
+                           <td>團隊精神</td>
+                           <td class="self">87</td>
+                           <td>87</td>
+                       </tr>
+                       <tr>
+                           <td>負責承擔</td>
+                           <td class="self">87</td>
+                           <td>87</td>
+                       </tr>
+                       <tr>
+                           <td>執行能力</td>
+                           <td class="self">87</td>
+                           <td>87</td>
+                       </tr>
+                       <tr>
+                           <td>溝通協調</td>
+                           <td class="self">87</td>
+                           <td>87</td>
+                       </tr>
+                       <tr>
+                           <td>人脈拓展</td>
+                           <td class="self">87</td>
+                           <td>87</td>
+                       </tr>
+                       <tr>
+                           <td>顧客關係</td>
+                           <td class="self">87</td>
+                           <td>87</td>
+                       </tr>
+                       <tr>
+                           <td>同理關懷</td>
+                           <td class="self">87</td>
+                           <td>87</td>
+                       </tr>
+                       <tr>
+                           <td>自我提升</td>
+                           <td class="self">87</td>
+                           <td>87</td>
+                       </tr>
+                       <tr>
+                           <td>適應能力</td>
+                           <td class="self">87</td>
+                           <td>87</td>
+                       </tr>
+                       <tr>
+                           <td>抗壓能力</td>
+                           <td class="self">87</td>
+                           <td>87</td>
+                       </tr>
+                       <tr>
+                           <td>正向樂觀</td>
+                           <td class="self">87</td>
+                           <td>87</td>
+                       </tr>
+                       <tr>
+                           <td>分析思考</td>
+                           <td class="self">87</td>
+                           <td>87</td>
+                       </tr>
+                       <tr>
+                           <td>創造能力</td>
+                           <td class="self">87</td>
+                           <td>87</td>
+                       </tr>
+                   </table>
+               </div>
+            </div>
+            <!--你表現良好的職能是...? -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="contTitle">
+                        <h2>你的競爭優勢</h2>
+                    </div>
+                </div>
+                <div id="jobViewer">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <div class="jobBox">
+                            <div class="row">
+                                <div class="col-xs-12 jobBoxTitle">
+                                    <span class="s5"></span>
+                                    <span>表現五顆星</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-12 col-lg-6">
+                                    <div class="roundHalf" id="f1">
+                                        <div class="box1">
+                                            <div class="round1"></div>
+                                        </div>
+                                        <div class="box2">
+                                            <div class="round2"></div>
+                                        </div>
+                                        <div class="nb"><span>87</span>分</div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-12 col-lg-6 ranking">
+                                    <h2>成就動機</h2>
+                                    <h4>排名73</h4>
+                                </div>
+                                <div class="col-xs-12">
+                                    <h4>你的成就動機偏低，比較喜歡安穩，沒有競爭性的工作環境，工作上也較不喜歡挑戰有難度的工作項目，做事情較偏向保守，對於自我實現和自我要求也較不重視。</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <div class="jobBox">
+                            <div class="row">
+                                <div class="col-xs-12 jobBoxTitle">
+                                    <span class="s4"></span>
+                                    <span>表現四顆星</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-12 col-lg-6">
+                                    <div class="roundHalf" id="f2">
+                                        <div class="box1">
+                                            <div class="round1"></div>
+                                        </div>
+                                        <div class="box2">
+                                            <div class="round2"></div>
+                                        </div>
+                                        <div class="nb"><span>99</span>分</div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-12 col-lg-6 ranking">
+                                    <h2>工作控管</h2>
+                                    <h4>排名73</h4>
+                                </div>
+                                <div class="col-xs-12">
+                                    <h4>你的工作控管能力很高，不管事情有多多或是緊急，你都能完善的進行安排與管理，並確保在最快速有效的狀況下完成一切。</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <div class="jobBox">
+                            <div class="row">
+                                <div class="col-xs-12 jobBoxTitle">
+                                    <span class="s3"></span>
+                                    <span>表現三顆星</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-12 col-lg-6">
+                                    <div class="roundHalf" id="f3">
+                                        <div class="box1">
+                                            <div class="round1"></div>
+                                        </div>
+                                        <div class="box2">
+                                            <div class="round2"></div>
+                                        </div>
+                                        <div class="nb"><span>25</span>分</div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-12 col-lg-6 ranking">
+                                    <h2>團隊精神</h2>
+                                    <h4>排名73</h4>
+                                </div>
+                                <div class="col-xs-12">
+                                    <h4>你的團隊精神很高，把團隊的事當成自己的事，以身為團隊的一份子感到驕傲，對團隊事務盡心盡力及全方位的投入，不在乎個人的表現，對於團隊的認同感很高，覺得隸屬的團隊與你榮辱與共。</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 showBox" data-run="jBox">
+                    <div class="row" id="jobMore">
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="jobBox">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <span class="s3"></span>
+                                        <span>表現三顆星</span>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6">
+                                        <div class="roundHalf" id="f4">
+                                            <div class="box1">
+                                                <div class="round1"></div>
+                                            </div>
+                                            <div class="box2">
+                                                <div class="round2"></div>
+                                            </div>
+                                            <div class="nb"><span>25</span>分</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6 ranking">
+                                        <h2>成就動機</h2>
+                                        <h4>排名73</h4>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <h4>職能說明職能說明職能說明職能說明職能說明職能說明職能說明職能說明職能說明職能說明職能說明職能說明職能說明職能說明職能說明職能說明職能說明職能說明職能說明職能說明</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="jobBox">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <span class="s4"></span>
+                                        <span>表現四顆星</span>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6">
+                                        <div class="roundHalf" id="f5">
+                                            <div class="box1">
+                                                <div class="round1"></div>
+                                            </div>
+                                            <div class="box2">
+                                                <div class="round2"></div>
+                                            </div>
+                                            <div class="nb"><span>99</span>分</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6 ranking">
+                                        <h2>工作控管</h2>
+                                        <h4>排名73</h4>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <h4>你的工作控管能力很高，不管事情有多多或是緊急，你都能完善的進行安排與管理，並確保在最快速有效的狀況下完成一切。</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="jobBox">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <span class="s3"></span>
+                                        <span>表現三顆星</span>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6">
+                                        <div class="roundHalf" id="f6">
+                                            <div class="box1">
+                                                <div class="round1"></div>
+                                            </div>
+                                            <div class="box2">
+                                                <div class="round2"></div>
+                                            </div>
+                                            <div class="nb"><span>25</span>分</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6 ranking">
+                                        <h2>團隊精神</h2>
+                                        <h4>排名73</h4>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <h4>你的團隊精神很高，把團隊的事當成自己的事，以身為團隊的一份子感到驕傲，對團隊事務盡心盡力及全方位的投入，不在乎個人的表現，對於團隊的認同感很高，覺得隸屬的團隊與你榮辱與共。</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-xs-12 seeMore">
+                    <p>展開看更多 <i class="icon-icon-05"></i></p>
+                </div>
+            </div>
+            <!--職能秘笈：如何提升弱勢職能? -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="contTitle">
+                        <h2>職能秘笈:如何提升我的職能?</h2>
+                    </div>
+                </div>
+                <div id="desViewer">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <div class="upgrade">
+                            <div class="Utitle">成就動機</div>
+                            <ul>
+                                <li>相信自己是有能力的，未必會做的比別人差。</li>
+                                <li>培養一項具競賽的興趣。</li>
+                                <li>設定目標達成時給自己的獎賞，增強自己達成目標的動力。</li>
+                                <li>提升自己的專業，自信來自您的專業。</li>
+                                <li>培養開放的態度，試著去嘗試一些冒險性活動(在安全保證的前提下)，例如登山，環島，泛舟。</li>
+                                <li>設立稍有挑戰性的目標，慢慢加深自己克服困難的信心與能力。</li>
+                                <li>不要怕競爭，競爭是可以激發自己更好的表現。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <div class="upgrade">
+                            <div class="Utitle">工作控管</div>
+                            <ul>
+                                <li>學習一套自己適用的記事方式，例如隨身筆記本。</li>
+                                <li>每天睡前花10分鐘回想今天所做的事情，思考下次怎樣做可以更好。</li>
+                                <li>掌握身旁資源，適時運用資源協助自己。</li>
+                                <li>在工作開始之前，先在腦中模擬一遍，並思考各項可能遇到的問題。</li>
+                                <li>學習安排工作期程，依事情的輕重緩急安排什麼時候該做什麼事。</li>
+                                <li>準備好所有工作的前置作業，盡量讓各項作業同時進行節省時間。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <div class="upgrade">
+                            <div class="Utitle">團隊精神</div>
+                            <ul>
+                                <li>建立信任他人的態度。</li>
+                                <li>多參與團隊的聚會，團隊的默契是從平常就培養起的。</li>
+                                <li>遭遇問題時多跟別人討論，一定會有對自己有幫助的建議。</li>
+                                <li>瞭解人各有所專長，人盡其用的優勢。</li>
+                                <li>眾志成城，每一個成功的大案子，一定都是團隊努力合作而成的。</li>
+                                <li>參與團隊型的運動活動，培養團隊合作的精神。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 showBox">
+                    <div class="row" id="desMore">
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="upgrade">
+                                <div class="Utitle">成就動機</div>
+                                <ul>
+                                    <li>學習一套自己適用的記事方式，例如隨身筆記本。</li>
+                                    <li>每天睡前花10分鐘回想今天所做的事情，思考下次怎樣做可以更好。</li>
+                                    <li>掌握身旁資源，適時運用資源協助自己。</li>
+                                    <li>在工作開始之前，先在腦中模擬一遍，並思考各項可能遇到的問題。</li>
+                                    <li>學習安排工作期程，依事情的輕重緩急安排什麼時候該做什麼事。</li>
+                                    <li>準備好所有工作的前置作業，盡量讓各項作業同時進行節省時間。</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="upgrade">
+                                <div class="Utitle">成就動機</div>
+                                <ul>
+                                    <li>學習一套自己適用的記事方式，例如隨身筆記本。</li>
+                                    <li>每天睡前花10分鐘回想今天所做的事情，思考下次怎樣做可以更好。</li>
+                                    <li>掌握身旁資源，適時運用資源協助自己。</li>
+                                    <li>在工作開始之前，先在腦中模擬一遍，並思考各項可能遇到的問題。</li>
+                                    <li>學習安排工作期程，依事情的輕重緩急安排什麼時候該做什麼事。</li>
+                                    <li>準備好所有工作的前置作業，盡量讓各項作業同時進行節省時間。</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="upgrade">
+                                <div class="Utitle">成就動機</div>
+                                <ul>
+                                    <li>學習一套自己適用的記事方式，例如隨身筆記本。</li>
+                                    <li>每天睡前花10分鐘回想今天所做的事情，思考下次怎樣做可以更好。</li>
+                                    <li>掌握身旁資源，適時運用資源協助自己。</li>
+                                    <li>在工作開始之前，先在腦中模擬一遍，並思考各項可能遇到的問題。</li>
+                                    <li>學習安排工作期程，依事情的輕重緩急安排什麼時候該做什麼事。</li>
+                                    <li>準備好所有工作的前置作業，盡量讓各項作業同時進行節省時間。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 seeMore">
+                    <p>展開看更多 <i class="icon-icon-05"></i></p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div id="footer" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footBg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul>
+                                    <li><a href="#">九大職能星</a></li>
+                                    <li><a href="#">開始測驗</a></li>
+                                    <li><a href="#">結果報告</a></li>
+                                    <li><a href="#">聯絡我們</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul>
+                                    <li><a href="#">其他測驗</a></li>
+                                    <li><a href="#">個人特質測驗</a></li>
+                                    <li><a href="#">TAT轉職測驗</a></li>
+                                    <li><a href="#">服務型職能測驗</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul>
+                                    <li><a href="#">其他服務</a></li>
+                                    <li><a href="#">職涯網</a></li>
+                                    <li><a href="#">訂閱電子報</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul class="icfSize">
+                                    <li><a href="#"></a></li>
+                                    <li>
+                                        <a href="#" class="icon-facebook"></a>
+                                        <a href="#" class="icon-google-plus"></a>
+                                        <a href="#" class="icon-linkedin2"></a>
+                                        <a href="#" class="icon-icon-10"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copyright">
+                    <h5 class="hidden-xs">建議您使用 google Chrome 瀏覽器以取得最佳、最快的瀏覽效果！</h5>
+                    <h5>全球華人股份有限公司版權所有 © 1111 Job Bank All Rights Reserved </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="coverB">
+        <div class="Cinfo">
+            <p>已符合再次施測的資格(距上次施測183天以上)開始重測?</p>
+            <button type="button" class="btnCheck" id="turnOff">先別</button>
+            <a href="cstar_start.htm"><button type="button" class="btnCheck">好，我準備好了</button></a>
+        </div>
+    </div>
+    <div id="gotop">
+        <div class="line" style="transform: rotate(45deg);top:22px;right:11px;"></div>
+        <div class="line" style="transform: rotate(-45deg);top:22px;right:21px;"></div>
+    </div>
+</body>
+</html>

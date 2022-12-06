@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>匯出履歷編輯器-列印履歷設定</title>
+    <!--css-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/backstage-print.css" rel="stylesheet">
+    <link href="css/backstage_P04_blue-print_main.css" rel="stylesheet">
+    <link href="" rel="stylesheet" id="mcolor">
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/backstage-print_menu.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            /*取消編輯*/
+            $(".introduction").attr("contenteditable","false");
+        });
+    </script>
+</head>
+<body>
+    <div class="wp">
+        <div class="container-fluid">
+            <!--header-->
+            <div class="row header">
+                <div class="col-xs-8">
+                    <img src="images/logo.png" alt="">
+                    <span>匯出履歷編輯</span>
+                    <a href="backstage_P04.htm" class="btnBack">←返回版型編輯</a>
+                    <button type="button" class="btnSave">儲存列印版型</button>
+                </div>
+                <div class="col-xs-4 alignR">
+                   <button type="button" class="btnDownload">下載</button>
+                   <button type="button" class="btnPrint">列印</button>
+                   <button type="button" class="btnCPrint">超商列印</button>
+                </div>
+            </div>
+            <div class="hh"></div>
+            <!--header end-->
+            <!--content-->
+            <div class="cont">
+                <div class="row">
+                    <!--main-->
+                    <div class="col-xs-12 main">
+                        <div class="topBar">
+                            目前編輯版本： 網頁版（列印時，因紙本排版限制將有些許差異，背景色及色塊將不會被列印,您可於「列印履歷設定」預覽列印狀態 ）
+                        </div>
+                        <div class="leftBar mbg">
+                            <div class="pic">
+                                <div><img src="images/pic.png" alt="" class="img-responsive"></div>
+                            </div>
+                            <p class="userName">你你你</p>
+                            <ul class="stMove2">
+                                <li>學歷資料</li>
+                                <li>工作經歷</li>
+                                <li>技能專長</li>
+                                <li>推 薦 人</li>
+                                <li>自　　傳</li>
+                                <li>聯絡資訊</li>
+                                <li>自訂版塊</li>
+                            </ul>
+                            <div class="outLink">
+                                <button class="linkBtn"><span>新增外部連結</span><i class="material-icons">add</i></button>
+                                <i class="material-icons hidden" title="編輯">create</i>
+                                <div class="outLinkCtl">
+                                    <p>新增外部連結</p>
+                                    <i class="material-icons olClose">close</i>
+                                    <ul class="stMoveOL2">
+                                        <li class="w20 text-left">預覽</li>
+                                        <li class="viewIcon"></li>
+                                        <li class="viewIcon"></li>
+                                        <li class="viewIcon"></li>
+                                        <li class="viewIcon"></li>
+                                    </ul>
+                                    <hr>
+                                    <ul>
+                                        <li class="w10">排序</li>
+                                        <li class="w10 ">圖標</li>
+                                        <li class="w60">連結</li>
+                                        <li class="w10">清除</li>
+                                    </ul>
+                                    <div id="olk">
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <span class="PromptText"></span>
+                                    </div>
+                                    <button type="button" class="olSave">儲存</button>
+                                </div>
+                            </div>
+                            <div class="mbtn eShow"><span>加分亮點</span></div>
+                            <div class="mbtn vShow"><span>影音履歷</span></div>
+                        </div>
+                        <div class="col-xs-12 rightBar">
+                            <div class="row">
+                                <div class="col-xs-12 col-lg-10 col-lg-offset-1 bgw"><!--col-xs-12 col-lg-10 col-lg-offset-1-->
+                                    <ul>
+                                        <li class="box col-xs-12">
+                                            <div class="content personal rbgone">
+                                                <div class="userMainInfo">
+                                                    <div class="photoBox">
+                                                        <div class="photo">
+                                                            <div class="pic">
+                                                                <img src="images/pic.png">
+                                                            </div>
+                                                            <div class="bubble n01 rbgthree"></div>
+                                                            <div class="bubble n02 rbgtwo"></div>
+                                                            <div class="bubble n03 rbgfour"></div>
+                                                            <div class="bubble n04 rbgthree"></div>
+                                                            <div class="bubble n05 rbgtwo"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <h3>你你你<span class="eName">Ni nini</span></h3>
+                                                        <div class="info">台北市松山區&nbsp;&frasl;&nbsp;女性&nbsp;&frasl;&nbsp;36歲</div>
+                                                        <div class="jobName tColor03">物料管理員,倉儲物流人員,品管人員</div>
+                                                    </div>
+                                                </div>
+                                                <div class="borderLine rbgtwo"></div>
+
+                                                <div class="InfoBox">
+                                                    <p>有鑒於過去跨領域的經歷，我對於學習新知總是持續不斷的接受挑戰。 感謝我過去多元的背景，大學時我主修政治學。政治學喚起了我的同理心以及與他人建立正向關係的熱情，這也使我得意以關懷社會上不同人群的訴求並幫助需要幫助的人（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。得意以關懷社會上不同人群的訴求得意以關懷社會上不同人群的訴求。</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="stMove3">
+                                        <li class="box col-xs-12">
+                                            <div class="content education rbgbox bgImg">
+                                                <div class="bTitle tColor01">
+                                                    <h3>學歷資料</h3>
+                                                    <div class="borderLine rbgthree"></div>
+                                                </div>
+                                                <div class="InfoBox">
+                                                    <div class="listBox">
+                                                        <ul>
+                                                            <li>
+                                                                <div class="icon">
+                                                                    <svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#004c82;}</style></defs><title>type04_icon</title><path class="cls-1" d="M20,6.7l-3-3H0V32.52H16.19L20,36.32l3.81-3.8H40V3.66H23ZM38.14,5.52V30.66H23l-3,3-3-3H1.86V5.52H16.19L19.07,8.4v15h1.86V8.4l2.88-2.88Z"/><rect class="cls-1" x="24.25" y="12.93" width="10.64" height="1.86"/><rect class="cls-1" x="24.25" y="20.79" width="10.64" height="1.86"/><rect class="cls-1" x="5.16" y="12.93" width="10.64" height="1.86"/><rect class="cls-1" x="5.16" y="20.79" width="10.64" height="1.86"/></svg>
+                                                                </div>
+                                                                <div class="left">
+                                                                    <div class="boxTop period tColor02">2000/3～2004/9</div>
+                                                                    <div class="location">
+                                                                        <span class="tColor04">研究所畢業</span><span>台灣</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <div class="graduation">
+                                                                        <span class="maru"></span>
+                                                                        <h4 class="tColor04">大阪藝術學院大阪藝術學院</h4><span class="tColor02">(在職專班)</span>
+                                                                    </div>
+                                                                    <div class="department"><span>資訊工程學系</span><span>資訊工程學類</span></div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="icon">
+                                                                    <svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#004c82;}</style></defs><title>type04_icon</title><path class="cls-1" d="M20,6.7l-3-3H0V32.52H16.19L20,36.32l3.81-3.8H40V3.66H23ZM38.14,5.52V30.66H23l-3,3-3-3H1.86V5.52H16.19L19.07,8.4v15h1.86V8.4l2.88-2.88Z"/><rect class="cls-1" x="24.25" y="12.93" width="10.64" height="1.86"/><rect class="cls-1" x="24.25" y="20.79" width="10.64" height="1.86"/><rect class="cls-1" x="5.16" y="12.93" width="10.64" height="1.86"/><rect class="cls-1" x="5.16" y="20.79" width="10.64" height="1.86"/></svg>
+                                                                </div>
+                                                                <div class="left">
+                                                                    <div class="boxTop period tColor02">2000/3～2004/9</div>
+                                                                    <div class="location">
+                                                                        <span class="tColor04">研究所畢業</span><span>台灣</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <div class="graduation">
+                                                                        <span class="maru"></span>
+                                                                        <h4 class="tColor04">大阪藝術學院大阪藝術學院</h4><span class="tColor02">(在職專班)</span>
+                                                                    </div>
+                                                                    <div class="department"><span>資訊工程學系</span><span>資訊工程學類</span></div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="icon">
+                                                                    <svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#004c82;}</style></defs><title>type04_icon</title><path class="cls-1" d="M20,6.7l-3-3H0V32.52H16.19L20,36.32l3.81-3.8H40V3.66H23ZM38.14,5.52V30.66H23l-3,3-3-3H1.86V5.52H16.19L19.07,8.4v15h1.86V8.4l2.88-2.88Z"/><rect class="cls-1" x="24.25" y="12.93" width="10.64" height="1.86"/><rect class="cls-1" x="24.25" y="20.79" width="10.64" height="1.86"/><rect class="cls-1" x="5.16" y="12.93" width="10.64" height="1.86"/><rect class="cls-1" x="5.16" y="20.79" width="10.64" height="1.86"/></svg>
+                                                                </div>
+                                                                <div class="left">
+                                                                    <div class="boxTop period tColor02">2000/3～2004/9</div>
+                                                                    <div class="location">
+                                                                        <span class="tColor04">研究所畢業</span><span>台灣</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <div class="graduation">
+                                                                        <span class="maru"></span>
+                                                                        <h4 class="tColor04">大阪藝術學院大阪藝術學院</h4><span class="tColor02">(在職專班)</span>
+                                                                    </div>
+                                                                    <div class="department"><span>資訊工程學系</span><span>資訊工程學類</span></div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="box col-xs-12">
+                                            <div class="content experience rbgbox bgImg">
+                                                <div class="bTitle tColor01">
+                                                    <h3>工作經歷</h3>
+                                                    <div class="borderLine rbgthree"></div>
+                                                </div>
+                                                <div class="InfoBox">
+                                                    <div class="listBox02">
+                                                        <ul>
+                                                            <li>
+                                                                <div class="jobInfo">
+                                                                    <div class="boxTop">
+                                                                        <div class="period tColor02">2000/3～2004/9</div>
+                                                                        <div class="job tColor01">
+                                                                            <span class="icon"><svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#004c82;}</style></defs><title>type04_icon</title><path class="cls-1" d="M11.1,1V7.41H0V36.86H40V7.41H28.9V1ZM13,2.9H27V7.41H13ZM1.87,35V18l17.78,11.1L38.13,18V35ZM38.13,15.79,19.66,26.92,1.87,15.8V9.28H38.13Z"/></svg></span>
+                                                                            <span>企劃</span>
+                                                                            <span class="shift">(全職)</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="company tColor04">這是一間有限公司</div>
+                                                                </div>
+                                                                <div class="infoList tColor02">
+                                                                    <ul>
+                                                                        <li><span class="maru"></span><span class="txt">台北市 內湖區</span></li>
+                                                                        <li><span class="maru"></span><span class="txt">工作待遇：隱藏</span></li>
+                                                                        <li><span class="maru"></span><span class="txt">公司規模：100人以上</span></li>
+                                                                        <li><span class="maru"></span><span class="txt">管理人數：5-10人</span></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <p>有鑒於過去跨領域的經歷，我對於學習新知總是持續不斷的接受挑戰。 感謝我過去多元的背景，大學時我主修政治學。政治學喚起了我的同理心以及與他人建立正向關係的熱情，這也使我得意以關懷社會上不同人群的訴求並幫助需要幫助的人（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。得意以關懷社會上不同人群的訴求得意以關懷社會上不同人群的訴求。</p>
+                                                            </li>
+                                                            <li>
+                                                                <div class="jobInfo">
+                                                                    <div class="boxTop">
+                                                                        <div class="period tColor02">2000/3～2004/9</div>
+                                                                        <div class="job tColor01">
+                                                                            <span class="icon"><svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#004c82;}</style></defs><title>type04_icon</title><path class="cls-1" d="M11.1,1V7.41H0V36.86H40V7.41H28.9V1ZM13,2.9H27V7.41H13ZM1.87,35V18l17.78,11.1L38.13,18V35ZM38.13,15.79,19.66,26.92,1.87,15.8V9.28H38.13Z"/></svg></span>
+                                                                            <span>企劃</span>
+                                                                            <span class="shift">(全職)</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="company tColor04">這是一間有限公司</div>
+                                                                </div>
+                                                                <div class="infoList tColor02">
+                                                                    <ul>
+                                                                        <li><span class="maru"></span><span class="txt">台北市 內湖區</span></li>
+                                                                        <li><span class="maru"></span><span class="txt">工作待遇：隱藏</span></li>
+                                                                        <li><span class="maru"></span><span class="txt">公司規模：100人以上</span></li>
+                                                                        <li><span class="maru"></span><span class="txt">管理人數：5-10人</span></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <p>有鑒於過去跨領域的經歷，我對於學習新知總是持續不斷的接受挑戰。 感謝我過去多元的背景，大學時我主修政治學。政治學喚起了我的同理心以及與他人建立正向關係的熱情，這也使我得意以關懷社會上不同人群的訴求並幫助需要幫助的人（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。得意以關懷社會上不同人群的訴求得意以關懷社會上不同人群的訴求。</p>
+                                                            </li>
+                                                            <li>
+                                                                <div class="jobInfo">
+                                                                    <div class="boxTop">
+                                                                        <div class="period tColor02">2000/3～2004/9</div>
+                                                                        <div class="job tColor01">
+                                                                            <span class="icon"><svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#004c82;}</style></defs><title>type04_icon</title><path class="cls-1" d="M11.1,1V7.41H0V36.86H40V7.41H28.9V1ZM13,2.9H27V7.41H13ZM1.87,35V18l17.78,11.1L38.13,18V35ZM38.13,15.79,19.66,26.92,1.87,15.8V9.28H38.13Z"/></svg></span>
+                                                                            <span>企劃</span>
+                                                                            <span class="shift">(全職)</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="company tColor04">這是一間有限公司</div>
+                                                                </div>
+                                                                <div class="infoList tColor02">
+                                                                    <ul>
+                                                                        <li><span class="maru"></span><span class="txt">台北市 內湖區</span></li>
+                                                                        <li><span class="maru"></span><span class="txt">工作待遇：隱藏</span></li>
+                                                                        <li><span class="maru"></span><span class="txt">公司規模：100人以上</span></li>
+                                                                        <li><span class="maru"></span><span class="txt">管理人數：5-10人</span></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <p>有鑒於過去跨領域的經歷，我對於學習新知總是持續不斷的接受挑戰。 感謝我過去多元的背景，大學時我主修政治學。政治學喚起了我的同理心以及與他人建立正向關係的熱情，這也使我得意以關懷社會上不同人群的訴求並幫助需要幫助的人（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。（公平貿易、偏鄉教育。得意以關懷社會上不同人群的訴求得意以關懷社會上不同人群的訴求。</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="box col-xs-12">
+                                            <div class="content skill rbgbox bgImg">
+                                                <div class="bTitle tColor01">
+                                                    <h3>技能專長</h3>
+                                                    <div class="borderLine rbgthree"></div>
+                                                </div>
+                                                <div class="InfoBox">
+                                                    <div class="listBox02">
+                                                        <ul>
+                                                            <li>
+                                                                <div class="jobInfo">
+                                                                    <div class="boxTop">
+                                                                        <div class="job tColor01">
+                                                                            <span class="icon"><svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#004c82;}</style></defs><title>type04_icon</title><path class="cls-1" d="M29.13,1.9H33V0H8.07V1.9h3.87L10.45,20.72H6.83v1.91H34.24V20.72H30.62ZM12.35,20.72,13.85,1.9H27.22l1.49,18.82Z"/><polygon class="cls-1" points="18.86 37.82 20.53 40 22.2 37.82 22.2 25.84 18.86 25.84 18.86 37.82"/></svg></span>
+                                                                            <span>語文能力</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="skillList">
+                                                                    <ul>
+                                                                        <li>中文：聽/精通，說/精通，讀/精通，寫/精通</li>
+                                                                        <li>英文：聽/精通，說/精通，讀/精通，寫/精通</li>
+                                                                        <li>客語：精通</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="jobInfo">
+                                                                    <div class="boxTop">
+                                                                        <div class="job tColor01">
+                                                                            <span class="icon"><svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#004c82;}</style></defs><title>type04_icon</title><path class="cls-1" d="M29.13,1.9H33V0H8.07V1.9h3.87L10.45,20.72H6.83v1.91H34.24V20.72H30.62ZM12.35,20.72,13.85,1.9H27.22l1.49,18.82Z"/><polygon class="cls-1" points="18.86 37.82 20.53 40 22.2 37.82 22.2 25.84 18.86 25.84 18.86 37.82"/></svg></span>
+                                                                            <span>校園幹部/社團經驗</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="skillList">
+                                                                    <ul>
+                                                                        <li>學生會：會長<span class="subTxt tColor02">1年 1個月</span></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="jobInfo">
+                                                                    <div class="boxTop">
+                                                                        <div class="job tColor01">
+                                                                            <span class="icon"><svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#004c82;}</style></defs><title>type04_icon</title><path class="cls-1" d="M29.13,1.9H33V0H8.07V1.9h3.87L10.45,20.72H6.83v1.91H34.24V20.72H30.62ZM12.35,20.72,13.85,1.9H27.22l1.49,18.82Z"/><polygon class="cls-1" points="18.86 37.82 20.53 40 22.2 37.82 22.2 25.84 18.86 25.84 18.86 37.82"/></svg></span>
+                                                                            <span>電腦專長</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="skillList">
+                                                                    <ul>
+                                                                        <li>辦公室應用：Excel,Outlook,LibreOffice W riter</li>
+                                                                        <li>作業系統：AIX,AS400,FreeBSD,NOVELL,SUN OS,W indows Server 2000-2012,</li>
+                                                                        <li>硬體開發/韌體設計類：USB技術,Firmware,PLC</li>
+                                                                        <li>其他：(其他電腦專長，可自行輸入500字)</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="jobInfo">
+                                                                    <div class="boxTop">
+                                                                        <div class="job tColor01">
+                                                                            <span class="icon"><svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#004c82;}</style></defs><title>type04_icon</title><path class="cls-1" d="M29.13,1.9H33V0H8.07V1.9h3.87L10.45,20.72H6.83v1.91H34.24V20.72H30.62ZM12.35,20.72,13.85,1.9H27.22l1.49,18.82Z"/><polygon class="cls-1" points="18.86 37.82 20.53 40 22.2 37.82 22.2 25.84 18.86 25.84 18.86 37.82"/></svg></span>
+                                                                            <span>專業證照</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="skillList">
+                                                                    <ul>
+                                                                        <li>辦公室應用：Excel,Outlook,LibreOffice W riter</li>
+                                                                        <li>作業系統：AIX,AS400,FreeBSD,NOVELL,SUN OS,W indows Server 2000-2012,</li>
+                                                                        <li>硬體開發/韌體設計類：USB技術,Firmware,PLC</li>
+                                                                        <li>其他：(其他電腦專長，可自行輸入500字)</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="jobInfo">
+                                                                    <div class="boxTop">
+                                                                        <div class="job tColor01">
+                                                                            <span class="icon"><svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#004c82;}</style></defs><title>type04_icon</title><path class="cls-1" d="M29.13,1.9H33V0H8.07V1.9h3.87L10.45,20.72H6.83v1.91H34.24V20.72H30.62ZM12.35,20.72,13.85,1.9H27.22l1.49,18.82Z"/><polygon class="cls-1" points="18.86 37.82 20.53 40 22.2 37.82 22.2 25.84 18.86 25.84 18.86 37.82"/></svg></span>
+                                                                            <span>其他專長</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="skillList">
+                                                                    <ul>
+                                                                        <li>辦公室應用：Excel,Outlook,LibreOffice W riter</li>
+                                                                        <li>作業系統：AIX,AS400,FreeBSD,NOVELL,SUN OS,W indows Server 2000-2012,</li>
+                                                                        <li>硬體開發/韌體設計類：USB技術,Firmware,PLC</li>
+                                                                        <li>其他：(其他電腦專長，可自行輸入500字)</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="box col-xs-12">
+                                            <div class="content referrer rbgbox bgImg">
+                                                <div class="bTitle tColor01">
+                                                    <h3>推薦人</h3>
+                                                    <div class="borderLine rbgthree"></div>
+                                                </div>
+                                                <div class="InfoBox">
+                                                    <div class="listBox">
+                                                        <ul>
+                                                            <li>
+                                                                <div class="icon">
+                                                                    <svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#004c82;}</style></defs><title>type04_icon</title><path class="cls-1" d="M36.49,15.31a3.42,3.42,0,0,0-2.42-1H28.4V6a2.3,2.3,0,0,0-1.2-2L24,2.25A2.35,2.35,0,0,0,22.91,2a2.21,2.21,0,0,0-.76.13A2.3,2.3,0,0,0,20.8,3.39L16.26,14.31H0L0,37.8H16.38V36.47H31.3a3.42,3.42,0,0,0,3.17-2.13l5.27-12.79A3.42,3.42,0,0,0,39,17.81Zm-34.73.8H14.64v20H1.76Zm36.37,4.77-5.26,12.8a1.7,1.7,0,0,1-1.57,1H16.38V16.05h1L17.86,15,22.41,4.06a.54.54,0,0,1,.32-.31.57.57,0,0,1,.18,0,.6.6,0,0,1,.27.06L26.37,5.5a.56.56,0,0,1,.29.49V16.05h7.41a1.65,1.65,0,0,1,1.19.49l2.5,2.5A1.68,1.68,0,0,1,38.13,20.88Z"/></svg>
+                                                                </div>
+                                                                <div class="left">
+                                                                    <div class="boxTop tColor04">張小明<span class="tColor02">部門主管</span></div>
+                                                                    <div class="company">有間公司股份有限公司</div>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <div class="list">
+                                                                        <ul>
+                                                                            <li><span class="maru"></span><span class="txt tColor02">手機：0987654321</span></li>
+                                                                            <li><span class="maru"></span><span class="txt tColor02">公司電話：(02)111111111 #123</span></li>
+                                                                            <li><span class="maru"></span><span class="txt tColor02">E-Mail：123131@1111.com.tw</span></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="icon">
+                                                                    <svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#004c82;}</style></defs><title>type04_icon</title><path class="cls-1" d="M36.49,15.31a3.42,3.42,0,0,0-2.42-1H28.4V6a2.3,2.3,0,0,0-1.2-2L24,2.25A2.35,2.35,0,0,0,22.91,2a2.21,2.21,0,0,0-.76.13A2.3,2.3,0,0,0,20.8,3.39L16.26,14.31H0L0,37.8H16.38V36.47H31.3a3.42,3.42,0,0,0,3.17-2.13l5.27-12.79A3.42,3.42,0,0,0,39,17.81Zm-34.73.8H14.64v20H1.76Zm36.37,4.77-5.26,12.8a1.7,1.7,0,0,1-1.57,1H16.38V16.05h1L17.86,15,22.41,4.06a.54.54,0,0,1,.32-.31.57.57,0,0,1,.18,0,.6.6,0,0,1,.27.06L26.37,5.5a.56.56,0,0,1,.29.49V16.05h7.41a1.65,1.65,0,0,1,1.19.49l2.5,2.5A1.68,1.68,0,0,1,38.13,20.88Z"/></svg>
+                                                                </div>
+                                                                <div class="left">
+                                                                    <div class="boxTop tColor04">王大大<span class="tColor02">部門主管</span></div>
+                                                                    <div class="company">一間公司股份有限公司</div>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <div class="list">
+                                                                        <ul>
+                                                                            <li><span class="maru"></span><span class="txt tColor02">手機：0987654321</span></li>
+                                                                            <li><span class="maru"></span><span class="txt tColor02">公司電話：(02)111111111 #123</span></li>
+                                                                            <li><span class="maru"></span><span class="txt tColor02">E-Mail：123131@1111.com.tw</span></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="box col-xs-12">
+                                            <div class="content autobiography rbgbox bgImg">
+                                                <div class="bTitle tColor01">
+                                                    <h3>自傳</h3>
+                                                    <div class="borderLine rbgthree"></div>
+                                                </div>
+                                                <div class="InfoBox">
+                                                    <div class="autobiographyBox">
+                                                        <div class="innerBox tColor02">我是一個的人，我講求效率，且具有十足行動力，我叫內部測試帳號。大就讀1111大學資訊管理系，在學期間修習另外，我在團隊合作時能找出矛盾和不合理之處，進一步釐清問題，有系統地蒐集資訊、研究並提出解決方案，我能夠多元善用各方資源，精進我在求職領域的專業知識，為日後成為企劃奠定的良好基礎。<br>
+                                                            我的工作經驗並不多，上一個工作是在1111人力銀行擔任企劃，負責工作說明工作說明工作說明工作 說明工作說明工作說明工作說明工作說明工作說明工作說明工作說明工作說明工作說明工作說明工作說 明工作說明工作說明工作說明等相關事務，任職1 年 8 個月。雖然任職不長，但已使我熟習職場生 活、揮別校園的青澀。未來我期待能夠繼續充分運用所學的專業知能，做最好的發揮。<br><br>
+                                                            
+                                                            電子化時代到來，持續精進自己的電腦能力是必要的，我能夠得心應手的運用Access,FoxPro,MS SQL,MySQL,Visual Foxpro,FileMaker,MongoDB,PhotoImpact,SOLIDW ORKS,SolidEdge,OSLO 光,。我領有國際 標準ISO 14000主導稽核員,服務業品質專業師(CSQP),國際製造管理師認證-設施／系統設計,中級非 破壞檢測,的專業證照，具備絕對的專業實力。<br><br>
+                                                            人生在世，不免碰到幾回逆境，但我從不放棄領悟自我、發現理想，然後一步步實踐自己美麗的目標。 我是個上進的企劃，所擅長的工作項目是：1.廣告／行銷企劃主管：研訂行銷策略及規劃行銷活動，從 事行銷企劃與廣告業務之規劃、組織、協調、指導、管制及考核等活動的管理 2.行銷企劃人員：蒐集市場資訊，擬定產品或活動行銷企劃案，運用各種行銷工具以達成產品或活動最 佳的曝光效果 3.遊戲企劃人員：構思遊戲內容整體架構，再交由美術和程式設計人員製作，並與之溝通協調 4.網站企劃人員：進行網站規劃或透過網路行銷的方式，達到品牌、產品、活動之推廣 5.行銷企劃助理：協助執行行銷企劃案及處理相關日常事務性工作 。期待能與 貴公司結好緣；我將會讓辛苦的汗水化為甜蜜的果實，以報答提攜之恩。
+                                                        </div>
+                                                        <div class="innerBox tColor02">
+                                                            Growing up in a middle-class traditional Chinese family as the oldest child, I am actually quite energetic and adventurous. I always enjoyed many extra-curricular activities going on during my elementary school years, such as calligraphy, creative writing, swimming, and piano lessons. After graduating from high school, I went to Los Angeles, CA to pursuit my college education at CSUF. Majoring in International Business, I had much opportunities to encounter many international students and local American students in the classes. I think the best advantage of studying abroad is exploring the world through interacting with those from different parts of the world so that I truly appreciate my cross-cultural experience.<br><br>
+                                                            Growing up in a middle-class traditional Chinese family as the oldest child, I am actually quite energetic and adventurous. I always enjoyed many extra-curricular activities going on during my elementary school years, such as calligraphy, creative writing, swimming, and piano lessons. After graduating from high school, I went to Los Angeles, CA to pursuit my college education at CSUF. Majoring in International Business, I had much opportunities to encounter many international students and local American students in the classes. I think the best advantage of studying abroad is exploring the world through interacting with those from different parts of the world so that I truly appreciate my cross-cultural experience.<br><br>
+                                                            Growing up in a middle-class traditional Chinese family as the oldest child, I am actually quite energetic and adventurous. I always enjoyed many extra-curricular activities going on during my elementary school years, such as calligraphy, creative writing, swimming, and piano lessons. After graduating from high school, I went to Los Angeles, CA to pursuit my college education at CSUF. Majoring in International Business, I had much opportunities to encounter many international students and local American students in the classes. I think the best advantage of studying abroad is exploring the world through interacting with those from different parts of the world so that I truly appreciate my cross-cultural experience.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="box col-xs-12">
+                                            <div class="content contactMe rbgbox bgImg">
+                                                <div class="bTitle tColor01">
+                                                    <h3>聯絡我</h3>
+                                                    <div class="borderLine rbgthree"></div>
+                                                </div>
+                                                <div class="InfoBox">
+                                                    <div class="listBox02">
+                                                        <ul>
+                                                            <li>
+                                                                <div class="jobInfo">
+                                                                    <div class="boxTop">
+                                                                        <div class="job tColor01">
+                                                                            <span class="icon"><svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#004c82;}</style></defs><title>type04_icon</title><path class="cls-1" d="M4,39.1H36a3,3,0,0,0,3-3V29.23a4.65,4.65,0,0,0-3.33-4.48L33.09,24A45.81,45.81,0,0,0,19.93,22,44.57,44.57,0,0,0,7.05,23.93l-2.72.82A4.65,4.65,0,0,0,1,29.23v6.85A3,3,0,0,0,4,39.1ZM2.73,29.23a3,3,0,0,1,2.1-2.83l2.72-.82a42.89,42.89,0,0,1,12.38-1.82,43.8,43.8,0,0,1,12.66,1.87l2.58.77a2.94,2.94,0,0,1,2.1,2.83v6.85A1.3,1.3,0,0,1,36,37.38H4a1.3,1.3,0,0,1-1.29-1.3Z"/><path class="cls-1" d="M20,18.7a9.35,9.35,0,1,0-9.35-9.35A9.35,9.35,0,0,0,20,18.7Zm0-17a7.63,7.63,0,1,1-7.63,7.62A7.63,7.63,0,0,1,20,1.73Z"/></svg></span>
+                                                                        </div>
+                                                                        <div class="userName ">
+                                                                            <span class="tColor01">你你你</span>
+                                                                            <span class="tColor01">Nini</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="infoList tColor02">
+                                                                    <ul>
+                                                                        <li><span class="maru"></span><span class="txt">女性</span></li>
+                                                                        <li><span class="maru"></span><span class="txt">36歲</span></li>
+                                                                        <li><span class="maru"></span><span class="txt">159cm</span></li>
+                                                                        <li><span class="maru"></span><span class="txt">48Kg</span></li>
+                                                                        <li><span class="maru"></span><span class="txt">蒲隆地人</span></li>
+                                                                        <li><span class="maru"></span><span class="txt">未婚</span></li>
+                                                                        <li><span class="maru"></span><span class="txt">屆退伍(2020/02/02)</span></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <p>原住民(鄒族),身心障礙者,僑生</p>
+                                                                <p>聲音語言機能障礙(中度)&nbsp;&frasl;&nbsp;有殘障手冊&nbsp;&frasl;&nbsp;輔助工具(金點一號,特殊滑鼠設計)</p>
+                                                                <p>輕型機車-駕照,車輛&nbsp;&frasl;&nbsp;普通小型車-駕照,車輛&nbsp;&frasl;&nbsp;普通小型車-駕照,車輛&nbsp;&frasl;&nbsp;普通大貨車-車輛</p>
+                                                                <div class="contactMeTips">
+                                                                    <span class="icon"><svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#004c82;}</style></defs><title>type04_icon</title><path class="cls-1" d="M2.81,18,21.67,36.89a.84.84,0,0,0,1.19-1.19L4,16.85a7.74,7.74,0,0,1,11-11L36.81,27.75A5.12,5.12,0,1,1,29.57,35L11.72,17.14a2.43,2.43,0,1,1,3.44-3.44L30,28.55a.84.84,0,0,0,1.19,0,.85.85,0,0,0,0-1.2L16.35,12.5a4.12,4.12,0,0,0-5.83,5.83L28.38,36.19A6.81,6.81,0,0,0,38,26.56L16.15,4.7A9.43,9.43,0,0,0,2.81,18Z"/></svg></span>
+                                                                    <span class="tColor04">錄取後1周可上班</span>
+                                                                    <span class="tColor02">在職中請優先以信件連繫，連絡時間 09:00-10:00</span>
+                                                                </div>
+                                                                <div class="contactList">
+                                                                    <ul>
+                                                                        <li>098765432111</li>
+                                                                        <li>(02)1111111111</li>
+                                                                        <li>daisylee@staff.1111.com.tw</li>
+                                                                        <li>105 台北市松山區南京東路</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="resumeCode">履歷代碼&frasl;狀態:00000000(關閉中)</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="box col-xs-12 wow slideInUp">
+                                            <div class="content rbgbox clearfix customizeBox">
+                                                <div class="row">
+                                                    <div class="col-xs-4">
+                                                        <div class="cusTitle" contenteditable="true">123</div>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <div class="cusTitle ct"></div>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <div class="cusTitle ct"></div>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <div class="cusCont" contenteditable="true">456</div>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <div class="cusCont cc"></div>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <div class="cusCont cc"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content rbgbox clearfix customizeBox">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <div class="cusTitle" contenteditable="true">123</div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="cusTitle ct"></div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="cusCont"  contenteditable="true">456</div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="cusCont cc"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content rbgbox clearfix customizeBox clearfix">
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div class="cusCont" contenteditable="true">123</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="box col-xs-12 eShow wow bounceInRight">
+                                            <div class="content rbgbox" style="min-height: 600px;">加分亮點放這</div>
+                                        </li>
+                                        <li class="box col-xs-12 vShow wow bounceInRight">
+                                            <div class="content rbgbox" style="min-height: 600px;">影音履歷放這</div>
+                                        </li>
+                                        <li class="box col-xs-12 evPrent">
+                                            <div class="content rbgbox">
+                                                <div class="inlineBox">
+                                                    <p>加分亮點</p>
+                                                    <img src="images/t1.png" alt="" class="img-responsive">
+                                                </div>
+                                                <div class="inlineBox">
+                                                    <p>影音履歷</p>
+                                                    <img src="images/t1.png" alt="" class="img-responsive">
+                                                </div>
+                                                <p>掃瞄QRcode後將連結至 1111人力銀行網站，請安心使用</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footer">1111人力銀行</div>
+                        </div>
+                    </div>
+                    <!--main end-->
+                    <!--menu-->
+                    <div class="menu">
+                        <div class="col-xs-2 menuBox">
+                            <div class="sHeight">
+                                <p>履歷換頁設定</p>
+                                <div class="rSortable">
+                                    <ul>
+                                        <li>關於我</li>
+                                    </ul>
+                                    <ul id="stb" class="stBox">
+                                        <li>學歷資料</li>
+                                        <li>工作經歷</li>
+                                        <li>技能專長</li>
+                                        <li>推薦人</li>
+                                        <li>自傳</li>
+                                        <li>聯絡資訊</li>
+                                        <li>自訂版塊</li>
+                                    </ul>
+                                    <!--拷貝用-->
+                                    <li class="stMove" id="copyPgbk" style="display: none;">
+                                        <div class="w15"><i class="material-icons stm" title="拖動排序">import_export</i></div>
+                                        <div class="stInfo">
+                                            <span contenteditable="false">Page Break</span>
+                                        </div>
+                                        <div class="w10 tipsBox">
+                                            <i class="material-icons del">close</i>
+                                        </div>
+                                    </li>
+                                    <!--拷貝用 結束-->
+                                </div>
+                                <div class="btnBox">
+                                    <button class="addBtn"><span>Page Break</span><i class="material-icons">add</i></button>
+                                </div>
+                                <hr/>
+                                <p>QR code 顯示設定</p>
+                                <div class="rSortable qrbox">
+                                    <ul>
+                                        <li data-qr="on"><i class="material-icons">check_box</i> <span class="qrcToggle">加分亮點</span></li>
+                                        <li data-qr="on"><i class="material-icons">check_box</i> <span class="qrcToggle">影音履歷</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="leftFoot">1111人力銀行<br/><a href="https://25.cami.yesing.com/tw/service/MTExMWpvYmJhbms" target="_blank">求職客服</a> |  <a href="https://www.1111.com.tw/help/faq.asp" target="_blank">Q＆A</a>  | <a href="http://www.1111.com.tw/help/service.asp" target="_blank">意見反應</a></div>
+                        </div>
+                    </div>
+                    <!--menu end-->
+                </div>
+            </div>
+            <!--content end-->
+            <!--跳窗-->
+            <div>
+                <div class="msgFullBg"></div>
+                <div class="msgBox">
+                    <div class="msgInfo">
+                        <b>已發佈您的履歷為最新編輯版本</b>
+                        <i class="material-icons btnClose">close</i>
+                        <hr>
+                        <p>任何擁有此連結的人，皆可瀏覽您的履歷資料</p>
+                        <input id="icopy" type="text" value="http://google.com">
+                        <button type="button" class="btnCopy">複製連結</button>
+                    </div>
+                </div>
+            </div>
+            <!--跳窗 end-->
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,282 @@
+﻿/*主題色*/
+.mbg{background: #67358e;opacity: 0;}
+/*.mbtn{color: #fff;}
+.mbtn:hover{background: #333; cursor: pointer;}*/
+.mbtn.eShow{background: #e03d8e;color: #fff;}
+.mbtn.eShow:hover{background: #ce3983; cursor: pointer;}
+.mbtn.vShow{background: #dc7a93;color: #fff;}
+.mbtn.vShow:hover{background: #c56e84; cursor: pointer;}
+.rbgbox{background: #fff;}
+.rbgone{background: #fff;}
+.rbgtwo{background: #e03d8e;}
+.tColor01{color: #e03d8e;}
+.tColor02{color: #9a31c5;}
+.tColor03{color: #aaaaaa;}
+.tColor04{color: #777777;}
+
+
+/*主要顯示區版型*/
+.main{position: relative;padding: 0 0 0 580px;font-size: 0;}
+.main .topBar{font-size: 13px;background: #2981c4;color: #fff;padding: 2px 5px;position: fixed;right:0;left: 240px;max-height: 22px;z-index: 10;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.leftBar,.rightBar{padding: 0 15px;font-size: 15px;vertical-align: top;}
+
+.main .leftBar{width: 340px;text-align: center;position: fixed;top: 92px;bottom: 0;left: 240px;color: #fff; letter-spacing: 10px;}
+.leftBar .stMove2 li:hover,.leftBar .userName:hover{cursor: pointer;opacity: .9;}
+.main .leftBar .outLink{letter-spacing: 0;}
+.leftBar .pic{width: 105px;height: 105px;overflow: hidden;margin: 50px auto 10px;}
+.leftBar .pic div{width: 100%;height: 100%;overflow: hidden; border-radius: 100%;border: 2px solid #fff;}
+.leftBar .pic div img{margin: auto;}
+.leftBar .userName{font-size: 21px;font-weight: 600;color: #fff; margin: 0 0 20px;}
+.leftBar .stMove2 li{padding: 5px 0; font-size: 16px;}
+.leftBar .outLink{background: url("../images/outLink.png") no-repeat center;height: 80px;margin: 20px 0;position: relative;}
+.outLink .reOl{color: #666;position: absolute;top: 8px;right: 30px;display: none;}
+.outLink .reOl:hover{opacity: .7;}
+.outLink:hover .reOl{display: block;}
+.linkBtn{background: #4f5152;width: 50%;min-width: 150px; margin-top: 27px;height: 30px;font-size: 16px;padding-top: 2px;border: 1px solid #999;color: #fff;}
+.outLinkCtl{position: absolute;right: 0;bottom: 0;width: 310px;border: 1px solid #2981c4;background: #fff;box-shadow: 2px 2px 5px #333;padding-bottom: 15px;font-size: 14px;display: none;color: #333;}
+.outLinkCtl>p{background: #2981c4;color: #fff;padding: 4px 0;font-size: 16px;}
+.outLinkCtl .olClose{position: absolute;right: 5px;top: 5px;color: #fff;font-size: 20px;}
+.outLinkCtl .olClose:hover{opacity: .8;}
+.outLinkCtl i{color: #999;}
+.outLinkCtl hr{border: 0.5px solid #2981c4; margin: 12px 10px 10px;}
+.outLinkCtl ul li{display: inline-block;vertical-align: middle;}
+.outLinkCtl ul li input{width: 100%;}
+
+#olk{background: #eee;padding-top: 10px;padding-bottom:1px;}
+.stMoveOL li:nth-child(2){background: #999;width: 23px;height: 23px;border-radius: 50%;}
+.stMoveOL li:nth-child(2)>i{font-size: 16px;padding-top: 3px;color: #fff;}
+.olTips{width: 150px;height: 40px;background: #ddd;box-shadow: 2px 2px 5px #999;position: absolute;left: -30px;top: 35px;z-index: 999;display: none;}
+.olTips .triangle{border-width: 0 11px 10px 11px;border-color: transparent transparent #ddd transparent;left: 30px;top: -6px;}
+.olTips .fbIcon,.olTips .inIcon,.olTips .trIcon,.olTips .beIcon{width: 30px;height: 30px;background-size: 100%;margin-top: 5px;}
+.olSave{background: #2981c4;color: #fff;border: 0;padding: 2px 50px;font-size: 16px;margin-top: 15px;}
+.olSave:hover,.outLinkCtl i:hover:not(.stm){opacity: .8;}
+.mbtn{padding: 10px 0 6px;width: 65%;margin: 15px auto;font-size: 16px; border-bottom: 2px solid #fff; }
+
+.main .rightBar{width: 100%;margin: 12px 0 0 0; background-color: #eeeeee;}
+.main .rightBar a{color: #333;}
+.rightBar ul li.box{padding: 0px 75px; position: relative;}
+.rightBar ul li.box .cont{position: relative;}
+.rightBar ul li.box .cont .bgImg{width: 209px; height: 272px; position: absolute; top: 0; right: 0; background-image: url(../images/resumeBg3_03.png); background-repeat: no-repeat;}
+.rightBar ul li .content{padding: 1px 50px 20px;}
+.rightBar ul li .content.other{padding: 10px 20px;}
+.rightBar ul li .content .listBox{padding: 20px 10px 0px; font-size: 0px;}
+.rightBar ul li .content .listBox ul li {padding: 5px 0px;}
+.rightBar ul li .content .listBox2{padding: 20px 10px}
+.rightBar ul li .content .listBox2 p{font-size: 14px;color: #777777; margin: 0;}
+.rightBar ul li .content .listBox2 > ul > li{border-bottom: 2px solid #ffdce5;padding: 10px 0;}
+.content .listBox2 .job .jobName{font-size: 24px; font-weight: 800;}
+.content .listBox2 .job span{padding: 3px 10px 3px 0px;vertical-align: middle;}
+.content .listBox2 h4{font-size: 18px; margin: 5px 0px;}
+.content .listBox2 .jobInfo{font-size: 0px; padding-bottom: 5px;}
+.content .listBox2 .jobInfo li{font-size: 14px; display: inline-block; padding: 3px 10px 3px 15px; color: #666666; position: relative;}
+.content .listBox2 .jobInfo li:before{content: ''; width: 8px; height: 8px; background-color: #dc7a93; position: absolute; border-radius: 100%; left: 4px; top: 9px;}
+
+.listBox .left{display: inline-block; font-size: 16px; width: 50%; vertical-align: top;}
+.listBox .left .boxTop{border-bottom: 3px solid #ffdce5; position: relative;}
+.listBox .left .boxTop:after{content: ''; width: 15px; height: 15px; background-color: #dc7a93; position: absolute; right: 0; top: 22px; border-radius: 100%;}
+.listBox .left .boxTop .tColor01{font-size: 20px; font-weight: 800;}
+.listBox .left .boxTop .period{font-size: 14px; position: absolute; right: 20px; top: 5px;}
+.listBox .left h4{font-size: 24px;}
+
+.listBox .right{display: inline-block; font-size: 16px; width: 50%; vertical-align: top; padding-left: 20px;}
+.listBox .right .location{padding-bottom: 10px;}
+.listBox .right .location span{padding-right: 10px;}
+.listBox .right .department{font-size: 20px;}
+.listBox .right .department span{padding-right: 10px;}
+
+.bTitle{font-size: 0px;}
+.bTitle h3{padding: 10px 0px 10px 50px; margin: 0; font-size: 28px; font-weight: 800; width: 60%; height: 50px; display: inline-block; vertical-align: middle;color: #fff;}
+.bTitle .bTitleAfter{display: inline-block; width: 71px; vertical-align: middle;margin-left: -1px;}
+.bTitle .bTitleAfter .cls-1{fill: #e03d8e;}
+.bTitle .bTitleAfter svg{height: 50px;}
+
+.personal{margin-top: 20px; background-image: url(../images/r03bg_03.png); background-size: 220px; background-repeat: no-repeat;}
+.personal .photoBG{position: absolute;width: 30%;max-width: 250px;}
+.personal .photoBG .cls-1{fill: #e03d8e;}
+.userMainInfo{padding-bottom: 10px; position: relative; padding: 50px 40px 30px;}
+.userMainInfo .photoBG{position: absolute;width: 30%;max-width: 250px;}
+.userMainInfo .userInfo{margin-bottom: 10px;}
+.userMainInfo .photo{overflow: hidden; border-radius: 100%;width: 150px; display: inline-block; border: 5px solid #e03d8e; position: relative; z-index: 1; vertical-align: middle; margin: 0px 50px;}
+.userMainInfo .photo img{width: 100%;}
+.userMainInfo .Info{display: inline-block; vertical-align: middle; text-align: left;}
+.userMainInfo h3{font-size: 40px; margin-top: 0px;}
+.userMainInfo .info span{padding: 0px 5px; font-size: 18px;}
+.userMainInfo .info span:first-child{padding-left: 0;}
+.userMainInfo .jobName{font-size: 20px;}
+.InfoBox{position: relative; z-index: 1;}
+.InfoBox p{margin: 0; padding: 15px 10px; word-wrap: break-word; word-break: break-all; text-align: justify;}
+
+.skill .listBox .right > ul > li {padding: 0px 0px 20px;}
+.skill .listBox .left{width: 30%;}
+.skill .listBox .right{width: 70%;}
+.skill .listBox .right .list{padding-top: 18px;font-size: 14px; word-wrap: break-word; word-break: break-all;}
+.skill .listBox .right .list li {padding: 2px 0px;}
+
+.referrer .boxArea{font-size: 0; padding: 20px 0;}
+.referrer .boxArea .oneBox{width: 50%;padding: 10px 10px;font-size: 16px; display: inline-block; vertical-align: top;}
+.referrer .boxArea .oneBox .Name{font-size: 24px; font-weight: 800;}
+.referrer .boxArea .oneBox .Name span{font-size: 16px; font-weight: normal; padding-left: 10px;}
+.referrer .boxArea .oneBox .contentBox{border: 2px solid #ffdce5;font-size: 15px;padding: 10px 5px;margin-top: 10px;}
+.referrer .boxArea .oneBox .contentBox li{position: relative;padding: 2px 10px 2px 15px;word-wrap: break-word; word-break: break-all;}
+.referrer .boxArea .oneBox .contentBox li:before{content: ''; width: 8px; height: 8px; background-color: #9a31c5; position: absolute; border-radius: 100%; left: 4px; top: 9px;}
+
+.autobiography .boxArea{font-size: 0; padding: 20px 0;}
+.autobiography .boxArea .oneBox{width: 50%;padding: 10px 10px;font-size: 14px; display: inline-block; vertical-align: top; word-wrap: break-word; word-break: break-all;}
+
+.contactMe .boxArea{font-size: 0; padding: 20px 0;}
+.contactMe .boxArea .oneBox{width: 50%;padding: 10px 10px;font-size: 14px; display: inline-block; vertical-align: top; word-wrap: break-word; word-break: break-all;}
+.contactMe .boxArea .oneBox .Name{font-size: 26px; font-weight: 800;}
+.contactMe .boxArea .oneBox .Name span{font-size: 18px; font-weight: normal; padding-left: 10px;}
+.contactMe .boxArea .oneBox .userInfo{font-size: 0px;}
+.contactMe .boxArea .oneBox .userInfo li{font-size: 14px; display: inline-block; padding: 3px 10px 3px 15px; color: #666666; position: relative;}
+.contactMe .boxArea .oneBox .userInfo li:before{content: ''; width: 8px; height: 8px; background-color: #dc7a93; position: absolute; border-radius: 100%; left: 4px; top: 9px;}
+.contactMe .boxArea .oneBox hr{margin: 0px 0px 10px; border: none; border-bottom: 2px solid #ffdce5; background-color: #fff;}
+.contactMe .boxArea .oneBox .remark{font-size: 18px;font-weight: 800;}
+.contactMe .boxArea .oneBox .contentBox{border: 2px solid #ffdce5;font-size: 15px;padding: 10px 5px;margin-top: 10px;}
+.contactMe .boxArea .oneBox .contentBox li{position: relative;padding: 2px 10px 2px 15px;}
+.contactMe .boxArea .oneBox .contentBox li:before{content: ''; width: 8px; height: 8px; background-color: #9a31c5; position: absolute; border-radius: 100%; left: 4px; top: 9px;}
+.contactMe .resumeCode{font-size: 16px; text-align: center; text-decoration: underline;}
+
+
+
+/*自訂版塊*/
+.cusTitle,.cusCont{border: 1px dashed #000; padding: 15px;margin-bottom: 15px;}
+.ct{background: url(../images/ct1.png) no-repeat center center transparent;}
+.cc{background: url(../images/cc1.png) no-repeat center center transparent;}
+.ct:hover,.cc:hover{opacity: 0.7;cursor: pointer;}
+.cusTitle{min-height: 54px;}
+.cusCont{min-height: 200px;}
+.evPrent{text-align: center; display: none;}
+.rightBar ul li.evPrent{padding: 0px;}
+.evPrent .inlineBox{display: inline-block;width: 30%;}
+.evPrent p{margin: 6px 0;}
+.evPrent .inlineBox img{display: initial;margin: auto;}
+
+.footer{background: #343a40;color: #fff;text-align: center;padding: 4px 0;margin-left: -15px;margin-right: -15px;}
+
+/*跳窗*/
+.msgFullBg{width: 100%;background: rgba(0,0,0,0.5);position: fixed;top: 0;bottom: 0;left: 0;z-index: 9999; display: none;}
+.msgBox{position: fixed;z-index: 9999;display: none;}
+.msgBox .msgInfo{width: 480px;height: 200px;background: #fff;position: relative;padding: 40px;box-shadow: 1px 1px 20px #333;line-height: 28px;letter-spacing: 1px;color: #666;text-align: center;border: 1px solid #2590fc;}
+.msgBox .msgInfo b{color: #2981c4;font-size: 18px;}
+.msgBox .msgInfo i{position: absolute;right: 10px;top: 10px;}
+.msgBox .msgInfo i:hover{color: #999;}
+.msgBox .msgInfo hr{border: .5px solid #2981c4;}
+.msgBox .msgInfo input{width: 230px;}
+.msgBox .msgInfo .btnCopy{margin: auto;padding: 0px 20px;color: #fff;background: #4077C9;border-radius: 4px;border: 0;}
+.msgBox .msgInfo .btnCopy:hover{background: #005a94;cursor: pointer;}
+
+.clearfix{overflow: auto;}
+
+@media only screen and (max-width: 1499px){
+    .skill .listBox .left, .skill .listBox .right{ width: 100%; display: inline-block; padding: 0px;}
+    .skill .listBox .right .list { padding-top: 5px;}
+}
+
+@media only screen and (max-width: 1199px){
+    .userMainInfo {padding: 20px;}
+    .personal{background-size: 180px;}
+    .personal .photoBG {width: 20%;max-width: 200px;}
+    .userMainInfo .photo {width: 120px;margin: 0px 10px;}
+    .userMainInfo h3{font-size: 26px;}
+    .userMainInfo .jobName {font-size: 16px;}
+    .userMainInfo .userInfo{margin-bottom: 0px;}
+    .userMainInfo .photo{margin-bottom: 20px;}
+    .InfoBox p{padding: 15px 0px;}
+    .bTitle h3{padding: 10px 0px 10px 20px;}
+
+    .rightBar ul li .content {padding: 1px 20px 20px;}
+    .rightBar ul li .content .listBox{padding: 0px;}
+    .rightBar ul li .content .listBox2 { padding: 0px;}
+    .rightBar ul li .content .listBox ul li{padding: 10px 0px; }
+    .listBox .left, .listBox .right{display: block;width: 100%; padding-left: 0px;}
+    .listBox .left h4{font-size: 20px;margin-bottom: 5px;}
+    .listBox .right .location{padding-bottom: 0px;}
+    .listBox .right .department{font-size: 14px; }
+}
+
+/*xs*/
+@media only screen and (max-width: 767px){
+    .main .leftBar{display: none;}
+    .main{padding: 0;}
+    .main .leftBar{width: 240px;left: 0}
+    .main .topBar{left: 0;}
+
+    .rightBar ul li.box{ padding: 0px 15px;}
+    .bTitle h3{font-size: 22px; height: 45px;}
+    .bTitle .bTitleAfter{width: 64px;}
+    .bTitle .bTitleAfter svg{height: 45px;}
+    .referrer .boxArea{padding: 0px}
+    .referrer .boxArea .oneBox{width: 100%; padding: 0px; display: block; margin: 15px auto;}
+    .autobiography .boxArea .oneBox{width: 100%; padding: 10px 0px; display: block;}
+    .autobiography .boxArea{padding: 0px;}
+    .contactMe .boxArea{padding: 0px;}
+    .contactMe .boxArea .oneBox{width: 100%; padding: 10px 0px; font-size: 14px; display: inline-block; vertical-align: top; word-wrap: break-word; word-break: break-all; }
+}
+
+@media only screen and (max-width: 497px){
+    .personal{background-size: 60%;}
+    .personal .photoBG{width: 50%; max-width: 240px;}
+    .userMainInfo .photo{display: block; margin-bottom: 20px; margin: 0px 25% 25px; width: 50%;}
+    .listBox .left .boxTop .tColor01{font-size: 16px;}
+    .listBox .left .boxTop .period{top: 2px;}
+    .listBox .left .boxTop:after{top: 16px;}
+    .listBox .left h4 {font-size: 16px; margin: 5px 0px 5px;}
+    .content .listBox2 .job .jobName{font-size: 20px;}
+    .content .listBox2 .job span.tColor03{display: block;}
+}
+
+/*sm*/
+@media (min-width: 768px) and (max-width: 991px){
+    .main{padding: 0 0 0 240px;}
+    .main .leftBar{width: 240px;left: 0}
+    .outLinkCtl{right: -16px;width: 240px;}
+    .viewIcon{width: 30px;height: 30px;}
+    .fbIcon{background: url(../images/fb.png) 45% 45% no-repeat transparent;}
+    .inIcon{background: url(../images/in.png)no-repeat 45% 45% transparent;}
+    .trIcon{background: url(../images/tr.png)no-repeat 45% 45% transparent;}
+    .beIcon{background: url(../images/be.png)no-repeat 45% 45% transparent;}
+    .outLink .reOl{right: -6px;}
+}
+
+/*md*/
+@media (min-width: 992px) and (max-width: 1199px){
+    .main{padding: 0 0 0 480px;}
+    .main .leftBar{width: 240px;}
+    .outLinkCtl{right: -30px;width: 250px;}
+    .viewIcon{width: 30px;height: 30px;}
+    .fbIcon{background: url(../images/fb.png) 45% 45% no-repeat transparent;}
+    .inIcon{background: url(../images/in.png)no-repeat 45% 45% transparent;}
+    .trIcon{background: url(../images/tr.png)no-repeat 45% 45% transparent;}
+    .beIcon{background: url(../images/be.png)no-repeat 45% 45% transparent;}
+    .outLink .reOl{right: -6px;}
+}
+
+/*lg*/
+@media (min-width: 1200px) and (max-width: 1699px){
+    .userMainInfo .photo {width: 120px;margin: 0px 10px;}
+}
+
+/*lgBig*/
+@media (min-width: 1700px){
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

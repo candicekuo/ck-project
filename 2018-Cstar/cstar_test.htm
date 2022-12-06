@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>本站僅為作品展示用</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/shared.js"></script>
+    <!--css-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/shared.css" rel="stylesheet" type="text/css">
+    <link href="css/cstar_test.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".questionBox").find("input").click(quecheck);
+            $(window).scroll(blueBg);
+            blueBgH();
+        });
+        $(window).resize(function(){
+            ansLong("");
+            blueBgH();
+            que();
+        });
+        var qNumber;
+        function quecheck(){
+            var T = this ;
+            qNumber = $(this).closest(".questionBox").index();
+            //chick 狀態
+            var s = $(this).parent("label").hasClass("checks");
+            if(s == false){
+                $(this).parent("label").addClass("checks").siblings().removeClass("checks");
+            }
+            //確定寬高
+            ww = $(window).width();
+            
+            //算火箭長度
+            ansLong(66);
+            //算下一提
+            ansNext(T);
+        }
+        
+        //算火箭長度跑到哪
+        var tp,overW,w,bs,ww;
+        function ansLong(a){
+//            a = $("input[type=radio]:checked").length;
+            ww = $(window).width();
+            if(ww > 767){
+                overW = 200;
+                bs = 250;
+            }
+            else{
+                overW = 20;
+                bs = 5;
+            }
+            w = ((ww-bs)/66*a)+overW;
+            $(".ansColor").animate({width:w},400);
+            $(".topBox img").animate({left:w-60},400);
+            $(".topBox h4 span").text(a);
+            if(ww >767){
+                $(".topBox h4").animate({left: w-160},400);
+            }
+            else {
+                $(".topBox h4").css("left","50%");
+            }
+        }
+        //算下一提要跑多高
+        function ansNext(t){
+            var v = $(t).closest(".questionBox").next().index(); //下一提位子
+            tp = ww > 767? 250:100;
+            if(v<5){
+                $("html,body").animate({scrollTop:$(".questionBox:eq("+v+")").offset().top-tp},400);
+            }
+        }
+        
+        //下方藍遮罩在哪消失
+        function blueBg(){
+            var h = $("html,body").scrollTop();
+            var ql= $(".questionBox").last().offset().top;
+            var wh= $(window).height();
+            var qh= ql-(wh/3);
+            //到底也要消失
+            var dh = $(document).height();
+            var bye = dh-wh;
+            if (h >= qh || h == bye) $(".blueBg").hide();
+            else $(".blueBg").show();
+            
+        }
+        //下方藍遮罩高度
+        function blueBgH(){
+            var wh = $(window).height();
+            var th = $(".Hbox").height();
+            var qboxH = $(".questionBox").height();
+            var mtH = $(".questionBox:eq(1)").css("margin-top");
+            var bh = wh-th-qboxH - (parseInt(mtH)/2);
+            $(".blueBg").height(bh);
+        }
+        //算跑到第幾題
+        function que(){
+            tp = ww > 767? 250:100;
+            if(qNumber<4){
+                $("html,body").animate({scrollTop:$(".questionBox:eq("+qNumber+")").next().offset().top-tp},400);
+            }
+            else{
+                $("html,body").animate({scrollTop:$(".questionBox:eq(4)").offset().top-tp},400);
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <div id="wp">
+        <div id="header" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 topBar hidden-xs">
+                    <a href="cstar.htm"><img src="img/CstarLogo-s.png" alt="" style="margin:-5px 0 0;">九大職能星</a>
+                    <a href="#">OOO 登出</a>
+                    <a href="cstar_consult.htm">線上諮詢</a>
+                    <a href="cstar_report.htm">結果報告</a>
+                    <a href="cstar_start.htm">開始測驗</a>
+                </div>
+                <div class="col-xs-12 topBar hidden-sm hidden-md hidden-lg">
+                    <a href="cstar.htm"><img src="img/CstarLogo-s.png" alt="" style="margin:-5px 0 0;">九大職能星</a>
+                    <i class="icon-icon-01"></i>
+                    <ul>
+                        <li><a href="cstar_start.htm">開始測驗</a></li>
+                        <li><a href="cstar_report.htm">結果報告</a></li>
+                        <li><a href="cstar_consult.htm">線上諮詢</a></li>
+                        <li><a href="#">OOO 登出</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 ">
+                    <div class="topBox">
+                        <div class="ansPercent">
+                            <div class="ansColor"></div>
+                        </div>
+                        <img src="img/fly4.png" alt="" class="img-responsive">
+                        <h4>已作答 <span>0</span>/66 題</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Hbox"></div>
+        <div id="content" class="container">
+            <!--第一 問題集 -->
+            <div class="row">
+                <form action="#" method="post">
+                <div class="col-xs-12 questionBox">
+                    <h3>1.在網路上搜尋到一個新的方法，或許可以讓目前的工作更有效率，我會？</h3>
+                    <label><input type="radio" name="q1">只要有時間和精力，即使沒有主管的支持和鼓勵，也會試看看</label>
+                    <label><input type="radio" name="q1">如果主管不反對，又有足夠的時間和精力，會考慮試看看</label>
+                    <label><input type="radio" name="q1">不會特別冒險嘗試，避免浪費時間又影響到原本的工作進度</label>
+                    <label><input type="radio" name="q1">不管結果如何，只要有機會讓事情更好，都值得試一試</label>
+                </div>
+                <div class="col-xs-12 questionBox">
+                    <h3>2.在網路上搜尋到一個新的方法，或許可以讓目前的工作更有效率，我會？</h3>
+                    <label><input type="radio" name="q2">只要有時間和精力，即使沒有主管的支持和鼓勵，也會試看看</label>
+                    <label><input type="radio" name="q2">如果主管不反對，又有足夠的時間和精力，會考慮試看看</label>
+                    <label><input type="radio" name="q2">不會特別冒險嘗試，避免浪費時間又影響到原本的工作進度</label>
+                    <label><input type="radio" name="q2">不管結果如何，只要有機會讓事情更好，都值得試一試</label>
+                </div>
+                <div class="col-xs-12 questionBox">
+                    <h3>3.在網路上搜尋到一個新的方法，或許可以讓目前的工作更有效率，我會？</h3>
+                    <label><input type="radio" name="q3">只要有時間和精力，即使沒有主管的支持和鼓勵，也會試看看</label>
+                    <label><input type="radio" name="q3">如果主管不反對，又有足夠的時間和精力，會考慮試看看</label>
+                    <label><input type="radio" name="q3">不會特別冒險嘗試，避免浪費時間又影響到原本的工作進度</label>
+                    <label><input type="radio" name="q3">不管結果如何，只要有機會讓事情更好，都值得試一試</label>
+                </div>
+                <div class="col-xs-12 questionBox">
+                    <h3>4.在網路上搜尋到一個新的方法，或許可以讓目前的工作更有效率，我會？</h3>
+                    <label><input type="radio" name="q4">只要有時間和精力，即使沒有主管的支持和鼓勵，也會試看看</label>
+                    <label><input type="radio" name="q4">如果主管不反對，又有足夠的時間和精力，會考慮試看看</label>
+                    <label><input type="radio" name="q4">不會特別冒險嘗試，避免浪費時間又影響到原本的工作進度</label>
+                    <label><input type="radio" name="q4">不管結果如何，只要有機會讓事情更好，都值得試一試</label>
+                </div>
+                <div class="col-xs-12 questionBox">
+                    <h3>5.在網路上搜尋到一個新的方法，或許可以讓目前的工作更有效率，我會？</h3>
+                    <label><input type="radio" name="q5">只要有時間和精力，即使沒有主管的支持和鼓勵，也會試看看</label>
+                    <label><input type="radio" name="q5">如果主管不反對，又有足夠的時間和精力，會考慮試看看</label>
+                    <label><input type="radio" name="q5">不會特別冒險嘗試，避免浪費時間又影響到原本的工作進度</label>
+                    <label><input type="radio" name="q5">不管結果如何，只要有機會讓事情更好，都值得試一試</label>
+                </div>
+                <div class="col-xs-12" style="text-align: center;">
+                    <button type="button" class="btnPink"><a href="#">下一頁</a></button>
+                    <button type="submit" class="btnPink">計算結果</button>
+                </div>
+                </form>
+            </div>
+            <!-- 下遮罩-->
+            <div class="row">
+                <div class="blueBg"></div>
+            </div>
+        </div>
+        
+        <div id="footer" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footBg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul>
+                                    <li><a href="#">九大職能星</a></li>
+                                    <li><a href="#">開始測驗</a></li>
+                                    <li><a href="#">結果報告</a></li>
+                                    <li><a href="#">聯絡我們</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul>
+                                    <li><a href="#">其他測驗</a></li>
+                                    <li><a href="#">個人特質測驗</a></li>
+                                    <li><a href="#">TAT轉職測驗</a></li>
+                                    <li><a href="#">服務型職能測驗</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul>
+                                    <li><a href="#">其他服務</a></li>
+                                    <li><a href="#">職涯網</a></li>
+                                    <li><a href="#">訂閱電子報</a></li>
+                                    <li><a href="#">預留版位</a></li>
+                                    <li><a href="#">預留版位</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul class="icfSize">
+                                    <li><a href="#"></a></li>
+                                    <li>
+                                        <a href="#" class="icon-facebook"></a>
+                                        <a href="#" class="icon-google-plus"></a>
+                                        <a href="#" class="icon-linkedin2"></a>
+                                        <a href="#" class="icon-icon-10"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copyright">
+                    <h5 class="hidden-xs">建議您使用 google Chrome 瀏覽器以取得最佳、最快的瀏覽效果！</h5>
+                    <h5>全球華人股份有限公司版權所有 © 1111 Job Bank All Rights Reserved </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="coverB">
+        <div class="Cinfo">
+            <p>OO題尚未填答</p>
+            <button type="button" class="btnCheck">我知道了</button>
+        </div>
+    </div>
+    <div id="gotop">
+        <div class="line" style="transform: rotate(45deg);top:22px;right:11px;"></div>
+        <div class="line" style="transform: rotate(-45deg);top:22px;right:21px;"></div>
+    </div>
+</body>
+</html>

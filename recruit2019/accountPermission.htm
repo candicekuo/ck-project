@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>1111人力銀行｜企業找人才、徵才透過1111人力銀行，找人才精準又快速</title>
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
+    
+    <!--css-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!--fontawesome-->
+    <link href="css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet" type="text/css" >
+    <!--共用 boxPage SharedModule -->
+    <link rel="stylesheet" href="css/lightBox/boxPage.css">
+    <link rel="stylesheet" href="css/accountPermission.css">
+    
+    <script type="text/javascript">
+        if (window.history.scrollRestoration && (window.history.scrollRestoration=="auto"))
+        window.history.scrollRestoration="manual";
+        
+        $(document).ready(function(){
+            /*啟用停用開關*/
+            $(".power").click(function(){
+                var t = $(this);
+                (t.children(".hid").prop("checked") == false)?t.addClass("powerOff"):t.removeClass("powerOff");
+            });
+            /*清空搜尋*/
+            $(".btnDel").click(function(){
+                $(this).prev().val("");
+            });
+            /*fancybox*/
+            $('[data-fancybox]').fancybox({
+                toolbar  : false,
+                smallBtn : true,
+                iframe : {
+                    preload : false,
+                    css: {
+                        width: 602,
+                        autoDimensions:true,
+                        backgroundColor: "transparent",
+                        autoScale:true
+                    }
+                }
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <div class="wp page">
+        <div class="topBar">
+            <ul>
+                <li><a href="https://www.1111.com.tw/" target="_blank">1111人力銀行</a></li>
+                <li><a href="">訂閱電子報</a></li>
+                <li><a href="">滿意度調查</a></li>
+                <li class="topBarInfo">
+                    <div>
+                        <span>上次登入訊息</span>
+                        <div class="infoShow">
+                            <span class="triangle"></span>
+                            <div class="w30">
+                                <p>登入帳號</p>
+                                <p>登入IP</p>
+                                <p>ISP名稱</p>
+                                <p>登入時間</p>
+                            </div>
+                            <div class="w68">
+                                <p class="redFont">guest****</p>
+                                <p>101.123.47.156</p>
+                                <p>台灣大哥大(台灣)</p>
+                                <p>2019-12-02 15:55</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="topBarInfo">
+                    <div>
+                        <span>客服人員</span>
+                        <div class="infoShow">
+                            <span class="triangle"></span>
+                            <p>貴公司本期VIP剩餘 333 天</p>
+                            <p>已續約，下期合約剩餘XXX天</p>
+                            <div class="w30">
+                                <p class="gray">客服人員</p>
+                                <p class="gray">服務專線</p>
+                            </div>
+                            <div class="w68">
+                                <p>林錦泰先生 <a href=""><i class="far fa-envelope"></i></a></p>
+                                <p>(02)8787-1111#6280</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="header">
+            <ul>
+                <li class="w70 lBar">
+                    <a href=""><img src="images/logo.png" alt=""></a>
+                    <h2>1111華人股份有限公司</h2>
+                </li>
+                <li class="w29 rBar">
+                    <a href="" title="主動應徵通知"><img src="images/ico-apply.jpg" alt=""><span class="noticeBox">2</span></a>
+                    <a href="#" title="求職者回覆通知"><img src="images/ico-reply.jpg" alt=""><span class="noticeBox">10</span></a>
+                    <a href="" title="來訪人才通知"><img src="images/ico-visitors.jpg" alt=""><span class="noticeBox">200</span></a>
+                    <span><a href="" class="btnLogInOut">登出</a></span>
+                </li>
+            </ul>
+        </div>
+        <!--關權中 尚未成為VIP 已到期狀態 樓下class加 menuBarClose -->
+        <div class="menuBar">
+            <ul>
+                <li>
+                    <h2>公司管理 <i class="fas fa-angle-down"></i></h2>
+                    <ul>
+                        <li><a href="">公司資料修改</a></li>
+                        <li><a href="">公司刊登預覽</a></li>
+                        <li><a href="">形象廣告</a></li>
+                        <li><a href="">相關訊息</a></li>
+                        <li><a href="">公司環境</a></li>
+                        <li><a href="">帳密權限管理</a></li>
+                        <li><a href="">通訊錄管理</a></li>
+                        <li><a href="">開/關權設定</a></li>
+                        <li><a href="">附加檔案上傳</a></li>
+                    </ul>
+                </li><li>
+                    <h2>職缺管理 <i class="fas fa-angle-down"></i></h2>
+                    <ul>
+                        <li><a href="">開啟中職缺（<b class="redFont">12</b>）</a></li>
+                        <li><a href="">關閉中職缺（<b class="redFont">251</b>）</a></li>
+                        <li><a href="">未刊登職缺（<b class="redFont">0</b>）</a></li>
+                        <li><a href="">新增職缺</a></li>
+                        <li><a href="">修改排序</a></li>
+                        <li><a href="">職缺移轉</a></li>
+                        <li><a href="">職缺自動更新</a></li>
+                        <li><a href="">求職者提問 </a></li>
+                    </ul>
+                </li><li>
+                    <h2>人才招募 <i class="fas fa-angle-down"></i></h2>
+                    <ul>
+                        <li><a href="">主動應徵（<b class="redFont">371</b>）</a></li>
+                        <li><a href="">追蹤名單（<b class="redFont">298</b>）</a></li>
+                        <li><a href="">通知紀錄</a></li>
+                        <li><a href="">配對匯入（<b class="redFont">47</b>）</a></li>
+                        <li><a href="">履歷還原</a></li>
+                        <li><a href="">招募行事曆</a></li>
+                        <li><a href="">招募設定</a></li>
+                        <li><a href="">簡訊服務</a></li>
+                        <li><a href="">追蹤資料夾管理</a></li>
+                        <li><a href="">信件╱簡訊範本管理</a></li>
+                        <li><a href="">求職者封鎖管理</a></li>
+                        <li><a href="">求職者失約回報</a></li>
+                        <li><a href="">求職者問題回報</a></li>
+                    </ul>
+                </li><li>
+                    <h2>人才搜尋 <i class="fas fa-angle-down"></i></h2>
+                    <ul>
+                        <li><a href="">線上配對</a></li>
+                        <li><a href="">簡易搜尋</a></li>
+                        <li><a href="">進階搜尋</a></li>
+                        <li><a href="">大專人才搜尋</a></li>
+                        <li><a href="">履歷代碼查詢</a></li>
+                    </ul>
+                </li><li>
+                    <h2>紀錄管理 <i class="fas fa-angle-down"></i></h2>
+                    <ul>
+                        <li><a href="">帳號使用紀錄</a></li>
+                        <li><a href="">履歷瀏覽紀錄</a></li>
+                        <li><a href="">人才來訪紀錄</a></li>
+                        <li><a href="">數據統計查詢</a></li>
+                        <li><a href="">人才點數統計查詢<b class="orangeFont">{內</b></a></li>
+                    </ul>
+                </li><li>
+                    <h2>貼心服務 <i class="fas fa-angle-down"></i></h2>
+                    <ul>
+                        <li><a href="">職缺同步</a></li>
+                        <li><a href="">薪資調查報告</a></li>
+                        <li><a href="">線上續約</a></li>
+                        <li><a href="">購買優先排序</a></li>
+                        <li><a href="">廣告排程設定</a></li>
+                        <li><a href="">人事表格下載</a></li>
+                        <li><a href="">求才文件下載</a></li>
+                        <li><a href="">紅利點數(5297點)</a></li>
+                        <li><a href="">廣告版位刊登</a></li>
+                        <li><a href="">查詢電子發票</a></li>
+                        <li><a href="">HR系統免費試用</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+        <!--關權中 尚未成為VIP 已到期狀態-->
+        <div class="modeBar">
+            <ul>
+                <li>會員已到期</li>
+                <li><a href="">我要續約</a></li>
+            </ul>
+        </div>
+        <!--關權中 尚未成為VIP 已到期狀態 end-->
+        <div class="content">
+            <div class="cont">
+                <div class="userBox w100">
+                    <h1 class="titleFont">個人帳號資料</h1>
+                    <hr>
+                    <ul>
+                        <li class="userTitle w100">
+                            <span class="w16">姓名</span>
+                            <span class="w16">帳號</span>
+                            <span class="w16">分類</span>
+                            <span class="w16">狀態</span>
+                            <span class="w16">權限</span>
+                            <span class="w16">個人資料</span>
+                        </li>
+                        <li class="w100">
+                            <span class="w16 over">陳OO</span>
+                            <span class="w16 over">23456-789102358</span>
+                            <span class="w16 over">主帳號</span>
+                            <span class="w16">啟用</span>
+                            <span class="w16"><a href="accountPermission_viewPermissionShow.htm" data-fancybox="" data-type="iframe">查看</a></span>
+                            <span class="w16"><a href="accountPermission_editAccountShow.htm" data-fancybox="" data-type="iframe">修改</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="authorityManagement w100">
+                    <h1 class="titleFont">帳密權限管理</h1>
+                    <span class="gray">共XXXX個帳號</span>
+                    <hr>
+                    <div class="toolBox">
+                        <div class="w20">
+                            <span class="lightBlue"><i class="fas fa-plus"></i><a href="accountPermission_addAccountShow.htm" data-fancybox="" data-type="iframe">新增</a></span>
+                            <span class="lightBlue relative">
+                                <i class="fas fa-pencil-alt"></i>修改
+                                <div class="reviseList">
+                                    <a href="accountPermission_changeClassShow.htm" data-fancybox="" data-type="iframe">分類</a>
+                                    <a href="accountPermission_changeStatusShow.htm" data-fancybox="" data-type="iframe">狀態</a>
+                                    <a href="accountPermission_changePermissionShow.htm" data-fancybox="" data-type="iframe">權限</a>
+                                </div>
+                            </span>
+                            <span class="red"><i class="far fa-trash-alt"></i><a href="">刪除</a></span>
+                        </div>
+                        <div class="w79">
+                            <ul>
+                                <li>
+                                    篩選
+                                    <select class="pySelect">
+                                        <option value ="0" selected="selected">狀態</option>
+                                        <option value="1">開啟</option>
+                                        <option value="2">關閉</option>
+                                    </select>
+                                </li>
+                                <li class="searchBox">
+                                    <input type="text" placeholder="姓名、帳號關鍵字或分類">
+                                    <i class="fas fa-times-circle btnDel"></i>
+                                    <span class="btnSearch"><i class="fas fa-search"></i></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul>
+                        <li class="userTitle w100">
+                            <span class="w3">
+                                <input type="checkbox" id="chk1">
+                                <label for="chk1"></label>
+                            </span>
+                            <span class="w14">姓名</span>
+                            <span class="w22">帳號</span>
+                            <span class="w20">分類</span>
+                            <span class="w10 textCenter">狀態</span>
+                            <span class="w8 textCenter">權限</span>
+                            <span class="w12 textCenter">個人資料權限設定</span>
+                            <span class="w8 textCenter">刪除</span>
+                        </li>
+                        <li class="w100">
+                            <span class="w3">
+                                <input type="checkbox" id="chk2">
+                                <label for="chk2"></label>
+                            </span>
+                            <span class="w14 over">陳OO陳陳陳陳陳</span>
+                            <span class="w22 over">23456-789102358468725138</span>
+                            <span class="w20 over">主帳號主帳號主帳號號</span>
+                            <span class="w10 textCenter">
+                                <!--啟用狀態-->
+                                <div class="power">
+                                    <input type="checkbox" checked="checked" class="hid">
+                                    <h5></h5>
+                                    <span class="circle"></span>
+                                </div>
+                                <!--啟用狀態 end-->
+                            </span>
+                            <span class="w8 textCenter"><a href="">查看</a></span>
+                            <span class="w12 textCenter"><a href="">修改</a></span>
+                            <span class="w8 textCenter"><a href=""><i class="far fa-trash-alt fontDel"></i></a></span>
+                        </li>
+                        <li class="w100">
+                            <span class="w3">
+                                <input type="checkbox" id="chk3">
+                                <label for="chk3"></label>
+                            </span>
+                            <span class="w14 over">陳OO</span>
+                            <span class="w22 over">23456-789102358</span>
+                            <span class="w20 over">主帳號</span>
+                            <span class="w10 textCenter">
+                                <!--停用狀態-->
+                                <div class="power powerOff">
+                                    <input type="checkbox" class="hid">
+                                    <h5></h5>
+                                    <span class="circle"></span>
+                                </div>
+                                <!--停用狀態 end-->
+                            </span>
+                            <span class="w8 textCenter"><a href="">查看</a></span>
+                            <span class="w12 textCenter"><a href="">修改</a></span>
+                            <span class="w8 textCenter"><a href=""><i class="far fa-trash-alt fontDel"></i></a></span>
+                        </li>
+                        <li class="w100">
+                            <span class="w3">
+                                <input type="checkbox" id="chk4">
+                                <label for="chk4"></label>
+                            </span>
+                            <span class="w14 over">陳OO陳陳陳陳陳</span>
+                            <span class="w22 over">23456-789102358468725138</span>
+                            <span class="w20 over">主帳號主帳號主帳號號</span>
+                            <span class="w10 textCenter">
+                                <div class="power">
+                                    <input type="checkbox" checked="checked" class="hid">
+                                    <h5></h5>
+                                    <span class="circle"></span>
+                                </div>
+                            </span>
+                            <span class="w8 textCenter"><a href="">查看</a></span>
+                            <span class="w12 textCenter"><a href="">修改</a></span>
+                            <span class="w8 textCenter"><a href=""><i class="far fa-trash-alt fontDel"></i></a></span>
+                        </li>
+                        <li class="w100">
+                            <span class="w3">
+                                <input type="checkbox" id="chk5">
+                                <label for="chk5"></label>
+                            </span>
+                            <span class="w14 over">陳OO陳陳陳陳陳</span>
+                            <span class="w22 over">23456-789102358468725138</span>
+                            <span class="w20 over">主帳號主帳號主帳號號</span>
+                            <span class="w10 textCenter">
+                                <div class="power">
+                                    <input type="checkbox" checked="checked" class="hid">
+                                    <h5></h5>
+                                    <span class="circle"></span>
+                                </div>
+                            </span>
+                            <span class="w8 textCenter"><a href="">查看</a></span>
+                            <span class="w12 textCenter"><a href="">修改</a></span>
+                            <span class="w8 textCenter"><a href=""><i class="far fa-trash-alt fontDel"></i></a></span>
+                        </li>
+                        <li class="w100">
+                            <span class="w3">
+                                <input type="checkbox" id="chk6">
+                                <label for="chk6"></label>
+                            </span>
+                            <span class="w14 over">陳OO陳陳陳陳陳</span>
+                            <span class="w22 over">23456-789102358468725138</span>
+                            <span class="w20 over">主帳號主帳號主帳號號</span>
+                            <span class="w10 textCenter">
+                                <div class="power">
+                                    <input type="checkbox" checked="checked" class="hid">
+                                    <h5></h5>
+                                    <span class="circle"></span>
+                                </div>
+                            </span>
+                            <span class="w8 textCenter"><a href="">查看</a></span>
+                            <span class="w12 textCenter"><a href="">修改</a></span>
+                            <span class="w8 textCenter"><a href=""><i class="far fa-trash-alt fontDel"></i></a></span>
+                        </li>
+                        <li class="w100">
+                            <span class="w3">
+                                <input type="checkbox" id="chk6">
+                                <label for="chk6"></label>
+                            </span>
+                            <span class="w14 over">陳OO陳陳陳陳陳</span>
+                            <span class="w22 over">23456-789102358468725138</span>
+                            <span class="w20 over">主帳號主帳號主帳號號</span>
+                            <span class="w10 textCenter">
+                                <div class="power">
+                                    <input type="checkbox" checked="checked" class="hid">
+                                    <h5></h5>
+                                    <span class="circle"></span>
+                                </div>
+                            </span>
+                            <span class="w8 textCenter"><a href="">查看</a></span>
+                            <span class="w12 textCenter"><a href="">修改</a></span>
+                            <span class="w8 textCenter"><a href=""><i class="far fa-trash-alt fontDel"></i></a></span>
+                        </li>
+                        <li class="w100">
+                            <span class="w3">
+                                <input type="checkbox" id="chk6">
+                                <label for="chk6"></label>
+                            </span>
+                            <span class="w14 over">陳OO陳陳陳陳陳</span>
+                            <span class="w22 over">23456-789102358468725138</span>
+                            <span class="w20 over">主帳號主帳號主帳號號</span>
+                            <span class="w10 textCenter">
+                                <div class="power">
+                                    <input type="checkbox" checked="checked" class="hid">
+                                    <h5></h5>
+                                    <span class="circle"></span>
+                                </div>
+                            </span>
+                            <span class="w8 textCenter"><a href="">查看</a></span>
+                            <span class="w12 textCenter"><a href="">修改</a></span>
+                            <span class="w8 textCenter"><a href=""><i class="far fa-trash-alt fontDel"></i></a></span>
+                        </li>
+                        <li class="w100">
+                            <span class="w3">
+                                <input type="checkbox" id="chk6">
+                                <label for="chk6"></label>
+                            </span>
+                            <span class="w14 over">陳OO陳陳陳陳陳</span>
+                            <span class="w22 over">23456-789102358468725138</span>
+                            <span class="w20 over">主帳號主帳號主帳號號</span>
+                            <span class="w10 textCenter">
+                                <div class="power">
+                                    <input type="checkbox" checked="checked" class="hid">
+                                    <h5></h5>
+                                    <span class="circle"></span>
+                                </div>
+                            </span>
+                            <span class="w8 textCenter"><a href="">查看</a></span>
+                            <span class="w12 textCenter"><a href="">修改</a></span>
+                            <span class="w8 textCenter"><a href=""><i class="far fa-trash-alt fontDel"></i></a></span>
+                        </li>
+                        <li class="w100">
+                            <span class="w3">
+                                <input type="checkbox" id="chk6">
+                                <label for="chk6"></label>
+                            </span>
+                            <span class="w14 over">陳OO陳陳陳陳陳</span>
+                            <span class="w22 over">23456-789102358468725138</span>
+                            <span class="w20 over">主帳號主帳號主帳號號</span>
+                            <span class="w10 textCenter">
+                                <div class="power">
+                                    <input type="checkbox" checked="checked" class="hid">
+                                    <h5></h5>
+                                    <span class="circle"></span>
+                                </div>
+                            </span>
+                            <span class="w8 textCenter"><a href="">查看</a></span>
+                            <span class="w12 textCenter"><a href="">修改</a></span>
+                            <span class="w8 textCenter"><a href=""><i class="far fa-trash-alt fontDel"></i></a></span>
+                        </li>
+                        <li class="w100">
+                            <span class="w3">
+                                <input type="checkbox" id="chk6">
+                                <label for="chk6"></label>
+                            </span>
+                            <span class="w14 over">陳OO陳陳陳陳陳</span>
+                            <span class="w22 over">23456-789102358468725138</span>
+                            <span class="w20 over">主帳號主帳號主帳號號</span>
+                            <span class="w10 textCenter">
+                                <div class="power">
+                                    <input type="checkbox" checked="checked" class="hid">
+                                    <h5></h5>
+                                    <span class="circle"></span>
+                                </div>
+                            </span>
+                            <span class="w8 textCenter"><a href="">查看</a></span>
+                            <span class="w12 textCenter"><a href="">修改</a></span>
+                            <span class="w8 textCenter"><a href=""><i class="far fa-trash-alt fontDel"></i></a></span>
+                        </li>
+                        
+                    </ul>
+                    <div class="pageBox">
+                        <span>
+                            <a>«</a><a>上一頁</a><span>1</span><a href="">2</a><a href="">3</a><a href="">4</a><a href="">...</a><a href="">下一頁</a><a href="">»</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footInfo">
+                <div class="lInfo">
+                    <p>
+                        全球華人股份有限公司版權所有 © 2020 1111 Job Bank All Rights Reserved.<br/>
+                        <span>本網站建議使用 IE10 以上版本瀏覽器及以1024ｘ768以上解析度，以獲得最佳瀏覽體驗</span>
+                    </p>
+                </div>
+                <div class="rInfo">
+                    <p>
+                        求才企業服務<br/>
+                        週一 ~ 週五 8:30 ~ 21:00，週六、週日、國定假日 9:00 ~ 21:00<br/>
+                        苗栗以北 (02)8787-1111  |  中部地區 (04)2203-1111  |  南部地區 (07)958-1111
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <div class="footInfo2">
+                <span>全球華人股份有限公司(私業許字第2218號)</span>
+                <span>全球華人股份有限公司臺中分公司(中市私立就服第011號)</span>
+                <span>全球華人股份有限公司高雄分公司(高市就服字第0010號)</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

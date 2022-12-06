@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>匯出履歷編輯器-列印履歷設定</title>
+    <!--css-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/backstage-print.css" rel="stylesheet">
+    <link href="css/backstage_2-print_main.css" rel="stylesheet">
+    <link href="" rel="stylesheet" id="mcolor">
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/backstage-print_menu.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            /*取消編輯*/
+            $(".introduction").attr("contenteditable","false");
+        });
+    </script>
+</head>
+<body>
+    <div class="wp">
+        <div class="container-fluid">
+            <!--header-->
+            <div class="row header">
+                <div class="col-xs-8">
+                    <img src="images/logo.png" alt="">
+                    <span>匯出履歷編輯</span>
+                    <a href="backstage_2.htm" class="btnBack">←返回版型編輯</a>
+                    <button type="button" class="btnSave">儲存列印版型</button>
+                </div>
+                <div class="col-xs-4 alignR">
+                   <button type="button" class="btnDownload">下載</button>
+                   <button type="button" class="btnPrint">列印</button>
+                   <button type="button" class="btnCPrint">超商列印</button>
+                </div>
+            </div>
+            <div class="hh"></div>
+            <!--header end-->
+            <!--content-->
+            <div class="cont">
+                <div class="row">
+                    <!--main-->
+                    <div class="col-xs-12 main">
+                        <div class="topBar">
+                            目前編輯版本： 網頁版（列印時，因紙本排版限制將有些許差異，背景色及色塊將不會被列印,您可於「列印履歷設定」預覽列印狀態 ）
+                        </div>
+                        <div class="leftBar mbg">
+                            <div class="pic">
+                                <div><img src="images/pic.png" alt="" class="img-responsive"></div>
+                            </div>
+                            <p class="userName">金泰亨</p>
+                            <ul class="stMove2">
+                                <li>學歷資料</li>
+                                <li>工作經歷</li>
+                                <li>技能專長</li>
+                                <li>推 薦 人</li>
+                                <li>自　　傳</li>
+                                <li>聯絡資訊</li>
+                                <li>自訂版塊</li>
+                            </ul>
+                            <div class="outLink">
+                                <button class="linkBtn"><span>新增外部連結</span><i class="material-icons">add</i></button>
+                                <i class="material-icons hidden" title="編輯">create</i>
+                                <div class="outLinkCtl">
+                                    <p>新增外部連結</p>
+                                    <i class="material-icons olClose">close</i>
+                                    <ul class="stMoveOL2">
+                                        <li class="w20 text-left">預覽</li>
+                                        <li class="viewIcon"></li>
+                                        <li class="viewIcon"></li>
+                                        <li class="viewIcon"></li>
+                                        <li class="viewIcon"></li>
+                                    </ul>
+                                    <hr>
+                                    <ul>
+                                        <li class="w10">排序</li>
+                                        <li class="w10 ">圖標</li>
+                                        <li class="w60">連結</li>
+                                        <li class="w10">清除</li>
+                                    </ul>
+                                    <div id="olk">
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <ul class="stMoveOL">
+                                            <li class="w10">
+                                                <i class="material-icons stm ui-sortable-handle" title="拖動排序">import_export</i>
+                                            </li>
+                                            <li class="w10 rel">
+                                                <i class="material-icons">edit</i>
+                                                <div class="olTips">
+                                                    <div class="triangle"></div>
+                                                    <div class="fbIcon"></div>
+                                                    <div class="inIcon"></div>
+                                                    <div class="trIcon"></div>
+                                                    <div class="beIcon"></div>
+                                                </div>
+                                            </li>
+                                            <li class="w60">
+                                                <input type="text" placeholder="輸入連結">
+                                            </li>
+                                            <li class="w10">
+                                                <i class="material-icons olDel">delete</i>
+                                            </li>
+                                        </ul>
+                                        <span class="PromptText"></span>
+                                    </div>
+                                    <button type="button" class="olSave">儲存</button>
+                                </div>
+                            </div>
+                            <div class="mbtn eShow"><span>加分亮點</span></div>
+                            <div class="mbtn vShow"><span>影音履歷</span></div>
+                        </div>
+                        <div class="col-xs-12 rightBar">
+                            <div class="row">
+                                <div class="col-xs-12 col-lg-10 col-lg-offset-1 bgw"><!--col-xs-12 col-lg-10 col-lg-offset-1-->
+                                    <ul>
+                                        <li class="col-xs-12 bg1">
+                                            <h2 class="jobName wow zoomIn">物料管理員,倉儲物流人員,品管人員</h2>
+                                            <h2 class="wow fadeInLeft">金泰亨</h2>
+                                            <h4 class="wow fadeInLeft">台北市松山區 | 女性 | 63歲</h4>
+                                            <div class="introduction wow fadeInRight" contenteditable="true">有鑒於過去跨領域的經歷，我對於學習新知總是持續不斷的接受挑戰。 感謝我過去多元的背景，大學時我主修政治學。政治學喚起了我的同理心以及與他人建立正向關係的熱情，這也使我得意以關懷社會上不同人群的訴求並幫助需要幫助的人（公平貿易、偏鄉教育）。</div>
+                                        </li>
+                                    </ul>
+                                    <ul class="stMove3">
+                                        <li class="col-xs-12">
+                                            <h2 class="bTitle">學歷資料</h2>
+                                            <div class="schoolBox wow zoomIn">
+                                                <div class="sbTitle">
+                                                    <span>碩士畢業</span>
+                                                </div>
+                                                <div class="sbCont">
+                                                    <span>2000/3～2004/9</span>
+                                                    <h3>日本大阪藝術學院</h3>
+                                                    <span>視覺傳達系-電腦語言(美術學類)</span><br/>
+                                                    <span>在職專班</span>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                            </div>
+                                            <div class="schoolBox wow zoomIn">
+                                                <div class="sbTitle sbTitleBg">
+                                                    <span>碩士畢業</span>
+                                                </div>
+                                                <div class="sbCont">
+                                                    <span>2000/3～2004/9</span>
+                                                    <h3>日本大阪藝術學院</h3>
+                                                    <span>視覺傳達系-電腦語言(美術學類)</span><br/>
+                                                    <span>在職專班</span>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12 bg2">
+                                            <h2 class="bTitle">工作經歷</h2>
+                                            <div class="row skillBox mt wow zoomIn">
+                                                <div class="col-xs-12 col-sm-3 skTitle">
+                                                    <div class="circle"></div>
+                                                    <b>升學輔導老師</b><br/>
+                                                    2015/01 ~ <b>在職中</b>，共計2年3個月
+                                                </div>
+                                                <div class="col-xs-12 col-sm-9 separate">
+                                                    <h4 class="mfont">康橋國際學校,台北市</h4>
+                                                    <b>工作性質:全職 │ 公司規模:100人以上 │ 管理人數:5-10人 │ 薪資待遇:隱藏</b><br/>
+                                                    <span>找台灣的輔導老師工作就上全台灣最強大的工作搜尋引擎Careerjet.tw. ... 160元工作性質： 職務類別： 「 升學補習班老師」薪資... 1月9日 - 儲存 - 寄給朋友. 中低年級(一~四 ... 工作內容： 主要輔導一位國三生國文,星期六下午，時段/時薪...可面議. * 工作 ...</span>
+                                                </div>
+                                            </div>
+                                            <div class="row skillBox wow zoomIn">
+                                                <div class="col-xs-12 col-sm-3 skTitle">
+                                                    <div class="circle"></div>
+                                                    <b>中文老師</b><br/>
+                                                    2012/2 ~ 2014/3 ，共2年2個月
+                                                </div>
+                                                <div class="col-xs-12 col-sm-9 separate">
+                                                    <h4 class="mfont">康橋國際學校,新北市</h4>
+                                                    <b>工作性質:工讀 │ 公司規模:100人以上 │ 管理人數:5-10人 │ 薪資待遇:隱藏</b><br/>
+                                                    <span>網站程式ASP撰寫、ASP系統規劃撰寫、資料庫管理維護、對外合作案、工作分派等.. 網站程式ASP撰寫、ASP系統規劃撰寫、資料庫管理維護、對外合作案、工作分派等</span>
+                                                </div>
+                                            </div>
+                                            <div class="row skillBox wow zoomIn">
+                                                <div class="col-xs-12 col-sm-3 skTitle">
+                                                    <div class="circle"></div>
+                                                    <b>Adjunct ESL Instructor</b><br/>
+                                                    2008/6 ~ 2010/7，共計2年2個月
+                                                </div>
+                                                <div class="col-xs-12 col-sm-9 separate">
+                                                    <h4 class="mfont">College of the Canyons,美國加利福尼亞州</h4>
+                                                    <b>工作性質:全職 │ 公司規模:100人以上 │ 管理人數:5-10人 │ 薪資待遇:隱藏</b><br/>
+                                                    <span>1.設計主要的電子商務作業系統、程式語言及應用軟體 2.監督技術人員進行安裝、評估、偵錯、修改各種電子商務相關軟體,以適應特定之網際網路配置 3.對電子商務系統運作、管理及相關網際網路設備採購作業,提供技術性建議 4.依據不同的電子商務作業協定,規劃網際網路商業資訊傳輸程式及軟體 5.設計作業系統、程式語言、編譯器及公用軟體等 6.安裝、修改、偵錯各種軟體,以適應特定之計算機配置 7.新產品或新功能的開發專案、支援應用程式設計工作 8.對系統運作、管理及電子計算機採購作業,提供技術性建議 9.設計各種電子計算機間之連線作業 10.整理市場的功能需求, 作出設計規格建議、競爭產品的技術分析 11.確認軟體單元的設計可以符合元件的功能和介面需求以及使用者的需要 12.分析、研究電腦網路特性,設計網路軟體系統並撰寫程式語言 13.依照測試程序進行測試,直到確認子系統之間整合狀況良好 14.配合網路系統保護措施與資訊安全需求之特性,設計確保資料正確與保密之軟體 15.網站或網路活動之程式撰寫、伺服器管理,參與系</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12 bg3">
+                                            <h2 class="bTitle">技能專長</h2>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="specialty wow bounceInDown">
+                                                        <div class="spTitle1">
+                                                            <i class="fa fa-language faIcon"></i>
+                                                            <p>語文能力</p>
+                                                        </div>
+                                                        <div class="spcount">
+                                                            <ul>
+                                                                <li>中文：聽/精通；說/普通；讀/略懂；寫/精通</li>
+                                                                <li>英文：聽/精通；說/精通；讀/精通；寫/精通</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="specialty wow bounceInLeft">
+                                                        <div class="spTitle2">
+                                                            <i class="fa fa-desktop faIcon"></i>
+                                                            <p>電腦專長</p>
+                                                        </div>
+                                                        <div class="spcount">
+                                                            <ul>
+                                                                <li>辦公室應用：Word,Excel,PowerPoint,Outlook,lnternet Explorer</li>
+                                                                <li>作業系統：Windows 98,Windows XP,Windows Vista</li>
+                                                                <li>其他：Blackboard, ManageBac</li>
+                                                                <li>中文打字：新注音 每分鐘 50 字</li>
+                                                                <li>英文打字：每分鐘 80 字</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="specialty wow slideInRight">
+                                                        <div class="spTitle3">
+                                                            <i class="fa fa-id-card-o faIcon"></i>
+                                                            <p>專業證照</p>
+                                                        </div>
+                                                        <div class="spcount">
+                                                            <ul>
+                                                                <li>語言認證類：TOEIC 多益(Gold860-990分),TESOL,TOEIC SPEAKING and WRITING TESTS</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="specialty wow bounceInRight">
+                                                        <div class="spTitle4">
+                                                            <i class="fa fa-briefcase faIcon"></i>
+                                                            <p>工作技能</p>
+                                                        </div>
+                                                        <div class="spcount">
+                                                            <ul>
+                                                                <li>學術文教：擬定教學計畫,高中職教學實務技巧,大專院校教學實務技巧,教學成果評量／評估,教導／輔導學生技巧,課程規劃與安排</li>
+                                                                <li>補教進修：作文指導教學能力,編寫上課講義,教材教具與教學媒體的運用,語文實務教學能力</li>
+                                                                <li>其他：美國加州中等教育教師證照 TESOL Certificate</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12">
+                                            <h2 class="bTitle">推薦人</h2>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-6 ex">
+                                                    <div class="expBox wow slideInRight">
+                                                        <p>新加坡商星沃恪股份有限公司</p>
+                                                        <span>執行長 吳'R</span>
+                                                        <div class="exCount">
+                                                            <em>0911-333-456</em><br/>
+                                                            <em>(02)1234-5678</em><br/>
+                                                            <em>oihfovisf@ijgbkf.com</em><br/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6 ex">
+                                                    <div class="expBox wow slideInLeft">
+                                                        <p>臺北醫學大學</p>
+                                                        <span>助理教授 李'S</span>
+                                                        <div class="exCount">
+                                                            <em>0911-333-456</em><br/>
+                                                            <em>(02)1234-5678</em><br/>
+                                                            <em>oihfovisf@ijgbkf.com</em><br/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12 bg2">
+                                            <h2 class="bTitle">自傳</h2>
+                                            <div class="autobiographyBox wow slideInUp">
+                                                <h3>Subheading to the article</h3>
+                                                After college graduation, I began my first full-time job in a Taiwanese-owned corporation. In those two years
+                                                <h3>大學畢業後</h3>
+                                                我在一家台資公司開始了我的第一份全職工作。 在這兩年裡，我通過與美國銷售代表和海外華人工廠的日常溝通，在國際業務領域學習了一些行話和操作程序，並將其知識付諸實踐，作為公司的聯絡人。 後來，我轉向醫療保健管理行業，因為我看到了該國前景看好。 作為中央健康的提供者關係代表和會員服務協調員，我很高興我不僅獲得了一些關於醫療管理行業的專業知識，而且還與我所服務的人員，醫生辦公室的工作人員和 最苛刻的病人。作為最年長的孩子，在一個中產階級的傳統中國家庭長大，我實際上是充滿活力和冒險精神。 在小學時期，我總是喜歡許多課外活動，如書法，創意寫作，游泳和鋼琴課。 高中畢業後，我去了加利福尼亞州洛杉磯，在CSUF追求我的大學教育。 主修國際商務，我有很多機會在課堂上遇到很多國際學生和當地美國學生。 我認為出國留學的最大好處是通過與來自世界各地的人進行互動來探索世界，這樣我才能真正體會到我的跨文化體驗。<br/><br/>
+                                                However due to my great passion in language education and the potential decision of moving back to Taiwan, where my families are, I attended the MA TESOL program at Cal State Los Angeles to pursuit my first MA degree. During those two years, my life as a graduate student was busy but very inspiring because of all the colleagues who are as passionate about language education and classroom teaching.
+                                                <h3>After receiving</h3>
+                                                After receiving the master degree, I started my part-time teaching as an Adjunct ESL Instructor at a community college helping my students, who were immigrants from all over the world, overcome some difficulties in learning English conversation because I was able to relate to their personal learning experience as I am a non-native English speaker as well. One thing worth of mentioning is that I opened a class titled<br/><br/>
+                                                Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. <br/>Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.<br/>
+                                                Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12 bg4">
+                                            <div class="row wow bounceInLeft">
+                                                <div class="col-xs-8 aboutMe">
+                                                    <h3>女性(阿美族) ‧ 30歲 ‧ 159cm 43kg ‧ 未婚 ‧ 屆退伍(2019/01/01)</h3>
+                                                    <div class="amBox">
+                                                        <span>輕型機車(持有駕照│車輛)</span>
+                                                        <span>普通大貨車(持有駕照│車輛)</span>
+                                                        <span>視覺障礙(重度)</span>
+                                                        <span>殘障手冊</span>
+                                                        <span>輔助工具(輪椅/金點一號)</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-4 amBox2">錄取後1周可上班</div>
+                                                <div class="col-xs-12 amBox3">
+                                                    <span>+886 987654321 | 02-8787-1111#1234 | 02-8787-0000 (H)</span>
+                                                    <span>mail@distinct.com</span>
+                                                    <span>履歷代碼/狀態：00000000(關閉中)</span>
+                                                    <span>台北市松山區 - 南京東路三段</span>
+                                                    <span>連絡時間：09:00 ~ 18:00</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-12 wow slideInUp">
+                                            <div class="row customizeBox">
+                                                <div class="col-xs-4">
+                                                    <div class="cusTitle" contenteditable="true">123</div>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <div class="cusTitle ct"></div>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <div class="cusTitle ct"></div>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <div class="cusCont" contenteditable="true">456</div>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <div class="cusCont cc"></div>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <div class="cusCont cc"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row customizeBox">
+                                                <div class="col-xs-6">
+                                                    <div class="cusTitle" contenteditable="true">123</div>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="cusTitle ct"></div>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="cusCont"  contenteditable="true">456</div>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="cusCont cc"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row customizeBox">
+                                                <div class="col-xs-12">
+                                                    <div class="cusCont" contenteditable="true">123</div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="col-xs-12 eShow  wow bounceInRight">
+                                            <div style="min-height: 600px;">加分亮點放這</div>
+                                        </li>
+                                        <li class="col-xs-12 vShow  wow bounceInRight">
+                                            <div style="min-height: 600px;">影音履歷放這</div>
+                                        </li>
+                                        <li class="col-xs-12 evPrent">
+                                            <div>
+                                                <p>加分亮點</p>
+                                                <img src="images/t1.png" alt="" class="img-responsive">
+                                            </div>
+                                            <div>
+                                                <p>影音履歷</p>
+                                                <img src="images/t1.png" alt="" class="img-responsive">
+                                            </div>
+                                            <p>掃瞄QRcode後將連結至 XXXX網站，請安心使用</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footer">XXXX網站</div>
+                        </div>
+                    </div>
+                    <!--main end-->
+                    <!--menu-->
+                    <div class="menu">
+                        <div class="col-xs-2 menuBox">
+                            <div class="sHeight">
+                                <p>履歷換頁設定</p>
+                                <div class="rSortable">
+                                    <ul>
+                                        <li>關於我</li>
+                                    </ul>
+                                    <ul id="stb" class="stBox">
+                                        <li>學歷資料</li>
+                                        <li>工作經歷</li>
+                                        <li>技能專長</li>
+                                        <li>推薦人</li>
+                                        <li>自傳</li>
+                                        <li>聯絡資訊</li>
+                                        <li>自訂版塊</li>
+                                    </ul>
+                                    <!--拷貝用-->
+                                    <li class="stMove" id="copyPgbk" style="display: none;">
+                                        <div class="w15"><i class="material-icons stm" title="拖動排序">import_export</i></div>
+                                        <div class="stInfo">
+                                            <span contenteditable="false">Page Break</span>
+                                        </div>
+                                        <div class="w10 tipsBox">
+                                            <i class="material-icons del">close</i>
+                                        </div>
+                                    </li>
+                                    <!--拷貝用 結束-->
+                                </div>
+                                <div class="btnBox">
+                                    <button class="addBtn"><span>Page Break</span><i class="material-icons">add</i></button>
+                                </div>
+                                <hr/>
+                                <p>QR code 顯示設定</p>
+                                <div class="rSortable qrbox">
+                                    <ul>
+                                        <li data-qr="on"><i class="material-icons">check_box</i> <span class="qrcToggle">加分亮點</span></li>
+                                        <li data-qr="on"><i class="material-icons">check_box</i> <span class="qrcToggle">影音履歷</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="leftFoot">XXXX網站<br/><a href="https://25.cami.yesing.com/tw/service/MTExMWpvYmJhbms" target="_blank">求職客服</a> |  <a href="#" target="_blank">Q＆A</a>  | <a href="#" target="_blank">意見反應</a></div>
+                        </div>
+                    </div>
+                    <!--menu end-->
+                </div>
+            </div>
+            <!--content end-->
+            <!--跳窗-->
+            <div>
+                <div class="msgFullBg"></div>
+                <div class="msgBox">
+                    <div class="msgInfo">
+                        <b>已發佈您的履歷為最新編輯版本</b>
+                        <i class="material-icons btnClose">close</i>
+                        <hr>
+                        <p>任何擁有此連結的人，皆可瀏覽您的履歷資料</p>
+                        <input id="icopy" type="text" value="http://google.com">
+                        <button type="button" class="btnCopy">複製連結</button>
+                    </div>
+                </div>
+            </div>
+            <!--跳窗 end-->
+        </div>
+    </div>
+</body>
+</html>

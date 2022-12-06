@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>本站僅為作品展示用</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/shared.js"></script>
+    <!--css-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/shared.css" rel="stylesheet" type="text/css">
+    <link href="css/cstar_consult.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".contList").click(slideUp);
+        });
+        
+        /*問題集 開合*/
+        function slideUp(){
+            var c = $(this).hasClass("contListY");
+            $(this).next("div").slideToggle().siblings(".contList+div").slideUp();
+            if(c==false){
+                $(this).addClass("contListY").siblings(".contList").removeClass("contListY");
+                $(this).find(".icon-icon-05").addClass("icon-icon-06").removeClass("icon-icon-05");
+                $(this).siblings().find(".icon-icon-06").removeClass("icon-icon-06").addClass("icon-icon-05");
+            }
+            else{
+                $(this).removeClass("contListY");
+                $(this).find(".icon-icon-06").addClass("icon-icon-05").removeClass("icon-icon-06");
+            }
+        }
+        
+    </script>
+    
+</head>
+<body>
+    <div id="wp">
+        <div id="header" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topBar hidden-xs">
+                    <a href="cstar.htm"><img src="img/CstarLogo-s.png" alt="" style="margin:-5px 0 0;">九大職能星</a>
+                    <a href="#">OOO 登出</a>
+                    <a href="cstar_consult.htm">線上諮詢</a>
+                    <a href="cstar_report.htm">結果報告</a>
+                    <a href="cstar_start.htm">開始測驗</a>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topBar hidden-sm hidden-md hidden-lg">
+                    <a href="cstar.htm"><img src="img/CstarLogo-s.png" alt="" style="margin:-5px 0 0;">九大職能星</a>
+                    <i class="icon-icon-01"></i>
+                    <ul>
+                        <li><a href="cstar_start.htm">開始測驗</a></li>
+                        <li><a href="cstar_report.htm">結果報告</a></li>
+                        <li><a href="cstar_consult.htm">線上諮詢</a></li>
+                        <li><a href="#">OOO 登出</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="container">
+            <!--第一 問題集 -->
+            <div class="row highBox"></div>
+            <div class="row">
+                <div class="contBox">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-lg-offset-2 col-md-offset-2">
+                        <h3>提問前，先看看常見問題集，節省信件來往的時間。</h3>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-lg-offset-2 col-md-offset-2">
+                        <div class="contList">
+                            <h3>1.對於報告結果想更進一步的了解
+                                <i class="icon-icon-05"></i>
+                            </h3>
+                        </div>
+                        <div>
+                            <h4>
+                            在此向您介紹測驗報告該如何閱讀。<br/><br/>
+                            <b>第一部份-【職能分析說明】：</b><br/>
+                            在這邊針對您15個職能向度的測驗結果有較詳盡的個別說明，在解釋的部分需注意各個職能的定義，需根據測驗所訂的定義去思考，避免每個人對不同的名稱會有不同的解釋，因而在解釋上產生不同的誤會。 其中的原始分數代表你在這個職能中所得的分數有多少，但這樣的分數無法直接解釋您在該職能表現好或不好，需要與他人比較才知道，因此我們提供了PR值(平均每100人當中所贏過的人數)，可以較為了解知道自己與常模比較的結果如何。<br/><br/>
+                            <b>第二部份-【常模分析圖表】：</b><br/>
+                            在這部份可以以圖表的方式了解自己與大眾的比較狀況。在這邊也可更改圖表比對的群組，目前提供比對的方式有學歷、年齡的群組，可以了解自己在不同群組的比較狀況。<br/><br/>
+                            <b>第三部份-【九大職能工作分布型態】：</b><br/>
+                            在這部分我們可以看到根據測驗結果所得到的九種類型的工作適合度，並可直接根據測驗結果，查閱該類型的推荐職務有哪些，並可直接進行搜尋及投遞履歷的動作。在這部分我們可以看到各個類型的工作型態，是需要不同的職能，在自己適合的職能也有較高及較低的狀況，如何發揮自己較高的職能，以及如何補強或避開自己較弱的職能，將會是重要的功課。 如果自己想從事的工作類型適合度較低，則可查閱在該類型當中較低的職能為何?並參考下一部分的職能秘笈進行提昇的訓練。<br/><br/>
+                            <b>第四部份-【職能秘笈】：</b><br/>
+                            在這裡提供您弱勢部分的職能簡單的提升建議，您可參考建議去進行改善，但這邊的建議畢竟還是較為簡略，如果要繼續提升，還需要自己去進行更多的資訊蒐集。您可透過各式書籍、網路、坊間課程...等方式自我提升，只要持之以恆的落實於日常生活中，相信很快就會有所提升。<br/>
+                            </h4>
+                        </div>
+                        <div class="contList">
+                            <h3>2.測驗完成後如何下載此測驗結果
+                                <i class="icon-icon-05" ></i>
+                            </h3>
+                        </div>
+                        <div>
+                            <h4>報告頁您的姓名右方，有一個「+」符號，點開有列印功能。<br/>
+                                1.出現列印視窗後，在目的地選擇印表機的地方，選擇另存為PDF。<br/>
+                                2.選擇後，原本「列印」鈕，會變成「儲存」。<br/>
+                                3.點擊「儲存」，選擇你要存報告的地方，即可完成。<br/><br/>
+
+                                小提醒:<br/>
+                                a. 本測驗大眾常模採動態方式計算，每次登入後數據可能會有些許的變動。<br/>
+                                b. 因瀏覽器版本不同，列印與儲存功能一瀏覽器提供的方式為主。(此說明以Google Chrome為範例)<br/></h4>
+                        </div>
+                        <div class="contList">
+                            <h3>3.為什麼我不能重測
+                                <i class="icon-icon-05"></i>
+                            </h3>
+                        </div>
+                        <div>
+                            <h4>因為職能為不易輕易變化的能力，在個人誠實依照自身實際狀回答的前提之下，我們可預期在短時間內重複測驗的結果將會是一致的。<br/><br/>
+                            一般來說每一年做一次測驗就足夠觀察個人的變化狀況，這時做的結果也比較容易觀察到差異，但為了幫助求職者能夠更準確的掌握自身職能，因此設定間隔時間為每半年一次。<br/><br/>
+                            半年之後，您可自行登入系統後，直接進行重測動作。</h4>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!--第二 送出表單 -->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-lg-offset-2 col-md-offset-2">
+                    <div class="subminBox">
+                        <h3>如對九大職能星網站或測驗報告有任何其他問題，歡迎來信詢問。</h3>
+                        <form action="#" method="post">
+                            聯絡人　<input type="text" value="" placeholder=""><br/>
+                            電　話　<input type="text" value="" placeholder=""><br/>
+                            E-mail　<input type="text" value="" placeholder=""><br/>
+                            <textarea id="" cols="30" rows="5" placeholder="請詳述問題內容，會有助於我們給予具體的回覆。"></textarea>
+                            <h4>您的來信皆受個資法保護，敬請安心提問。</h4>
+                            <center><button type="submit">送出</button></center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="footer" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footBg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul>
+                                    <li><a href="#">九大職能星</a></li>
+                                    <li><a href="#">開始測驗</a></li>
+                                    <li><a href="#">結果報告</a></li>
+                                    <li><a href="#">聯絡我們</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul>
+                                    <li><a href="#">其他測驗</a></li>
+                                    <li><a href="#">個人特質測驗</a></li>
+                                    <li><a href="#">TAT轉職測驗</a></li>
+                                    <li><a href="#">服務型職能測驗</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul>
+                                    <li><a href="#">其他服務</a></li>
+                                    <li><a href="#">職涯網</a></li>
+                                    <li><a href="#">訂閱電子報</a></li>
+                                    <li><a href="#">預留版位</a></li>
+                                    <li><a href="#">預留版位</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <ul class="icfSize">
+                                    <li><a href="#"></a></li>
+                                    <li>
+                                        <a href="#" class="icon-facebook"></a>
+                                        <a href="#" class="icon-google-plus"></a>
+                                        <a href="#" class="icon-linkedin2"></a>
+                                        <a href="#" class="icon-icon-10"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copyright">
+                    <h5 class="hidden-xs">建議您使用 google Chrome 瀏覽器以取得最佳、最快的瀏覽效果！</h5>
+                    <h5>全球華人股份有限公司版權所有 © 1111 Job Bank All Rights Reserved </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="gotop">
+        <div class="line" style="transform: rotate(45deg);top:22px;right:11px;"></div>
+        <div class="line" style="transform: rotate(-45deg);top:22px;right:21px;"></div>
+    </div>
+</body>
+</html>
